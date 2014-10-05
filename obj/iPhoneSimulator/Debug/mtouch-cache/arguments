@@ -1,6 +1,6 @@
-# Version: 8.0.0.62 (8bd8158)
+# Version: 8.2.0.193 (959c1e4)
 # [first argument, ignore] # /Users/sethi/Projects/Feelknit.iOS/bin/iPhoneSimulator/Debug/mtouch.exe
-/Library/Frameworks/Xamarin.iOS.framework/Versions/8.0.0.62/bin/mtouch \
+/Library/Frameworks/Xamarin.iOS.framework/Versions/8.2.0.193/bin/mtouch \
 	-sdkroot \
 	/Applications/Xcode.app/Contents/Developer \
 	--cache \
@@ -9,6 +9,8 @@
 	--nosign \
 	-sim \
 	/Users/sethi/Projects/Feelknit.iOS/bin/iPhoneSimulator/Debug/Feelknit.app \
+	-r \
+	/Users/sethi/Projects/Feelknit.iOS/packages/Newtonsoft.Json.6.0.5/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/2.1/System.dll \
 	-r \

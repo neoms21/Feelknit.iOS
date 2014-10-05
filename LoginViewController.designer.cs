@@ -16,15 +16,11 @@ namespace Feelknit
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIButton LoginButton { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextField Password { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIButton RegistrationButton { get; set; }
+		UIButton RegisterButton { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -32,17 +28,13 @@ namespace Feelknit
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (LoginButton != null) {
-				LoginButton.Dispose ();
-				LoginButton = null;
-			}
 			if (Password != null) {
 				Password.Dispose ();
 				Password = null;
 			}
-			if (RegistrationButton != null) {
-				RegistrationButton.Dispose ();
-				RegistrationButton = null;
+			if (RegisterButton != null) {
+				RegisterButton.Dispose ();
+				RegisterButton = null;
 			}
 			if (UserName != null) {
 				UserName.Dispose ();

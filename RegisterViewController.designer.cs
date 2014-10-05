@@ -11,8 +11,8 @@ using System.CodeDom.Compiler;
 
 namespace Feelknit
 {
-	[Register ("RegistrationViewController")]
-	partial class RegistrationViewController
+	[Register ("RegisterViewController")]
+	partial class RegisterViewController
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -20,11 +20,11 @@ namespace Feelknit
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITextField RegistrationPassword { get; set; }
+		UIView RegisterController { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIView RegistrationUserName { get; set; }
+		UITextField RegisterUserName { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
@@ -32,13 +32,13 @@ namespace Feelknit
 				RegisterButton.Dispose ();
 				RegisterButton = null;
 			}
-			if (RegistrationPassword != null) {
-				RegistrationPassword.Dispose ();
-				RegistrationPassword = null;
+			if (RegisterController != null) {
+				RegisterController.Dispose ();
+				RegisterController = null;
 			}
-			if (RegistrationUserName != null) {
-				RegistrationUserName.Dispose ();
-				RegistrationUserName = null;
+			if (RegisterUserName != null) {
+				RegisterUserName.Dispose ();
+				RegisterUserName = null;
 			}
 		}
 	}
