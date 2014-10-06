@@ -16,3 +16,12 @@ UpgradeLog.*
 *.DS_Store
 *.nib
 *.pfx
+*.dll
+
+*.xml
+
+*.nupkg
+
+*.ps1
+
+*.ini
