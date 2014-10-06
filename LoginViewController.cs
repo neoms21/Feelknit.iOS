@@ -15,7 +15,10 @@ namespace Feelknit
 	    {
 	        base.ViewDidLoad();
 
-
+			UserName.RightViewMode = UITextFieldViewMode.WhileEditing;
+			var imageView = new UIImageView (UIImage.FromBundle("usericon.png"));
+			imageView.Frame = new RectangleF (10,10,imageView.Image.CGImage.Width, imageView.Image.CGImage.Height);
+			UserName.LeftView = imageView;
 //			RegisterButton.TouchUpInside += (object sender, EventArgs e) =>
 //            {
 //                // Launches a new instance of RegistrationController

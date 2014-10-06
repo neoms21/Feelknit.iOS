@@ -98,11 +98,35 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\001.png" />
+    <BundleResource Include="Resources\004.png" />
+    <BundleResource Include="Resources\006.png" />
+    <BundleResource Include="Resources\010.png" />
+    <BundleResource Include="Resources\011.png" />
+    <BundleResource Include="Resources\012.png" />
+    <BundleResource Include="Resources\015.png" />
+    <BundleResource Include="Resources\019.png" />
+    <BundleResource Include="Resources\020.png" />
+    <BundleResource Include="Resources\021.png" />
+    <BundleResource Include="Resources\bg.png" />
+    <BundleResource Include="Resources\comment.png" />
+    <BundleResource Include="Resources\comments.png" />
+    <BundleResource Include="Resources\green.png" />
+    <BundleResource Include="Resources\header.png" />
+    <BundleResource Include="Resources\icon.png" />
+    <BundleResource Include="Resources\iconsmall.png" />
+    <BundleResource Include="Resources\iconsmall_cut.png" />
+    <BundleResource Include="Resources\messages.png" />
+    <BundleResource Include="Resources\notifications.png" />
+    <BundleResource Include="Resources\password.png" />
+    <BundleResource Include="Resources\settings.png" />
+    <BundleResource Include="Resources\userIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
-    <None Include="packages.config" />
+    <None Include="desktop.ini" />
+    <None Include="Resources\packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="JsonHttpClient.cs" />

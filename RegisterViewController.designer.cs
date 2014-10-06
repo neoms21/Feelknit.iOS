@@ -26,6 +26,14 @@ namespace Feelknit
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextField RegisterUserName { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITextField RegistrationEmail { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITextField RegistrationPassword { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (RegisterButton != null) {
@@ -39,6 +47,14 @@ namespace Feelknit
 			if (RegisterUserName != null) {
 				RegisterUserName.Dispose ();
 				RegisterUserName = null;
+			}
+			if (RegistrationEmail != null) {
+				RegistrationEmail.Dispose ();
+				RegistrationEmail = null;
+			}
+			if (RegistrationPassword != null) {
+				RegistrationPassword.Dispose ();
+				RegistrationPassword = null;
 			}
 		}
 	}
