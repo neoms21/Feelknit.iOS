@@ -46,6 +46,13 @@ namespace Feelknit
             if (bool.Parse(result))
             {
 
+				var addFeelingController = this.Storyboard.InstantiateViewController("AddFeelingViewController") as AddFeelingViewController;
+				if (addFeelingController != null)
+				                {
+					this.NavigationController.PushViewController(addFeelingController, true);
+				                }
+				return;
+
             };
 
             var alert = new UIAlertView("Error", "Invalid username/password", null, "OK", null);

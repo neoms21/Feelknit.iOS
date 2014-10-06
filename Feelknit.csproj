@@ -87,15 +87,14 @@
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -126,8 +125,8 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
-    <None Include="packages.config" />
     <None Include="Resources\packages.config" />
+    <None Include="desktop.ini" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="JsonHttpClient.cs" />
@@ -141,6 +140,10 @@
     <Compile Include="RegisterViewController.cs" />
     <Compile Include="RegisterViewController.designer.cs">
       <DependentUpon>RegisterViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddFeelingViewController.cs" />
+    <Compile Include="AddFeelingViewController.designer.cs">
+      <DependentUpon>AddFeelingViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
