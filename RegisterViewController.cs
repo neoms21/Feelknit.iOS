@@ -1,27 +1,34 @@
 using System;
+using Feelknit.Model;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 
 namespace Feelknit
 {
-	partial class RegisterViewController : UIViewController
-	{
-		public RegisterViewController (IntPtr handle) : base (handle)
-		{
-		}
+    partial class RegisterViewController : UIViewController
+    {
+        public RegisterViewController(IntPtr handle)
+            : base(handle)
+        {
+        }
 
 
-		public override void ViewDidLoad ()
-		{
-			base.ViewDidLoad ();
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
 
-						RegisterButton.TouchUpInside += (object sender, EventArgs e) =>
-			            {
-				var user = new Model.User{UserName="xxx",Password="yyy",EmailAddress="sss@ss.com"};
-				var client = new JsonHttpClient("Users");
-				client.PostRequest(user);
-			            };
-		}
-	}
+            RegisterButton.TouchUpInside += (object sender, EventArgs e) =>
+            {
+                var user = new User { UserName = "xxx", Password = "yyy", EmailAddress = "sss@ss.com" };
+                SaveUser(user);
+            };
+        }
+
+        private async void SaveUser(User user)
+        {
+            var client = new JsonHttpClient("Users");
+            await client.PostRequest(user);
+        }
+    }
 }
