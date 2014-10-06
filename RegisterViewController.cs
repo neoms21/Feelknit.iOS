@@ -20,7 +20,7 @@ namespace Feelknit
 
             RegisterButton.TouchUpInside += (object sender, EventArgs e) =>
             {
-                var user = new User { UserName = "xxx", Password = "yyy", EmailAddress = "sss@ss.com" };
+                var user = new User { UserName = RegisterUserName.Text, Password = RegistrationPassword.Text, EmailAddress = RegistrationEmail.Text };
                 SaveUser(user);
             };
         }
