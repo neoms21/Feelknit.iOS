@@ -21,15 +21,15 @@ namespace Feelknit
             //imageView.Frame = new RectangleF(1,1, imageView.Image.CGImage.Width, imageView.Image.CGImage.Height);
             //UserName.LeftViewMode = UITextFieldViewMode.Always;
             //UserName.LeftView = imageView;
-            //			RegisterButton.TouchUpInside += (object sender, EventArgs e) =>
-            //            {
-            //                // Launches a new instance of RegistrationController
-            //                var registration = this.Storyboard.InstantiateViewController("RegisterViewController") as RegisterViewController;
-            //                if (registration != null)
-            //                {
-            //                    this.NavigationController.PushViewController(registration, true);
-            //                }
-            //            };
+            			RegisterButton.TouchUpInside += (object sender, EventArgs e) =>
+                        {
+                            // Launches a new instance of RegistrationController
+                            var registration = this.Storyboard.InstantiateViewController("RegisterViewController") as RegisterViewController;
+                            if (registration != null)
+                            {
+                                this.NavigationController.PushViewController(registration, true);
+                            }
+                        };
 
             LoginButton.TouchUpInside += (object sender, EventArgs e) =>
                         {

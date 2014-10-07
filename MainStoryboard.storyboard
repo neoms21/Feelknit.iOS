@@ -42,7 +42,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="123" kind="push" id="128"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="172" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
@@ -50,9 +49,7 @@
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="185" kind="push" id="189"/>
-                                </connections>
+                                <connections/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="175" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="iconsmall.png">
                                 <rect key="frame" x="89" y="70" width="133" height="139"/>
