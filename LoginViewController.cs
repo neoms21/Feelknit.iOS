@@ -1,6 +1,8 @@
 using System;
+using System.Drawing;
 using System.Threading.Tasks;
 using Feelknit.Model;
+using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
 namespace Feelknit
@@ -15,21 +17,35 @@ namespace Feelknit
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            var isAuthenticated = NSUserDefaults.StandardUserDefaults.BoolForKey("IsAuthenticated");
+            if (isAuthenticated)
+            {
+                NavigateToAddFeeling();
+                return;
+            }
+            var imageView = new UIImageView(UIImage.FromBundle("usericon.png"))
+            {
+                Frame = new RectangleF(new PointF(20, 1), new SizeF(20, 20))
+            };
+            UserName.LeftViewMode = UITextFieldViewMode.Always;
+            UserName.LeftView = imageView;
 
+            var imageView2 = new UIImageView(UIImage.FromBundle("password.png"))
+            {
+                Frame = new RectangleF(new PointF(20, 1), new SizeF(20, 20))
+            };
+            Password.LeftViewMode = UITextFieldViewMode.Always;
+            Password.LeftView = imageView2;
 
-            //var imageView = new UIImageView(UIImage.FromBundle("usericon.png"));
-            //imageView.Frame = new RectangleF(1,1, imageView.Image.CGImage.Width, imageView.Image.CGImage.Height);
-            //UserName.LeftViewMode = UITextFieldViewMode.Always;
-            //UserName.LeftView = imageView;
-            			RegisterButton.TouchUpInside += (object sender, EventArgs e) =>
-                        {
-                            // Launches a new instance of RegistrationController
-                            var registration = this.Storyboard.InstantiateViewController("RegisterViewController") as RegisterViewController;
-                            if (registration != null)
-                            {
-                                this.NavigationController.PushViewController(registration, true);
-                            }
-                        };
+            RegisterButton.TouchUpInside += (object sender, EventArgs e) =>
+            {
+                // Launches a new instance of RegistrationController
+                var registration = this.Storyboard.InstantiateViewController("RegisterViewController") as RegisterViewController;
+                if (registration != null)
+                {
+                    this.NavigationController.PushViewController(registration, true);
+                }
+            };
 
             LoginButton.TouchUpInside += (object sender, EventArgs e) =>
                         {
@@ -45,13 +61,9 @@ namespace Feelknit
 
             if (bool.Parse(result))
             {
-
-				var addFeelingController = this.Storyboard.InstantiateViewController("AddFeelingViewController") as AddFeelingViewController;
-				if (addFeelingController != null)
-				                {
-					this.NavigationController.PushViewController(addFeelingController, true);
-				                }
-				return;
+                NSUserDefaults.StandardUserDefaults.SetBool(true, "IsAuthenticated");
+                NavigateToAddFeeling();
+                return;
 
             };
 
@@ -59,5 +71,14 @@ namespace Feelknit
             alert.Show();
         }
 
+        private void NavigateToAddFeeling()
+        {
+            var addFeelingController =
+                this.Storyboard.InstantiateViewController("AddFeelingViewController") as AddFeelingViewController;
+            if (addFeelingController != null)
+            {
+                this.NavigationController.PushViewController(addFeelingController, true);
+            }
+        }
     }
 }

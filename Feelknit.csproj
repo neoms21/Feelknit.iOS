@@ -136,7 +136,6 @@
       <DependentUpon>LoginViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\User.cs" />
-    <Compile Include="PaddingTextField.cs" />
     <Compile Include="RegisterViewController.cs" />
     <Compile Include="RegisterViewController.designer.cs">
       <DependentUpon>RegisterViewController.cs</DependentUpon>
