@@ -126,7 +126,6 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="Resources\packages.config" />
-    <None Include="desktop.ini" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="JsonHttpClient.cs" />
@@ -137,6 +136,7 @@
       <DependentUpon>LoginViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\User.cs" />
+    <Compile Include="PaddingTextField.cs" />
     <Compile Include="RegisterViewController.cs" />
     <Compile Include="RegisterViewController.designer.cs">
       <DependentUpon>RegisterViewController.cs</DependentUpon>

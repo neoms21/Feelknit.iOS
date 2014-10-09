@@ -42,6 +42,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+      
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="172" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
@@ -49,7 +50,6 @@
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="175" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="iconsmall.png">
                                 <rect key="frame" x="89" y="70" width="133" height="139"/>
@@ -132,8 +132,8 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="125" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="141" y="822"/>
-        </scene>
-        <scene sceneID="184">
+        </scene>  
+		<scene sceneID="184">
             <objects>
                 <viewController id="185" sceneMemberID="viewController" customClass="AddFeelingViewController" storyboardIdentifier="AddFeelingViewController" title="Add Feeling">
                     <layoutGuides>
