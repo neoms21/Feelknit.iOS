@@ -23,32 +23,9 @@ namespace Feelknit
 //                NavigateToAddFeeling();
 //                return;
 //            }
-			var imageView = new UIImageView(UIImage.FromBundle("usericon.png"))
-			{
-				// Indent it 10 pixels from the left.
-				Frame = new RectangleF(10,0,20,20)
-			};
-
-			UIView objLeftView = new UIView(new Rectangle(0,0,30,20));
-			objLeftView.AddSubview(imageView);
-			//and then on the UITextField set the LeftView as such:-
-
-			UserName.LeftViewMode = UITextFieldViewMode.Always;
-			UserName.LeftView = objLeftView;
-//
-//            var imageView = new UIImageView(UIImage.FromBundle("usericon.png"))
-//            {
-//                Frame = new RectangleF(new PointF(20, 1), new SizeF(20, 20))
-//            };
-//            UserName.LeftViewMode = UITextFieldViewMode.Always;
-//            UserName.LeftView = imageView;
-
-            var imageView2 = new UIImageView(UIImage.FromBundle("password.png"))
-            {
-                Frame = new RectangleF(new PointF(20, 1), new SizeF(20, 20))
-            };
-            Password.LeftViewMode = UITextFieldViewMode.Always;
-            Password.LeftView = imageView2;
+		
+            SetImageAndMargin(UserName, "usericon.png");
+            SetImageAndMargin(Password, "password.png");
 
             RegisterButton.TouchUpInside += (object sender, EventArgs e) =>
             {
@@ -65,6 +42,20 @@ namespace Feelknit
                             var user = new User { UserName = UserName.Text, Password = Password.Text };
                             VerifyUser(user);
                         };
+        }
+
+        private void SetImageAndMargin(UITextField uiTextField, string image)
+        {
+            var imageView = new UIImageView(UIImage.FromBundle(image))
+            {
+                // Indent it 10 pixels from the left.
+                Frame = new RectangleF(10, 0, 20, 20)
+            };
+
+            var leftView = new UIView(new Rectangle(0, 0, 30, 20));
+            leftView.AddSubview(imageView);
+            uiTextField.LeftViewMode = UITextFieldViewMode.Always;
+            uiTextField.LeftView = leftView;
         }
 
         private async void VerifyUser(User user)
