@@ -17,18 +17,31 @@ namespace Feelknit
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            var isAuthenticated = NSUserDefaults.StandardUserDefaults.BoolForKey("IsAuthenticated");
-            if (isAuthenticated)
-            {
-                NavigateToAddFeeling();
-                return;
-            }
-            var imageView = new UIImageView(UIImage.FromBundle("usericon.png"))
-            {
-                Frame = new RectangleF(new PointF(20, 1), new SizeF(20, 20))
-            };
-            UserName.LeftViewMode = UITextFieldViewMode.Always;
-            UserName.LeftView = imageView;
+//            var isAuthenticated = NSUserDefaults.StandardUserDefaults.BoolForKey("IsAuthenticated");
+//            if (isAuthenticated)
+//            {
+//                NavigateToAddFeeling();
+//                return;
+//            }
+			var imageView = new UIImageView(UIImage.FromBundle("usericon.png"))
+			{
+				// Indent it 10 pixels from the left.
+				Frame = new RectangleF(10,0,20,20)
+			};
+
+			UIView objLeftView = new UIView(new Rectangle(0,0,30,20));
+			objLeftView.AddSubview(imageView);
+			//and then on the UITextField set the LeftView as such:-
+
+			UserName.LeftViewMode = UITextFieldViewMode.Always;
+			UserName.LeftView = objLeftView;
+//
+//            var imageView = new UIImageView(UIImage.FromBundle("usericon.png"))
+//            {
+//                Frame = new RectangleF(new PointF(20, 1), new SizeF(20, 20))
+//            };
+//            UserName.LeftViewMode = UITextFieldViewMode.Always;
+//            UserName.LeftView = imageView;
 
             var imageView2 = new UIImageView(UIImage.FromBundle("password.png"))
             {
