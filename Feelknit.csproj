@@ -92,7 +92,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
-    <Reference Include="Newtonsoft.Json">
+    <Reference Include="Newtonsoft">
       <HintPath>packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -135,9 +135,6 @@
     <Compile Include="LoginViewController.designer.cs">
       <DependentUpon>LoginViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Comment.cs" />
-    <Compile Include="Model\Feeling.cs" />
-    <Compile Include="Model\Response.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="RegisterViewController.cs" />
     <Compile Include="RegisterViewController.designer.cs">
@@ -146,6 +143,10 @@
     <Compile Include="AddFeelingViewController.cs" />
     <Compile Include="AddFeelingViewController.designer.cs">
       <DependentUpon>AddFeelingViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserFeelingsController.cs" />
+    <Compile Include="UserFeelingsController.designer.cs">
+      <DependentUpon>UserFeelingsController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
