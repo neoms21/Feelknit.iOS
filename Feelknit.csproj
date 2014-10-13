@@ -135,6 +135,9 @@
     <Compile Include="LoginViewController.designer.cs">
       <DependentUpon>LoginViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Comment.cs" />
+    <Compile Include="Model\Feeling.cs" />
+    <Compile Include="Model\Response.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="RegisterViewController.cs" />
     <Compile Include="RegisterViewController.designer.cs">
