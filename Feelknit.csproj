@@ -92,7 +92,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
-    <Reference Include="Newtonsoft">
+    <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -154,6 +154,7 @@
       <DependentUpon>UserFeelingsController.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\LoadingOverlayView.cs" />
+    <Compile Include="Views\UserFeelingCellView.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
