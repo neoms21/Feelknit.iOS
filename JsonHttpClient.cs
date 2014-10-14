@@ -54,19 +54,17 @@ namespace Feelknit
             return response;
         }
 
-        public async Task<string> GetRequest<T>(T obj)
+        public async Task<string> GetRequest()
         {
-            var json = JsonConvert.SerializeObject(obj);
             var request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "GET";
             request.ContentType = "application/json";
             request.Accept = "application/json";
-            request.ContentLength = json.Length;
-            using (var webStream = request.GetRequestStream())
-            using (var requestWriter = new StreamWriter(webStream, Encoding.ASCII))
-            {
-                requestWriter.Write(json);
-            }
+            //using (var webStream = request.GetRequestStream())
+            //using (var requestWriter = new StreamWriter(webStream, Encoding.ASCII))
+            //{
+            //    requestWriter.Write(json);
+            //}
             var response = "";
             try
             {

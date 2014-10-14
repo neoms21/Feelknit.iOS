@@ -125,6 +125,7 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
     <None Include="Resources\packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +136,9 @@
     <Compile Include="LoginViewController.designer.cs">
       <DependentUpon>LoginViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Comment.cs" />
+    <Compile Include="Model\Feeling.cs" />
+    <Compile Include="Model\Response.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="RegisterViewController.cs" />
     <Compile Include="RegisterViewController.designer.cs">
@@ -144,10 +148,12 @@
     <Compile Include="AddFeelingViewController.designer.cs">
       <DependentUpon>AddFeelingViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableViewSources\UserFeelingsTableViewSource.cs" />
     <Compile Include="UserFeelingsController.cs" />
     <Compile Include="UserFeelingsController.designer.cs">
       <DependentUpon>UserFeelingsController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\LoadingOverlayView.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

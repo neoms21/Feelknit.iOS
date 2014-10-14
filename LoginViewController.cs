@@ -17,13 +17,13 @@ namespace Feelknit
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-//            var isAuthenticated = NSUserDefaults.StandardUserDefaults.BoolForKey("IsAuthenticated");
-//            if (isAuthenticated)
-//            {
-//                NavigateToAddFeeling();
-//                return;
-//            }
-		
+            var isAuthenticated = NSUserDefaults.StandardUserDefaults.BoolForKey("IsAuthenticated");
+            if (isAuthenticated)
+            {
+                NavigateToAddFeeling();
+                return;
+            }
+
             SetImageAndMargin(UserName, "usericon.png");
             SetImageAndMargin(Password, "password.png");
 
@@ -77,11 +77,11 @@ namespace Feelknit
 
         private void NavigateToAddFeeling()
         {
-            var addFeelingController =
-                this.Storyboard.InstantiateViewController("AddFeelingViewController") as AddFeelingViewController;
-            if (addFeelingController != null)
+            var userFeelingsController =
+                this.Storyboard.InstantiateViewController("UserFeelingsController") as UserFeelingsController;
+            if (userFeelingsController != null)
             {
-                this.NavigationController.PushViewController(addFeelingController, true);
+                this.NavigationController.PushViewController(userFeelingsController, true);
             }
         }
     }
