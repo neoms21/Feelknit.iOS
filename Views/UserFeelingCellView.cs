@@ -1,8 +1,8 @@
-﻿using System;
+﻿using MonoTouch.UIKit;
 
-namespace Feelknit
+namespace Feelknit.iOS.Views
 {
-	public class UserFeelingCellView
+	public class UserFeelingCellView : UIView
 	{
 		public UserFeelingCellView ()
 		{

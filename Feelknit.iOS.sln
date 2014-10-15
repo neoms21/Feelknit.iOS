@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feelknit.iOS", "Feelknit.iOS.csproj", "{21FB5837-3F5D-4D8F-8238-870907068D9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		Ad-Hoc|iPhoneSimulator = Ad-Hoc|iPhoneSimulator
+		AppStore|iPhone = AppStore|iPhone
+		AppStore|iPhoneSimulator = AppStore|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Ad-Hoc|iPhoneSimulator
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Ad-Hoc|iPhoneSimulator.Build.0 = Ad-Hoc|iPhoneSimulator
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.AppStore|iPhoneSimulator.ActiveCfg = AppStore|iPhoneSimulator
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.AppStore|iPhoneSimulator.Build.0 = AppStore|iPhoneSimulator
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Debug|iPhone.Build.0 = Debug|iPhone
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Release|iPhone.ActiveCfg = Release|iPhone
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Release|iPhone.Build.0 = Release|iPhone
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Feelknit.csproj
+	EndGlobalSection
+EndGlobal

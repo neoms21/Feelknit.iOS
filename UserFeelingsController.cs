@@ -1,18 +1,16 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using Feelknit.iOS.Model;
+using Feelknit.iOS.TableViewSources;
+using Feelknit.iOS.Views;
 using Feelknit.Model;
-using Feelknit.TableViewSources;
-using Feelknit.Views;
-using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using System.CodeDom.Compiler;
 using Newtonsoft.Json;
 
-namespace Feelknit
+namespace Feelknit.iOS
 {
     partial class UserFeelingsController : UIViewController
     {
@@ -30,7 +28,8 @@ namespace Feelknit
         {
             base.ViewDidLoad();
             var bounds = UIScreen.MainScreen.Bounds; // portrait bounds
-            if (UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeLeft || UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeRight)
+            if (UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeLeft 
+                || UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeRight)
             {
                 bounds.Size = new SizeF(bounds.Size.Height, bounds.Size.Width);
             }

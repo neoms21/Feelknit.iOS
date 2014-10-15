@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Feelknit.iOS.Model;
 using Feelknit.Model;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
-namespace Feelknit.TableViewSources
+namespace Feelknit.iOS.TableViewSources
 {
     public class UserFeelingsTableViewSource : UITableViewSource
     {

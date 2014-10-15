@@ -1,5 +1,5 @@
 ﻿
-namespace Feelknit.Model
+namespace Feelknit.iOS.Model
 {
     public class Response
     {

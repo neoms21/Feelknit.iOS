@@ -9,7 +9,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 
-namespace Feelknit
+namespace Feelknit.iOS
 {
 	[Register ("UserFeelingsController")]
 	partial class UserFeelingsController

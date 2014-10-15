@@ -1,19 +1,17 @@
 ﻿using System.Drawing;
 using MonoTouch.UIKit;
 
-namespace Feelknit.Views
+namespace Feelknit.iOS.Views
 {
-    public class LoadingOverlay : UIView
+    public sealed class LoadingOverlay : UIView
     {
         // control declarations
-        UIActivityIndicatorView activitySpinner;
-        UILabel loadingLabel;
 
         public LoadingOverlay(RectangleF frame)
             : base(frame)
         {
             // configurable bits
-            BackgroundColor = UIColor.Black;
+            BackgroundColor = UIColor.Gray;
             Alpha = 0.75f;
             AutoresizingMask = UIViewAutoresizing.FlexibleDimensions;
 
@@ -25,7 +23,7 @@ namespace Feelknit.Views
             float centerY = Frame.Height / 2;
 
             // create the activity spinner, center it horizontall and put it 5 points above center x
-            activitySpinner = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.WhiteLarge);
+            var activitySpinner = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.WhiteLarge);
             activitySpinner.Frame = new RectangleF(
                 centerX - (activitySpinner.Frame.Width / 2),
                 centerY - activitySpinner.Frame.Height - 20,
@@ -36,7 +34,7 @@ namespace Feelknit.Views
             activitySpinner.StartAnimating();
 
             // create and configure the "Loading Data" label
-            loadingLabel = new UILabel(new RectangleF(
+            UILabel loadingLabel = new UILabel(new RectangleF(
                 centerX - (labelWidth / 2),
                 centerY + 20,
                 labelWidth,
@@ -58,7 +56,7 @@ namespace Feelknit.Views
             UIView.Animate(
                 0.5, // duration
                 () => { Alpha = 0; },
-                () => { RemoveFromSuperview(); }
+                RemoveFromSuperview
             );
         }
     };

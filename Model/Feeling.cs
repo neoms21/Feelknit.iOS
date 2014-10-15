@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Feelknit.Model;
 
-namespace Feelknit.Model
+namespace Feelknit.iOS.Model
 {
     public class Feeling
     {
