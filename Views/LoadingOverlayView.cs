@@ -5,7 +5,7 @@ namespace Feelknit.iOS.Views
 {
     public sealed class LoadingOverlay : UIView
     {
-        // control declarations
+        // control declarations 
 
         public LoadingOverlay(RectangleF frame)
             : base(frame)

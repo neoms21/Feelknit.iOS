@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Feelknit.iOS.Model;
+using Feelknit.iOS.Views;
 using Feelknit.Model;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
@@ -21,17 +22,23 @@ namespace Feelknit.iOS.TableViewSources
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
-            UITableViewCell cell = tableView.DequeueReusableCell(cellIdentifier);
+            var cell = tableView.DequeueReusableCell(cellIdentifier) as UserFeelingCellView ??
+                                   new UserFeelingCellView(cellIdentifier);
             // if there are no cells to reuse, create a new one
-            if (cell == null)
-                cell = new UITableViewCell(UITableViewCellStyle.Default, cellIdentifier);
-            cell.TextLabel.Text = _feelings[indexPath.Row].FeelingText;
+            var feeling = _feelings[indexPath.Row];
+            cell.UpdateCell(feeling.GetFeelingFormattedText("I"), string.Format("{0} Comments", feeling.Comments.Count),
+                string.Format("{0} Suppport", feeling.SupportCount), feeling.FeelingDate.ToString("yy-mm-dd"));
             return cell;
         }
 
         public override int RowsInSection(UITableView tableview, int section)
         {
             return _feelings.Count();
+        }
+
+        public override float GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+        {
+            return 80;
         }
     }
 }

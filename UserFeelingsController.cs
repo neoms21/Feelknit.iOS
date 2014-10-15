@@ -28,7 +28,7 @@ namespace Feelknit.iOS
         {
             base.ViewDidLoad();
             var bounds = UIScreen.MainScreen.Bounds; // portrait bounds
-            if (UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeLeft 
+            if (UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeLeft
                 || UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeRight)
             {
                 bounds.Size = new SizeF(bounds.Size.Height, bounds.Size.Width);
@@ -54,6 +54,7 @@ namespace Feelknit.iOS
             var result = await client.GetRequest();
 
             _feelings = JsonConvert.DeserializeObject<IEnumerable<Feeling>>(result);
+            _feelings.First().IsFirstFeeling = true;
             return _feelings;
         }
     }

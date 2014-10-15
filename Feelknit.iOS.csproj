@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Feelknit.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Feelknit.iOS</AssemblyName>
+    <AssemblyName>FeelknitiOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>

@@ -44,11 +44,11 @@ namespace Feelknit.iOS.Model
         public double[] Location { get; set; }
 
         public IList<Comment> Comments { get; set; }
-        
+
         public IList<string> SupportUsers { get; set; }
 
         public bool IsReported { get; set; }
-        
+
         public bool IsCurrentFeeling { get; set; }
 
         public double Latitude
@@ -71,5 +71,21 @@ namespace Feelknit.iOS.Model
             }
         }
 
+
+        public String GetFeelingFormattedText(String pronoun)
+        {
+            var p = pronoun.Equals("I") ? "am" : "is";
+
+            if (string.IsNullOrEmpty(Reason) && string.IsNullOrEmpty(Action))
+                return String.Format("{0} feeling {1}", IsFirstFeeling ? p : "was", FeelingText);
+            if (string.IsNullOrEmpty(Reason) && !string.IsNullOrEmpty(Action))
+                return String.Format("{0} feeling {1} so {2}", IsFirstFeeling ? p : "was", FeelingText, Action);
+            if (!string.IsNullOrEmpty(Reason) && string.IsNullOrEmpty(Action))
+                return String.Format("{0} feeling {1} because {2}", IsFirstFeeling ? p : "was", FeelingText, Reason);
+
+            return String.Format("{0} feeling {1} because {2} so {3}", IsFirstFeeling ? p : "was", FeelingText, Reason, Action);
+        }
+
+        public bool IsFirstFeeling { get; set; }
     }
 }
