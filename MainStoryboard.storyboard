@@ -153,7 +153,7 @@
         </scene>
         <scene sceneID="289">
             <objects>
-                <viewController id="290" sceneMemberID="viewController" customClass="UserFeelingsController" storyboardIdentifier="UserFeelingsController">
+                <viewController id="290" sceneMemberID="viewController" customClass="UserFeelingsController" storyboardIdentifier="UserFeelingsController" modalTransitionStyle="coverVertical">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="287"/>
                         <viewControllerLayoutGuide type="bottom" id="288"/>
@@ -163,50 +163,44 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="300" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="0.0" y="60" width="320" height="470"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="301">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="302" tableViewCell="301">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="303">
-                                        <rect key="frame" x="0.0" y="66" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="304" tableViewCell="303">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="305">
-                                        <rect key="frame" x="0.0" y="110" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="306" tableViewCell="305">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="309" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="0.0" y="538" width="320" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="309" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="533" width="320" height="35"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
                                 <state key="normal" title="Create New">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                                 </state>
+                                <constraints>
+                                    <constraint firstItem="309" firstAttribute="height" constant="35" id="421"/>
+                                    <constraint firstItem="309" firstAttribute="height" constant="35" id="427"/>
+                                </constraints>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="434" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="76" width="320" height="377"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="My Recent Feelings" lineBreakMode="tailTruncation" minimumFontSize="10" id="317" textAlignment="center" key="tableHeaderView" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="32" width="320" height="44"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="288" firstAttribute="top" secondItem="309" secondAttribute="bottom" constant="32" id="418"/>
+                            <constraint firstItem="309" firstAttribute="bottom" secondItem="291" secondAttribute="bottom" constant="0.0" id="424"/>
+                            <constraint firstItem="309" firstAttribute="trailing" secondItem="291" secondAttribute="trailing" constant="0.0" id="428"/>
+                            <constraint firstItem="309" firstAttribute="trailing" secondItem="291" secondAttribute="trailing" constant="0.0" id="429"/>
+                            <constraint firstItem="309" firstAttribute="leading" secondItem="291" secondAttribute="leading" constant="0.0" id="430"/>
+                            <constraint firstItem="309" firstAttribute="leading" secondItem="291" secondAttribute="leading" constant="0.0" id="431"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="CreateNewFeelingButton" destination="309" id="name-outlet-309"/>
-                        <outlet property="UserFeelingsTable" destination="300" id="name-outlet-300"/>
+                        <outlet property="UserFeelingsTable" destination="434" id="name-outlet-434"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="292" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -77,13 +77,13 @@ namespace Feelknit.iOS.Model
             var p = pronoun.Equals("I") ? "am" : "is";
 
             if (string.IsNullOrEmpty(Reason) && string.IsNullOrEmpty(Action))
-                return String.Format("{0} feeling {1}", IsFirstFeeling ? p : "was", FeelingText);
+				return String.Format("{0} {1} feeling {2}",pronoun, IsFirstFeeling ? p : "was", FeelingText);
             if (string.IsNullOrEmpty(Reason) && !string.IsNullOrEmpty(Action))
-                return String.Format("{0} feeling {1} so {2}", IsFirstFeeling ? p : "was", FeelingText, Action);
+				return String.Format("{0} {1} feeling {2} so {3}",pronoun, IsFirstFeeling ? p : "was", FeelingText, Action);
             if (!string.IsNullOrEmpty(Reason) && string.IsNullOrEmpty(Action))
-                return String.Format("{0} feeling {1} because {2}", IsFirstFeeling ? p : "was", FeelingText, Reason);
+				return String.Format("{0} {1} feeling {2} because {3}",pronoun, IsFirstFeeling ? p : "was", FeelingText, Reason);
 
-            return String.Format("{0} feeling {1} because {2} so {3}", IsFirstFeeling ? p : "was", FeelingText, Reason, Action);
+			return String.Format("{0} {1} feeling {2} because {3} so {4}",pronoun, IsFirstFeeling ? p : "was", FeelingText, Reason, Action);
         }
 
         public bool IsFirstFeeling { get; set; }
