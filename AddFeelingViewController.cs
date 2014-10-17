@@ -1,7 +1,5 @@
 using System;
-using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using System.CodeDom.Compiler;
 
 namespace Feelknit
 {
@@ -10,5 +8,12 @@ namespace Feelknit
 		public AddFeelingViewController (IntPtr handle) : base (handle)
 		{
 		}
+
+	    public override void ViewDidLoad()
+	    {
+	        base.ViewDidLoad();
+            this.NavigationController.NavigationBarHidden = false;
+
+	    }
 	}
 }

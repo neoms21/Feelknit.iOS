@@ -22,10 +22,6 @@ namespace Feelknit.iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableView UserFeelingsTable { get; set; }
 
-		[Action ("CreateNewFeelingButtonEventHandler:")]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		partial void CreateNewFeelingButtonEventHandler (UIButton sender);
-
 		void ReleaseDesignerOutlets ()
 		{
 			if (CreateNewFeelingButton != null) {
