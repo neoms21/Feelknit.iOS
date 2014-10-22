@@ -14,8 +14,24 @@ namespace Feelknit
 	[Register ("AddFeelingViewController")]
 	partial class AddFeelingViewController
 	{
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton MainButton { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIScrollView ScrollView { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
+			if (MainButton != null) {
+				MainButton.Dispose ();
+				MainButton = null;
+			}
+			if (ScrollView != null) {
+				ScrollView.Dispose ();
+				ScrollView = null;
+			}
 		}
 	}
 }
