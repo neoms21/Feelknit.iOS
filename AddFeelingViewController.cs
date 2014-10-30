@@ -20,42 +20,7 @@ namespace Feelknit
             this.NavigationController.NavigationBarHidden = false;
 			#region View lifecycle
 		
-				var frame = UIScreen.MainScreen.ApplicationFrame;
-				this.View.Frame = frame;
-				this.ScrollView.Frame = this.View.Bounds;
-				this.ScrollView.ContentSize = new SizeF (this.View.Frame.Width, this.View.Bounds.Height);
-				this.ScrollView.Scrolled += ScrollViewDidScroll;
-
-				var item0 = new MenuItem ("Slide Menu",  (menuItem) => {
-					Console.WriteLine("Item: {0}", menuItem);
-					this.MoveButtonToXY(10,200);
-					this.ChangeButtonBackground(0);
-				});
-
-				var item1 = new MenuItem ("Favourite",  (menuItem) => {
-					Console.WriteLine("Item: {0}", menuItem);
-					this.MoveButtonToXY(10,150);
-					this.ChangeButtonBackground(1);
-				});
-
-				var item2 = new MenuItem ("Search", (menuItem) => {
-					Console.WriteLine("Item: {0}", menuItem);
-					this.MoveButtonToXY(10,250);
-					this.ChangeButtonBackground(2);
-				});
-
-			for(int i = 0 ;i<15;i++)
-			{
-				var menuItem new MenuItem();
-			}
-
-				item0.Tag = 0;
-				item1.Tag = 1;
-				item2.Tag = 2;
-
-				this.slideMenu = new SlideMenu (new List<MenuItem> { item0, item1, item2 }, new PointF(0f,100f));
-
-				this.View.AddSubview (this.slideMenu);
+				
 
 				this.MainButton.TouchUpInside += MainButtonPressed;
 			}

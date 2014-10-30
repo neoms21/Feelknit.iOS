@@ -28,7 +28,7 @@ namespace Feelknit
 
         private async void SaveUser(User user)
         {
-            var client = new JsonHttpClient("Users");
+			var client = new JsonHttpClient(UrlHelper.USER);
             await client.PostRequest(user);
         }
     }

@@ -155,6 +155,8 @@
     </Compile>
     <Compile Include="Views\LoadingOverlayView.cs" />
     <Compile Include="Views\UserFeelingCellView.cs" />
+    <Compile Include="Helpers\ApplicationHelper.cs" />
+    <Compile Include="Helpers\UrlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
@@ -165,5 +167,8 @@
       <Project>{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}</Project>
       <Name>SlideDownMenu</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
   </ItemGroup>
 </Project>

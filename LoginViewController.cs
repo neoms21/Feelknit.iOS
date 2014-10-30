@@ -21,6 +21,7 @@ namespace Feelknit
             var isAuthenticated = NSUserDefaults.StandardUserDefaults.BoolForKey("IsAuthenticated");
             if (isAuthenticated)
             {
+				ApplicationHelper.UserName = NSUserDefaults.StandardUserDefaults.StringForKey ("UserName");	
                 NavigateToAddFeeling();
                 return;
             }
@@ -61,12 +62,13 @@ namespace Feelknit
 
         private async void VerifyUser(User user)
         {
-            var client = new JsonHttpClient("Users/Verify");
+			var client = new JsonHttpClient(UrlHelper.USER_VERIFY);
             var result = await client.PostRequest(user);
 
             if (bool.Parse(result))
             {
                 NSUserDefaults.StandardUserDefaults.SetBool(true, "IsAuthenticated");
+				NSUserDefaults.StandardUserDefaults.SetString( UserName.Text, "UserName");
                 NavigateToAddFeeling();
                 return;
 

@@ -65,7 +65,7 @@ namespace Feelknit.iOS
 
 		private async Task<IEnumerable<Feeling>> GetUserFeelings ()
 		{
-			var client = new JsonHttpClient ("feelings/username/neo");
+			var client = new JsonHttpClient (string.Format(UrlHelper.USER_FEELINGS,ApplicationHelper.UserName));
 			var result = await client.GetRequest ();
 
 			_feelings = JsonConvert.DeserializeObject<IEnumerable<Feeling>> (result);
