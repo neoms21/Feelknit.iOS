@@ -7,7 +7,7 @@ namespace Feelknit.iOS.Views
     {
         // control declarations 
 
-        public LoadingOverlay(RectangleF frame)
+		public LoadingOverlay(RectangleF frame, string message)
             : base(frame)
         {
             // configurable bits
@@ -42,7 +42,7 @@ namespace Feelknit.iOS.Views
                 ));
             loadingLabel.BackgroundColor = UIColor.Clear;
             loadingLabel.TextColor = UIColor.White;
-            loadingLabel.Text = "Loading Data...";
+            loadingLabel.Text = message;
             loadingLabel.TextAlignment = UITextAlignment.Center;
             loadingLabel.AutoresizingMask = UIViewAutoresizing.FlexibleMargins;
             AddSubview(loadingLabel);

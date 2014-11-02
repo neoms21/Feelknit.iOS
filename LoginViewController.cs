@@ -5,11 +5,14 @@ using Feelknit.iOS;
 using Feelknit.Model;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using Feelknit.iOS.Views;
 
 namespace Feelknit
 {
     partial class LoginViewController : UIViewController
     {
+		private LoadingOverlay _loadingOverlay;
+
         public LoginViewController(IntPtr handle)
             : base(handle)
         {
@@ -18,6 +21,7 @@ namespace Feelknit
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+			_loadingOverlay = new LoadingOverlay (UIScreen.MainScreen.Bounds, "Logging In");
             var isAuthenticated = NSUserDefaults.StandardUserDefaults.BoolForKey("IsAuthenticated");
             if (isAuthenticated)
             {
@@ -41,6 +45,7 @@ namespace Feelknit
 
             LoginButton.TouchUpInside += (object sender, EventArgs e) =>
                         {
+				this.View.Add(_loadingOverlay);
                             var user = new User { UserName = UserName.Text, Password = Password.Text };
                             VerifyUser(user);
                         };
@@ -67,6 +72,7 @@ namespace Feelknit
 
             if (bool.Parse(result))
             {
+				_loadingOverlay.Hide ();
                 NSUserDefaults.StandardUserDefaults.SetBool(true, "IsAuthenticated");
 				NSUserDefaults.StandardUserDefaults.SetString( UserName.Text, "UserName");
                 NavigateToAddFeeling();

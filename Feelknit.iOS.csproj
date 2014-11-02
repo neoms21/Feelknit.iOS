@@ -121,6 +121,7 @@
     <BundleResource Include="Resources\password.png" />
     <BundleResource Include="Resources\settings.png" />
     <BundleResource Include="Resources\userIcon.png" />
+    <BundleResource Include="Resources\.DS_Store" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -158,9 +159,18 @@
     <Compile Include="Helpers\ApplicationHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
     <Compile Include="TableViewSources\FeelingsTableViewSources.cs" />
+    <Compile Include="RelatedFeelingsViewController.cs" />
+    <Compile Include="RelatedFeelingsViewController.designer.cs">
+      <DependentUpon>RelatedFeelingsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RelatedFeelingTableCellView.cs" />
+    <Compile Include="Views\RelatedFeelingTableCellView.designer.cs">
+      <DependentUpon>RelatedFeelingTableCellView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
+    <InterfaceDefinition Include="Views\RelatedFeelingTableCellView.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>

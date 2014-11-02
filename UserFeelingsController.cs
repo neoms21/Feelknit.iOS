@@ -48,7 +48,7 @@ namespace Feelknit.iOS
 
 			this.NavigationController.NavigationBarHidden = true;
 			// show the loading overlay on the UI thread using the correct orientation sizing
-			_loadingOverlay = new LoadingOverlay (bounds);
+			_loadingOverlay = new LoadingOverlay (bounds,"Getting feelings..");
 			this.View.Add (_loadingOverlay);
 
 			GetFeelings += async () => {
