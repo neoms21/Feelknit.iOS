@@ -16,21 +16,37 @@ namespace Feelknit
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIButton MainButton { get; set; }
+		UITableView FeelingsTableView { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIScrollView ScrollView { get; set; }
+		UITextField ReasonText { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton SelectFeelingButton { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton ShareFeelingButton { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (MainButton != null) {
-				MainButton.Dispose ();
-				MainButton = null;
+			if (FeelingsTableView != null) {
+				FeelingsTableView.Dispose ();
+				FeelingsTableView = null;
 			}
-			if (ScrollView != null) {
-				ScrollView.Dispose ();
-				ScrollView = null;
+			if (ReasonText != null) {
+				ReasonText.Dispose ();
+				ReasonText = null;
+			}
+			if (SelectFeelingButton != null) {
+				SelectFeelingButton.Dispose ();
+				SelectFeelingButton = null;
+			}
+			if (ShareFeelingButton != null) {
+				ShareFeelingButton.Dispose ();
+				ShareFeelingButton = null;
 			}
 		}
 	}

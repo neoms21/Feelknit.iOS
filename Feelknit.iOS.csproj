@@ -157,6 +157,7 @@
     <Compile Include="Views\UserFeelingCellView.cs" />
     <Compile Include="Helpers\ApplicationHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
+    <Compile Include="TableViewSources\FeelingsTableViewSources.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

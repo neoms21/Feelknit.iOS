@@ -3,53 +3,70 @@ using MonoTouch.UIKit;
 using SlideDownMenu;
 using System.Drawing;
 using System.Collections.Generic;
+using Feelknit.iOS;
+using MonoTouch.Foundation;
+using Feelknit.iOS.Model;
 
 namespace Feelknit
 {
 	partial class AddFeelingViewController : UIViewController
 	{
-		private SlideMenu slideMenu;
+		string _feelingText;
 
+	
 		public AddFeelingViewController (IntPtr handle) : base (handle)
 		{
 		}
 
-	    public override void ViewDidLoad()
-	    {
-	        base.ViewDidLoad();
-            this.NavigationController.NavigationBarHidden = false;
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+			this.NavigationController.NavigationBarHidden = false;
 			#region View lifecycle
-		
+			FeelingsTableView.Hidden = true;
 				
+			string[] tableItems = new string[] {"Sad","Angry","Worried"};
+			FeelingsTableView.Source = new FeelingsTableViewSources (tableItems, SetSelection);
+			FeelingsTableView.Hidden = true;
+			FeelingsTableView.RowHeight = 30;
+			SelectFeelingButton.TouchUpInside += (object sender, EventArgs e) => {
+				FeelingsTableView.Hidden = false;
 
-				this.MainButton.TouchUpInside += MainButtonPressed;
-			}
+			};
 
-			#endregion
+			ShareFeelingButton.TouchUpInside += (object sender, EventArgs e) => {
 
-			void MainButtonPressed (object sender, EventArgs e)
-			{
-				this.slideMenu.ToggleMenu ();
-			}
+				SaveFeeling();
 
-			private void ScrollViewDidScroll (object sender, EventArgs e)
-			{
-				this.slideMenu.OpenIconMenu ();
-			}
+			};
+				
+		}
+		private void SaveFeeling(){
+			var client = new JsonHttpClient(UrlHelper.FEELINGS);
+			var result = client.PostRequest(new Feeling{ UserName = ApplicationHelper.UserName, FeelingText =_feelingText, Reason = ReasonText.Text});
 
-			private void MoveButtonToXY(float x, float y)
-			{
-				UIView.Animate(0.2, () => {
-					this.MainButton.Frame = new RectangleF(x, y, this.MainButton.Bounds.Width, this.MainButton.Bounds.Height);
-				});
-			}
 
-			private void ChangeButtonBackground(int buttonNumber)
-			{
-//				UIView.Animate(0.2, () => {
-//					this.MainButton.SetBackgroundImage(UIImage.FromBundle (string.Format("Images/a{0}.png", buttonNumber)), UIControlState.Normal);
-//				});
-			}
+			var alert = new UIAlertView("msg", "Feeling Saved", null, "OK", null);
+			alert.Show();
+		}
+
+
+		#endregion
+
+		public void SetSelection (string value)
+		{
+
+			SelectFeelingButton.SetTitle (value, UIControlState.Normal);
+			_feelingText = value;
+			FeelingsTableView.Hidden = true;
+		}
+
+		public override void TouchesEnded (NSSet touches, UIEvent evt)
+		{
+
+			base.TouchesEnded (touches,evt);
+			FeelingsTableView.Hidden = true;
+		}
 	    
 	}
 }

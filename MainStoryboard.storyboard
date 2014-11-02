@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="96">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="96">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Login-->
         <scene sceneID="8">
             <objects>
-                <viewController id="9" sceneMemberID="viewController" customClass="LoginViewController">
+                <viewController id="9" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6"/>
                         <viewControllerLayoutGuide type="bottom" id="7"/>
@@ -15,60 +15,54 @@
                     <view key="view" contentMode="scaleToFill" id="10">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="" borderStyle="line" minimumFontSize="17" id="15" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Enter username">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="15">
                                 <rect key="frame" x="19" y="229" width="262" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="" borderStyle="line" minimumFontSize="17" id="16" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Enter your password">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="16">
                                 <rect key="frame" x="19" y="300" width="262" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="18" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18">
                                 <rect key="frame" x="114" y="1027" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="80" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80">
                                 <rect key="frame" x="0.0" y="428" width="285" height="30"/>
                                 <state key="normal" title="Register">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="172" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="172">
                                 <rect key="frame" x="115" y="377" width="46" height="30"/>
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="220" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="iconsmall.png">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="iconsmall.png" translatesAutoresizingMaskIntoConstraints="NO" id="220">
                                 <rect key="frame" x="96" y="90" width="118" height="123"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="1" height="1"/>
                             </imageView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Login" id="107"/>
                     <connections>
-                        <outlet property="UserName" destination="15" id="name-outlet-15"/>
+                        <outlet property="LoginButton" destination="172" id="name-outlet-172"/>
                         <outlet property="Password" destination="16" id="name-outlet-16"/>
                         <outlet property="RegisterButton" destination="80" id="name-outlet-80"/>
-                        <outlet property="LoginButton" destination="172" id="name-outlet-172"/>
+                        <outlet property="UserName" destination="15" id="name-outlet-15"/>
                     </connections>
-                    <navigationItem title="Login" id="107" key="navigationItem"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="656" y="120"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="95">
             <objects>
                 <navigationController definesPresentationContext="YES" id="96" sceneMemberID="viewController">
@@ -83,9 +77,10 @@
             </objects>
             <point key="canvasLocation" x="162" y="113"/>
         </scene>
+        <!--Register-->
         <scene sceneID="122">
             <objects>
-                <viewController id="123" sceneMemberID="viewController" customClass="RegisterViewController" title="Register" storyboardIdentifier="RegisterViewController">
+                <viewController storyboardIdentifier="RegisterViewController" title="Register" id="123" customClass="RegisterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="120"/>
                         <viewControllerLayoutGuide type="bottom" id="121"/>
@@ -93,50 +88,51 @@
                     <view key="view" contentMode="scaleToFill" id="124">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" customColorSpace="calibratedWhite" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="" borderStyle="line" minimumFontSize="17" id="127" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Enter your username">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="127">
                                 <rect key="frame" x="26" y="194" width="272" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="146" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="146">
                                 <rect key="frame" x="1" y="429" width="298" height="30"/>
                                 <state key="normal" title="Register">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" id="157" translatesAutoresizingMaskIntoConstraints="NO" clearButtonMode="unlessEditing" text="" fixedFrame="YES" placeholder="Enter your password">
-                                <rect key="frame" x="27.07133" y="256.1369" width="271" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your password" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="157">
+                                <rect key="frame" x="27" y="256" width="271" height="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="" borderStyle="line" minimumFontSize="17" id="159" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Enter your email addres" textAlignment="left" alpha="1">
-                                <rect key="frame" x="27.07133" y="321.4878" width="271" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your email addres" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="159">
+                                <rect key="frame" x="27" y="321" width="271" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="167" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="iconsmall.png">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="iconsmall.png" translatesAutoresizingMaskIntoConstraints="NO" id="167">
                                 <rect key="frame" x="110" y="70" width="93" height="107"/>
                             </imageView>
                         </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="RegisterUserName" destination="127" id="name-outlet-127"/>
-                        <outlet property="RegisterController" destination="124" id="name-outlet-124"/>
                         <outlet property="RegisterButton" destination="146" id="name-outlet-146"/>
-                        <outlet property="RegistrationPassword" destination="157" id="name-outlet-157"/>
+                        <outlet property="RegisterController" destination="124" id="name-outlet-124"/>
+                        <outlet property="RegisterUserName" destination="127" id="name-outlet-127"/>
                         <outlet property="RegistrationEmail" destination="159" id="name-outlet-159"/>
+                        <outlet property="RegistrationPassword" destination="157" id="name-outlet-157"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="125" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="141" y="822"/>
         </scene>
+        <!--Add Feeling-->
         <scene sceneID="184">
             <objects>
-                <viewController id="185" sceneMemberID="viewController" customClass="AddFeelingViewController" storyboardIdentifier="AddFeelingViewController" title="Add Feeling">
+                <viewController storyboardIdentifier="AddFeelingViewController" title="Add Feeling" id="185" customClass="AddFeelingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="182"/>
                         <viewControllerLayoutGuide type="bottom" id="183"/>
@@ -144,38 +140,91 @@
                     <view key="view" contentMode="scaleToFill" id="186">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="How are you Feeling?" lineBreakMode="tailTruncation" minimumFontSize="10" id="504" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="20" y="81" width="300" height="21"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="512" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="62" y="146" width="160" height="240"/>
-                            </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="525" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="20" y="118" width="140" height="30"/>
-                                <state key="normal" title="Select Feeling">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="Reason" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="536">
+                                <rect key="frame" x="10" y="170" width="303" height="150"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="571" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="137" y="350" width="46" height="30"/>
+                                <state key="normal" title="Share">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="525" showsTouchWhenHighlighted="YES">
+                                <rect key="frame" x="20" y="77" width="276" height="30"/>
+                                <state key="normal" title="Select a Feeling">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="604" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="45" y="77" width="226" height="346"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="605">
+                                        <rect key="frame" x="0.0" y="22" width="226" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="606" tableViewCell="605">
+                                            <rect key="frame" x="0.0" y="0.0" width="226" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="607">
+                                        <rect key="frame" x="0.0" y="66" width="226" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="608" tableViewCell="607">
+                                            <rect key="frame" x="0.0" y="0.0" width="226" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="609">
+                                        <rect key="frame" x="0.0" y="110" width="226" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="610" tableViewCell="609">
+                                            <rect key="frame" x="0.0" y="0.0" width="226" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="525" firstAttribute="top" secondItem="182" secondAttribute="bottom" constant="57" id="579"/>
+                            <constraint firstItem="525" firstAttribute="leading" secondItem="186" secondAttribute="leading" constant="20" id="580"/>
+                            <constraint firstItem="186" firstAttribute="trailing" secondItem="525" secondAttribute="trailing" constant="24" id="581"/>
+                            <constraint firstItem="536" firstAttribute="top" secondItem="525" secondAttribute="bottom" constant="63" id="591"/>
+                            <constraint firstItem="536" firstAttribute="leading" secondItem="186" secondAttribute="leading" constant="10" id="592"/>
+                            <constraint firstItem="186" firstAttribute="trailing" secondItem="536" secondAttribute="trailing" constant="7" id="593"/>
+                            <constraint id="599" firstItem="186" firstAttribute="bottom" secondItem="571" secondAttribute="bottom" constant="189"/>
+                            <constraint firstItem="571" firstAttribute="top" secondItem="536" secondAttribute="bottom" constant="29" id="600"/>
+                            <constraint firstItem="571" firstAttribute="width" secondItem="536" secondAttribute="width" id="601"/>
+                            <constraint firstItem="186" firstAttribute="trailing" secondItem="604" secondAttribute="trailing" constant="49" id="611"/>
+                            <constraint firstItem="604" firstAttribute="leading" secondItem="186" secondAttribute="leading" constant="45" id="612"/>
+                            <constraint firstItem="604" firstAttribute="top" secondItem="182" secondAttribute="bottom" constant="57" id="613"/>
+                            <constraint firstItem="183" firstAttribute="top" secondItem="604" secondAttribute="bottom" constant="124" id="614"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="ScrollView" destination="512" id="name-outlet-512"/>
-                        <outlet property="MainButton" destination="525" id="name-outlet-525"/>
+                        <outlet property="ReasonText" destination="536" id="name-outlet-536"/>
+                        <outlet property="SelectFeelingButton" destination="525" id="name-outlet-525"/>
+                        <outlet property="ShareFeelingButton" destination="571" id="name-outlet-571"/>
+                        <outlet property="FeelingsTableView" destination="604" id="name-outlet-604"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="187" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1142" y="122"/>
         </scene>
+        <!--User Feelings Controller-->
         <scene sceneID="289">
             <objects>
-                <viewController id="290" sceneMemberID="viewController" customClass="UserFeelingsController" storyboardIdentifier="UserFeelingsController" modalTransitionStyle="coverVertical">
+                <viewController storyboardIdentifier="UserFeelingsController" id="290" customClass="UserFeelingsController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="287"/>
                         <viewControllerLayoutGuide type="bottom" id="288"/>
@@ -183,43 +232,39 @@
                     <view key="view" contentMode="scaleToFill" id="291">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="309" translatesAutoresizingMaskIntoConstraints="NO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="309">
                                 <rect key="frame" x="0.0" y="533" width="320" height="35"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
-                                <state key="normal" title="Create New">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
-                                </state>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="309" firstAttribute="height" constant="35" id="421"/>
-                                    <constraint firstItem="309" firstAttribute="height" constant="35" id="427"/>
+                                    <constraint firstAttribute="height" constant="35" id="421"/>
+                                    <constraint firstAttribute="height" constant="35" id="427"/>
                                 </constraints>
-                                <connections>
-                                </connections>
+                                <state key="normal" title="Create New">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="434" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="434" fixedFrame="YES">
                                 <rect key="frame" x="0.0" y="76" width="320" height="377"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                </prototypes>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="My Recent Feelings" lineBreakMode="tailTruncation" minimumFontSize="10" id="317" textAlignment="center" key="tableHeaderView" fixedFrame="YES">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="My Recent Feelings" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="317" fixedFrame="YES">
                                 <rect key="frame" x="0.0" y="32" width="320" height="44"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="288" firstAttribute="top" secondItem="309" secondAttribute="bottom" constant="32" id="418"/>
-                            <constraint firstItem="309" firstAttribute="bottom" secondItem="291" secondAttribute="bottom" constant="0.0" id="424"/>
-                            <constraint firstItem="309" firstAttribute="trailing" secondItem="291" secondAttribute="trailing" constant="0.0" id="428"/>
-                            <constraint firstItem="309" firstAttribute="trailing" secondItem="291" secondAttribute="trailing" constant="0.0" id="429"/>
-                            <constraint firstItem="309" firstAttribute="leading" secondItem="291" secondAttribute="leading" constant="0.0" id="430"/>
-                            <constraint firstItem="309" firstAttribute="leading" secondItem="291" secondAttribute="leading" constant="0.0" id="431"/>
+                            <constraint firstItem="309" firstAttribute="bottom" secondItem="291" secondAttribute="bottom" id="424"/>
+                            <constraint firstItem="309" firstAttribute="trailing" secondItem="291" secondAttribute="trailing" id="428"/>
+                            <constraint firstItem="309" firstAttribute="trailing" secondItem="291" secondAttribute="trailing" id="429"/>
+                            <constraint firstItem="309" firstAttribute="leading" secondItem="291" secondAttribute="leading" id="430"/>
+                            <constraint firstItem="309" firstAttribute="leading" secondItem="291" secondAttribute="leading" id="431"/>
                         </constraints>
                     </view>
                     <connections>
@@ -232,12 +277,8 @@
             <point key="canvasLocation" x="640" y="822"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
     <resources>
+        <image name="iconsmall.png" width="220" height="260"/>
         <image name="Default-568h.png" width="640" height="1136"/>
         <image name="001.png" width="400" height="400"/>
         <image name="004.png" width="44" height="44"/>
@@ -256,11 +297,15 @@
         <image name="header.png" width="260" height="80"/>
         <image name="icon.png" width="284" height="281"/>
         <image name="iconsmall_cut.png" width="284" height="281"/>
-        <image name="iconsmall.png" width="220" height="260"/>
         <image name="messages.png" width="40" height="40"/>
         <image name="notifications.png" width="40" height="40"/>
         <image name="password.png" width="44" height="44"/>
         <image name="settings.png" width="40" height="40"/>
         <image name="userIcon.png" width="38" height="38"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
