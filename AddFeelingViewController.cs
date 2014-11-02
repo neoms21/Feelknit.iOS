@@ -29,7 +29,7 @@ namespace Feelknit
 			#region View lifecycle
 			FeelingsTableView.Hidden = true;
 				
-			string[] tableItems = new string[] {"Sad","Angry","Worried"};
+			string[] tableItems = new string[] {"Sad","Angry","Worried","Frustrated"};
 			FeelingsTableView.Source = new FeelingsTableViewSources (tableItems, SetSelection);
 			FeelingsTableView.Hidden = true;
 			FeelingsTableView.RowHeight = 30;

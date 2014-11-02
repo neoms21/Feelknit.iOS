@@ -167,6 +167,7 @@
     <Compile Include="Views\RelatedFeelingTableCellView.designer.cs">
       <DependentUpon>RelatedFeelingTableCellView.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableViewSources\RelatedFeelingsTableViewSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

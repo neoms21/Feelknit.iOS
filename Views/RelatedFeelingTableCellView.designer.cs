@@ -1,18 +1,82 @@
-﻿// WARNING
+// WARNING
 //
-// This file has been generated automatically by MonoDevelop to store outlets and
-// actions made in the Xcode designer. If it is removed, they will be lost.
+// This file has been generated automatically by Xamarin Studio to store outlets and
+// actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
 using MonoTouch.Foundation;
+using System.CodeDom.Compiler;
 
 namespace Feelknit.iOS
 {
 	[Register ("RelatedFeelingTableCellView")]
 	partial class RelatedFeelingTableCellView
 	{
+		[Outlet]
+		MonoTouch.UIKit.UIButton CommentButton { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel CommentsLabel { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel FeelingDate { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel FeelingTextLabel { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton ReportButton { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton SupportButton { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel SupportLabel { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIImageView userImageView { get; set; }
+		
 		void ReleaseDesignerOutlets ()
 		{
+			if (userImageView != null) {
+				userImageView.Dispose ();
+				userImageView = null;
+			}
+
+			if (CommentButton != null) {
+				CommentButton.Dispose ();
+				CommentButton = null;
+			}
+
+			if (SupportButton != null) {
+				SupportButton.Dispose ();
+				SupportButton = null;
+			}
+
+			if (ReportButton != null) {
+				ReportButton.Dispose ();
+				ReportButton = null;
+			}
+
+			if (CommentsLabel != null) {
+				CommentsLabel.Dispose ();
+				CommentsLabel = null;
+			}
+
+			if (SupportLabel != null) {
+				SupportLabel.Dispose ();
+				SupportLabel = null;
+			}
+
+			if (FeelingDate != null) {
+				FeelingDate.Dispose ();
+				FeelingDate = null;
+			}
+
+			if (FeelingTextLabel != null) {
+				FeelingTextLabel.Dispose ();
+				FeelingTextLabel = null;
+			}
 		}
 	}
 }

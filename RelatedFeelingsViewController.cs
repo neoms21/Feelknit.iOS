@@ -25,6 +25,13 @@ namespace Feelknit.iOS
 			FeelingTextLabel.LineBreakMode = UILineBreakMode.WordWrap;
 			FeelingTextLabel.Text = Feeling.GetFeelingFormattedText ("I");
 			FeelingNumberLabel.Text = string.Format("{0} people feeling {1} currently",RelatedFeelings.Count,Feeling.FeelingText);
+
+			RelatedFeelingsTable.Source = new RelatedFeelingsTableViewSource (RelatedFeelings, OnRowSelection);
+		}
+
+		private void OnRowSelection(string feelingId)
+		{
+
 		}
 	}
 }
