@@ -11,9 +11,9 @@ namespace Feelknit.iOS
 		IList<Feeling> _feelings;
 		string cellIdentifier = "TableCell";
 
-		Action<string> _action;
+		Action<Feeling> _action;
 
-		public RelatedFeelingsTableViewSource (IList<Feeling> feelings, Action<string> action)
+		public RelatedFeelingsTableViewSource (IList<Feeling> feelings, Action<Feeling> action)
 		{
 			_action = action;
 			_feelings = feelings;
@@ -38,10 +38,7 @@ namespace Feelknit.iOS
 
 		public override void RowSelected (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 		{
-			_action.Invoke (_feelings[indexPath.Row].Id);
-			// NOTE: Don't call the base implementation on a Model class
-			// see http://docs.xamarin.com/guides/ios/application_fundamentals/delegates,_protocols,_and_events
-			//throw new NotImplementedException ();
+			_action.Invoke (_feelings[indexPath.Row]);
 		}
 
 		public override float GetHeightForRow (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)

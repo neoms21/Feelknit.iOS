@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="656" y="120"/>
+            <point key="canvasLocation" x="604" y="122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="95">
@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="187" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1142" y="122"/>
+            <point key="canvasLocation" x="1066" y="110"/>
         </scene>
         <!--User Feelings Controller-->
         <scene sceneID="289">
@@ -274,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="292" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="640" y="822"/>
+            <point key="canvasLocation" x="612" y="827"/>
         </scene>
         <scene sceneID="659">
             <objects>
@@ -348,7 +348,101 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="662" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="822"/>
+            <point key="canvasLocation" x="1068" y="817"/>
+        </scene>
+        <scene sceneID="757">
+            <objects>
+                <viewController id="758" sceneMemberID="viewController" customClass="CommentsViewController" storyboardIdentifier="CommentsViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="755"/>
+                        <viewControllerLayoutGuide type="bottom" id="756"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="759">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="764" translatesAutoresizingMaskIntoConstraints="NO" image="userIcon.png" misplaced="YES">
+                                <rect key="frame" x="12" y="34" width="36" height="38"/>
+                                <constraints>
+                                    <constraint firstItem="764" firstAttribute="width" constant="36" id="769"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="770" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="72" y="42" width="42" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0" green="1" blue="0" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint firstItem="770" firstAttribute="width" constant="42" id="773"/>
+                                    <constraint firstItem="770" firstAttribute="height" constant="21" id="775"/>
+                                </constraints>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="789" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="140" y="42" width="160" height="91"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliq</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="803"/>
+                                    <constraint firstAttribute="height" constant="91" id="804"/>
+                                </constraints>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="795" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="152" width="320" height="21"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0" blue="1" alpha="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint firstItem="795" firstAttribute="width" constant="320" id="797"/>
+                                </constraints>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="807" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="173" width="320" height="364"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                </prototypes>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="847"/>
+                                    <constraint firstAttribute="height" constant="364" id="848"/>
+                                </constraints>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="line" minimumFontSize="17" id="830" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="538" width="320" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="764" firstAttribute="top" secondItem="755" secondAttribute="bottom" constant="14" id="765"/>
+                            <constraint firstItem="764" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="12" id="766"/>
+                            <constraint firstItem="770" firstAttribute="centerY" secondItem="764" secondAttribute="centerY" constant="0.0" id="771"/>
+                            <constraint firstItem="770" firstAttribute="top" secondItem="755" secondAttribute="bottom" constant="22" id="772"/>
+                            <constraint firstItem="770" firstAttribute="leading" secondItem="764" secondAttribute="trailing" constant="24" id="774"/>
+                            <constraint firstItem="795" firstAttribute="trailing" secondItem="759" secondAttribute="trailing" constant="0.0" id="799"/>
+                            <constraint firstItem="795" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="0.0" id="800"/>
+                            <constraint firstItem="759" firstAttribute="trailing" secondItem="789" secondAttribute="trailing" constant="20" id="805"/>
+                            <constraint id="806" firstItem="789" firstAttribute="top" secondItem="759" secondAttribute="top" constant="42"/>
+                            <constraint firstItem="795" firstAttribute="top" secondItem="789" secondAttribute="bottom" constant="19" id="823"/>
+                            <constraint firstItem="807" firstAttribute="width" secondItem="795" secondAttribute="width" id="835"/>
+                            <constraint id="845" firstItem="759" firstAttribute="trailing" secondItem="807" secondAttribute="trailing" constant="0.0"/>
+                            <constraint id="846" firstItem="759" firstAttribute="bottom" secondItem="807" secondAttribute="bottom" constant="31"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="UserNameLabel" destination="770" id="name-outlet-770"/>
+                        <outlet property="FeelingTextView" destination="789" id="name-outlet-789"/>
+                        <outlet property="NewCommentTextField" destination="830" id="name-outlet-830"/>
+                        <outlet property="CommentsTable" destination="807" id="name-outlet-807"/>
+                        <outlet property="CommentsCountLabel" destination="795" id="name-outlet-795"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="760" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1464" y="825"/>
         </scene>
     </scenes>
     <resources>

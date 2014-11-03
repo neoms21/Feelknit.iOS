@@ -29,9 +29,15 @@ namespace Feelknit.iOS
 			RelatedFeelingsTable.Source = new RelatedFeelingsTableViewSource (RelatedFeelings, OnRowSelection);
 		}
 
-		private void OnRowSelection(string feelingId)
+		private void OnRowSelection(Feeling feeling)
 		{
-
+			var commentsViewController =
+				this.Storyboard.InstantiateViewController("CommentsViewController") as CommentsViewController;
+			if (commentsViewController != null)
+			{
+				commentsViewController.Feeling = feeling;
+				this.NavigationController.PushViewController(commentsViewController, true);
+			}
 		}
 	}
 }

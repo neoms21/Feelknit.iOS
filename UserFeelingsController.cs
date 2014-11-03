@@ -54,13 +54,24 @@ namespace Feelknit.iOS
 			GetFeelings += async () => {
 				_feelings = await GetUserFeelings ();
 
-				UserFeelingsTable.Source = new UserFeelingsTableViewSource (_feelings.ToList ());
+				UserFeelingsTable.Source = new UserFeelingsTableViewSource (_feelings.ToList (),OnRowSelection);
 				UserFeelingsTable.ReloadData ();
 
 				_loadingOverlay.Hide ();
 			};
 
 			GetFeelings.Invoke ();
+		}
+
+		private void OnRowSelection(Feeling feeling)
+		{
+			var commentsViewController =
+				this.Storyboard.InstantiateViewController("CommentsViewController") as CommentsViewController;
+			if (commentsViewController != null)
+			{
+				commentsViewController.Feeling = feeling;
+				this.NavigationController.PushViewController(commentsViewController, true);
+			}
 		}
 
 		private async Task<IEnumerable<Feeling>> GetUserFeelings ()

@@ -5,6 +5,7 @@ using Feelknit.iOS.Views;
 using Feelknit.Model;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using System;
 
 namespace Feelknit.iOS.TableViewSources
 {
@@ -13,11 +14,13 @@ namespace Feelknit.iOS.TableViewSources
         private IList<Feeling> _feelings;
         string cellIdentifier = "TableCell";
 
+		Action<Feeling> _action;
 
-        public UserFeelingsTableViewSource(IList<Feeling> feelings)
-        {
-            _feelings = feelings;
-        }
+		public UserFeelingsTableViewSource(IList<Feeling> feelings, Action<Feeling> action)
+		{
+			_action = action;
+			_feelings = feelings;
+		}
 
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -27,7 +30,7 @@ namespace Feelknit.iOS.TableViewSources
             // if there are no cells to reuse, create a new one
             var feeling = _feelings[indexPath.Row];
             cell.UpdateCell(feeling.GetFeelingFormattedText("I"), string.Format("{0} Comments", feeling.Comments.Count),
-                string.Format("{0} Suppport", feeling.SupportCount), feeling.FeelingDate.ToString("yy-mm-dd"));
+                string.Format("{0} Suppport", feeling.SupportCount), feeling.FeelingDate.ToString("dd-MMM-yyyy HH:mm"));
             return cell;
         }
 
@@ -40,5 +43,10 @@ namespace Feelknit.iOS.TableViewSources
         {
             return 80;
         }
+
+		public override void RowSelected (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+		{
+			_action.Invoke (_feelings[indexPath.Row]);
+		}
     }
 }
