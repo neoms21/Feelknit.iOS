@@ -141,54 +141,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="Reason" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="536">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="Reason" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="536">
                                 <rect key="frame" x="10" y="170" width="303" height="150"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <constraints/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="571" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="571">
                                 <rect key="frame" x="137" y="350" width="46" height="30"/>
                                 <state key="normal" title="Share">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="525" showsTouchWhenHighlighted="YES">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="525">
                                 <rect key="frame" x="20" y="77" width="276" height="30"/>
                                 <state key="normal" title="Select a Feeling">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="604" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="604">
                                 <rect key="frame" x="45" y="77" width="226" height="346"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="605">
                                         <rect key="frame" x="0.0" y="22" width="226" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="606" tableViewCell="605">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="605" id="ECg-z7-TBa">
                                             <rect key="frame" x="0.0" y="0.0" width="226" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="607">
                                         <rect key="frame" x="0.0" y="66" width="226" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="608" tableViewCell="607">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="607" id="bLY-lH-RuM">
                                             <rect key="frame" x="0.0" y="0.0" width="226" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="609">
                                         <rect key="frame" x="0.0" y="110" width="226" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="610" tableViewCell="609">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="609" id="iA0-VT-gfp">
                                             <rect key="frame" x="0.0" y="0.0" width="226" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -197,24 +193,24 @@
                         <constraints>
                             <constraint firstItem="525" firstAttribute="top" secondItem="182" secondAttribute="bottom" constant="57" id="579"/>
                             <constraint firstItem="525" firstAttribute="leading" secondItem="186" secondAttribute="leading" constant="20" id="580"/>
-                            <constraint firstItem="186" firstAttribute="trailing" secondItem="525" secondAttribute="trailing" constant="24" id="581"/>
+                            <constraint firstAttribute="trailing" secondItem="525" secondAttribute="trailing" constant="24" id="581"/>
                             <constraint firstItem="536" firstAttribute="top" secondItem="525" secondAttribute="bottom" constant="63" id="591"/>
                             <constraint firstItem="536" firstAttribute="leading" secondItem="186" secondAttribute="leading" constant="10" id="592"/>
-                            <constraint firstItem="186" firstAttribute="trailing" secondItem="536" secondAttribute="trailing" constant="7" id="593"/>
-                            <constraint id="599" firstItem="186" firstAttribute="bottom" secondItem="571" secondAttribute="bottom" constant="189"/>
+                            <constraint firstAttribute="trailing" secondItem="536" secondAttribute="trailing" constant="7" id="593"/>
+                            <constraint firstAttribute="bottom" secondItem="571" secondAttribute="bottom" constant="189" id="599"/>
                             <constraint firstItem="571" firstAttribute="top" secondItem="536" secondAttribute="bottom" constant="29" id="600"/>
                             <constraint firstItem="571" firstAttribute="width" secondItem="536" secondAttribute="width" id="601"/>
-                            <constraint firstItem="186" firstAttribute="trailing" secondItem="604" secondAttribute="trailing" constant="49" id="611"/>
+                            <constraint firstAttribute="trailing" secondItem="604" secondAttribute="trailing" constant="49" id="611"/>
                             <constraint firstItem="604" firstAttribute="leading" secondItem="186" secondAttribute="leading" constant="45" id="612"/>
                             <constraint firstItem="604" firstAttribute="top" secondItem="182" secondAttribute="bottom" constant="57" id="613"/>
                             <constraint firstItem="183" firstAttribute="top" secondItem="604" secondAttribute="bottom" constant="124" id="614"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="FeelingsTableView" destination="604" id="name-outlet-604"/>
                         <outlet property="ReasonText" destination="536" id="name-outlet-536"/>
                         <outlet property="SelectFeelingButton" destination="525" id="name-outlet-525"/>
                         <outlet property="ShareFeelingButton" destination="571" id="name-outlet-571"/>
-                        <outlet property="FeelingsTableView" destination="604" id="name-outlet-604"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="187" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -232,53 +228,61 @@
                     <view key="view" contentMode="scaleToFill" id="291">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="37" affinity="maxY"/>
+                        </userGuides>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="309">
-                                <rect key="frame" x="0.0" y="533" width="320" height="35"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Recent Feelings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCR-gH-lKd">
+                                <rect key="frame" x="0.0" y="37" width="320" height="30"/>
+                                <color key="backgroundColor" red="0.30257722609576881" green="0.27458569433048974" blue="0.99883601641414144" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="421"/>
-                                    <constraint firstAttribute="height" constant="35" id="427"/>
+                                    <constraint firstAttribute="height" constant="30" id="870"/>
                                 </constraints>
-                                <state key="normal" title="Create New">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="434" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="76" width="320" height="377"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="My Recent Feelings" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="317" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="32" width="320" height="44"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8j-c3-q1v">
+                                <rect key="frame" x="0.0" y="501" width="320" height="30"/>
+                                <color key="backgroundColor" red="0.30257722609999999" green="0.27458569430000002" blue="0.99883601639999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Create New">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="NUM-G7-oEh">
+                                <rect key="frame" x="0.0" y="111" width="320" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="288" firstAttribute="top" secondItem="309" secondAttribute="bottom" constant="32" id="418"/>
-                            <constraint firstItem="309" firstAttribute="bottom" secondItem="291" secondAttribute="bottom" id="424"/>
-                            <constraint firstItem="309" firstAttribute="trailing" secondItem="291" secondAttribute="trailing" id="428"/>
-                            <constraint firstItem="309" firstAttribute="trailing" secondItem="291" secondAttribute="trailing" id="429"/>
-                            <constraint firstItem="309" firstAttribute="leading" secondItem="291" secondAttribute="leading" id="430"/>
-                            <constraint firstItem="309" firstAttribute="leading" secondItem="291" secondAttribute="leading" id="431"/>
+                            <constraint firstItem="mCR-gH-lKd" firstAttribute="top" secondItem="287" secondAttribute="bottom" constant="17" id="858"/>
+                            <constraint firstItem="288" firstAttribute="top" secondItem="O8j-c3-q1v" secondAttribute="bottom" constant="16" id="859"/>
+                            <constraint firstItem="288" firstAttribute="top" secondItem="O8j-c3-q1v" secondAttribute="bottom" constant="16" id="860"/>
+                            <constraint firstItem="NUM-G7-oEh" firstAttribute="top" secondItem="mCR-gH-lKd" secondAttribute="bottom" id="867"/>
+                            <constraint firstItem="O8j-c3-q1v" firstAttribute="width" secondItem="mCR-gH-lKd" secondAttribute="width" id="5Q2-tf-AVZ"/>
+                            <constraint firstItem="O8j-c3-q1v" firstAttribute="top" secondItem="NUM-G7-oEh" secondAttribute="bottom" id="Jqf-Xm-uhS"/>
+                            <constraint firstAttribute="trailing" secondItem="mCR-gH-lKd" secondAttribute="trailing" id="MZj-1O-c3b"/>
+                            <constraint firstItem="mCR-gH-lKd" firstAttribute="trailing" secondItem="NUM-G7-oEh" secondAttribute="trailing" id="ivJ-Uu-AlC"/>
+                            <constraint firstItem="mCR-gH-lKd" firstAttribute="leading" secondItem="NUM-G7-oEh" secondAttribute="leading" id="kdZ-nZ-RwE"/>
+                            <constraint firstItem="mCR-gH-lKd" firstAttribute="leading" secondItem="291" secondAttribute="leading" id="vE0-C6-rah"/>
                         </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <outlet property="CreateNewFeelingButton" destination="309" id="name-outlet-309"/>
-                        <outlet property="UserFeelingsTable" destination="434" id="name-outlet-434"/>
+                        <outlet property="CreateNewFeelingButton" destination="O8j-c3-q1v" id="name-outlet-O8j-c3-q1v"/>
+                        <outlet property="UserFeelingsTableView" destination="NUM-G7-oEh" id="name-outlet-NUM-G7-oEh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="292" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="612" y="827"/>
+            <point key="canvasLocation" x="612" y="855"/>
         </scene>
+        <!--Related Feelings View Controller-->
         <scene sceneID="659">
             <objects>
-                <viewController id="660" sceneMemberID="viewController" customClass="RelatedFeelingsViewController" storyboardIdentifier="RelatedFeelingsViewController">
+                <viewController storyboardIdentifier="RelatedFeelingsViewController" id="660" customClass="RelatedFeelingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="657"/>
                         <viewControllerLayoutGuide type="bottom" id="658"/>
@@ -286,38 +290,35 @@
                     <view key="view" contentMode="scaleToFill" id="661">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="664" translatesAutoresizingMaskIntoConstraints="NO" image="userIcon.png">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="userIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="664">
                                 <rect key="frame" x="9" y="40" width="31" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="31" id="697"/>
                                     <constraint firstAttribute="height" constant="28" id="698"/>
-                                    <constraint firstItem="664" firstAttribute="height" constant="28" id="710"/>
+                                    <constraint firstAttribute="height" constant="28" id="710"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" id="667" translatesAutoresizingMaskIntoConstraints="NO">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="667">
                                 <rect key="frame" x="0.0" y="103" width="320" height="44"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="0" alpha="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="733"/>
                                     <constraint firstAttribute="height" constant="44" id="734"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="669" translatesAutoresizingMaskIntoConstraints="NO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="669">
                                 <rect key="frame" x="0.0" y="155" width="320" height="364"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                </prototypes>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="737"/>
                                     <constraint firstAttribute="height" constant="364" id="738"/>
                                 </constraints>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="feelingtext" lineBreakMode="tailTruncation" minimumFontSize="10" id="700" translatesAutoresizingMaskIntoConstraints="NO">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="feelingtext" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="700">
                                 <rect key="frame" x="69" y="44" width="231" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -325,24 +326,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint id="695" firstItem="664" firstAttribute="leading" secondItem="661" secondAttribute="leading" constant="9"/>
+                            <constraint firstItem="664" firstAttribute="leading" secondItem="661" secondAttribute="leading" constant="9" id="695"/>
                             <constraint firstItem="664" firstAttribute="top" secondItem="657" secondAttribute="bottom" constant="20" id="707"/>
-                            <constraint id="731" firstItem="661" firstAttribute="trailing" secondItem="667" secondAttribute="trailing" constant="0.0"/>
-                            <constraint id="735" firstItem="661" firstAttribute="trailing" secondItem="669" secondAttribute="trailing" constant="0.0"/>
-                            <constraint id="736" firstItem="661" firstAttribute="bottom" secondItem="669" secondAttribute="bottom" constant="49"/>
+                            <constraint firstAttribute="trailing" secondItem="667" secondAttribute="trailing" id="731"/>
+                            <constraint firstAttribute="trailing" secondItem="669" secondAttribute="trailing" id="735"/>
+                            <constraint firstAttribute="bottom" secondItem="669" secondAttribute="bottom" constant="49" id="736"/>
                             <constraint firstItem="667" firstAttribute="top" secondItem="700" secondAttribute="bottom" constant="38" id="742"/>
                             <constraint firstItem="700" firstAttribute="top" secondItem="657" secondAttribute="bottom" constant="24" id="743"/>
                             <constraint firstItem="669" firstAttribute="top" secondItem="667" secondAttribute="bottom" constant="8" id="744"/>
-                            <constraint firstItem="669" firstAttribute="leading" secondItem="661" secondAttribute="leading" constant="0.0" id="745"/>
+                            <constraint firstItem="669" firstAttribute="leading" secondItem="661" secondAttribute="leading" id="745"/>
                             <constraint firstItem="669" firstAttribute="centerY" secondItem="661" secondAttribute="centerY" constant="53" id="746"/>
                             <constraint firstItem="700" firstAttribute="leading" secondItem="664" secondAttribute="trailing" constant="29" id="747"/>
-                            <constraint firstItem="661" firstAttribute="trailing" secondItem="700" secondAttribute="trailing" constant="20" id="748"/>
+                            <constraint firstAttribute="trailing" secondItem="700" secondAttribute="trailing" constant="20" id="748"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="FeelingTextLabel" destination="700" id="name-outlet-700"/>
                         <outlet property="FeelingNumberLabel" destination="667" id="name-outlet-667"/>
+                        <outlet property="FeelingTextLabel" destination="700" id="name-outlet-700"/>
                         <outlet property="RelatedFeelingsTable" destination="669" id="name-outlet-669"/>
                     </connections>
                 </viewController>
@@ -350,9 +352,10 @@
             </objects>
             <point key="canvasLocation" x="1068" y="817"/>
         </scene>
+        <!--Comments View Controller-->
         <scene sceneID="757">
             <objects>
-                <viewController id="758" sceneMemberID="viewController" customClass="CommentsViewController" storyboardIdentifier="CommentsViewController">
+                <viewController storyboardIdentifier="CommentsViewController" id="758" customClass="CommentsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="755"/>
                         <viewControllerLayoutGuide type="bottom" id="756"/>
@@ -360,84 +363,82 @@
                     <view key="view" contentMode="scaleToFill" id="759">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="764" translatesAutoresizingMaskIntoConstraints="NO" image="userIcon.png" misplaced="YES">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="userIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="764">
                                 <rect key="frame" x="12" y="34" width="36" height="38"/>
                                 <constraints>
-                                    <constraint firstItem="764" firstAttribute="width" constant="36" id="769"/>
+                                    <constraint firstAttribute="width" constant="36" id="769"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="770" translatesAutoresizingMaskIntoConstraints="NO">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="770">
                                 <rect key="frame" x="72" y="42" width="42" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" colorSpace="calibratedRGB" red="0" green="1" blue="0" alpha="1"/>
-                                <nil key="highlightedColor"/>
                                 <constraints>
-                                    <constraint firstItem="770" firstAttribute="width" constant="42" id="773"/>
-                                    <constraint firstItem="770" firstAttribute="height" constant="21" id="775"/>
+                                    <constraint firstAttribute="width" constant="42" id="773"/>
+                                    <constraint firstAttribute="height" constant="21" id="775"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="789" translatesAutoresizingMaskIntoConstraints="NO">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="789">
                                 <rect key="frame" x="140" y="42" width="160" height="91"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliq</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="803"/>
                                     <constraint firstAttribute="height" constant="91" id="804"/>
                                 </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliq</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="795" translatesAutoresizingMaskIntoConstraints="NO">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="795">
                                 <rect key="frame" x="0.0" y="152" width="320" height="21"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0" blue="1" alpha="1"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="797"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <constraints>
-                                    <constraint firstItem="795" firstAttribute="width" constant="320" id="797"/>
-                                </constraints>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="807" translatesAutoresizingMaskIntoConstraints="NO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="807">
                                 <rect key="frame" x="0.0" y="173" width="320" height="364"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                </prototypes>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="847"/>
                                     <constraint firstAttribute="height" constant="364" id="848"/>
                                 </constraints>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="line" minimumFontSize="17" id="830" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="830">
                                 <rect key="frame" x="0.0" y="538" width="320" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="764" firstAttribute="top" secondItem="755" secondAttribute="bottom" constant="14" id="765"/>
                             <constraint firstItem="764" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="12" id="766"/>
-                            <constraint firstItem="770" firstAttribute="centerY" secondItem="764" secondAttribute="centerY" constant="0.0" id="771"/>
+                            <constraint firstItem="770" firstAttribute="centerY" secondItem="764" secondAttribute="centerY" id="771"/>
                             <constraint firstItem="770" firstAttribute="top" secondItem="755" secondAttribute="bottom" constant="22" id="772"/>
                             <constraint firstItem="770" firstAttribute="leading" secondItem="764" secondAttribute="trailing" constant="24" id="774"/>
-                            <constraint firstItem="795" firstAttribute="trailing" secondItem="759" secondAttribute="trailing" constant="0.0" id="799"/>
-                            <constraint firstItem="795" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="0.0" id="800"/>
-                            <constraint firstItem="759" firstAttribute="trailing" secondItem="789" secondAttribute="trailing" constant="20" id="805"/>
-                            <constraint id="806" firstItem="789" firstAttribute="top" secondItem="759" secondAttribute="top" constant="42"/>
+                            <constraint firstItem="795" firstAttribute="trailing" secondItem="759" secondAttribute="trailing" id="799"/>
+                            <constraint firstItem="795" firstAttribute="leading" secondItem="759" secondAttribute="leading" id="800"/>
+                            <constraint firstAttribute="trailing" secondItem="789" secondAttribute="trailing" constant="20" id="805"/>
+                            <constraint firstItem="789" firstAttribute="top" secondItem="759" secondAttribute="top" constant="42" id="806"/>
                             <constraint firstItem="795" firstAttribute="top" secondItem="789" secondAttribute="bottom" constant="19" id="823"/>
                             <constraint firstItem="807" firstAttribute="width" secondItem="795" secondAttribute="width" id="835"/>
-                            <constraint id="845" firstItem="759" firstAttribute="trailing" secondItem="807" secondAttribute="trailing" constant="0.0"/>
-                            <constraint id="846" firstItem="759" firstAttribute="bottom" secondItem="807" secondAttribute="bottom" constant="31"/>
+                            <constraint firstAttribute="trailing" secondItem="807" secondAttribute="trailing" id="845"/>
+                            <constraint firstAttribute="bottom" secondItem="807" secondAttribute="bottom" constant="31" id="846"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="UserNameLabel" destination="770" id="name-outlet-770"/>
+                        <outlet property="CommentsCountLabel" destination="795" id="name-outlet-795"/>
+                        <outlet property="CommentsTable" destination="807" id="name-outlet-807"/>
                         <outlet property="FeelingTextView" destination="789" id="name-outlet-789"/>
                         <outlet property="NewCommentTextField" destination="830" id="name-outlet-830"/>
-                        <outlet property="CommentsTable" destination="807" id="name-outlet-807"/>
-                        <outlet property="CommentsCountLabel" destination="795" id="name-outlet-795"/>
+                        <outlet property="UserNameLabel" destination="770" id="name-outlet-770"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="760" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -447,28 +448,6 @@
     </scenes>
     <resources>
         <image name="iconsmall.png" width="220" height="260"/>
-        <image name="Default-568h.png" width="640" height="1136"/>
-        <image name="001.png" width="400" height="400"/>
-        <image name="004.png" width="44" height="44"/>
-        <image name="006.png" width="64" height="64"/>
-        <image name="010.png" width="38" height="38"/>
-        <image name="011.png" width="38" height="38"/>
-        <image name="012.png" width="56" height="56"/>
-        <image name="015.png" width="40" height="40"/>
-        <image name="019.png" width="237" height="237"/>
-        <image name="020.png" width="510" height="1280"/>
-        <image name="021.png" width="720" height="1280"/>
-        <image name="bg.png" width="720" height="1280"/>
-        <image name="comment.png" width="38" height="38"/>
-        <image name="comments.png" width="40" height="40"/>
-        <image name="green.png" width="64" height="42"/>
-        <image name="header.png" width="260" height="80"/>
-        <image name="icon.png" width="284" height="281"/>
-        <image name="iconsmall_cut.png" width="284" height="281"/>
-        <image name="messages.png" width="40" height="40"/>
-        <image name="notifications.png" width="40" height="40"/>
-        <image name="password.png" width="44" height="44"/>
-        <image name="settings.png" width="40" height="40"/>
         <image name="userIcon.png" width="38" height="38"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

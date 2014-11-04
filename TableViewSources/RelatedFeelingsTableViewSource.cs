@@ -9,7 +9,6 @@ namespace Feelknit.iOS
 	public class RelatedFeelingsTableViewSource: UITableViewSource
 	{
 		IList<Feeling> _feelings;
-		string cellIdentifier = "TableCell";
 
 		Action<Feeling> _action;
 

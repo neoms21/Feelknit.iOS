@@ -54,8 +54,8 @@ namespace Feelknit.iOS
 			GetFeelings += async () => {
 				_feelings = await GetUserFeelings ();
 
-				UserFeelingsTable.Source = new UserFeelingsTableViewSource (_feelings.ToList (),OnRowSelection);
-				UserFeelingsTable.ReloadData ();
+				UserFeelingsTableView.Source = new UserFeelingsTableViewSource (_feelings.ToList (),OnRowSelection);
+				UserFeelingsTableView.ReloadData ();
 
 				_loadingOverlay.Hide ();
 			};

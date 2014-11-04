@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feelknit.iOS", "Feelknit.iOS.csproj", "{21FB5837-3F5D-4D8F-8238-870907068D9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlideDownMenu", "SlideDownMenu\SlideDownMenu.csproj", "{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|iPhone = Ad-Hoc|iPhone
@@ -35,22 +33,6 @@ Global
 		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Release|iPhone.Build.0 = Release|iPhone
 		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.Ad-Hoc|iPhoneSimulator.Build.0 = Release|Any CPU
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.AppStore|iPhone.ActiveCfg = Release|Any CPU
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.AppStore|iPhone.Build.0 = Release|Any CPU
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.AppStore|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.AppStore|iPhoneSimulator.Build.0 = Release|Any CPU
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.Release|iPhone.Build.0 = Release|Any CPU
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{EDE88F03-1F3A-44FE-8E5B-69F1443F8955}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Feelknit.iOS.csproj

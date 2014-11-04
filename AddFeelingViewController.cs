@@ -1,6 +1,5 @@
 using System;
 using MonoTouch.UIKit;
-using SlideDownMenu;
 using System.Drawing;
 using System.Collections.Generic;
 using Feelknit.iOS;

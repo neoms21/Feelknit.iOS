@@ -20,7 +20,7 @@ namespace Feelknit.iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableView UserFeelingsTable { get; set; }
+		UITableView UserFeelingsTableView { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
@@ -28,9 +28,9 @@ namespace Feelknit.iOS
 				CreateNewFeelingButton.Dispose ();
 				CreateNewFeelingButton = null;
 			}
-			if (UserFeelingsTable != null) {
-				UserFeelingsTable.Dispose ();
-				UserFeelingsTable = null;
+			if (UserFeelingsTableView != null) {
+				UserFeelingsTableView.Dispose ();
+				UserFeelingsTableView = null;
 			}
 		}
 	}
