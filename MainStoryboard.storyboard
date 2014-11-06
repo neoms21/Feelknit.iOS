@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="604" y="122"/>
+            <point key="canvasLocation" x="1079" y="111"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="95">
@@ -70,7 +70,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="9" kind="relationship" relationship="rootViewController" id="108"/>
+                        <segue destination="888" kind="relationship" relationship="rootViewController" id="902"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="100" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -117,6 +117,7 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="880"/>
                     <connections>
                         <outlet property="RegisterButton" destination="146" id="name-outlet-146"/>
                         <outlet property="RegisterController" destination="124" id="name-outlet-124"/>
@@ -215,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="187" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066" y="110"/>
+            <point key="canvasLocation" x="1453" y="105"/>
         </scene>
         <!--User Feelings Controller-->
         <scene sceneID="289">
@@ -445,8 +446,39 @@
             </objects>
             <point key="canvasLocation" x="1464" y="825"/>
         </scene>
+        <!--Title-->
+        <scene sceneID="887">
+            <objects>
+                <viewController id="888" customClass="LoadingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="885"/>
+                        <viewControllerLayoutGuide type="bottom" id="886"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="889">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="904">
+                                <rect key="frame" x="60" y="190" width="201" height="199"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="904" firstAttribute="top" secondItem="889" secondAttribute="top" constant="190" id="BfR-2B-oqJ"/>
+                            <constraint firstAttribute="trailing" secondItem="904" secondAttribute="trailing" constant="59" id="DrS-jP-VCx"/>
+                            <constraint firstItem="904" firstAttribute="leading" secondItem="889" secondAttribute="leading" constant="60" id="kjn-sq-Xw8"/>
+                            <constraint firstAttribute="bottom" secondItem="904" secondAttribute="bottom" constant="179" id="qbg-6y-gBa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="901"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="890" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="637" y="113"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="icon.png" width="284" height="281"/>
         <image name="iconsmall.png" width="220" height="260"/>
         <image name="userIcon.png" width="38" height="38"/>
     </resources>
