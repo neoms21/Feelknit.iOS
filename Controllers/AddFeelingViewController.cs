@@ -1,15 +1,15 @@
 using System;
-using MonoTouch.UIKit;
-using System.Drawing;
 using System.Collections.Generic;
-using Feelknit.iOS;
-using MonoTouch.Foundation;
-using Feelknit.iOS.Model;
-using Newtonsoft.Json;
-using Feelknit.iOS.Views;
 using System.Linq;
+using Feelknit.iOS.Helpers;
+using Feelknit.iOS.Model;
+using Feelknit.iOS.TableViewSources;
+using Feelknit.iOS.Views;
+using MonoTouch.Foundation;
+using MonoTouch.UIKit;
+using Newtonsoft.Json;
 
-namespace Feelknit
+namespace Feelknit.iOS.Controllers
 {
 	partial class AddFeelingViewController : UIViewController
 	{
@@ -28,16 +28,16 @@ namespace Feelknit
 			#region View lifecycle
 			FeelingsTableView.Hidden = true;
 				
-			string[] tableItems = new string[] {"Sad","Angry","Worried","Frustrated"};
-			FeelingsTableView.Source = new FeelingsTableViewSources (tableItems, SetSelection);
+			//string[] tableItems = new string[] {"Sad","Angry","Worried","Frustrated"};
+			FeelingsTableView.Source = new FeelingsTableViewSources (ApplicationHelper.Feelings, SetSelection);
 			FeelingsTableView.Hidden = true;
 			FeelingsTableView.RowHeight = 30;
-			SelectFeelingButton.TouchUpInside += (object sender, EventArgs e) => {
+			SelectFeelingButton.TouchUpInside += (sender, e) => {
 				FeelingsTableView.Hidden = false;
 
 			};
 			_loadingOverlay = new LoadingOverlay (UIScreen.MainScreen.Bounds, "Sharing..");
-			ShareFeelingButton.TouchUpInside += (object sender, EventArgs e) => {
+			ShareFeelingButton.TouchUpInside += (sender, e) => {
 				this.View.Add(_loadingOverlay);
 				SaveFeeling();
 

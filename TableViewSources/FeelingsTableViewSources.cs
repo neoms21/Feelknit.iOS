@@ -1,39 +1,40 @@
 ﻿using System;
+using System.Collections.Generic;
 using MonoTouch.UIKit;
 
-namespace Feelknit.iOS
+namespace Feelknit.iOS.TableViewSources
 {
 	public class FeelingsTableViewSources : UITableViewSource
 	{
-		string[] tableItems;
-		string cellIdentifier = "TableCell";
+	    readonly IList<string> _feelings;
+	    private const string CellIdentifier = "TableCell";
 
-		Action<string> _action;
+	    readonly Action<string> _action;
 
-		public FeelingsTableViewSources (string [] items, Action<string> action)
+		public FeelingsTableViewSources (IList<string> feelings, Action<string> action)
 		{
 			_action = action;
-			tableItems = items;
+			_feelings = feelings;
 		}
 
 		public override int RowsInSection (UITableView tableview, int section)
 		{
-			return tableItems.Length;
+			return _feelings.Count;
 		}
 
 		public override UITableViewCell GetCell (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 		{
-			UITableViewCell cell = tableView.DequeueReusableCell (cellIdentifier);
+			UITableViewCell cell = tableView.DequeueReusableCell (CellIdentifier);
 			// if there are no cells to reuse, create a new one
 			if (cell == null)
-				cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
-			cell.TextLabel.Text = tableItems[indexPath.Row];
+				cell = new UITableViewCell (UITableViewCellStyle.Default, CellIdentifier);
+			cell.TextLabel.Text = _feelings[indexPath.Row];
 			return cell;
 		}
 
 		public override void RowSelected (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 		{
-			_action.Invoke (tableItems[indexPath.Row]);
+			_action.Invoke (_feelings[indexPath.Row]);
 			// NOTE: Don't call the base implementation on a Model class
 			// see http://docs.xamarin.com/guides/ios/application_fundamentals/delegates,_protocols,_and_events
 			//throw new NotImplementedException ();

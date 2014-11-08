@@ -9,7 +9,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 
-namespace Feelknit
+namespace Feelknit.iOS.Controllers
 {
 	[Register ("AddFeelingViewController")]
 	partial class AddFeelingViewController

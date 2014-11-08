@@ -1,11 +1,8 @@
 using System;
-using Feelknit.iOS;
 using Feelknit.Model;
-using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using System.CodeDom.Compiler;
 
-namespace Feelknit
+namespace Feelknit.iOS.Controllers
 {
     partial class RegisterViewController : UIViewController
     {

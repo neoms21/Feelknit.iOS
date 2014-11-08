@@ -1,10 +1,8 @@
 using System;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using System.CodeDom.Compiler;
 using Feelknit.iOS.Model;
+using MonoTouch.UIKit;
 
-namespace Feelknit.iOS
+namespace Feelknit.iOS.Controllers
 {
 	partial class CommentsViewController : UIViewController
 	{

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using Feelknit.iOS.Helpers;
 using Feelknit.iOS.Model;
 using Feelknit.iOS.TableViewSources;
 using Feelknit.iOS.Views;
-using Feelknit.Model;
 using MonoTouch.UIKit;
 using Newtonsoft.Json;
 
-namespace Feelknit.iOS
+namespace Feelknit.iOS.Controllers
 {
 	partial class UserFeelingsController : UIViewController
 	{

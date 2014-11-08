@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feelknit.iOS", "Feelknit.iOS.csproj", "{21FB5837-3F5D-4D8F-8238-870907068D9C}"
@@ -29,15 +29,16 @@ Global
 		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Debug|iPhone.Build.0 = Debug|iPhone
 		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Debug|iPhoneSimulator.Deploy.0 = Debug|iPhoneSimulator
 		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Release|iPhone.ActiveCfg = Release|iPhone
 		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Release|iPhone.Build.0 = Release|iPhone
 		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{21FB5837-3F5D-4D8F-8238-870907068D9C}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Feelknit.iOS.csproj
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Feelknit.iOS.csproj
 	EndGlobalSection
 EndGlobal

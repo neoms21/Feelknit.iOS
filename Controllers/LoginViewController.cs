@@ -1,17 +1,16 @@
 using System;
 using System.Drawing;
-using System.Threading.Tasks;
-using Feelknit.iOS;
+using Feelknit.iOS.Helpers;
+using Feelknit.iOS.Views;
 using Feelknit.Model;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using Feelknit.iOS.Views;
 
-namespace Feelknit
+namespace Feelknit.iOS.Controllers
 {
     partial class LoginViewController : UIViewController
     {
-		private LoadingOverlay _loadingOverlay;
+        private LoadingOverlay _loadingOverlay;
 
         public LoginViewController(IntPtr handle)
             : base(handle)
@@ -21,31 +20,25 @@ namespace Feelknit
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-			_loadingOverlay = new LoadingOverlay (UIScreen.MainScreen.Bounds, "Logging In");
-            var isAuthenticated = NSUserDefaults.StandardUserDefaults.BoolForKey("IsAuthenticated");
-            if (isAuthenticated)
-            {
-				ApplicationHelper.UserName = NSUserDefaults.StandardUserDefaults.StringForKey ("UserName");	
-                NavigateToAddFeeling();
-                return;
-            }
+            _loadingOverlay = new LoadingOverlay(UIScreen.MainScreen.Bounds, "Logging In");
+            
 
             SetImageAndMargin(UserName, "usericon.png");
             SetImageAndMargin(Password, "password.png");
 
-            RegisterButton.TouchUpInside += (object sender, EventArgs e) =>
+            RegisterButton.TouchUpInside += (sender, e) =>
             {
                 // Launches a new instance of RegistrationController
-                var registration = this.Storyboard.InstantiateViewController("RegisterViewController") as RegisterViewController;
+                var registration = Storyboard.InstantiateViewController("RegisterViewController") as RegisterViewController;
                 if (registration != null)
                 {
-                    this.NavigationController.PushViewController(registration, true);
+                    NavigationController.PushViewController(registration, true);
                 }
             };
 
-            LoginButton.TouchUpInside += (object sender, EventArgs e) =>
+            LoginButton.TouchUpInside += (sender, e) =>
                         {
-				this.View.Add(_loadingOverlay);
+                            View.Add(_loadingOverlay);
                             var user = new User { UserName = UserName.Text, Password = Password.Text };
                             VerifyUser(user);
                         };
@@ -67,31 +60,31 @@ namespace Feelknit
 
         private async void VerifyUser(User user)
         {
-			var client = new JsonHttpClient(UrlHelper.USER_VERIFY);
+            var client = new JsonHttpClient(UrlHelper.USER_VERIFY);
             var result = await client.PostRequest(user);
 
             if (bool.Parse(result))
             {
-				_loadingOverlay.Hide ();
+                _loadingOverlay.Hide();
                 NSUserDefaults.StandardUserDefaults.SetBool(true, "IsAuthenticated");
-				NSUserDefaults.StandardUserDefaults.SetString( UserName.Text, "UserName");
-                NavigateToAddFeeling();
+                NSUserDefaults.StandardUserDefaults.SetString(UserName.Text, "UserName");
+                NavigateToUserFeelings();
                 return;
-
-            };
+            }
 
             var alert = new UIAlertView("Error", "Invalid username/password", null, "OK", null);
             alert.Show();
         }
 
-        private void NavigateToAddFeeling()
+        private void NavigateToUserFeelings()
         {
             var userFeelingsController =
-                this.Storyboard.InstantiateViewController("UserFeelingsController") as UserFeelingsController;
+                Storyboard.InstantiateViewController("UserFeelingsController") as UserFeelingsController;
             if (userFeelingsController != null)
             {
-                this.NavigationController.PushViewController(userFeelingsController, true);
+                NavigationController.PushViewController(userFeelingsController, true);
             }
         }
+        
     }
 }
