@@ -77,7 +77,7 @@ namespace Feelknit.iOS.Controllers
         }
 
         private void NavigateToUserFeelings()
-        {
+        {  
             var userFeelingsController =
                 Storyboard.InstantiateViewController("UserFeelingsController") as UserFeelingsController;
             if (userFeelingsController != null)
