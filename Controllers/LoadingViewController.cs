@@ -26,7 +26,8 @@ namespace Feelknit.iOS.Controllers
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            _loadingOverlay = new LoadingOverlay(UIScreen.MainScreen.Bounds, "Loading..");
+			this.View.BackgroundColor = Resources.MainBackgroundColor;
+			_loadingOverlay = new LoadingOverlay(UIScreen.MainScreen.Bounds, "Loading..");
             View.Add(_loadingOverlay);
 
             GetFeelingsList();
@@ -36,21 +37,35 @@ namespace Feelknit.iOS.Controllers
         private async void GetFeelingsList()
         {
             var client = new JsonHttpClient(UrlHelper.GET_FEELS);
+
             var result = await client.GetRequest();
             _loadingOverlay.Hide();
+			 
             ApplicationHelper.Feelings = JsonConvert.DeserializeObject<List<string>>(result);
-            MoveToNextController();
+			try{MoveToNextController();}
+			catch (Exception ex) {
+				var alert = new UIAlertView("Authentication", ex.ToString(), null, "OK", null);
+				alert.Show();
+			}
         }
 
         private void MoveToNextController()
         {
             var isAuthenticated = NSUserDefaults.StandardUserDefaults.BoolForKey("IsAuthenticated");
-            if (isAuthenticated)
-            {
-                ApplicationHelper.UserName = NSUserDefaults.StandardUserDefaults.StringForKey("UserName");
-                NavigateToAddFeeling();
-                return;
-            }
+
+			if (isAuthenticated) {
+				ApplicationHelper.UserName = NSUserDefaults.StandardUserDefaults.StringForKey ("UserName");
+				NavigateToAddFeeling ();
+				return;
+			} else {
+			 
+				var loginViewController = Storyboard.InstantiateViewController("LoginViewController") as LoginViewController;
+
+				if (loginViewController != null)
+				{
+					NavigationController.PushViewController(loginViewController,true);
+				}
+			}
         }
 
         private void NavigateToAddFeeling()

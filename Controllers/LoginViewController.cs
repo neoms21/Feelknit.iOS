@@ -23,9 +23,13 @@ namespace Feelknit.iOS.Controllers
             _loadingOverlay = new LoadingOverlay(UIScreen.MainScreen.Bounds, "Logging In");
             
 
-            SetImageAndMargin(UserName, "usericon.png");
+            SetImageAndMargin(UserName, "userIcon.png");
             SetImageAndMargin(Password, "password.png");
 
+			this.Password.ShouldReturn += (textField) => { 
+				textField.ResignFirstResponder();
+				return true; 
+			};
             RegisterButton.TouchUpInside += (sender, e) =>
             {
                 // Launches a new instance of RegistrationController
@@ -46,7 +50,7 @@ namespace Feelknit.iOS.Controllers
 
         private void SetImageAndMargin(UITextField uiTextField, string image)
         {
-            var imageView = new UIImageView(UIImage.FromBundle(image))
+			var imageView = new UIImageView(UIImage.FromBundle(image))
             {
                 // Indent it 10 pixels from the left.
                 Frame = new RectangleF(10, 0, 20, 20)
@@ -62,12 +66,13 @@ namespace Feelknit.iOS.Controllers
         {
             var client = new JsonHttpClient(UrlHelper.USER_VERIFY);
             var result = await client.PostRequest(user);
-
+			_loadingOverlay.Hide();
             if (bool.Parse(result))
             {
-                _loadingOverlay.Hide();
+                
                 NSUserDefaults.StandardUserDefaults.SetBool(true, "IsAuthenticated");
                 NSUserDefaults.StandardUserDefaults.SetString(UserName.Text, "UserName");
+				ApplicationHelper.UserName = UserName.Text;
                 NavigateToUserFeelings();
                 return;
             }

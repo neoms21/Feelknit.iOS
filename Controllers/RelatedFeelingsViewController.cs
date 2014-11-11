@@ -20,6 +20,7 @@ namespace Feelknit.iOS.Controllers
 		{
 			base.ViewDidLoad ();
 			FeelingTextLabel.SizeToFit ();
+			FeelingTextLabel.PreferredMaxLayoutWidth = 200;
 			FeelingTextLabel.LineBreakMode = UILineBreakMode.WordWrap;
 			FeelingTextLabel.Text = Feeling.GetFeelingFormattedText ("I");
 			FeelingNumberLabel.Text = string.Format("{0} people feeling {1} currently",RelatedFeelings.Count,Feeling.FeelingText);

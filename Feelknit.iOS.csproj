@@ -25,7 +25,7 @@
     <MtouchSdkVersion>8.0</MtouchSdkVersion>
     <MtouchExtraArgs>
     </MtouchExtraArgs>
-    <MtouchArch>Default, ARMv7</MtouchArch>
+    <MtouchArch>ARMv7</MtouchArch>
     <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
     <MtouchI18n>
     </MtouchI18n>
@@ -72,8 +72,8 @@
     <ConsolePause>false</ConsolePause>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <BuildIpa>true</BuildIpa>
-    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
-    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>c3a853c2-3623-447b-8954-4f93f8310578</CodesignProvision>
+    <CodesignKey>iPhone Developer: Manoj Sethi (KVMQ8BJK94)</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <DebugType>full</DebugType>
@@ -94,6 +94,15 @@
     <Reference Include="monotouch" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="BugSense.Xamarin.Bind.iOS">
+      <HintPath>packages\BugSense.Xamarin.iOS.3.6.7.0\lib\MonoTouch\BugSense.Xamarin.Bind.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="BugSense.Xamarin.iOS">
+      <HintPath>packages\BugSense.Xamarin.iOS.3.6.7.0\lib\MonoTouch\BugSense.Xamarin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemServicesBinding">
+      <HintPath>packages\BugSense.Xamarin.iOS.3.6.7.0\lib\MonoTouch\SystemServicesBinding.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -166,14 +175,13 @@
     <BundleResource Include="Resources\settings.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="Resources\userIcon.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
+    <BundleResource Include="Resources\userIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
+    <None Include="BugSense\BugSense - SDK License Agreement.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AddFeelingViewController.cs" />
@@ -223,6 +231,7 @@
     </Compile>
     <Compile Include="TableViewSources\RelatedFeelingsTableViewSource.cs" />
     <Compile Include="Helpers\Resources.cs" />
+    <Compile Include="Helpers\UIColorExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
