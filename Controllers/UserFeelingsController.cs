@@ -29,7 +29,15 @@ namespace Feelknit.iOS.Controllers
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-
+			this.SetToolbarItems( new UIBarButtonItem[] {
+				new UIBarButtonItem(UIBarButtonSystemItem.Refresh, (s,e) => {
+					Console.WriteLine("Refresh clicked");
+				})
+				, new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace) { Width = 50 }
+				, new UIBarButtonItem(UIBarButtonSystemItem.Pause, (s,e) => {
+					Console.WriteLine ("Pause clicked");
+				})
+			}, false);
 			var bounds = UIScreen.MainScreen.Bounds; // portrait bounds
 
 			if (UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeLeft

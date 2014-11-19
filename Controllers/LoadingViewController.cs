@@ -21,6 +21,7 @@ namespace Feelknit.iOS.Controllers
         {
             base.ViewWillAppear(animated);
             this.NavigationController.NavigationBarHidden = true;
+			this.View.BackgroundColor = Resources.MainBackgroundColor;
         }
 
         public override void ViewDidLoad()

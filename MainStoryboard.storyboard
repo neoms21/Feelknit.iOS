@@ -16,13 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="15">
-                                <rect key="frame" x="19" y="229" width="262" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="15">
+                                <rect key="frame" x="15" y="229" width="290" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="16">
-                                <rect key="frame" x="19" y="300" width="262" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="16">
+                                <rect key="frame" x="15" y="300" width="290" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
@@ -32,23 +32,49 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80">
-                                <rect key="frame" x="0.0" y="428" width="285" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80">
+                                <rect key="frame" x="15" y="451" width="290" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="1" blue="0" alpha="1"/>
                                 <state key="normal" title="Register">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="172">
-                                <rect key="frame" x="115" y="377" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="172">
+                                <rect key="frame" x="15" y="377" width="290" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="1" blue="0" alpha="1"/>
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="iconsmall.png" translatesAutoresizingMaskIntoConstraints="NO" id="220">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="iconsmall.png" translatesAutoresizingMaskIntoConstraints="NO" id="220">
                                 <rect key="frame" x="96" y="90" width="118" height="123"/>
+                                <constraints>
+                                    <constraint firstItem="220" firstAttribute="height" constant="123" id="1080"/>
+                                    <constraint firstItem="220" firstAttribute="width" constant="118" id="1081"/>
+                                    <constraint firstItem="220" firstAttribute="width" constant="118" id="1083"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="10" firstAttribute="trailing" secondItem="80" secondAttribute="trailing" constant="15" id="1038"/>
+                            <constraint firstItem="80" firstAttribute="leading" secondItem="10" secondAttribute="leading" constant="15" id="1039"/>
+                            <constraint firstItem="7" firstAttribute="top" secondItem="80" secondAttribute="bottom" constant="87" id="1040"/>
+                            <constraint firstItem="10" firstAttribute="trailing" secondItem="172" secondAttribute="trailing" constant="15" id="1042"/>
+                            <constraint firstItem="172" firstAttribute="leading" secondItem="10" secondAttribute="leading" constant="15" id="1043"/>
+                            <constraint firstItem="80" firstAttribute="top" secondItem="172" secondAttribute="bottom" constant="44" id="1045"/>
+                            <constraint firstItem="172" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="0.0" id="1046"/>
+                            <constraint firstItem="172" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" constant="0.0" id="1047"/>
+                            <constraint firstItem="16" firstAttribute="height" secondItem="172" secondAttribute="height" id="1048"/>
+                            <constraint firstItem="172" firstAttribute="top" secondItem="16" secondAttribute="bottom" constant="47" id="1049"/>
+                            <constraint firstItem="15" firstAttribute="width" secondItem="16" secondAttribute="width" id="1050"/>
+                            <constraint firstItem="15" firstAttribute="height" secondItem="16" secondAttribute="height" id="1051"/>
+                            <constraint firstItem="15" firstAttribute="leading" secondItem="172" secondAttribute="leading" constant="0.0" id="1053"/>
+                            <constraint firstItem="172" firstAttribute="trailing" secondItem="15" secondAttribute="trailing" constant="0.0" id="1054"/>
+                            <constraint firstItem="220" firstAttribute="leading" secondItem="10" secondAttribute="leading" constant="96" id="1089"/>
+                            <constraint id="1090" firstItem="220" firstAttribute="top" secondItem="10" secondAttribute="top" constant="90"/>
+                            <constraint firstItem="15" firstAttribute="top" secondItem="220" secondAttribute="bottom" constant="16" id="1091"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="107"/>
                     <connections>
@@ -89,7 +115,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="127">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="127" fixedFrame="YES">
                                 <rect key="frame" x="26" y="194" width="272" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -111,11 +137,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="iconsmall.png" translatesAutoresizingMaskIntoConstraints="NO" id="167">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="iconsmall.png" translatesAutoresizingMaskIntoConstraints="NO" id="167">
                                 <rect key="frame" x="110" y="70" width="93" height="107"/>
+                                <constraints>
+                                    <constraint firstItem="167" firstAttribute="height" constant="107" id="1061"/>
+                                    <constraint firstItem="167" firstAttribute="width" constant="93" id="1062"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="167" firstAttribute="top" secondItem="120" secondAttribute="bottom" constant="50" id="1060"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="880"/>
                     <connections>

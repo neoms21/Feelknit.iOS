@@ -17,12 +17,33 @@ namespace Feelknit.iOS.Controllers
         {
         }
 
+		public override void ViewWillAppear (bool animated)
+		{
+			base.ViewWillAppear (animated);
+			this.View.BackgroundColor = Resources.MainBackgroundColor;
+			this.LoginButton.BackgroundColor = Resources.ButtonColor;
+			RegisterButton.BackgroundColor = Resources.ButtonColor;
+
+			LoginButton.SetTitleColor(Resources.TextColor,UIControlState.Normal);
+			RegisterButton.SetTitleColor(Resources.TextColor,UIControlState.Normal);
+
+		}
+
+		public override bool ShouldAutorotate ()
+		{
+			return false;
+		}
+
+		public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
+		{
+			return UIInterfaceOrientationMask.Portrait;
+		}
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             _loadingOverlay = new LoadingOverlay(UIScreen.MainScreen.Bounds, "Logging In");
             
-
             SetImageAndMargin(UserName, "userIcon.png");
             SetImageAndMargin(Password, "password.png");
 
