@@ -115,25 +115,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="127" fixedFrame="YES">
-                                <rect key="frame" x="26" y="194" width="272" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="127">
+                                <rect key="frame" x="15" y="194" width="290" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="146">
-                                <rect key="frame" x="1" y="429" width="298" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="146">
+                                <rect key="frame" x="15" y="451" width="290" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="1" blue="0" alpha="1"/>
                                 <state key="normal" title="Register">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <constraints/>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your password" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="157">
-                                <rect key="frame" x="27" y="256" width="271" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your password" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="157">
+                                <rect key="frame" x="15" y="269" width="290" height="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your email addres" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="159">
-                                <rect key="frame" x="27" y="321" width="271" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your email addres" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="159">
+                                <rect key="frame" x="15" y="342" width="290" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -148,6 +150,22 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="167" firstAttribute="top" secondItem="120" secondAttribute="bottom" constant="50" id="1060"/>
+                            <constraint firstItem="124" firstAttribute="trailing" secondItem="146" secondAttribute="trailing" constant="15" id="1102"/>
+                            <constraint firstItem="146" firstAttribute="leading" secondItem="124" secondAttribute="leading" constant="15" id="1103"/>
+                            <constraint firstItem="121" firstAttribute="top" secondItem="146" secondAttribute="bottom" constant="87" id="1104"/>
+                            <constraint firstItem="146" firstAttribute="top" secondItem="159" secondAttribute="bottom" constant="79" id="1105"/>
+                            <constraint firstItem="159" firstAttribute="leading" secondItem="146" secondAttribute="leading" constant="0.0" id="1106"/>
+                            <constraint firstItem="157" firstAttribute="leading" secondItem="146" secondAttribute="leading" constant="0.0" id="1107"/>
+                            <constraint firstItem="127" firstAttribute="leading" secondItem="146" secondAttribute="leading" constant="0.0" id="1108"/>
+                            <constraint firstItem="127" firstAttribute="trailing" secondItem="157" secondAttribute="trailing" constant="0.0" id="1119"/>
+                            <constraint firstItem="127" firstAttribute="trailing" secondItem="159" secondAttribute="trailing" constant="0.0" id="1120"/>
+                            <constraint firstItem="127" firstAttribute="trailing" secondItem="146" secondAttribute="trailing" constant="0.0" id="1121"/>
+                            <constraint firstItem="159" firstAttribute="height" secondItem="146" secondAttribute="height" id="1123"/>
+                            <constraint firstItem="157" firstAttribute="height" secondItem="146" secondAttribute="height" id="1124"/>
+                            <constraint firstItem="127" firstAttribute="height" secondItem="146" secondAttribute="height" id="1125"/>
+                            <constraint firstItem="124" firstAttribute="trailing" secondItem="167" secondAttribute="trailing" constant="117" id="1127"/>
+                            <constraint firstItem="127" firstAttribute="top" secondItem="167" secondAttribute="bottom" constant="17" id="1128"/>
+                            <constraint firstItem="157" firstAttribute="top" secondItem="127" secondAttribute="bottom" constant="45" id="1129"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="880"/>

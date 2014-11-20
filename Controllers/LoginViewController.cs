@@ -29,6 +29,7 @@ namespace Feelknit.iOS.Controllers
 
 		}
 
+
 		public override bool ShouldAutorotate ()
 		{
 			return false;
