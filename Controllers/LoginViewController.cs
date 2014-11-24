@@ -5,6 +5,7 @@ using Feelknit.iOS.Views;
 using Feelknit.Model;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using Newtonsoft.Json;
 
 namespace Feelknit.iOS.Controllers
 {
@@ -89,7 +90,9 @@ namespace Feelknit.iOS.Controllers
             var client = new JsonHttpClient(UrlHelper.USER_VERIFY);
             var result = await client.PostRequest(user);
 			_loadingOverlay.Hide();
-            if (bool.Parse(result))
+
+			var loginResult = JsonConvert.DeserializeObject<LoginResult> (result);
+			if (loginResult.IsLoginSuccessful)
             {
                 
                 NSUserDefaults.StandardUserDefaults.SetBool(true, "IsAuthenticated");

@@ -232,6 +232,7 @@
     <Compile Include="TableViewSources\RelatedFeelingsTableViewSource.cs" />
     <Compile Include="Helpers\Resources.cs" />
     <Compile Include="Helpers\UIColorExtensions.cs" />
+    <Compile Include="Model\LoginResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

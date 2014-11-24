@@ -25,7 +25,7 @@ namespace Feelknit.iOS.Model
             set
             {
                 _feelingText = value;
-                FeelingTextLower = value.ToLower();
+				FeelingTextLower = value!=null ? value.ToLower():string.Empty;
             }
         }
 
