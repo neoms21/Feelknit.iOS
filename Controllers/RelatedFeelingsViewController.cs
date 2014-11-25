@@ -1,17 +1,16 @@
-using System;
 using System.Collections.Generic;
 using Feelknit.iOS.Model;
 using MonoTouch.UIKit;
 
 namespace Feelknit.iOS.Controllers
 {
-	partial class RelatedFeelingsViewController : UIViewController
+	partial class RelatedFeelingsViewController : BaseController
 	{
 		public Feeling Feeling{ get; set; }
 
 		public IList<Feeling> RelatedFeelings{ get; set; }
 
-		public RelatedFeelingsViewController (IntPtr handle) : base (handle)
+		public RelatedFeelingsViewController () : base (null,null)
 		{
 			RelatedFeelings = new List<Feeling> ();
 }

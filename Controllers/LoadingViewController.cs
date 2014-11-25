@@ -21,14 +21,14 @@ namespace Feelknit.iOS.Controllers
         {
             base.ViewWillAppear(animated);
             this.NavigationController.NavigationBarHidden = true;
-			this.View.BackgroundColor = Resources.MainBackgroundColor;
+            this.View.BackgroundColor = Resources.MainBackgroundColor;
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-			this.View.BackgroundColor = Resources.MainBackgroundColor;
-			_loadingOverlay = new LoadingOverlay(UIScreen.MainScreen.Bounds, "Loading..");
+            this.View.BackgroundColor = Resources.MainBackgroundColor;
+            _loadingOverlay = new LoadingOverlay(UIScreen.MainScreen.Bounds, "Loading..");
             View.Add(_loadingOverlay);
 
             GetFeelingsList();
@@ -41,32 +41,39 @@ namespace Feelknit.iOS.Controllers
 
             var result = await client.GetRequest();
             _loadingOverlay.Hide();
-			 
+
             ApplicationHelper.Feelings = JsonConvert.DeserializeObject<List<string>>(result);
-			try{MoveToNextController();}
-			catch (Exception ex) {
-				var alert = new UIAlertView("Authentication", ex.ToString(), null, "OK", null);
-				alert.Show();
-			}
+            try
+            {
+                MoveToNextController();
+            }
+            catch (Exception ex)
+            {
+                var alert = new UIAlertView("Authentication", ex.ToString(), null, "OK", null);
+                alert.Show();
+            }
         }
 
         private void MoveToNextController()
         {
             var isAuthenticated = NSUserDefaults.StandardUserDefaults.BoolForKey("IsAuthenticated");
 
-			if (isAuthenticated) {
-				ApplicationHelper.UserName = NSUserDefaults.StandardUserDefaults.StringForKey ("UserName");
-				NavigateToAddFeeling ();
-				return;
-			} else {
-			 
-				var loginViewController = Storyboard.InstantiateViewController("LoginViewController") as LoginViewController;
+            if (isAuthenticated)
+            {
+                ApplicationHelper.UserName = NSUserDefaults.StandardUserDefaults.StringForKey("UserName");
+                NavigateToAddFeeling();
+                return;
+            }
+            else
+            {
 
-				if (loginViewController != null)
-				{
-					NavigationController.PushViewController(loginViewController,true);
-				}
-			}
+                var loginViewController = Storyboard.InstantiateViewController("LoginViewController") as LoginViewController;
+
+                if (loginViewController != null)
+                {
+                    NavigationController.PushViewController(loginViewController, true);
+                }
+            }
         }
 
         private void NavigateToAddFeeling()

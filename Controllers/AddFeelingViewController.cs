@@ -11,13 +11,13 @@ using Newtonsoft.Json;
 
 namespace Feelknit.iOS.Controllers
 {
-	partial class AddFeelingViewController : UIViewController
+	partial class AddFeelingViewController : BaseController
 	{
 		string _feelingText;
 		private LoadingOverlay _loadingOverlay;
 
 	
-		public AddFeelingViewController (IntPtr handle) : base (handle)
+		public AddFeelingViewController () : base (null,null)
 		{
 		}
 

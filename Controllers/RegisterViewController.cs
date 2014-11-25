@@ -4,10 +4,10 @@ using MonoTouch.UIKit;
 
 namespace Feelknit.iOS.Controllers
 {
-    partial class RegisterViewController : UIViewController
+    partial class RegisterViewController : BaseController
     {
-        public RegisterViewController(IntPtr handle)
-            : base(handle)
+        public RegisterViewController()
+            : base(null, null)
         {
         }
 
@@ -25,7 +25,7 @@ namespace Feelknit.iOS.Controllers
 
         private async void SaveUser(User user)
         {
-			var client = new JsonHttpClient(UrlHelper.USER);
+            var client = new JsonHttpClient(UrlHelper.USER);
             await client.PostRequest(user);
         }
     }

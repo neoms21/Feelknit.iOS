@@ -188,6 +188,7 @@
     <Compile Include="Controllers\AddFeelingViewController.designer.cs">
       <DependentUpon>AddFeelingViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CommentsViewController.cs" />
     <Compile Include="Controllers\CommentsViewController.designer.cs">
       <DependentUpon>CommentsViewController.cs</DependentUpon>
@@ -200,6 +201,7 @@
     <Compile Include="Controllers\LoginViewController.designer.cs">
       <DependentUpon>LoginViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\RegisterViewController.cs" />
     <Compile Include="Controllers\RegisterViewController.designer.cs">
       <DependentUpon>RegisterViewController.cs</DependentUpon>
@@ -208,6 +210,9 @@
     <Compile Include="Controllers\RelatedFeelingsViewController.designer.cs">
       <DependentUpon>RelatedFeelingsViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\RootViewController.cs" />
+    <Compile Include="Controllers\SidebarController.cs" />
+    <Compile Include="Controllers\SideMenuController.cs" />
     <Compile Include="Controllers\UserFeelingsController.cs" />
     <Compile Include="Controllers\UserFeelingsController.designer.cs">
       <DependentUpon>UserFeelingsController.cs</DependentUpon>
@@ -239,5 +244,7 @@
     <InterfaceDefinition Include="Views\RelatedFeelingTableCellView.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
-  <ItemGroup />
+  <ItemGroup>
+    <BundleResource Include="Resources\threelines.png" />
+  </ItemGroup>
 </Project>

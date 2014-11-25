@@ -4,11 +4,11 @@ using MonoTouch.UIKit;
 
 namespace Feelknit.iOS.Controllers
 {
-	partial class CommentsViewController : UIViewController
+	partial class CommentsViewController : BaseController
 	{
 		public Feeling Feeling{ get; set; }
 
-		public CommentsViewController (IntPtr handle) : base (handle)
+		public CommentsViewController () : base (null,null)
 		{
 		}
 

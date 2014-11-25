@@ -1,4 +1,5 @@
-﻿using MonoTouch.Foundation;
+﻿using Feelknit.iOS.Controllers;
+using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using BugSense;
 
@@ -16,8 +17,13 @@ namespace Feelknit
 			get;
 			set;
 		}
-		
-		// This method is invoked when the application is about to move from active to inactive state.
+
+	    public NavController NavController { get; set; }
+
+
+        public RootViewController RootViewController { get { return Window.RootViewController as RootViewController; } }
+
+        // This method is invoked when the application is about to move from active to inactive state.
 		// OpenGL applications should use this method to pause.
 		public override void OnResignActivation (UIApplication application)
 		{
@@ -45,6 +51,14 @@ namespace Feelknit
 			// NOTE: Don't call the base implementation on a Model class
 			// see http://docs.xamarin.com/guides/ios/application_fundamentals/delegates,_protocols,_and_events
 			BugSenseHandler.Instance.InitAndStartSession ("9dd4c16c");
+            // create a new window instance based on the screen size
+            Window = new UIWindow(UIScreen.MainScreen.Bounds);
+
+            // If you have defined a root view controller, set it here:
+            Window.RootViewController = new RootViewController();
+
+            // make the window visible
+            Window.MakeKeyAndVisible();
 
 			return true;
 

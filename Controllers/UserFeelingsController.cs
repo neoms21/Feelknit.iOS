@@ -12,91 +12,94 @@ using Newtonsoft.Json;
 
 namespace Feelknit.iOS.Controllers
 {
-	partial class UserFeelingsController : UIViewController
-	{
-		private IEnumerable<Feeling> _feelings;
+    partial class UserFeelingsController : BaseController
+    {
+        private IEnumerable<Feeling> _feelings;
 
-		private LoadingOverlay _loadingOverlay;
+        private LoadingOverlay _loadingOverlay;
 
-		event GetUserFeelingsDelegate GetFeelings;
+        event GetUserFeelingsDelegate GetFeelings;
 
-		public UserFeelingsController (IntPtr handle)
-			: base (handle)
-		{
-			//this.EdgesForExtendedLayout = UIRectEdge.None;
-		}
+        public UserFeelingsController()
+            : base(null, null)
+        {
+            //this.EdgesForExtendedLayout = UIRectEdge.None;
+        }
 
-		public override void ViewDidLoad ()
-		{
-			base.ViewDidLoad ();
-			var array =  new UIBarButtonItem[5];
-
-
-			for(int i =0; i<=4;i++)
-				{
-				var btn = new UIBarButtonItem ();
-				btn.Image = UIImage.FromFile("UserIcon.png");
-				array [i] = btn;
-			}
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            var array = new UIBarButtonItem[5];
 
 
-			this.SetToolbarItems( array, false);
-			this.NavigationController.ToolbarHidden = false;
-			var bounds = UIScreen.MainScreen.Bounds; // portrait bounds
+            for (int i = 0; i <= 4; i++)
+            {
+                var btn = new UIBarButtonItem();
+                btn.Image = UIImage.FromFile("UserIcon.png");
+                array[i] = btn;
+            }
 
-			if (UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeLeft
-			             || UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeRight) {
-				bounds.Size = new SizeF (bounds.Size.Height, bounds.Size.Width);
-			}
 
-			CreateNewFeelingButton.TouchUpInside+= (object sender,EventArgs e) => {
-				var addFeelingViewController =
-					this.Storyboard.InstantiateViewController("AddFeelingViewController") as AddFeelingViewController;
-				if (addFeelingViewController != null)
-				{
-					this.NavigationController.PushViewController(addFeelingViewController, true);
-				}
-			};
+            this.SetToolbarItems(array, false);
+            this.NavigationController.ToolbarHidden = false;
+            var bounds = UIScreen.MainScreen.Bounds; // portrait bounds
 
-			this.NavigationController.NavigationBarHidden = true;
-			// show the loading overlay on the UI thread using the correct orientation sizing
-			_loadingOverlay = new LoadingOverlay (bounds,"Getting feelings..");
-			this.View.Add (_loadingOverlay);
+            if (UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeLeft
+                         || UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeRight)
+            {
+                bounds.Size = new SizeF(bounds.Size.Height, bounds.Size.Width);
+            }
 
-			GetFeelings += async () => {
-				_feelings = await GetUserFeelings ();
+            CreateNewFeelingButton.TouchUpInside += (object sender, EventArgs e) =>
+            {
+                var addFeelingViewController =
+                    this.Storyboard.InstantiateViewController("AddFeelingViewController") as AddFeelingViewController;
+                if (addFeelingViewController != null)
+                {
+                    this.NavigationController.PushViewController(addFeelingViewController, true);
+                }
+            };
 
-				UserFeelingsTableView.Source = new UserFeelingsTableViewSource (_feelings.ToList (),OnRowSelection);
-				UserFeelingsTableView.ReloadData ();
+            this.NavigationController.NavigationBarHidden = true;
+            // show the loading overlay on the UI thread using the correct orientation sizing
+            _loadingOverlay = new LoadingOverlay(bounds, "Getting feelings..");
+            this.View.Add(_loadingOverlay);
 
-				_loadingOverlay.Hide ();
-			};
+            GetFeelings += async () =>
+            {
+                _feelings = await GetUserFeelings();
 
-			GetFeelings.Invoke ();
-		}
+                UserFeelingsTableView.Source = new UserFeelingsTableViewSource(_feelings.ToList(), OnRowSelection);
+                UserFeelingsTableView.ReloadData();
 
-		private void OnRowSelection(Feeling feeling)
-		{
-			var commentsViewController =
-				this.Storyboard.InstantiateViewController("CommentsViewController") as CommentsViewController;
-			if (commentsViewController != null)
-			{
-				commentsViewController.Feeling = feeling;
-				this.NavigationController.PushViewController(commentsViewController, true);
-			}
-		}
+                _loadingOverlay.Hide();
+            };
 
-		private async Task<IEnumerable<Feeling>> GetUserFeelings ()
-		{
-			var client = new JsonHttpClient (string.Format(UrlHelper.USER_FEELINGS,ApplicationHelper.UserName));
-			var result = await client.GetRequest ();
+            GetFeelings.Invoke();
+        }
 
-			_feelings = JsonConvert.DeserializeObject<IEnumerable<Feeling>> (result);
-			_feelings.First ().IsFirstFeeling = true;
-			return _feelings;
-		}
-	}
+        private void OnRowSelection(Feeling feeling)
+        {
+            var commentsViewController =
+                this.Storyboard.InstantiateViewController("CommentsViewController") as CommentsViewController;
+            if (commentsViewController != null)
+            {
+                commentsViewController.Feeling = feeling;
+                this.NavigationController.PushViewController(commentsViewController, true);
+            }
+        }
 
-	internal delegate void GetUserFeelingsDelegate ();
+        private async Task<IEnumerable<Feeling>> GetUserFeelings()
+        {
+            var client = new JsonHttpClient(string.Format(UrlHelper.USER_FEELINGS, ApplicationHelper.UserName));
+            var result = await client.GetRequest();
+
+            _feelings = JsonConvert.DeserializeObject<IEnumerable<Feeling>>(result);
+            _feelings.First().IsFirstFeeling = true;
+            return _feelings;
+        }
+    }
+
+    internal delegate void GetUserFeelingsDelegate();
 
 }

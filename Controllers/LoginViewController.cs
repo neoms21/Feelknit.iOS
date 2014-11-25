@@ -9,50 +9,51 @@ using Newtonsoft.Json;
 
 namespace Feelknit.iOS.Controllers
 {
-    partial class LoginViewController : UIViewController
+    partial class LoginViewController : BaseController
     {
         private LoadingOverlay _loadingOverlay;
 
-        public LoginViewController(IntPtr handle)
-            : base(handle)
+        public LoginViewController()
+            : base(null, null)
         {
         }
 
-		public override void ViewWillAppear (bool animated)
-		{
-			base.ViewWillAppear (animated);
-			this.View.BackgroundColor = Resources.MainBackgroundColor;
-			this.LoginButton.BackgroundColor = Resources.ButtonColor;
-			RegisterButton.BackgroundColor = Resources.ButtonColor;
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+            this.View.BackgroundColor = Resources.MainBackgroundColor;
+            this.LoginButton.BackgroundColor = Resources.ButtonColor;
+            RegisterButton.BackgroundColor = Resources.ButtonColor;
 
-			LoginButton.SetTitleColor(Resources.TextColor,UIControlState.Normal);
-			RegisterButton.SetTitleColor(Resources.TextColor,UIControlState.Normal);
+            LoginButton.SetTitleColor(Resources.TextColor, UIControlState.Normal);
+            RegisterButton.SetTitleColor(Resources.TextColor, UIControlState.Normal);
 
-		}
+        }
 
 
-		public override bool ShouldAutorotate ()
-		{
-			return false;
-		}
+        public override bool ShouldAutorotate()
+        {
+            return false;
+        }
 
-		public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
-		{
-			return UIInterfaceOrientationMask.Portrait;
-		}
+        public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations()
+        {
+            return UIInterfaceOrientationMask.Portrait;
+        }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             _loadingOverlay = new LoadingOverlay(UIScreen.MainScreen.Bounds, "Logging In");
-            
+
             SetImageAndMargin(UserName, "userIcon.png");
             SetImageAndMargin(Password, "password.png");
 
-			this.Password.ShouldReturn += (textField) => { 
-				textField.ResignFirstResponder();
-				return true; 
-			};
+            this.Password.ShouldReturn += (textField) =>
+            {
+                textField.ResignFirstResponder();
+                return true;
+            };
             RegisterButton.TouchUpInside += (sender, e) =>
             {
                 // Launches a new instance of RegistrationController
@@ -73,7 +74,7 @@ namespace Feelknit.iOS.Controllers
 
         private void SetImageAndMargin(UITextField uiTextField, string image)
         {
-			var imageView = new UIImageView(UIImage.FromBundle(image))
+            var imageView = new UIImageView(UIImage.FromBundle(image))
             {
                 // Indent it 10 pixels from the left.
                 Frame = new RectangleF(10, 0, 20, 20)
@@ -89,15 +90,15 @@ namespace Feelknit.iOS.Controllers
         {
             var client = new JsonHttpClient(UrlHelper.USER_VERIFY);
             var result = await client.PostRequest(user);
-			_loadingOverlay.Hide();
+            _loadingOverlay.Hide();
 
-			var loginResult = JsonConvert.DeserializeObject<LoginResult> (result);
-			if (loginResult.IsLoginSuccessful)
+            var loginResult = JsonConvert.DeserializeObject<LoginResult>(result);
+            if (loginResult.IsLoginSuccessful)
             {
-                
+
                 NSUserDefaults.StandardUserDefaults.SetBool(true, "IsAuthenticated");
                 NSUserDefaults.StandardUserDefaults.SetString(UserName.Text, "UserName");
-				ApplicationHelper.UserName = UserName.Text;
+                ApplicationHelper.UserName = UserName.Text;
                 NavigateToUserFeelings();
                 return;
             }
@@ -107,7 +108,7 @@ namespace Feelknit.iOS.Controllers
         }
 
         private void NavigateToUserFeelings()
-        {  
+        {
             var userFeelingsController =
                 Storyboard.InstantiateViewController("UserFeelingsController") as UserFeelingsController;
             if (userFeelingsController != null)
@@ -115,6 +116,6 @@ namespace Feelknit.iOS.Controllers
                 NavigationController.PushViewController(userFeelingsController, true);
             }
         }
-        
+
     }
 }
