@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace Feelknit.iOS.Controllers
 {
-    partial class LoadingViewController : UIViewController
+    partial class LoadingViewController : BaseController
     {
         private LoadingOverlay _loadingOverlay;
 
@@ -67,23 +67,23 @@ namespace Feelknit.iOS.Controllers
             else
             {
 
-                var loginViewController = Storyboard.InstantiateViewController("LoginViewController") as LoginViewController;
+                var loginViewController = MainStoryboard.InstantiateViewController("LoginViewController") as LoginViewController;
 
                 if (loginViewController != null)
                 {
-                    NavigationController.PushViewController(loginViewController, true);
+                    NavController.PushViewController(loginViewController, true);
                 }
             }
         }
 
         private void NavigateToAddFeeling()
         {
-            var userFeelingsController =
-                Storyboard.InstantiateViewController("UserFeelingsController") as UserFeelingsController;
-            if (userFeelingsController != null)
-            {
-                NavigationController.PushViewController(userFeelingsController, true);
-            }
+            //var userFeelingsController =
+            //    Storyboard.InstantiateViewController("UserFeelingsController") as UserFeelingsController;
+            //if (userFeelingsController != null)
+            //{
+            //    NavigationController.PushViewController(userFeelingsController, true);
+            //}
         }
     }
 }

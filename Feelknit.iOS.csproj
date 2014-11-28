@@ -224,6 +224,7 @@
     <Compile Include="Model\Feeling.cs" />
     <Compile Include="Model\Response.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="TableViewSources\SideMenuTableViewSource.cs" />
     <Compile Include="TableViewSources\UserFeelingsTableViewSource.cs" />
     <Compile Include="Views\LoadingOverlayView.cs" />
     <Compile Include="Views\UserFeelingCellView.cs" />

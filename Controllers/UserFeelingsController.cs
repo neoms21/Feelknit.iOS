@@ -20,10 +20,9 @@ namespace Feelknit.iOS.Controllers
 
         event GetUserFeelingsDelegate GetFeelings;
 
-        public UserFeelingsController()
-            : base(null, null)
+        public UserFeelingsController(IntPtr handle)
+            : base(handle)
         {
-            //this.EdgesForExtendedLayout = UIRectEdge.None;
         }
 
         public override void ViewDidLoad()

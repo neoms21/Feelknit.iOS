@@ -13,10 +13,11 @@ namespace Feelknit.iOS.Controllers
     {
         private LoadingOverlay _loadingOverlay;
 
-        public LoginViewController()
-            : base(null, null)
+        public LoginViewController(IntPtr handle)
+            : base(handle)
         {
         }
+
 
         public override void ViewWillAppear(bool animated)
         {

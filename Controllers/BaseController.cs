@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
@@ -12,6 +10,11 @@ namespace Feelknit.iOS.Controllers
         public BaseController(IntPtr handle)
             : base(handle)
         {
+        }
+
+        protected UIStoryboard MainStoryboard
+        {
+            get { return UIStoryboard.FromName("MainStoryboard", null); }
         }
 
         // provide access to the sidebar controller to all inheriting controllers
@@ -45,10 +48,7 @@ namespace Feelknit.iOS.Controllers
             NavigationItem.SetLeftBarButtonItem(
                 new UIBarButtonItem(UIImage.FromBundle("threelines")
                     , UIBarButtonItemStyle.Plain
-                    , (sender, args) =>
-                    {
-                        SidebarController.ToggleMenu();
-                    }), true);
+                    , (sender, args) => SidebarController.ToggleMenu()), true);
         }
     }
 }
