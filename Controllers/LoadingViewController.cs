@@ -67,7 +67,7 @@ namespace Feelknit.iOS.Controllers
             else
             {
 
-                var loginViewController = MainStoryboard.InstantiateViewController("RegisterViewController") as RegisterViewController;
+				var loginViewController = MainStoryboard.InstantiateViewController("AvatarViewController") as AvatarViewController;
 
                 if (loginViewController != null)
                 {

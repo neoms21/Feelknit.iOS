@@ -1,5 +1,6 @@
 ﻿using System;
 using MonoTouch.UIKit;
+using System.Collections.Generic;
 
 namespace Feelknit.iOS
 {
@@ -21,6 +22,10 @@ namespace Feelknit.iOS
 //			<color name="whiteBg">#FFFFFF</color>
 //			<color name="mainBg">#A4C3DC</color>
 //			<color name="greyColor">#6F7376</color>
+
+		public static IList<string> Avatars = new List<string> {"agnes", "blackwidow", "chef", "evilminion", "girl1",
+			"girl2", "girl3", "gru", "hulk", "ironman", "kungfuminion", "thor"
+		};
 	}
 }
 

@@ -176,6 +176,19 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
     <BundleResource Include="Resources\userIcon.png" />
+    <BundleResource Include="Resources\Avatars\agnes.png" />
+    <BundleResource Include="Resources\Avatars\blackwidow.png" />
+    <BundleResource Include="Resources\Avatars\chef.png" />
+    <BundleResource Include="Resources\Avatars\evilminion.png" />
+    <BundleResource Include="Resources\Avatars\girl1.png" />
+    <BundleResource Include="Resources\Avatars\girl2.png" />
+    <BundleResource Include="Resources\Avatars\girl3.png" />
+    <BundleResource Include="Resources\Avatars\gru.png" />
+    <BundleResource Include="Resources\Avatars\hulk.png" />
+    <BundleResource Include="Resources\Avatars\ironman.png" />
+    <BundleResource Include="Resources\Avatars\kungfuminion.png" />
+    <BundleResource Include="Resources\Avatars\thor.png" />
+    <BundleResource Include="Resources\agnes.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -239,6 +252,11 @@
     <Compile Include="Helpers\Resources.cs" />
     <Compile Include="Helpers\UIColorExtensions.cs" />
     <Compile Include="Model\LoginResult.cs" />
+    <Compile Include="AvatarViewController.cs" />
+    <Compile Include="AvatarViewController.designer.cs">
+      <DependentUpon>AvatarViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableViewSources\AvatarTableViewSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
@@ -247,5 +265,8 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
     <BundleResource Include="Resources\threelines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Avatars\" />
   </ItemGroup>
 </Project>
