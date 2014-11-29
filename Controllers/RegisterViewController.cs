@@ -6,8 +6,8 @@ namespace Feelknit.iOS.Controllers
 {
     partial class RegisterViewController : BaseController
     {
-        public RegisterViewController()
-            : base(null, null)
+        public RegisterViewController(IntPtr handle)
+            : base(handle)
         {
         }
 

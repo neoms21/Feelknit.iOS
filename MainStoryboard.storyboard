@@ -109,56 +109,66 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="127">
-                                <rect key="frame" x="15" y="194" width="290" height="30"/>
+                                <rect key="frame" x="15" y="124" width="290" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint firstItem="127" firstAttribute="height" constant="30" id="1197"/>
+                                </constraints>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="146">
-                                <rect key="frame" x="15" y="451" width="290" height="30"/>
+                                <rect key="frame" x="15" y="472" width="290" height="30"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="1" blue="0" alpha="1"/>
                                 <state key="normal" title="Register">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <constraints/>
+                                <constraints>
+                                    <constraint firstItem="146" firstAttribute="height" constant="30" id="1179"/>
+                                </constraints>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your password" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="157">
-                                <rect key="frame" x="15" y="269" width="290" height="30"/>
+                                <rect key="frame" x="15" y="199" width="290" height="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <constraints>
+                                    <constraint firstItem="157" firstAttribute="height" constant="30" id="1191"/>
+                                </constraints>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your email addres" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="159">
-                                <rect key="frame" x="15" y="342" width="290" height="30"/>
+                                <rect key="frame" x="15" y="272" width="290" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="iconsmall.png" translatesAutoresizingMaskIntoConstraints="NO" id="167">
-                                <rect key="frame" x="110" y="70" width="93" height="107"/>
                                 <constraints>
-                                    <constraint firstItem="167" firstAttribute="height" constant="107" id="1061"/>
-                                    <constraint firstItem="167" firstAttribute="width" constant="93" id="1062"/>
+                                    <constraint firstItem="159" firstAttribute="height" constant="30" id="1187"/>
+                                </constraints>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="iconsmall_cut.png" translatesAutoresizingMaskIntoConstraints="NO" id="167">
+                                <rect key="frame" x="126" y="35" width="69" height="74"/>
+                                <constraints>
+                                    <constraint firstItem="167" firstAttribute="width" constant="69" id="1203"/>
+                                    <constraint firstItem="167" firstAttribute="height" constant="74" id="1204"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="167" firstAttribute="top" secondItem="120" secondAttribute="bottom" constant="50" id="1060"/>
-                            <constraint firstItem="124" firstAttribute="trailing" secondItem="146" secondAttribute="trailing" constant="15" id="1102"/>
-                            <constraint firstItem="146" firstAttribute="leading" secondItem="124" secondAttribute="leading" constant="15" id="1103"/>
-                            <constraint firstItem="121" firstAttribute="top" secondItem="146" secondAttribute="bottom" constant="87" id="1104"/>
-                            <constraint firstItem="146" firstAttribute="top" secondItem="159" secondAttribute="bottom" constant="79" id="1105"/>
-                            <constraint firstItem="159" firstAttribute="leading" secondItem="146" secondAttribute="leading" constant="0.0" id="1106"/>
-                            <constraint firstItem="157" firstAttribute="leading" secondItem="146" secondAttribute="leading" constant="0.0" id="1107"/>
-                            <constraint firstItem="127" firstAttribute="leading" secondItem="146" secondAttribute="leading" constant="0.0" id="1108"/>
                             <constraint firstItem="127" firstAttribute="trailing" secondItem="157" secondAttribute="trailing" constant="0.0" id="1119"/>
-                            <constraint firstItem="127" firstAttribute="trailing" secondItem="159" secondAttribute="trailing" constant="0.0" id="1120"/>
-                            <constraint firstItem="127" firstAttribute="trailing" secondItem="146" secondAttribute="trailing" constant="0.0" id="1121"/>
-                            <constraint firstItem="159" firstAttribute="height" secondItem="146" secondAttribute="height" id="1123"/>
-                            <constraint firstItem="157" firstAttribute="height" secondItem="146" secondAttribute="height" id="1124"/>
-                            <constraint firstItem="127" firstAttribute="height" secondItem="146" secondAttribute="height" id="1125"/>
-                            <constraint firstItem="124" firstAttribute="trailing" secondItem="167" secondAttribute="trailing" constant="117" id="1127"/>
-                            <constraint firstItem="127" firstAttribute="top" secondItem="167" secondAttribute="bottom" constant="17" id="1128"/>
-                            <constraint firstItem="157" firstAttribute="top" secondItem="127" secondAttribute="bottom" constant="45" id="1129"/>
+                            <constraint firstItem="146" firstAttribute="leading" secondItem="124" secondAttribute="leading" constant="15" id="1177"/>
+                            <constraint firstItem="124" firstAttribute="trailing" secondItem="146" secondAttribute="trailing" constant="15" id="1178"/>
+                            <constraint firstItem="121" firstAttribute="top" secondItem="146" secondAttribute="bottom" constant="66" id="1180"/>
+                            <constraint firstItem="146" firstAttribute="leading" secondItem="159" secondAttribute="leading" constant="0.0" id="1183"/>
+                            <constraint firstItem="159" firstAttribute="trailing" secondItem="146" secondAttribute="trailing" constant="0.0" id="1184"/>
+                            <constraint firstItem="159" firstAttribute="leading" secondItem="157" secondAttribute="leading" constant="0.0" id="1189"/>
+                            <constraint firstItem="157" firstAttribute="trailing" secondItem="159" secondAttribute="trailing" constant="0.0" id="1190"/>
+                            <constraint firstItem="157" firstAttribute="top" secondItem="127" secondAttribute="bottom" constant="45" id="1193"/>
+                            <constraint firstItem="159" firstAttribute="top" secondItem="157" secondAttribute="bottom" constant="43" id="1194"/>
+                            <constraint firstItem="157" firstAttribute="leading" secondItem="127" secondAttribute="leading" constant="0.0" id="1195"/>
+                            <constraint firstItem="127" firstAttribute="trailing" secondItem="157" secondAttribute="trailing" constant="0.0" id="1196"/>
+                            <constraint firstItem="127" firstAttribute="top" secondItem="167" secondAttribute="bottom" constant="15" id="1202"/>
+                            <constraint firstItem="124" firstAttribute="trailing" secondItem="167" secondAttribute="trailing" constant="125" id="1208"/>
+                            <constraint firstItem="167" firstAttribute="leading" secondItem="124" secondAttribute="leading" constant="126" id="1209"/>
+                            <constraint firstItem="167" firstAttribute="top" secondItem="120" secondAttribute="bottom" constant="15" id="1210"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="880"/>
