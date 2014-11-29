@@ -22,7 +22,7 @@ namespace Feelknit.iOS.Controllers
         {
             get
             {
-                return (UIApplication.SharedApplication.Delegate as AppDelegate).RootViewController.SidebarController;
+                return ((AppDelegate)UIApplication.SharedApplication.Delegate).RootViewController.SidebarController;
             }
         }
 
@@ -31,7 +31,7 @@ namespace Feelknit.iOS.Controllers
         {
             get
             {
-                return (UIApplication.SharedApplication.Delegate as AppDelegate).RootViewController.NavController;
+                return ((AppDelegate)UIApplication.SharedApplication.Delegate).RootViewController.NavController;
             }
         }
 

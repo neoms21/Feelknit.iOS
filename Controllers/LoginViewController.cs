@@ -58,10 +58,10 @@ namespace Feelknit.iOS.Controllers
             RegisterButton.TouchUpInside += (sender, e) =>
             {
                 // Launches a new instance of RegistrationController
-                var registration = Storyboard.InstantiateViewController("RegisterViewController") as RegisterViewController;
+                var registration = MainStoryboard.InstantiateViewController("RegisterViewController") as RegisterViewController;
                 if (registration != null)
                 {
-                    NavigationController.PushViewController(registration, true);
+                    NavController.PushViewController(registration, true);
                 }
             };
 
