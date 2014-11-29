@@ -32,11 +32,11 @@ namespace Feelknit.iOS.Controllers
             base.ViewDidLoad();
             NavController = new NavController();
             //Set Navigation controller reference so we can use it everywhere
-            AppDelegate appD = UIApplication.SharedApplication.Delegate as AppDelegate;
+            var appD = UIApplication.SharedApplication.Delegate as AppDelegate;
             appD.NavController = new NavController();
 
             var storyboard = UIStoryboard.FromName("MainStoryboard", null);
-            var loadingViewController = storyboard.InstantiateViewController("LoadingViewController") as LoadingViewController;
+            var loadingViewController = storyboard.InstantiateViewController(typeof(LoadingViewController).Name) as LoadingViewController;
 
             if (loadingViewController != null)
             {

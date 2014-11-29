@@ -26,8 +26,8 @@ namespace Feelknit.iOS.Controllers
             this.LoginButton.BackgroundColor = Resources.ButtonColor;
             RegisterButton.BackgroundColor = Resources.ButtonColor;
 
-            LoginButton.SetTitleColor(Resources.TextColor, UIControlState.Normal);
-            RegisterButton.SetTitleColor(Resources.TextColor, UIControlState.Normal);
+            LoginButton.SetTitleColor(Resources.LoginButtonColor, UIControlState.Normal);
+            RegisterButton.SetTitleColor(Resources.LoginButtonColor, UIControlState.Normal);
 
         }
 
