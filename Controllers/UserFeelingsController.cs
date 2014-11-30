@@ -25,22 +25,28 @@ namespace Feelknit.iOS.Controllers
         {
         }
 
+		public override void ViewWillAppear (bool animated)
+		{
+			base.ViewWillAppear (animated);
+			NavigationController.NavigationBarHidden = false;
+		}
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            var array = new UIBarButtonItem[5];
+//            var array = new UIBarButtonItem[5];
 
 
-            for (int i = 0; i <= 4; i++)
-            {
-                var btn = new UIBarButtonItem();
-                btn.Image = UIImage.FromFile("UserIcon.png");
-                array[i] = btn;
-            }
-
-
-            this.SetToolbarItems(array, false);
-            this.NavigationController.ToolbarHidden = false;
+//            for (int i = 0; i <= 4; i++)
+//            {
+//                var btn = new UIBarButtonItem();
+//                btn.Image = UIImage.FromFile("UserIcon.png");
+//                array[i] = btn;
+//            }
+//
+//
+//            this.SetToolbarItems(array, false);
+//            this.NavigationController.ToolbarHidden = false;
             var bounds = UIScreen.MainScreen.Bounds; // portrait bounds
 
             if (UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeLeft

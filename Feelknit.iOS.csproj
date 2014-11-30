@@ -257,10 +257,15 @@
       <DependentUpon>AvatarViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="TableViewSources\AvatarTableViewSource.cs" />
+    <Compile Include="Views\LeftDrawerView.cs" />
+    <Compile Include="Views\LeftDrawerView.designer.cs">
+      <DependentUpon>LeftDrawerView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <InterfaceDefinition Include="Views\RelatedFeelingTableCellView.xib" />
+    <InterfaceDefinition Include="Views\LeftDrawerView.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>

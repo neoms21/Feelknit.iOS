@@ -6,6 +6,7 @@ namespace Feelknit.iOS.Helpers
 	{
 		public static string UserName{get;set;}
 	    public static IList<string> Feelings { get; set; }
+		public static string Avatar{get;set;}
 	}
 }
 

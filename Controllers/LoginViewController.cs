@@ -100,22 +100,12 @@ namespace Feelknit.iOS.Controllers
                 NSUserDefaults.StandardUserDefaults.SetBool(true, "IsAuthenticated");
                 NSUserDefaults.StandardUserDefaults.SetString(UserName.Text, "UserName");
                 ApplicationHelper.UserName = UserName.Text;
-                NavigateToUserFeelings();
+				MoveToNextController (typeof(UserFeelingsController).Name);
                 return;
             }
 
             var alert = new UIAlertView("Error", "Invalid username/password", null, "OK", null);
             alert.Show();
-        }
-
-        private void NavigateToUserFeelings()
-        {
-            var userFeelingsController =
-                Storyboard.InstantiateViewController("UserFeelingsController") as UserFeelingsController;
-            if (userFeelingsController != null)
-            {
-                NavigationController.PushViewController(userFeelingsController, true);
-            }
         }
 
     }

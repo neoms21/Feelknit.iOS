@@ -54,7 +54,7 @@ namespace Feelknit.iOS.Controllers
             // create a slideout navigation controller with the top navigation controller and the menu view controller
             
             // NavController.PushViewController(new LoadingViewController(), false);
-            SidebarController = new SidebarController(this, NavController, new SideMenuController())
+            SidebarController = new SidebarController(this, NavController,new SideMenuController())
             {
                 MenuLocation = SidebarController.MenuLocations.Left,
                 MenuWidth = 220,
