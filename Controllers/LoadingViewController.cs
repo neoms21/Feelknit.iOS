@@ -45,7 +45,7 @@ namespace Feelknit.iOS.Controllers
             ApplicationHelper.Feelings = JsonConvert.DeserializeObject<List<string>>(result);
             try
             {
-                MoveToNextController();
+                MoveToNextState();
             }
             catch (Exception ex)
             {
@@ -54,26 +54,17 @@ namespace Feelknit.iOS.Controllers
             }
         }
 
-        private void MoveToNextController()
+        private void MoveToNextState()
         {
             var isAuthenticated = NSUserDefaults.StandardUserDefaults.BoolForKey("IsAuthenticated");
 
             if (isAuthenticated)
             {
                 ApplicationHelper.UserName = NSUserDefaults.StandardUserDefaults.StringForKey("UserName");
-                NavigateToAddFeeling();
+                MoveToNextController(typeof(UserFeelingsController).Name);
                 return;
             }
-            else
-            {
-
-				var loginViewController = MainStoryboard.InstantiateViewController("AvatarViewController") as AvatarViewController;
-
-                if (loginViewController != null)
-                {
-                    NavController.PushViewController(loginViewController, true);
-                }
-            }
+            MoveToNextController(typeof(LoginViewController).Name);
         }
 
         private void NavigateToAddFeeling()

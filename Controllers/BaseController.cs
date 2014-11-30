@@ -50,5 +50,15 @@ namespace Feelknit.iOS.Controllers
                     , UIBarButtonItemStyle.Plain
                     , (sender, args) => SidebarController.ToggleMenu()), true);
         }
+
+        protected void MoveToNextController(string controllerName)
+        {
+            var controller = (UIViewController)MainStoryboard.InstantiateViewController(controllerName);
+
+            if (controller != null)
+            {
+                NavController.PushViewController(controller, true);
+            }
+        }
     }
 }
