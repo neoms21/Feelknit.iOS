@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using System.Threading.Tasks;
 using Feelknit.iOS.Helpers;
 using Feelknit.iOS.Views;
 using Feelknit.Model;
@@ -100,7 +101,14 @@ namespace Feelknit.iOS.Controllers
                 NSUserDefaults.StandardUserDefaults.SetBool(true, "IsAuthenticated");
                 NSUserDefaults.StandardUserDefaults.SetString(UserName.Text, "UserName");
                 ApplicationHelper.UserName = UserName.Text;
-				MoveToNextController (typeof(UserFeelingsController).Name);
+                await Task.Factory.StartNew(async () =>
+                {
+                    client = new JsonHttpClient(UrlHelper.USER_KEY);
+                    user.iosKey = ApplicationHelper.DeviceToken;
+                    await client.PostRequest(user);
+                });
+
+                MoveToNextController(typeof(UserFeelingsController).Name);
                 return;
             }
 
