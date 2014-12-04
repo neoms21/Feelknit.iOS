@@ -2,6 +2,8 @@
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using BugSense;
+using System;
+using Feelknit.iOS.Helpers;
 
 namespace Feelknit
 {
@@ -12,7 +14,8 @@ namespace Feelknit
 	public partial class AppDelegate : UIApplicationDelegate
 	{
 		// class-level declarations
-		
+		private string _deviceToken;
+
 		public override UIWindow Window {
 			get;
 			set;
@@ -60,8 +63,43 @@ namespace Feelknit
             // make the window visible
             Window.MakeKeyAndVisible();
 
+			if (UIDevice.CurrentDevice.CheckSystemVersion(8,0))
+			{
+				var settings = UIUserNotificationSettings.GetSettingsForTypes (UIUserNotificationType.Sound |
+					UIUserNotificationType.Alert | UIUserNotificationType.Badge, null);
+
+				application.RegisterUserNotificationSettings (settings);
+				application.RegisterForRemoteNotifications ();
+
+			}
+			else
+			{
+				application.RegisterForRemoteNotificationTypes(UIRemoteNotificationType.Badge |
+					UIRemoteNotificationType.Sound | UIRemoteNotificationType.Alert);
+			}
 			return true;
 
+		}
+			
+		public override void DidRegisterUserNotificationSettings(UIApplication application, UIUserNotificationSettings notificationSettings)
+		{
+			Console.WriteLine ("in did register");
+			// without this RegisteredForRemoteNotifications doesn't fire on iOS 8!
+			application.RegisterForRemoteNotifications();
+		}
+
+		public override void RegisteredForRemoteNotifications (
+			UIApplication application, NSData deviceToken)
+		{
+			ApplicationHelper.DeviceToken = deviceToken != null ?
+				deviceToken.ToString().Replace(" ","").Replace("<","").Replace(">",""):string.Empty;
+			new UIAlertView("Token", _deviceToken, null, "OK", null).Show();
+			// code to register with your server application goes here
+		}
+
+		public override void FailedToRegisterForRemoteNotifications (UIApplication application , NSError error)
+		{
+			//new UIAlertView("Error registering push notifications", error.LocalizedDescription, null, "OK", null).Show();
 		}
 	}
 }

@@ -14,6 +14,8 @@ namespace Feelknit.Model
 
         public string Key { get; set; }
 
+		public string iosKey { get; set; }
+
         public bool IsTemporary { get; set; }
 
         public DateTime? PasswordExpiryTime { get; set; }
