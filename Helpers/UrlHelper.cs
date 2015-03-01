@@ -6,11 +6,11 @@ namespace Feelknit.iOS
 	{
 		private static bool onEmulator{ get { return MonoTouch.ObjCRuntime.Runtime.Arch == MonoTouch.ObjCRuntime.Arch.SIMULATOR; } }
 
-		private static  string BASE_URL_EMULATOR = "http://192.168.0.5/FeelKnitService/";
+		private static  string BASE_URL_EMULATOR = "http://192.168.0.3/FeelKnitService/";
 		private static  string BASE_URL = "http://feelknitservice.apphb.com/";
 		public static  string COMMENTS = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "Comments";
 		public static  string FEELINGS = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings";
-		public static  string USER_VERIFY = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "Users/Verify";
+		public static  string USER_VERIFY = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "Users/login";
 		public static  string USER_KEY = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "Users/devicetoken";
 		public static  string CLEAR_USER_KEY = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "Users/clearkey";
 		public static  string USER = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "Users";

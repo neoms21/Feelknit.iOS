@@ -41,8 +41,8 @@ namespace Feelknit.iOS.Controllers
 
             var result = await client.GetRequest();
             _loadingOverlay.Hide();
-
-            ApplicationHelper.Feelings = JsonConvert.DeserializeObject<List<string>>(result);
+			ApplicationHelper.FeelTexts = result;
+         //   ApplicationHelper.Feelings = JsonConvert.DeserializeObject<List<string>>(result);
             try
             {
                 MoveToNextState();

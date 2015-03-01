@@ -29,6 +29,7 @@
     <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
     <MtouchI18n>
     </MtouchI18n>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>full</DebugType>
@@ -236,7 +237,6 @@
     <Compile Include="Controllers\UserFeelingsController.designer.cs">
       <DependentUpon>UserFeelingsController.cs</DependentUpon>
     </Compile>
-    <Compile Include="JsonHttpClient.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Model\Comment.cs" />
@@ -267,6 +267,7 @@
     <Compile Include="Views\LeftDrawerView.designer.cs">
       <DependentUpon>LeftDrawerView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\JsonHttpClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

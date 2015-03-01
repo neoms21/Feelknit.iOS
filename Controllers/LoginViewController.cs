@@ -97,14 +97,17 @@ namespace Feelknit.iOS.Controllers
             var loginResult = JsonConvert.DeserializeObject<LoginResult>(result);
             if (loginResult.IsLoginSuccessful)
             {
+				ApplicationHelper.UserName = UserName.Text;
+				ApplicationHelper.IsAuthenticated = true;
+				ApplicationHelper.AuthorizationToken = loginResult.Token;
 
-                NSUserDefaults.StandardUserDefaults.SetBool(true, "IsAuthenticated");
-                NSUserDefaults.StandardUserDefaults.SetString(UserName.Text, "UserName");
-                ApplicationHelper.UserName = UserName.Text;
+//                NSUserDefaults.StandardUserDefaults.SetBool(true, "IsAuthenticated");
+//                NSUserDefaults.StandardUserDefaults.SetString(UserName.Text, "UserName");
+                
                 await Task.Factory.StartNew(async () =>
                 {
                     client = new JsonHttpClient(UrlHelper.USER_KEY);
-                    user.iosKey = ApplicationHelper.DeviceToken;
+						user.iosKey = ApplicationHelper.ApnsToken;
                     await client.PostRequest(user);
                 });
 

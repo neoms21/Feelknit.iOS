@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace Feelknit.iOS
+namespace Feelknit.iOS.Helpers
 {
     public class JsonHttpClient
     {
@@ -59,6 +59,7 @@ namespace Feelknit.iOS
             request.Method = "GET";
             request.ContentType = "application/json";
             request.Accept = "application/json";
+			request.Headers.Add ("Authorization", ApplicationHelper.AuthorizationToken);
             //using (var webStream = request.GetRequestStream())
             //using (var requestWriter = new StreamWriter(webStream, Encoding.ASCII))
             //{

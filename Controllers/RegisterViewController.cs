@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using Feelknit.Model;
 using MonoTouch.UIKit;
+using Feelknit.iOS.Helpers;
 
 namespace Feelknit.iOS.Controllers
 {

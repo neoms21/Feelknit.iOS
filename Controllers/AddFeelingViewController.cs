@@ -29,7 +29,8 @@ namespace Feelknit.iOS.Controllers
 			FeelingsTableView.Hidden = true;
 				
 			//string[] tableItems = new string[] {"Sad","Angry","Worried","Frustrated"};
-			FeelingsTableView.Source = new FeelingsTableViewSources (ApplicationHelper.Feelings, SetSelection);
+			var feelings  = JsonConvert.DeserializeObject<List<string>>(ApplicationHelper.FeelTexts);
+			FeelingsTableView.Source = new FeelingsTableViewSources (feelings, SetSelection);
 			FeelingsTableView.Hidden = true;
 			FeelingsTableView.RowHeight = 30;
 			SelectFeelingButton.TouchUpInside += (sender, e) => {

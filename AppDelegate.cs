@@ -91,7 +91,7 @@ namespace Feelknit
         public override void RegisteredForRemoteNotifications(
             UIApplication application, NSData deviceToken)
         {
-            ApplicationHelper.DeviceToken = deviceToken != null ?
+			ApplicationHelper.ApnsToken = deviceToken != null ?
                 deviceToken.ToString().Replace(" ", "").Replace("<", "").Replace(">", "") : string.Empty;
             // code to register with your server application goes here
         }

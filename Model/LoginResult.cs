@@ -6,6 +6,8 @@ namespace Feelknit.iOS
 	{
 		public bool IsLoginSuccessful{ get; set;}
 			public string Avatar{get;set;}
+
+		public string Token{ get; set;}
 		public LoginResult ()
 		{
 		
