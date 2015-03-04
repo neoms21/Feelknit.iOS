@@ -332,7 +332,7 @@
                                     <constraint firstAttribute="height" constant="28" id="710"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="667">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="667" misplaced="YES">
                                 <rect key="frame" x="0.0" y="97" width="320" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -342,14 +342,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="feelingtext" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="700">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="feelingtext" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="700" misplaced="YES">
                                 <rect key="frame" x="69" y="44" width="231" height="15"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="669">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="669" misplaced="YES">
                                 <rect key="frame" x="0.0" y="149" width="320" height="397"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -393,81 +393,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="userIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="764" misplaced="YES">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="userIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="764">
                                 <rect key="frame" x="12" y="34" width="36" height="38"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="769"/>
+                                    <constraint id="1495" firstAttribute="width" constant="36"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="770">
                                 <rect key="frame" x="72" y="42" width="42" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="773"/>
-                                    <constraint firstAttribute="height" constant="21" id="775"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0" green="1" blue="0" alpha="1"/>
                                 <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="789">
-                                <rect key="frame" x="140" y="42" width="160" height="91"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="803"/>
-                                    <constraint firstAttribute="height" constant="91" id="804"/>
+                                    <constraint id="1488" firstAttribute="height" constant="21"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliq</string>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1525" translatesAutoresizingMaskIntoConstraints="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium ">
+                                <rect key="frame" x="0.0" y="80" width="320" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <constraints>
+                                    <constraint id="1535" firstItem="1525" firstAttribute="height" constant="50"/>
+                                </constraints>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="795">
-                                <rect key="frame" x="0.0" y="152" width="320" height="21"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="797"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="807">
-                                <rect key="frame" x="0.0" y="173" width="320" height="364"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="847"/>
-                                    <constraint firstAttribute="height" constant="364" id="848"/>
-                                </constraints>
-                            </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="830">
-                                <rect key="frame" x="0.0" y="538" width="320" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="764" firstAttribute="top" secondItem="755" secondAttribute="bottom" constant="14" id="765"/>
-                            <constraint firstItem="764" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="12" id="766"/>
-                            <constraint firstItem="770" firstAttribute="centerY" secondItem="764" secondAttribute="centerY" id="771"/>
-                            <constraint firstItem="770" firstAttribute="top" secondItem="755" secondAttribute="bottom" constant="22" id="772"/>
-                            <constraint firstItem="770" firstAttribute="leading" secondItem="764" secondAttribute="trailing" constant="24" id="774"/>
-                            <constraint firstItem="795" firstAttribute="trailing" secondItem="759" secondAttribute="trailing" id="799"/>
-                            <constraint firstItem="795" firstAttribute="leading" secondItem="759" secondAttribute="leading" id="800"/>
-                            <constraint firstAttribute="trailing" secondItem="789" secondAttribute="trailing" constant="20" id="805"/>
-                            <constraint firstItem="789" firstAttribute="top" secondItem="759" secondAttribute="top" constant="42" id="806"/>
-                            <constraint firstItem="795" firstAttribute="top" secondItem="789" secondAttribute="bottom" constant="19" id="823"/>
-                            <constraint firstItem="807" firstAttribute="width" secondItem="795" secondAttribute="width" id="835"/>
-                            <constraint firstAttribute="trailing" secondItem="807" secondAttribute="trailing" id="845"/>
-                            <constraint firstAttribute="bottom" secondItem="807" secondAttribute="bottom" constant="31" id="846"/>
+                            <constraint id="1486" firstItem="770" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="72"/>
+                            <constraint id="1493" firstItem="764" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="12"/>
+                            <constraint firstItem="770" firstAttribute="top" secondItem="755" secondAttribute="bottom" constant="22" id="1498"/>
+                            <constraint firstItem="764" firstAttribute="top" secondItem="755" secondAttribute="bottom" constant="14" id="1501"/>
+                            <constraint firstItem="1525" firstAttribute="top" secondItem="764" secondAttribute="bottom" constant="8" id="1528"/>
+                            <constraint firstItem="1525" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="0.0" id="1536"/>
+                            <constraint firstItem="759" firstAttribute="trailing" secondItem="1525" secondAttribute="trailing" constant="0.0" id="1539"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="CommentsCountLabel" destination="795" id="name-outlet-795"/>
-                        <outlet property="CommentsTable" destination="807" id="name-outlet-807"/>
-                        <outlet property="FeelingTextView" destination="789" id="name-outlet-789"/>
-                        <outlet property="NewCommentTextField" destination="830" id="name-outlet-830"/>
                         <outlet property="UserNameLabel" destination="770" id="name-outlet-770"/>
+                        <outlet property="UserIcon" destination="764" id="name-outlet-764"/>
+                        <outlet property="FeelingTextView" destination="1525" id="name-outlet-1525"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="760" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -517,14 +483,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Choose an Avatar" lineBreakMode="tailTruncation" minimumFontSize="10" id="1227" translatesAutoresizingMaskIntoConstraints="NO">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Choose an Avatar" lineBreakMode="tailTruncation" minimumFontSize="10" id="1227" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="10" y="40" width="174" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1230" translatesAutoresizingMaskIntoConstraints="NO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1230" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="0.0" y="81" width="320" height="361"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -622,6 +588,28 @@
         <image name="Avatars/kungfuminion.png" width="128" height="128"/>
         <image name="Avatars/thor.png" width="300" height="300"/>
         <image name="agnes.png" width="128" height="128"/>
+        <image name="Avatars/ade.png" width="128" height="128"/>
+        <image name="Avatars/ben.png" width="128" height="128"/>
+        <image name="Avatars/billy_boy.png" width="128" height="128"/>
+        <image name="Avatars/billy.png" width="128" height="128"/>
+        <image name="Avatars/carla.png" width="128" height="128"/>
+        <image name="Avatars/coco_moustasche.png" width="128" height="128"/>
+        <image name="Avatars/cora.png" width="128" height="128"/>
+        <image name="Avatars/costa.png" width="128" height="128"/>
+        <image name="Avatars/frank.png" width="128" height="128"/>
+        <image name="Avatars/fred.png" width="128" height="128"/>
+        <image name="Avatars/gav.png" width="128" height="128"/>
+        <image name="Avatars/gus.png" width="128" height="128"/>
+        <image name="Avatars/hena.png" width="128" height="128"/>
+        <image name="Avatars/iri.png" width="128" height="128"/>
+        <image name="Avatars/jayman.png" width="128" height="128"/>
+        <image name="Avatars/john.png" width="128" height="128"/>
+        <image name="Avatars/laly.png" width="128" height="128"/>
+        <image name="Avatars/michela.png" width="128" height="128"/>
+        <image name="Avatars/profile.png" width="128" height="128"/>
+        <image name="Avatars/seby.png" width="128" height="128"/>
+        <image name="Avatars/smith.png" width="128" height="128"/>
+        <image name="Avatars/stella.png" width="128" height="128"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -4,9 +4,9 @@
 // actions declared in your storyboard file.
 // Manual changes to this file will not be maintained.
 //
-using System;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using System;
 using System.CodeDom.Compiler;
 
 namespace Feelknit.iOS.Controllers
@@ -16,19 +16,11 @@ namespace Feelknit.iOS.Controllers
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel CommentsCountLabel { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableView CommentsTable { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextView FeelingTextView { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITextField NewCommentTextField { get; set; }
+		UIImageView UserIcon { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -36,21 +28,13 @@ namespace Feelknit.iOS.Controllers
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (CommentsCountLabel != null) {
-				CommentsCountLabel.Dispose ();
-				CommentsCountLabel = null;
-			}
-			if (CommentsTable != null) {
-				CommentsTable.Dispose ();
-				CommentsTable = null;
-			}
 			if (FeelingTextView != null) {
 				FeelingTextView.Dispose ();
 				FeelingTextView = null;
 			}
-			if (NewCommentTextField != null) {
-				NewCommentTextField.Dispose ();
-				NewCommentTextField = null;
+			if (UserIcon != null) {
+				UserIcon.Dispose ();
+				UserIcon = null;
 			}
 			if (UserNameLabel != null) {
 				UserNameLabel.Dispose ();

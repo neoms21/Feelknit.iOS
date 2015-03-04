@@ -100,6 +100,7 @@ namespace Feelknit.iOS.Controllers
 				ApplicationHelper.UserName = UserName.Text;
 				ApplicationHelper.IsAuthenticated = true;
 				ApplicationHelper.AuthorizationToken = loginResult.Token;
+				ApplicationHelper.Avatar = loginResult.Avatar;
 
 //                NSUserDefaults.StandardUserDefaults.SetBool(true, "IsAuthenticated");
 //                NSUserDefaults.StandardUserDefaults.SetString(UserName.Text, "UserName");

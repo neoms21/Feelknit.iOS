@@ -183,19 +183,29 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
     <BundleResource Include="Resources\userIcon.png" />
-    <BundleResource Include="Resources\Avatars\agnes.png" />
-    <BundleResource Include="Resources\Avatars\blackwidow.png" />
-    <BundleResource Include="Resources\Avatars\chef.png" />
-    <BundleResource Include="Resources\Avatars\evilminion.png" />
-    <BundleResource Include="Resources\Avatars\girl1.png" />
-    <BundleResource Include="Resources\Avatars\girl2.png" />
-    <BundleResource Include="Resources\Avatars\girl3.png" />
-    <BundleResource Include="Resources\Avatars\gru.png" />
-    <BundleResource Include="Resources\Avatars\hulk.png" />
-    <BundleResource Include="Resources\Avatars\ironman.png" />
-    <BundleResource Include="Resources\Avatars\kungfuminion.png" />
-    <BundleResource Include="Resources\Avatars\thor.png" />
     <BundleResource Include="Resources\agnes.png" />
+    <BundleResource Include="Resources\Avatars\ade.png" />
+    <BundleResource Include="Resources\Avatars\ben.png" />
+    <BundleResource Include="Resources\Avatars\billy_boy.png" />
+    <BundleResource Include="Resources\Avatars\billy.png" />
+    <BundleResource Include="Resources\Avatars\carla.png" />
+    <BundleResource Include="Resources\Avatars\coco_moustasche.png" />
+    <BundleResource Include="Resources\Avatars\cora.png" />
+    <BundleResource Include="Resources\Avatars\costa.png" />
+    <BundleResource Include="Resources\Avatars\frank.png" />
+    <BundleResource Include="Resources\Avatars\fred.png" />
+    <BundleResource Include="Resources\Avatars\gav.png" />
+    <BundleResource Include="Resources\Avatars\gus.png" />
+    <BundleResource Include="Resources\Avatars\hena.png" />
+    <BundleResource Include="Resources\Avatars\iri.png" />
+    <BundleResource Include="Resources\Avatars\jayman.png" />
+    <BundleResource Include="Resources\Avatars\john.png" />
+    <BundleResource Include="Resources\Avatars\laly.png" />
+    <BundleResource Include="Resources\Avatars\michela.png" />
+    <BundleResource Include="Resources\Avatars\profile.png" />
+    <BundleResource Include="Resources\Avatars\seby.png" />
+    <BundleResource Include="Resources\Avatars\smith.png" />
+    <BundleResource Include="Resources\Avatars\stella.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
