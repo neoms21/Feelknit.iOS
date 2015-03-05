@@ -393,14 +393,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="userIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="764">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="userIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="764" misplaced="YES">
                                 <rect key="frame" x="12" y="34" width="36" height="38"/>
                                 <constraints>
                                     <constraint id="1495" firstAttribute="width" constant="36"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="770">
-                                <rect key="frame" x="72" y="42" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="I" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="770">
+                                <rect key="frame" x="72" y="42" width="4.5" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0" green="1" blue="0" alpha="1"/>
@@ -410,14 +410,53 @@
                                 </constraints>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1525" translatesAutoresizingMaskIntoConstraints="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium ">
-                                <rect key="frame" x="0.0" y="80" width="320" height="50"/>
+                                <rect key="frame" x="84" y="28" width="222" height="49"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <constraints>
-                                    <constraint id="1535" firstItem="1525" firstAttribute="height" constant="50"/>
+                                    <constraint id="1588" firstAttribute="width" constant="222"/>
+                                    <constraint id="1589" firstAttribute="height" constant="49"/>
                                 </constraints>
                             </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="1634" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="1034" width="42" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="1635" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="111" width="320" height="25"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="1" alpha="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="1640" firstItem="1635" firstAttribute="height" constant="25"/>
+                                </constraints>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1660" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="146" width="320" height="371"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                </prototypes>
+                                <constraints>
+                                    <constraint id="1705" firstAttribute="width" constant="320"/>
+                                    <constraint id="1706" firstAttribute="height" constant="371"/>
+                                </constraints>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Text" borderStyle="line" minimumFontSize="17" id="1676" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="517" width="270" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="1683" firstItem="1676" firstAttribute="height" constant="51"/>
+                                </constraints>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="right" id="1685" key="tableFooterView" image="012.png">
+                                <rect key="frame" x="278" y="528" width="40" height="40"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -425,15 +464,30 @@
                             <constraint id="1493" firstItem="764" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="12"/>
                             <constraint firstItem="770" firstAttribute="top" secondItem="755" secondAttribute="bottom" constant="22" id="1498"/>
                             <constraint firstItem="764" firstAttribute="top" secondItem="755" secondAttribute="bottom" constant="14" id="1501"/>
-                            <constraint firstItem="1525" firstAttribute="top" secondItem="764" secondAttribute="bottom" constant="8" id="1528"/>
-                            <constraint firstItem="1525" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="0.0" id="1536"/>
-                            <constraint firstItem="759" firstAttribute="trailing" secondItem="1525" secondAttribute="trailing" constant="0.0" id="1539"/>
+                            <constraint id="1585" firstItem="1525" firstAttribute="centerY" secondItem="764" secondAttribute="centerY" constant="0.0"/>
+                            <constraint id="1586" firstItem="1525" firstAttribute="centerY" secondItem="770" secondAttribute="centerY" constant="0.0"/>
+                            <constraint id="1587" firstItem="759" firstAttribute="trailing" secondItem="1525" secondAttribute="trailing" constant="14"/>
+                            <constraint firstItem="1635" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="0.0" id="1637"/>
+                            <constraint firstItem="1635" firstAttribute="top" secondItem="1525" secondAttribute="bottom" constant="34" id="1638"/>
+                            <constraint firstItem="759" firstAttribute="trailing" secondItem="1635" secondAttribute="trailing" constant="0.0" id="1643"/>
+                            <constraint firstItem="1676" firstAttribute="bottom" secondItem="756" secondAttribute="top" constant="0.0" id="1677"/>
+                            <constraint firstItem="759" firstAttribute="trailing" secondItem="1676" secondAttribute="trailing" constant="50" id="1678"/>
+                            <constraint firstItem="1676" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="0.0" id="1680"/>
+                            <constraint id="1703" firstItem="759" firstAttribute="bottom" secondItem="1660" secondAttribute="bottom" constant="51"/>
+                            <constraint id="1704" constant="0.0" firstItem="759" firstAttribute="trailing" secondItem="1660" secondAttribute="trailing"/>
+                            <constraint firstItem="1660" firstAttribute="top" secondItem="1635" secondAttribute="bottom" constant="10" id="1715"/>
+                            <constraint firstItem="1685" firstAttribute="leading" secondItem="1676" secondAttribute="trailing" constant="8" id="1716"/>
+                            <constraint firstItem="1685" firstAttribute="top" secondItem="1660" secondAttribute="bottom" constant="11" id="1717"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="UserNameLabel" destination="770" id="name-outlet-770"/>
                         <outlet property="UserIcon" destination="764" id="name-outlet-764"/>
                         <outlet property="FeelingTextView" destination="1525" id="name-outlet-1525"/>
+                        <outlet property="CommentsCountLabel" destination="1635" id="name-outlet-1635"/>
+                        <outlet property="CommentsTable" destination="1660" id="name-outlet-1660"/>
+                        <outlet property="CommentText" destination="1676" id="name-outlet-1676"/>
+                        <outlet property="SubmitCommentButton" destination="1685" id="name-outlet-1685"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="760" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -16,7 +16,23 @@ namespace Feelknit.iOS.Controllers
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel CommentsCountLabel { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITableView CommentsTable { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITextField CommentText { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextView FeelingTextView { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIImageView SubmitCommentButton { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -28,9 +44,25 @@ namespace Feelknit.iOS.Controllers
 
 		void ReleaseDesignerOutlets ()
 		{
+			if (CommentsCountLabel != null) {
+				CommentsCountLabel.Dispose ();
+				CommentsCountLabel = null;
+			}
+			if (CommentsTable != null) {
+				CommentsTable.Dispose ();
+				CommentsTable = null;
+			}
+			if (CommentText != null) {
+				CommentText.Dispose ();
+				CommentText = null;
+			}
 			if (FeelingTextView != null) {
 				FeelingTextView.Dispose ();
 				FeelingTextView = null;
+			}
+			if (SubmitCommentButton != null) {
+				SubmitCommentButton.Dispose ();
+				SubmitCommentButton = null;
 			}
 			if (UserIcon != null) {
 				UserIcon.Dispose ();

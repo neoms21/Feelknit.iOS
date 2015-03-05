@@ -278,11 +278,17 @@
       <DependentUpon>LeftDrawerView.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\JsonHttpClient.cs" />
+    <Compile Include="TableViewSources\CommentsTableViewSource.cs" />
+    <Compile Include="Views\CommentCellView.cs" />
+    <Compile Include="Views\CommentCellView.designer.cs">
+      <DependentUpon>CommentCellView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <InterfaceDefinition Include="Views\RelatedFeelingTableCellView.xib" />
     <InterfaceDefinition Include="Views\LeftDrawerView.xib" />
+    <InterfaceDefinition Include="Views\CommentCellView.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
