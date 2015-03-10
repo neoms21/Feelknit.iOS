@@ -28,40 +28,37 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu," translatesAutoresizingMaskIntoConstraints="NO" id="oqa-iu-z6n">
-                        <rect key="frame" x="8" y="76" width="240" height="34"/>
+                        <rect key="frame" x="8" y="76" width="438" height="68"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report Abuse!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUw-vg-rLa">
-                        <rect key="frame" x="280" y="27" width="110" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="376" y="33" width="80" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVP-DP-15l">
-                        <rect key="frame" x="280" y="136" width="42" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="42" id="XWp-bp-81T"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="428" y="190" width="28" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="gJO-vV-GXO" firstAttribute="leading" secondItem="oqa-iu-z6n" secondAttribute="leading" id="Bb3-xn-MJT"/>
-                    <constraint firstItem="OVP-DP-15l" firstAttribute="leading" secondItem="eUw-vg-rLa" secondAttribute="leading" id="Btj-Ce-gtA"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="oqa-iu-z6n" secondAttribute="bottom" constant="60" id="0D4-OM-bae"/>
                     <constraint firstItem="gJO-vV-GXO" firstAttribute="leading" secondItem="gCc-zc-qV3" secondAttribute="leadingMargin" id="CZT-L1-aS1"/>
                     <constraint firstItem="gJO-vV-GXO" firstAttribute="centerX" secondItem="Dbl-ku-Oeo" secondAttribute="centerX" constant="-74" id="D3P-Cv-2Ts"/>
                     <constraint firstItem="oqa-iu-z6n" firstAttribute="top" secondItem="Dbl-ku-Oeo" secondAttribute="bottom" constant="27" id="Tfs-Fm-tpo"/>
-                    <constraint firstItem="oqa-iu-z6n" firstAttribute="top" secondItem="eUw-vg-rLa" secondAttribute="bottom" constant="28" id="VvK-K9-5UM"/>
-                    <constraint firstItem="oqa-iu-z6n" firstAttribute="top" secondItem="gJO-vV-GXO" secondAttribute="bottom" constant="18" id="f0j-f9-ic9"/>
-                    <constraint firstItem="OVP-DP-15l" firstAttribute="leading" secondItem="oqa-iu-z6n" secondAttribute="trailing" constant="32" id="fJW-V7-hhG"/>
-                    <constraint firstAttribute="trailing" secondItem="OVP-DP-15l" secondAttribute="trailing" constant="144" id="hEK-Wj-85T"/>
+                    <constraint firstAttribute="bottom" secondItem="OVP-DP-15l" secondAttribute="bottom" constant="5" id="YEr-Cs-NIP"/>
+                    <constraint firstAttribute="trailing" secondItem="OVP-DP-15l" secondAttribute="trailing" constant="10" id="hEK-Wj-85T"/>
+                    <constraint firstAttribute="trailing" secondItem="eUw-vg-rLa" secondAttribute="trailing" constant="10" id="izK-cu-z8n"/>
+                    <constraint firstItem="oqa-iu-z6n" firstAttribute="top" secondItem="gJO-vV-GXO" secondAttribute="bottom" constant="18" id="r0N-VV-O7R"/>
+                    <constraint firstAttribute="trailing" secondItem="oqa-iu-z6n" secondAttribute="trailing" constant="20" id="rMq-br-bUc"/>
                     <constraint firstItem="gJO-vV-GXO" firstAttribute="centerX" secondItem="Dbl-ku-Oeo" secondAttribute="centerX" constant="-74" id="vCX-mr-5OT"/>
-                    <constraint firstItem="OVP-DP-15l" firstAttribute="top" secondItem="oqa-iu-z6n" secondAttribute="bottom" constant="26" id="wtN-0K-xVk"/>
-                    <constraint firstItem="OVP-DP-15l" firstAttribute="top" secondItem="eUw-vg-rLa" secondAttribute="bottom" constant="88" id="yla-7A-VeW"/>
+                    <constraint firstItem="eUw-vg-rLa" firstAttribute="top" secondItem="gCc-zc-qV3" secondAttribute="top" constant="33" id="wbP-2g-EeF"/>
+                    <constraint firstItem="oqa-iu-z6n" firstAttribute="leading" secondItem="gCc-zc-qV3" secondAttribute="leading" constant="8" id="xvz-w0-dbF"/>
                     <constraint firstItem="gJO-vV-GXO" firstAttribute="top" secondItem="gCc-zc-qV3" secondAttribute="topMargin" id="ysd-JN-Gt9"/>
                 </constraints>
             </tableViewCellContentView>
@@ -71,6 +68,73 @@
                 <outlet property="ReportAbuseLabel" destination="eUw-vg-rLa" id="mQU-32-Bqv"/>
                 <outlet property="UserIconImageView" destination="gJO-vV-GXO" id="kOD-hE-Cg8"/>
                 <outlet property="UserNameLabel" destination="Dbl-ku-Oeo" id="Yqa-4h-WQY"/>
+            </connections>
+            <point key="canvasLocation" x="409" y="253.5"/>
+        </tableViewCell>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="213" id="lTC-EL-OD2" customClass="CommentCellView">
+            <rect key="frame" x="0.0" y="0.0" width="466" height="213"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lTC-EL-OD2" id="HQ6-Wd-asx">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="CommentUserIcon" image="userIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="EwQ-Si-DQT">
+                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="mhP-N2-DZP"/>
+                            <constraint firstAttribute="height" constant="50" id="n9A-Xb-WYF"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="CommentUserName" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJi-Ny-ixg">
+                        <rect key="frame" x="88" y="31" width="38" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu," translatesAutoresizingMaskIntoConstraints="NO" id="LyY-6P-WnS">
+                        <rect key="frame" x="8" y="76" width="374" height="34"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report Abuse!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWB-23-m0f">
+                        <rect key="frame" x="381" y="20" width="80" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMe-8W-bhT">
+                        <rect key="frame" x="414" y="123" width="42" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="euN-z6-C7R"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="LWB-23-m0f" firstAttribute="top" secondItem="HQ6-Wd-asx" secondAttribute="top" constant="20" id="0FK-fd-xTo"/>
+                    <constraint firstItem="LyY-6P-WnS" firstAttribute="top" secondItem="EwQ-Si-DQT" secondAttribute="bottom" constant="18" id="0OI-FP-1X8"/>
+                    <constraint firstItem="LyY-6P-WnS" firstAttribute="top" secondItem="LJi-Ny-ixg" secondAttribute="bottom" constant="27" id="BGx-zx-yj4"/>
+                    <constraint firstItem="EwQ-Si-DQT" firstAttribute="top" secondItem="HQ6-Wd-asx" secondAttribute="topMargin" id="II3-Fk-ISs"/>
+                    <constraint firstItem="EwQ-Si-DQT" firstAttribute="centerX" secondItem="LJi-Ny-ixg" secondAttribute="centerX" constant="-74" id="cmi-29-IIf"/>
+                    <constraint firstAttribute="trailing" secondItem="LWB-23-m0f" secondAttribute="trailing" constant="5" id="eKg-sp-q5Q"/>
+                    <constraint firstItem="EwQ-Si-DQT" firstAttribute="leading" secondItem="LyY-6P-WnS" secondAttribute="leading" id="g0S-tO-Y7S"/>
+                    <constraint firstItem="CMe-8W-bhT" firstAttribute="leading" secondItem="LyY-6P-WnS" secondAttribute="trailing" constant="32" id="k9a-fs-GqM"/>
+                    <constraint firstItem="EwQ-Si-DQT" firstAttribute="leading" secondItem="HQ6-Wd-asx" secondAttribute="leadingMargin" id="qJZ-Ep-Lgu"/>
+                    <constraint firstItem="EwQ-Si-DQT" firstAttribute="centerX" secondItem="LJi-Ny-ixg" secondAttribute="centerX" constant="-74" id="rZE-JR-eIK"/>
+                    <constraint firstAttribute="trailing" secondItem="CMe-8W-bhT" secondAttribute="trailing" constant="10" id="w50-qq-5QG"/>
+                    <constraint firstItem="CMe-8W-bhT" firstAttribute="top" secondItem="LWB-23-m0f" secondAttribute="bottom" constant="88" id="yjW-C5-nYC"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="LyY-6P-WnS" secondAttribute="bottom" constant="94" id="zHC-iO-J9Y"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="CommentTextView" destination="LyY-6P-WnS" id="iyw-ap-bSr"/>
+                <outlet property="CommentTimeLabel" destination="CMe-8W-bhT" id="cUt-cI-wtJ"/>
+                <outlet property="ReportAbuseLabel" destination="LWB-23-m0f" id="3at-0h-KpP"/>
+                <outlet property="UserIconImageView" destination="EwQ-Si-DQT" id="KAk-fI-Kbg"/>
+                <outlet property="UserNameLabel" destination="LJi-Ny-ixg" id="YNp-cm-ArH"/>
             </connections>
             <point key="canvasLocation" x="409" y="253.5"/>
         </tableViewCell>

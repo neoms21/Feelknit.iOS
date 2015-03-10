@@ -2,13 +2,16 @@
 using MonoTouch.UIKit;
 using Feelknit.Model;
 using System.Collections.Generic;
+using MonoTouch.Foundation;
+using System.Linq;
 
 namespace Feelknit.iOS
 {
 	public class CommentsTableViewSource: UITableViewSource
-	{private IList<Comment> _comments;
+	{
+		private List<Comment> _comments;
 
-		public CommentsTableViewSource (IList<Comment> comments)
+		public CommentsTableViewSource (List<Comment> comments)
 		{
 			_comments = comments;
 		}
@@ -30,10 +33,26 @@ namespace Feelknit.iOS
 			return cell;
 		}
 
-		public override float GetHeightForRow (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+		public override float GetHeightForRow (UITableView tableView, NSIndexPath indexPath)
 		{
-			return 275;
+			var comment = _comments[indexPath.Item];
+
+			var f = EstimateHeight (comment.Text, UIScreen.MainScreen.Bounds.Width, UIFont.FromName ("Helvetica",14));
+			return f;
 		}
+
+		private float EstimateHeight(String text, float width, UIFont font)
+		{
+
+			System.Drawing.SizeF size = ((NSString)text).StringSize (font, new System.Drawing.SizeF (width, float.MaxValue),
+				UILineBreakMode.WordWrap);
+			return (float)size.Height + 150; // The 50 is just padding
+		}
+
+//		public override float GetHeightForRow (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+//		{
+//			return 150;
+//		}
 	}
 }
 

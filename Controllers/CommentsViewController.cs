@@ -3,6 +3,8 @@ using Feelknit.iOS.Model;
 using MonoTouch.UIKit;
 using Feelknit.iOS.Helpers;
 using System.Drawing;
+using MonoTouch.Foundation;
+using System.Linq;
 
 namespace Feelknit.iOS.Controllers
 {
@@ -39,7 +41,13 @@ namespace Feelknit.iOS.Controllers
 
 			CommentsCountLabel.Text = string.Format ("  {0} comments", Feeling.Comments.Count);
 			SubmitCommentButton.Image = ResizeImage (UIImage.FromBundle ("012.png"), 40, 40);
-			CommentsTable.Source = new CommentsTableViewSource (Feeling.Comments);
+			CommentsTable.Source = new CommentsTableViewSource (Feeling.Comments.ToList());
+
+			CommentsTable.SeparatorColor = Resources.MainBackgroundColor;
+
+
+			CommentsTable.SeparatorStyle = UITableViewCellSeparatorStyle.SingleLine;
+			//CommentsTable.RowHeight = ;
 
 			//FeelingTextView.SizeToFit();
 			//CommentsCountLabel.Text = string.Format ("{0} comments on this feeling", Feeling.Comments.Count);
