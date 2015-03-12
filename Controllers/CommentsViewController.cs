@@ -42,15 +42,15 @@ namespace Feelknit.iOS.Controllers
 
 			CommentsTable.SeparatorColor = Resources.MainBackgroundColor;
 			CommentText.EditingChanged += (object sender, EventArgs e) => {
-				if (this.CommentText.Text.Length > 0) {
-					InvokeOnMainThread (() => {
+				InvokeOnMainThread (() => {
+					if (this.CommentText.Text.Length > 0) {
+
 						this.SubmitCommentButton.Hidden = false;
-					});
-				} else {
-					InvokeOnMainThread (() => {
+					} else {
+
 						this.SubmitCommentButton.Hidden = true;
-					});
-				}
+						}
+				});
 			};
 				
 
