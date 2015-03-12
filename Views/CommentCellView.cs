@@ -30,16 +30,34 @@ namespace Feelknit.iOS
 		public override void LayoutSubviews ()
 		{
 			base.LayoutSubviews ();
-			var frame = CommentTextView.Frame;
+			var frame = CommentTextLabel.Frame;
 
 //			frame.Width = ContentView.Bounds.Width;
 //			frame.Height = 100;
 //			CommentTextView.Frame = frame;
-			CommentTextView.Text = Comment.Text;
-			CommentTextView.ScrollEnabled = false;
+			CommentTextLabel.Text = Comment.Text;
+			ResizeHeigthWithText (CommentTextLabel);
+
 			UserNameLabel.Text = Comment.User;
+			UserNameLabel.TextColor = Resources.LightButtonColor;
 			CommentTimeLabel.Text = Comment.PostedAt.ToString ("dd-MMM-yyyy HH:mm");
 			UserIconImageView.Image = UIImage.FromBundle ("Avatars/" + Comment.UserAvatar + ".png");
+
+//			ReportAbuseLabel.Touch
+		}
+
+		private void ResizeHeigthWithText(UILabel label,float maxHeight = 960f) 
+		{
+
+			label.AdjustsFontSizeToFitWidth = false;
+			float width = 280;// label.Frame.Width;  
+			label.Lines = 0;
+			SizeF size = ((NSString)label.Text).StringSize(label.Font,  
+				constrainedToSize:new SizeF(width,maxHeight) ,lineBreakMode:UILineBreakMode.WordWrap);
+
+			var labelFrame = label.Frame;
+			labelFrame.Size = new SizeF(280,size.Height);
+			label.Frame = labelFrame; 
 		}
 
 	}

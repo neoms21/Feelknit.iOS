@@ -21,18 +21,12 @@
                             <constraint firstAttribute="width" constant="50" id="cCc-EI-IUG"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="CommentUserName" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbl-ku-Oeo">
-                        <rect key="frame" x="86" y="28" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" restorationIdentifier="CommentUserName" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbl-ku-Oeo">
+                        <rect key="frame" x="86" y="0.0" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu," translatesAutoresizingMaskIntoConstraints="NO" id="oqa-iu-z6n">
-                        <rect key="frame" x="8" y="76" width="438" height="68"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report Abuse!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUw-vg-rLa">
                         <rect key="frame" x="376" y="33" width="80" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -45,25 +39,29 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4X2-Za-n26">
+                        <rect key="frame" x="12" y="90" width="444" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="oqa-iu-z6n" secondAttribute="bottom" constant="60" id="0D4-OM-bae"/>
                     <constraint firstItem="gJO-vV-GXO" firstAttribute="leading" secondItem="gCc-zc-qV3" secondAttribute="leadingMargin" id="CZT-L1-aS1"/>
                     <constraint firstItem="gJO-vV-GXO" firstAttribute="centerX" secondItem="Dbl-ku-Oeo" secondAttribute="centerX" constant="-74" id="D3P-Cv-2Ts"/>
-                    <constraint firstItem="oqa-iu-z6n" firstAttribute="top" secondItem="Dbl-ku-Oeo" secondAttribute="bottom" constant="27" id="Tfs-Fm-tpo"/>
+                    <constraint firstItem="4X2-Za-n26" firstAttribute="leading" secondItem="gCc-zc-qV3" secondAttribute="leading" constant="12" id="NqO-ei-Nfi"/>
                     <constraint firstAttribute="bottom" secondItem="OVP-DP-15l" secondAttribute="bottom" constant="5" id="YEr-Cs-NIP"/>
                     <constraint firstAttribute="trailing" secondItem="OVP-DP-15l" secondAttribute="trailing" constant="10" id="hEK-Wj-85T"/>
                     <constraint firstAttribute="trailing" secondItem="eUw-vg-rLa" secondAttribute="trailing" constant="10" id="izK-cu-z8n"/>
-                    <constraint firstItem="oqa-iu-z6n" firstAttribute="top" secondItem="gJO-vV-GXO" secondAttribute="bottom" constant="18" id="r0N-VV-O7R"/>
-                    <constraint firstAttribute="trailing" secondItem="oqa-iu-z6n" secondAttribute="trailing" constant="20" id="rMq-br-bUc"/>
+                    <constraint firstAttribute="trailing" secondItem="4X2-Za-n26" secondAttribute="trailing" constant="10" id="odb-cf-yeb"/>
                     <constraint firstItem="gJO-vV-GXO" firstAttribute="centerX" secondItem="Dbl-ku-Oeo" secondAttribute="centerX" constant="-74" id="vCX-mr-5OT"/>
                     <constraint firstItem="eUw-vg-rLa" firstAttribute="top" secondItem="gCc-zc-qV3" secondAttribute="top" constant="33" id="wbP-2g-EeF"/>
-                    <constraint firstItem="oqa-iu-z6n" firstAttribute="leading" secondItem="gCc-zc-qV3" secondAttribute="leading" constant="8" id="xvz-w0-dbF"/>
                     <constraint firstItem="gJO-vV-GXO" firstAttribute="top" secondItem="gCc-zc-qV3" secondAttribute="topMargin" id="ysd-JN-Gt9"/>
+                    <constraint firstItem="4X2-Za-n26" firstAttribute="top" secondItem="gJO-vV-GXO" secondAttribute="bottom" constant="32" id="zui-dH-Ha1"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="CommentTextView" destination="oqa-iu-z6n" id="6po-hE-U0d"/>
+                <outlet property="CommentTextLabel" destination="4X2-Za-n26" id="DHf-97-X4U"/>
                 <outlet property="CommentTimeLabel" destination="OVP-DP-15l" id="wty-kh-7SV"/>
                 <outlet property="ReportAbuseLabel" destination="eUw-vg-rLa" id="mQU-32-Bqv"/>
                 <outlet property="UserIconImageView" destination="gJO-vV-GXO" id="kOD-hE-Cg8"/>

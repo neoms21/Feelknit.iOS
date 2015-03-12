@@ -13,6 +13,9 @@ namespace Feelknit.iOS
 	partial class CommentCellView
 	{
 		[Outlet]
+		MonoTouch.UIKit.UILabel CommentTextLabel { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UITextView CommentTextView { get; set; }
 
 		[Outlet]
@@ -29,6 +32,21 @@ namespace Feelknit.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (CommentTextView != null) {
+				CommentTextView.Dispose ();
+				CommentTextView = null;
+			}
+
+			if (CommentTimeLabel != null) {
+				CommentTimeLabel.Dispose ();
+				CommentTimeLabel = null;
+			}
+
+			if (ReportAbuseLabel != null) {
+				ReportAbuseLabel.Dispose ();
+				ReportAbuseLabel = null;
+			}
+
 			if (UserIconImageView != null) {
 				UserIconImageView.Dispose ();
 				UserIconImageView = null;
@@ -39,19 +57,9 @@ namespace Feelknit.iOS
 				UserNameLabel = null;
 			}
 
-			if (ReportAbuseLabel != null) {
-				ReportAbuseLabel.Dispose ();
-				ReportAbuseLabel = null;
-			}
-
-			if (CommentTextView != null) {
-				CommentTextView.Dispose ();
-				CommentTextView = null;
-			}
-
-			if (CommentTimeLabel != null) {
-				CommentTimeLabel.Dispose ();
-				CommentTimeLabel = null;
+			if (CommentTextLabel != null) {
+				CommentTextLabel.Dispose ();
+				CommentTextLabel = null;
 			}
 		}
 	}

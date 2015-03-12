@@ -1,12 +1,10 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio from the outlets and
-// actions declared in your storyboard file.
-// Manual changes to this file will not be maintained.
+// This file has been generated automatically by Xamarin Studio to store outlets and
+// actions made in the UI designer. If it is removed, they will be lost.
+// Manual changes to this file may not be handled correctly.
 //
 using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using System;
 using System.CodeDom.Compiler;
 
 namespace Feelknit.iOS.Controllers
@@ -15,62 +13,61 @@ namespace Feelknit.iOS.Controllers
 	partial class CommentsViewController
 	{
 		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel CommentsCountLabel { get; set; }
+		MonoTouch.UIKit.UILabel CommentsCountLabel { get; set; }
 
 		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableView CommentsTable { get; set; }
+		MonoTouch.UIKit.UITableView CommentsTable { get; set; }
 
 		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UITextField CommentText { get; set; }
+		MonoTouch.UIKit.UITextField CommentText { get; set; }
 
 		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UITextView FeelingTextView { get; set; }
+		MonoTouch.UIKit.UITextView FeelingTextView { get; set; }
 
 		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIImageView SubmitCommentButton { get; set; }
+		MonoTouch.UIKit.UIImageView SubmitCommentButton { get; set; }
 
 		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIImageView UserIcon { get; set; }
+		MonoTouch.UIKit.UIImageView UserIcon { get; set; }
 
 		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel UserNameLabel { get; set; }
-
+		MonoTouch.UIKit.UILabel UserNameLabel { get; set; }
+		
 		void ReleaseDesignerOutlets ()
 		{
 			if (CommentsCountLabel != null) {
 				CommentsCountLabel.Dispose ();
 				CommentsCountLabel = null;
 			}
+
 			if (CommentsTable != null) {
 				CommentsTable.Dispose ();
 				CommentsTable = null;
 			}
+
 			if (CommentText != null) {
 				CommentText.Dispose ();
 				CommentText = null;
 			}
+
 			if (FeelingTextView != null) {
 				FeelingTextView.Dispose ();
 				FeelingTextView = null;
 			}
-			if (SubmitCommentButton != null) {
-				SubmitCommentButton.Dispose ();
-				SubmitCommentButton = null;
-			}
+
 			if (UserIcon != null) {
 				UserIcon.Dispose ();
 				UserIcon = null;
 			}
+
 			if (UserNameLabel != null) {
 				UserNameLabel.Dispose ();
 				UserNameLabel = null;
+			}
+
+			if (SubmitCommentButton != null) {
+				SubmitCommentButton.Dispose ();
+				SubmitCommentButton = null;
 			}
 		}
 	}
