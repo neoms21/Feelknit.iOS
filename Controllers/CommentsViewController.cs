@@ -5,6 +5,8 @@ using Feelknit.iOS.Helpers;
 using System.Drawing;
 using MonoTouch.Foundation;
 using System.Linq;
+using Feelknit.Model;
+using System.IO;
 
 namespace Feelknit.iOS.Controllers
 {
@@ -22,7 +24,20 @@ namespace Feelknit.iOS.Controllers
 			View.BackgroundColor = Resources.MainBackgroundColor;
 			UserNameLabel.TextColor = Resources.ButtonColor;
 			CommentsCountLabel.BackgroundColor = Resources.LoginButtonColor;
-			SubmitCommentButton.Hidden = true;
+
+//			AddCommentButton = UIButton.FromType(UIButtonType.RoundedRect);
+//			AddCommentButton.SetImage(UIImage.FromBundle("012.png"), UIControlState.Normal);
+//			AddCommentButton.BackgroundColor = Resources.LightButtonColor;
+
+			AddCommentButton.Hidden = true;
+
+			CommentTextView.Layer.BorderColor = UIColor.Black.CGColor;
+			CommentTextView.Layer.CornerRadius = 2;
+
+			CommentTextView.ScrollEnabled = false;
+
+
+
 			//CommentsCountLabel.BackgroundColor = Resources.LoginButtonColor;
 		}
 
@@ -32,27 +47,51 @@ namespace Feelknit.iOS.Controllers
 
 			this.NavigationController.NavigationBarHidden = false;
 			UserIcon.Image = ResizeImage (UIImage.FromBundle ("Avatars/" + ApplicationHelper.Avatar + ".png"), 100, 100);
-			//UserIcon.Frame = new RectangleF (10,10,36, 30);
 			UserNameLabel.Text = ApplicationHelper.UserName == Feeling.UserName ? "I" : Feeling.UserName;
 			FeelingTextView.Text = Feeling.GetFeelingFormattedText ("");
-
 			CommentsCountLabel.Text = string.Format ("  {0} comments", Feeling.Comments.Count);
-			//SubmitCommentButton.Image = ResizeImage (UIImage.FromBundle ("012.png"), 40, 40);
 			CommentsTable.Source = new CommentsTableViewSource (Feeling.Comments.ToList ());
-
 			CommentsTable.SeparatorColor = Resources.MainBackgroundColor;
-			CommentText.EditingChanged += (object sender, EventArgs e) => {
-				InvokeOnMainThread (() => {
-					if (this.CommentText.Text.Length > 0) {
+			var constraints = CommentTextView.Constraints;
+			//var heightConstraint = constraints.FirstOrDefault(c=>c.Constant == 30);
+			//AddCommentButton.Title = "Cli";
+			AddCommentButton.TouchUpInside += (sender, e) => {
+								var comment = new Comment {
+									Text = CommentTextView.Text,
+									User = ApplicationHelper.UserName,
+					UserAvatar = ApplicationHelper.Avatar,
+					PostedAt = DateTime.UtcNow
+				};
 
-						this.SubmitCommentButton.Hidden = false;
+				SaveComment(comment);
+
+//				InvokeOnMainThread (() => {new UIAlertView ( " click"
+//					, "TouchUpInside Handled"
+//					, null
+//					, "OK"
+//					, null).Show();});
+			};
+
+			//var frameWidthForCommentTextView = CommentTextView.Frame.Size.Width;
+
+
+
+			CommentTextView.Changed += (object sender, EventArgs e) => {
+				InvokeOnMainThread (() => {
+					if (this.CommentTextView.Text.Length > 0) {
+//						var size =	this.CommentTextView.StringSize(CommentTextView.Text,UIFont.SystemFontOfSize(12));
+						this.AddCommentButton.Hidden = false;
+					//	heightConstraint.Constant = 50;
+						//var size = CommentTextView.SizeThatFits(Comm;
+
+
 					} else {
 
-						this.SubmitCommentButton.Hidden = true;
+						this.AddCommentButton.Hidden = true;
 						}
 				});
 			};
-				
+
 
 			CommentsTable.SeparatorStyle = UITableViewCellSeparatorStyle.SingleLine;
 			//CommentsTable.RowHeight = ;
@@ -66,24 +105,16 @@ namespace Feelknit.iOS.Controllers
 		}
 
 
-
-		//		public override void ViewWillLayoutSubviews ()
-		//		{
-		//			base.ViewWillLayoutSubviews ();
-		//			var width = FeelingTextView.Frame.Size.Width;
-		//			var size = FeelingTextView.SizeThatFits(FeelingTextView.Frame.Size);
-		//			var newFrame = FeelingTextView.Frame;
-		//			newFrame.Size = size;
-		//			FeelingTextView.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
-		//			FeelingTextView.Frame = new RectangleF(0,0,200,30);
-		//			//FeelingTextView.ScrollEnabled = false;
-		//
-		////			CGSize newSize = [textView sizeThatFits:CGSizeMake(fixedWidth, MAXFLOAT)];
-		////			CGRect newFrame = textView.frame;
-		////			newFrame.size = CGSizeMake(fmaxf(newSize.width, fixedWidth), newSize.height);
-		////			textView.frame = newFrame;
-		//
-		//		}
+		private async void SaveComment(Comment comment)
+		{
+			var client = new JsonHttpClient(Path.Combine(UrlHelper.COMMENTS,Feeling.Id));
+			await client.PostRequest (comment);
+			Feeling.Comments.Add (comment);
+			InvokeOnMainThread (() => {
+				CommentsTable.Source = new CommentsTableViewSource(Feeling.Comments.ToList());
+				CommentsTable.ReloadData ();
+			});
+		}
 
 		// resize the image (without trying to maintain aspect ratio)
 		public UIImage ResizeImage (UIImage sourceImage, float width, float height)

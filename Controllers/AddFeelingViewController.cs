@@ -82,7 +82,6 @@ namespace Feelknit.iOS.Controllers
 
 		public override void TouchesEnded (NSSet touches, UIEvent evt)
 		{
-
 			base.TouchesEnded (touches,evt);
 			FeelingsTableView.Hidden = true;
 		}

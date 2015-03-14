@@ -19,6 +19,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="15">
                                 <rect key="frame" x="15" y="229" width="290" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1152"/>
                                 </constraints>
@@ -435,22 +436,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1660">
-                                <rect key="frame" x="0.0" y="144" width="320" height="385"/>
+                                <rect key="frame" x="0.0" y="144" width="320" height="386"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a comment" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="1676">
-                                <rect key="frame" x="4" y="534" width="266" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="012.png" translatesAutoresizingMaskIntoConstraints="NO" id="q87-Ap-a7d">
-                                <rect key="frame" x="278" y="534" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.18880854039961245" green="0.092984399877762525" blue="0.7038154987373737" alpha="1" colorSpace="calibratedRGB"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="wk0-go-rJm">
+                                <rect key="frame" x="4" y="534" width="254" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="C5H-Qm-5EQ"/>
-                                    <constraint firstAttribute="width" constant="30" id="i9O-4h-1Ew"/>
+                                    <constraint firstAttribute="height" constant="30" id="91U-CW-0Kc"/>
                                 </constraints>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2I-oW-bqT">
+                                <rect key="frame" x="266" y="534" width="30" height="28"/>
+                                <color key="backgroundColor" red="0.1988979481" green="1" blue="0.37979163459999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="add">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -464,24 +469,24 @@
                             <constraint firstItem="1635" firstAttribute="leading" secondItem="759" secondAttribute="leading" id="1637"/>
                             <constraint firstItem="1635" firstAttribute="top" secondItem="1525" secondAttribute="bottom" constant="34" id="1638"/>
                             <constraint firstAttribute="trailing" secondItem="1635" secondAttribute="trailing" id="1643"/>
+                            <constraint firstItem="wk0-go-rJm" firstAttribute="leading" secondItem="759" secondAttribute="leadingMargin" constant="-12" id="2af-96-zNE"/>
+                            <constraint firstItem="wk0-go-rJm" firstAttribute="top" secondItem="1660" secondAttribute="bottom" constant="4" id="6fn-gh-d9b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F2I-oW-bqT" secondAttribute="trailing" constant="8" id="CGX-AC-H1P"/>
+                            <constraint firstItem="756" firstAttribute="top" secondItem="wk0-go-rJm" secondAttribute="bottom" constant="4" id="DdE-ND-eWe"/>
+                            <constraint firstItem="F2I-oW-bqT" firstAttribute="leading" secondItem="wk0-go-rJm" secondAttribute="trailing" constant="8" id="JIL-KP-g8l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1660" secondAttribute="trailing" constant="-16" id="JTP-ca-KSX"/>
-                            <constraint firstAttribute="bottom" secondItem="q87-Ap-a7d" secondAttribute="bottom" constant="4" id="LRX-ag-lTq"/>
-                            <constraint firstItem="1676" firstAttribute="leading" secondItem="759" secondAttribute="leadingMargin" constant="-12" id="Nan-mE-4EQ"/>
+                            <constraint firstItem="F2I-oW-bqT" firstAttribute="top" secondItem="1660" secondAttribute="bottom" constant="4" id="Mw1-Pt-Z0J"/>
                             <constraint firstItem="1634" firstAttribute="top" secondItem="756" secondAttribute="bottom" constant="466" id="TpV-oQ-pCA"/>
-                            <constraint firstItem="q87-Ap-a7d" firstAttribute="leading" secondItem="1676" secondAttribute="trailing" constant="8" id="Xl8-nq-kgn"/>
                             <constraint firstItem="1660" firstAttribute="leading" secondItem="759" secondAttribute="leadingMargin" constant="-16" id="Zg9-Kq-PDq"/>
                             <constraint firstItem="1660" firstAttribute="top" secondItem="1635" secondAttribute="bottom" constant="8" id="c5O-gd-f9o"/>
-                            <constraint firstItem="756" firstAttribute="top" secondItem="1676" secondAttribute="bottom" constant="4" id="eKa-4Z-aYk"/>
-                            <constraint firstAttribute="trailing" secondItem="q87-Ap-a7d" secondAttribute="trailing" constant="12" id="mqU-h3-WoV"/>
-                            <constraint firstItem="1676" firstAttribute="top" secondItem="1660" secondAttribute="bottom" constant="5" id="zKG-AS-Ex9"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="CommentText" destination="1676" id="name-outlet-1676"/>
+                        <outlet property="AddCommentButton" destination="F2I-oW-bqT" id="Q1t-hF-qe9"/>
+                        <outlet property="CommentTextView" destination="wk0-go-rJm" id="D7S-Yz-875"/>
                         <outlet property="CommentsCountLabel" destination="1635" id="name-outlet-1635"/>
                         <outlet property="CommentsTable" destination="1660" id="name-outlet-1660"/>
                         <outlet property="FeelingTextView" destination="1525" id="name-outlet-1525"/>
-                        <outlet property="SubmitCommentButton" destination="q87-Ap-a7d" id="jDQ-Hz-N3I"/>
                         <outlet property="UserIcon" destination="764" id="name-outlet-764"/>
                         <outlet property="UserNameLabel" destination="770" id="name-outlet-770"/>
                     </connections>
@@ -502,7 +507,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="904">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="iconsmall_cut.png" translatesAutoresizingMaskIntoConstraints="NO" id="904">
                                 <rect key="frame" x="60" y="190" width="201" height="199"/>
                             </imageView>
                         </subviews>
@@ -598,8 +603,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="012.png" width="56" height="56"/>
-        <image name="icon.png" width="284" height="281"/>
         <image name="iconsmall.png" width="220" height="260"/>
         <image name="iconsmall_cut.png" width="284" height="281"/>
         <image name="userIcon.png" width="38" height="38"/>

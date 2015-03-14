@@ -13,19 +13,19 @@ namespace Feelknit.iOS.Controllers
 	partial class CommentsViewController
 	{
 		[Outlet]
+		MonoTouch.UIKit.UIButton AddCommentButton { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UILabel CommentsCountLabel { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UITableView CommentsTable { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UITextField CommentText { get; set; }
+		MonoTouch.UIKit.UITextView CommentTextView { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UITextView FeelingTextView { get; set; }
-
-		[Outlet]
-		MonoTouch.UIKit.UIImageView SubmitCommentButton { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UIImageView UserIcon { get; set; }
@@ -45,9 +45,9 @@ namespace Feelknit.iOS.Controllers
 				CommentsTable = null;
 			}
 
-			if (CommentText != null) {
-				CommentText.Dispose ();
-				CommentText = null;
+			if (CommentTextView != null) {
+				CommentTextView.Dispose ();
+				CommentTextView = null;
 			}
 
 			if (FeelingTextView != null) {
@@ -65,9 +65,9 @@ namespace Feelknit.iOS.Controllers
 				UserNameLabel = null;
 			}
 
-			if (SubmitCommentButton != null) {
-				SubmitCommentButton.Dispose ();
-				SubmitCommentButton = null;
+			if (AddCommentButton != null) {
+				AddCommentButton.Dispose ();
+				AddCommentButton = null;
 			}
 		}
 	}

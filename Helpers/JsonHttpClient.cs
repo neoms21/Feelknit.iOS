@@ -23,6 +23,7 @@ namespace Feelknit.iOS.Helpers
             request.Method = "POST";
             request.ContentType = "application/json";
             request.Accept = "application/json";
+			request.Headers.Add (HttpRequestHeader.Authorization, ApplicationHelper.AuthorizationToken);
             request.ContentLength = json.Length;
             using (var webStream = request.GetRequestStream())
             using (var requestWriter = new StreamWriter(webStream, Encoding.ASCII))
