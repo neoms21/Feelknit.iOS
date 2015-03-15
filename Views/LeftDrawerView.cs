@@ -26,8 +26,10 @@ namespace Feelknit.iOS
 		{
 			base.LayoutSubviews ();
 
-			UserNameLabel.Text = "neo";
-			UserImageView.Image = UIImage.FromBundle ("Avatars/girl1.png");
+			UserNameLabel.Text = ApplicationHelper.UserName;
+			UserImageView.Image = UIImage.FromBundle ("Avatars/ben.png");
+
+			LeftDrawerTableView.Source = new LeftDrawerTableViewSource (Resources.LeftDrawerItems);
 
 //			SignoutButton.TouchUpInside+=
 		}

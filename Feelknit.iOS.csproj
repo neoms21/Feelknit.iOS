@@ -287,12 +287,19 @@
     <Compile Include="Controllers\CurrentFeelingsViewController.designer.cs">
       <DependentUpon>CurrentFeelingsViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableViewSources\LeftDrawerTableViewSource.cs" />
+    <Compile Include="Model\LeftDrawerItem.cs" />
+    <Compile Include="Views\LeftDrawerTableCellView.cs" />
+    <Compile Include="Views\LeftDrawerTableCellView.designer.cs">
+      <DependentUpon>LeftDrawerTableCellView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <InterfaceDefinition Include="Views\RelatedFeelingTableCellView.xib" />
     <InterfaceDefinition Include="Views\LeftDrawerView.xib" />
     <InterfaceDefinition Include="Views\CommentCellView.xib" />
+    <InterfaceDefinition Include="Views\LeftDrawerTableCellView.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>

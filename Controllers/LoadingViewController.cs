@@ -22,6 +22,7 @@ namespace Feelknit.iOS.Controllers
             base.ViewWillAppear(animated);
             NavigationController.NavigationBarHidden = true;
             View.BackgroundColor = Resources.MainBackgroundColor;
+			NavigationItem.HidesBackButton = true;
         }
 
         public override void ViewDidLoad()
@@ -61,7 +62,7 @@ namespace Feelknit.iOS.Controllers
             if (isAuthenticated)
             {
                 ApplicationHelper.UserName = NSUserDefaults.StandardUserDefaults.StringForKey("UserName");
-				MoveToNextController(typeof(CurrentFeelingsViewController).Name);
+				MoveToNextController(typeof(CurrentFeelingsViewController).Name, true);
                 return;
             }
             MoveToNextController(typeof(LoginViewController).Name);

@@ -35,6 +35,8 @@ namespace Feelknit.iOS.Model
 
         public string UserName { get; set; }
 
+		public int CommentsCount{ get; set;}
+
 		public string UserAvatar{ get; set; }
 
         public string Reason { get; set; }

@@ -26,6 +26,16 @@ namespace Feelknit.iOS
 		public static IList<string> Avatars = new List<string> {"agnes", "blackwidow", "chef", "evilminion", "girl1",
 			"girl2", "girl3", "gru", "hulk", "ironman", "kungfuminion", "thor"
 		};
+
+		public static List<LeftDrawerItem> LeftDrawerItems = new List<LeftDrawerItem>
+		{
+			new LeftDrawerItem("Profile","notifications",101),
+			new LeftDrawerItem("Current Feelings","userdrawer",102),
+			new LeftDrawerItem("My Feelings","userdrawer",103),
+			new LeftDrawerItem("Comments","comments",104),
+			new LeftDrawerItem("Related Feelings","userdrawer", 105),
+			new LeftDrawerItem("About","settings",106),
+		};
 	}
 }
 

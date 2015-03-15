@@ -14,8 +14,24 @@ namespace Feelknit.iOS
 	[Register ("CurrentFeelingsViewController")]
 	partial class CurrentFeelingsViewController
 	{
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel RecentFeelingsLabel { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UITableView RecentFeelingsTableView { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
+			if (RecentFeelingsLabel != null) {
+				RecentFeelingsLabel.Dispose ();
+				RecentFeelingsLabel = null;
+			}
+			if (RecentFeelingsTableView != null) {
+				RecentFeelingsTableView.Dispose ();
+				RecentFeelingsTableView = null;
+			}
 		}
 	}
 }

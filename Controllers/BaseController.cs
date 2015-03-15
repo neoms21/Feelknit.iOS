@@ -7,6 +7,9 @@ namespace Feelknit.iOS.Controllers
     public class BaseController : UIViewController
     {
 
+
+		public object Data{ get; set; }
+
         public BaseController(IntPtr handle)
             : base(handle)
         {
@@ -45,16 +48,21 @@ namespace Feelknit.iOS.Controllers
         {
             base.ViewDidLoad();
 
-            NavigationItem.SetLeftBarButtonItem(
+//			NavigationItem.SetLeftBarButtonItem(
+//				new UIBarButtonItem(UIImage.FromBundle("")
+//					, UIBarButtonItemStyle.Plain
+//					, (sender, args) => SidebarController.ToggleMenu()), true);
+
+			NavigationItem.SetRightBarButtonItem(
                 new UIBarButtonItem(UIImage.FromBundle("threelines")
                     , UIBarButtonItemStyle.Plain
                     , (sender, args) => SidebarController.ToggleMenu()), true);
         }
 
-        protected void MoveToNextController(string controllerName)
+		protected void MoveToNextController(string controllerName, object data = null)
         {
-            var controller = (UIViewController)MainStoryboard.InstantiateViewController(controllerName);
-
+			var controller = (BaseController)MainStoryboard.InstantiateViewController(controllerName);
+			controller.Data = data;
             if (controller != null)
             {
                 NavController.PushViewController(controller, true);

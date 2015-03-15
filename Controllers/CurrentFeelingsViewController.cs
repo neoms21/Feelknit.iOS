@@ -14,23 +14,25 @@ using Feelknit.iOS.Controllers;
 
 namespace Feelknit.iOS
 {
-	partial class CurrentFeelingsViewController : UITableViewController
+	partial class CurrentFeelingsViewController :BaseController
 	{
 		private IEnumerable<Feeling> _feelings;
 
 		private LoadingOverlay _loadingOverlay;
 
 		event GetUserFeelingsDelegate GetFeelings;
-
-
 		public CurrentFeelingsViewController (IntPtr handle) : base (handle)
 		{
+			Title = "Current Feelings";
+
 		}
 
 		public override void ViewWillAppear (bool animated)
 		{
 			base.ViewWillAppear (animated);
-
+			RecentFeelingsLabel.BackgroundColor = Resources.LoginButtonColor;
+			NavigationController.NavigationBarHidden = false;
+			NavigationItem.HidesBackButton = true;
 		}
 
 		public override void ViewDidLoad ()
@@ -52,11 +54,11 @@ namespace Feelknit.iOS
 			{
 				_feelings = await GetCurrentFeelings();
 
-				this.TableView.Source = new RelatedFeelingsTableViewSource(_feelings.ToList(), OnRowSelection);
-				this.TableView.ReloadData();
+				this.RecentFeelingsTableView.Source = new RelatedFeelingsTableViewSource(_feelings.ToList(), OnRowSelection);
+				this.RecentFeelingsTableView.ReloadData();
 
 				_loadingOverlay.Hide();
-			};
+			} ;
 
 
 			GetFeelings.Invoke();
@@ -80,11 +82,13 @@ namespace Feelknit.iOS
 			if (commentsViewController != null)
 			{
 				commentsViewController.Feeling = feeling;
+				commentsViewController.Data = true;
 				this.NavigationController.PushViewController(commentsViewController, true);
 			}
 		}
 
 
 		internal delegate void GetUserFeelingsDelegate();
+
 	}
 }

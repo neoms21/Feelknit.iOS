@@ -13,7 +13,7 @@ namespace Feelknit.iOS.Controllers
 		public const int DefaultMenuWidth = 260;
 
 		public enum MenuLocations{
-			Left = 1,
+			Left =1,
 			Right
 		}
 

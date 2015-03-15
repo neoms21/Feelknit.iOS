@@ -50,7 +50,7 @@ namespace Feelknit.iOS
 			FeelingTextLabel.AttributedText = prettyString ;
 
 			ResizeHeigthWithText (FeelingTextLabel);
-			CommentsLabel.Text = string.Format ("Comments {0}", Feeling.Comments.Count);
+			CommentsLabel.Text = string.Format ("Comments {0}", Feeling.Comments.Count == 0 ? Feeling.CommentsCount:Feeling.Comments.Count);
 			SupportLabel.Text = string.Format ("Support {0}", Feeling.SupportCount);
 			FeelingDate.Text = Feeling.FeelingDate.ToString ("dd MMM yyyy HH:mm");
 		}
