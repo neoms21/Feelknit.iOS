@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,65 +13,94 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="vbD-qq-iBY">
-                        <rect key="frame" x="8" y="8" width="36" height="33"/>
-                    </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REQ-fQ-dcv">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REQ-fQ-dcv">
                         <rect key="frame" x="8" y="143" width="82" height="30"/>
                         <accessibility key="accessibilityConfiguration" label="Comment"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="KI0-NG-gS6"/>
                             <constraint firstAttribute="width" constant="82" id="KNl-Qa-gjk"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="Comment">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6v-UW-XJC">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6v-UW-XJC">
                         <rect key="frame" x="238" y="143" width="64" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="64" id="sfg-65-aK0"/>
                             <constraint firstAttribute="height" constant="30" id="t5K-Fo-QOC"/>
+                            <constraint firstAttribute="width" constant="64" id="x16-gx-rmi"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="Report">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="feelingtext" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMF-jW-RBQ">
-                        <rect key="frame" x="76" y="15" width="226" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments (0)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqP-HD-2na">
-                        <rect key="frame" x="8" y="102" width="82" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="feelingtext" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMF-jW-RBQ">
+                        <rect key="frame" x="82" y="29" width="230" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Support(0)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mho-9f-r0q">
-                        <rect key="frame" x="106" y="102" width="90" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments (0)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqP-HD-2na">
+                        <rect key="frame" x="8" y="108" width="78" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaS-bD-h3Y">
-                        <rect key="frame" x="232" y="102" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support(0)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mho-9f-r0q">
+                        <rect key="frame" x="102" y="108" width="90" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="4uV-FN-Bpr"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7az-kN-GDg">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaS-bD-h3Y">
+                        <rect key="frame" x="282" y="108" width="30" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7az-kN-GDg">
                         <rect key="frame" x="127" y="143" width="69" height="30"/>
                         <constraints>
+                            <constraint firstAttribute="width" constant="69" id="4F3-SW-LK0"/>
                             <constraint firstAttribute="height" constant="30" id="HWj-8d-o4L"/>
-                            <constraint firstAttribute="width" constant="69" id="aAM-BC-Ffz"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="Support">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="vbD-qq-iBY">
+                        <rect key="frame" x="8" y="15" width="42" height="42"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="42" id="aal-nC-CNS"/>
+                            <constraint firstAttribute="width" constant="42" id="p7o-i8-RgA"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="7az-kN-GDg" secondAttribute="bottom" constant="8" id="0TL-Ms-mKp"/>
+                    <constraint firstItem="REQ-fQ-dcv" firstAttribute="top" secondItem="eqP-HD-2na" secondAttribute="bottom" constant="20" id="0yc-aH-kFp"/>
+                    <constraint firstAttribute="bottom" secondItem="a6v-UW-XJC" secondAttribute="bottom" constant="8" id="3W3-JB-iVT"/>
+                    <constraint firstItem="Mho-9f-r0q" firstAttribute="leading" secondItem="eqP-HD-2na" secondAttribute="trailing" constant="16" id="9Ox-M0-Bac"/>
+                    <constraint firstItem="a6v-UW-XJC" firstAttribute="leading" secondItem="7az-kN-GDg" secondAttribute="trailing" constant="42" id="GH8-yy-idx"/>
+                    <constraint firstItem="vbD-qq-iBY" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="top" constant="15" id="IBa-qe-blB"/>
+                    <constraint firstItem="vbD-qq-iBY" firstAttribute="centerY" secondItem="CMF-jW-RBQ" secondAttribute="centerY" id="LTw-TG-Dov"/>
+                    <constraint firstAttribute="trailing" secondItem="CMF-jW-RBQ" secondAttribute="trailing" constant="10" id="PPA-6S-ObA"/>
+                    <constraint firstAttribute="trailing" secondItem="qaS-bD-h3Y" secondAttribute="trailing" constant="10" id="a8C-jN-I5B"/>
+                    <constraint firstAttribute="bottom" secondItem="REQ-fQ-dcv" secondAttribute="bottom" constant="8" id="csZ-Bq-X6g"/>
+                    <constraint firstItem="7az-kN-GDg" firstAttribute="leading" secondItem="REQ-fQ-dcv" secondAttribute="trailing" constant="37" id="nLx-Ms-5fG"/>
+                    <constraint firstItem="REQ-fQ-dcv" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" constant="8" id="nc6-5J-geI"/>
+                    <constraint firstItem="eqP-HD-2na" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" constant="8" id="nl6-sn-pWi"/>
+                    <constraint firstItem="Mho-9f-r0q" firstAttribute="top" secondItem="eqP-HD-2na" secondAttribute="top" id="of7-Zp-MHi"/>
+                    <constraint firstItem="vbD-qq-iBY" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" constant="8" id="p1g-E5-uw3"/>
+                    <constraint firstItem="Mho-9f-r0q" firstAttribute="top" secondItem="qaS-bD-h3Y" secondAttribute="top" id="wfc-jD-LC7"/>
+                    <constraint firstItem="CMF-jW-RBQ" firstAttribute="leading" secondItem="vbD-qq-iBY" secondAttribute="trailing" constant="32" id="wsy-67-JYX"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="CommentButton" destination="REQ-fQ-dcv" id="vIx-XP-s7J"/>

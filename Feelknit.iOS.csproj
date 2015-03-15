@@ -283,6 +283,10 @@
     <Compile Include="Views\CommentCellView.designer.cs">
       <DependentUpon>CommentCellView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CurrentFeelingsViewController.cs" />
+    <Compile Include="Controllers\CurrentFeelingsViewController.designer.cs">
+      <DependentUpon>CurrentFeelingsViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

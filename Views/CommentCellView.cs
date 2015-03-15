@@ -32,9 +32,6 @@ namespace Feelknit.iOS
 			base.LayoutSubviews ();
 			var frame = CommentTextLabel.Frame;
 
-//			frame.Width = ContentView.Bounds.Width;
-//			frame.Height = 100;
-//			CommentTextView.Frame = frame;
 			CommentTextLabel.Text = Comment.Text;
 			ResizeHeigthWithText (CommentTextLabel);
 
@@ -48,7 +45,6 @@ namespace Feelknit.iOS
 
 		private void ResizeHeigthWithText(UILabel label,float maxHeight = 960f) 
 		{
-
 			label.AdjustsFontSizeToFitWidth = false;
 			float width = 280;// label.Frame.Width;  
 			label.Lines = 0;

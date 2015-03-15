@@ -1,10 +1,12 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio to store outlets and
-// actions made in the UI designer. If it is removed, they will be lost.
-// Manual changes to this file may not be handled correctly.
+// This file has been generated automatically by Xamarin Studio from the outlets and
+// actions declared in your storyboard file.
+// Manual changes to this file will not be maintained.
 //
 using MonoTouch.Foundation;
+using MonoTouch.UIKit;
+using System;
 using System.CodeDom.Compiler;
 
 namespace Feelknit.iOS.Controllers
@@ -32,43 +34,9 @@ namespace Feelknit.iOS.Controllers
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel UserNameLabel { get; set; }
-		
+
 		void ReleaseDesignerOutlets ()
 		{
-			if (CommentsCountLabel != null) {
-				CommentsCountLabel.Dispose ();
-				CommentsCountLabel = null;
-			}
-
-			if (CommentsTable != null) {
-				CommentsTable.Dispose ();
-				CommentsTable = null;
-			}
-
-			if (CommentTextView != null) {
-				CommentTextView.Dispose ();
-				CommentTextView = null;
-			}
-
-			if (FeelingTextView != null) {
-				FeelingTextView.Dispose ();
-				FeelingTextView = null;
-			}
-
-			if (UserIcon != null) {
-				UserIcon.Dispose ();
-				UserIcon = null;
-			}
-
-			if (UserNameLabel != null) {
-				UserNameLabel.Dispose ();
-				UserNameLabel = null;
-			}
-
-			if (AddCommentButton != null) {
-				AddCommentButton.Dispose ();
-				AddCommentButton = null;
-			}
 		}
 	}
 }
