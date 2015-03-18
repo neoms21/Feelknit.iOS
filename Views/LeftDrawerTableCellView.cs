@@ -26,10 +26,8 @@ namespace Feelknit.iOS
 		{
 			base.LayoutSubviews ();
 			LeftDrawerItemImage.Image = UIImage.FromBundle (LeftDrawerItem.Image + ".png");
-			LeftDrawerItem.Text = LeftDrawerItem.Text;
-			LeftDrawerItem.Id = LeftDrawerItem.Id;
+			LeftDrawerItemText.Text = LeftDrawerItem.Text;
 
-			//			ReportAbuseLabel.Touch
 		}
 
 

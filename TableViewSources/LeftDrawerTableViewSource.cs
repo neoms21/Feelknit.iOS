@@ -7,17 +7,17 @@ namespace Feelknit.iOS
 	public class LeftDrawerTableViewSource : UITableViewSource
 	{
 		List<LeftDrawerItem> _items;
-		public LeftDrawerTableViewSource (List<LeftDrawerItem> items)
+
+		readonly Action<string> _action;
+
+		public LeftDrawerTableViewSource (List<LeftDrawerItem> items, Action<string> action)
 		{
 			_items = items;
+			_action = action;
 		}
-
 
 		private const string CellIdentifier = "LeftDrawerTableCell";
 
-		readonly Action<int> _action;
-
-	
 
 		public override int RowsInSection (UITableView tableview, int section)
 		{

@@ -1,11 +1,14 @@
 using Feelknit.iOS.TableViewSources;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using System;
 
 namespace Feelknit.iOS.Controllers
 {
     public class SideMenuController : BaseController
     {
+		public Action<bool> Action { get; set; }
+
         public SideMenuController()
             : base(null, null)
         {
@@ -14,16 +17,15 @@ namespace Feelknit.iOS.Controllers
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-			View = LeftDrawerView.Create();
+			View = LeftDrawerView.Create(DrawerItemSelected);
             View.BackgroundColor = UIColor.FromRGB(.9f, .9f, .9f);
-
-//            var tableView = new UITableView(View.Bounds);
-//            tableView.Source = new SideMenuTableViewSource(new[] { "Related Feelings", "Comments", " My Feelings" });
-//
-//            View.Add(tableView);
-            //			View.Add(body);
-            //			View.Add(introButton);
-            //			View.Add(contentButton);
         }
+
+		public void DrawerItemSelected (string id)
+		{
+			MoveToNextController (id);
+			if (Action != null)
+				Action.Invoke (true);
+		}
     }
 }

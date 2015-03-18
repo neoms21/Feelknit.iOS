@@ -6,8 +6,6 @@ namespace Feelknit.iOS.Controllers
 {
     public class BaseController : UIViewController
     {
-
-
 		public object Data{ get; set; }
 
         public BaseController(IntPtr handle)

@@ -146,6 +146,9 @@ namespace Feelknit.iOS.Controllers
 		{
 			Initialize(contentAreaController, navigationAreaController);
 
+			var controller = (navigationAreaController as SideMenuController);
+			controller.Action = CloseMenu;
+
 			// handle wiring things up so events propogate properly
 			rootViewController.AddChildViewController(this);
 			rootViewController.View.AddSubview(this.View);
