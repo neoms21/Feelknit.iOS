@@ -111,6 +111,9 @@
     <Reference Include="SystemServicesBinding">
       <HintPath>packages\BugSense.Xamarin.iOS.3.6.7.0\lib\MonoTouch\SystemServicesBinding.dll</HintPath>
     </Reference>
+    <Reference Include="DSoft.Messaging">
+      <HintPath>Libs\DSoft.Messaging.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png">

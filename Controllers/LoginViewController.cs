@@ -7,6 +7,7 @@ using Feelknit.Model;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using Newtonsoft.Json;
+using DSoft.Messaging;
 
 namespace Feelknit.iOS.Controllers
 {
@@ -26,9 +27,9 @@ namespace Feelknit.iOS.Controllers
             this.View.BackgroundColor = Resources.MainBackgroundColor;
             this.LoginButton.BackgroundColor = Resources.ButtonColor;
             RegisterButton.BackgroundColor = Resources.ButtonColor;
-
-            LoginButton.SetTitleColor(Resources.LoginButtonColor, UIControlState.Normal);
-            RegisterButton.SetTitleColor(Resources.LoginButtonColor, UIControlState.Normal);
+			NavigationController.NavigationBarHidden = true;
+			LoginButton.SetTitleColor(UIColor.White, UIControlState.Normal);
+			RegisterButton.SetTitleColor(UIColor.White, UIControlState.Normal);
 
         }
 
@@ -76,6 +77,7 @@ namespace Feelknit.iOS.Controllers
 
         private void SetImageAndMargin(UITextField uiTextField, string image)
         {
+			uiTextField.BackgroundColor = UIColor.White;
             var imageView = new UIImageView(UIImage.FromBundle(image))
             {
                 // Indent it 10 pixels from the left.
@@ -105,7 +107,15 @@ namespace Feelknit.iOS.Controllers
 
 //                NSUserDefaults.StandardUserDefaults.SetBool(true, "IsAuthenticated");
 //                NSUserDefaults.StandardUserDefaults.SetString(UserName.Text, "UserName");
-                
+				//Creare a MessageBusEvent
+				var aEvent = new CoreMessageBusEvent ("LoginDetailsEvent") {
+					Sender = this,
+
+				};
+
+				//send it
+				MessageBus.Default.Post (aEvent);
+
                 await Task.Factory.StartNew(async () =>
                 {
                     client = new JsonHttpClient(UrlHelper.USER_KEY);
