@@ -22,7 +22,6 @@ namespace Feelknit.iOS
 		public static  string USER_FEELINGS = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings/username/{0}";
 		public static  string GET_FEELS = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings/getfeels";
 		public static  string CURRENT = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings/current";
-
 	}
 }
 

@@ -98,6 +98,7 @@ namespace Feelknit.iOS.Controllers
             if (loginResult.IsLoginSuccessful)
             {
 				ApplicationHelper.UserName = UserName.Text;
+				ApplicationHelper.EmailAddress = loginResult.UserEmail;
 				ApplicationHelper.IsAuthenticated = true;
 				ApplicationHelper.AuthorizationToken = loginResult.Token;
 				ApplicationHelper.Avatar = loginResult.Avatar;
@@ -112,7 +113,7 @@ namespace Feelknit.iOS.Controllers
                     await client.PostRequest(user);
                 });
 
-                MoveToNextController(typeof(UserFeelingsController).Name);
+				MoveToNextController(typeof(CurrentFeelingsViewController).Name);
                 return;
             }
 

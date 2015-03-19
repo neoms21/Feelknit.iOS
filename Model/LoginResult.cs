@@ -8,6 +8,8 @@ namespace Feelknit.iOS
 			public string Avatar{get;set;}
 
 		public string Token{ get; set;}
+
+		public string UserEmail{ get; set;}
 		public LoginResult ()
 		{
 		

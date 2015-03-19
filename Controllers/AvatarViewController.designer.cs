@@ -16,33 +16,25 @@ namespace Feelknit.iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITableView AvatarsTableView { get; set; }
+		UICollectionView AvatarCollectionView { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIButton SaveAvatarButton { get; set; }
+		UIButton SaveButton { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton SkipButton { get; set; }
 
-		[Action ("SaveAvatarButton_TouchUpInside:")]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		partial void SaveAvatarButton_TouchUpInside (UIButton sender);
-
-		[Action ("SkipButton_TouchUpInside:")]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		partial void SkipButton_TouchUpInside (UIButton sender);
-
 		void ReleaseDesignerOutlets ()
 		{
-			if (AvatarsTableView != null) {
-				AvatarsTableView.Dispose ();
-				AvatarsTableView = null;
+			if (AvatarCollectionView != null) {
+				AvatarCollectionView.Dispose ();
+				AvatarCollectionView = null;
 			}
-			if (SaveAvatarButton != null) {
-				SaveAvatarButton.Dispose ();
-				SaveAvatarButton = null;
+			if (SaveButton != null) {
+				SaveButton.Dispose ();
+				SaveButton = null;
 			}
 			if (SkipButton != null) {
 				SkipButton.Dispose ();

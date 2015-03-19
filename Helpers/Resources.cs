@@ -30,7 +30,7 @@ namespace Feelknit.iOS
 
 		public static List<LeftDrawerItem> LeftDrawerItems = new List<LeftDrawerItem>
 		{
-			new LeftDrawerItem("Profile","notifications",""),
+			new LeftDrawerItem("Profile","notifications",typeof(ProfileViewController).Name),
 			new LeftDrawerItem("Current Feelings","userdrawer",typeof(CurrentFeelingsViewController).Name),
 			new LeftDrawerItem("My Feelings","userdrawer",typeof(UserFeelingsController).Name),
 			new LeftDrawerItem("Comments","comments",typeof(CommentsViewController).Name),

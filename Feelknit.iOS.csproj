@@ -269,10 +269,6 @@
     <Compile Include="Helpers\Resources.cs" />
     <Compile Include="Helpers\UIColorExtensions.cs" />
     <Compile Include="Model\LoginResult.cs" />
-    <Compile Include="AvatarViewController.cs" />
-    <Compile Include="AvatarViewController.designer.cs">
-      <DependentUpon>AvatarViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="TableViewSources\AvatarTableViewSource.cs" />
     <Compile Include="Views\LeftDrawerView.cs" />
     <Compile Include="Views\LeftDrawerView.designer.cs">
@@ -293,6 +289,14 @@
     <Compile Include="Views\LeftDrawerTableCellView.cs" />
     <Compile Include="Views\LeftDrawerTableCellView.designer.cs">
       <DependentUpon>LeftDrawerTableCellView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ProfileViewController.cs" />
+    <Compile Include="Controllers\ProfileViewController.designer.cs">
+      <DependentUpon>ProfileViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AvatarViewController.cs" />
+    <Compile Include="Controllers\AvatarViewController.designer.cs">
+      <DependentUpon>AvatarViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
