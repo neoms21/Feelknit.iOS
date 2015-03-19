@@ -108,13 +108,12 @@ namespace Feelknit.iOS.Controllers
 //                NSUserDefaults.StandardUserDefaults.SetBool(true, "IsAuthenticated");
 //                NSUserDefaults.StandardUserDefaults.SetString(UserName.Text, "UserName");
 				//Creare a MessageBusEvent
-				var aEvent = new CoreMessageBusEvent ("LoginDetailsEvent") {
-					Sender = this,
-
-				};
+			
 
 				//send it
-				MessageBus.Default.Post (aEvent);
+				MessageBus.Default.Post (new CoreMessageBusEvent (Constants.LoginDetailsReceivedEvent) {
+					Sender = this,
+					});
 
                 await Task.Factory.StartNew(async () =>
                 {

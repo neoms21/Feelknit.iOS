@@ -26,6 +26,10 @@ namespace Feelknit.iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton SkipButton { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIImageView UserAvatarImageView { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (AvatarCollectionView != null) {
@@ -39,6 +43,10 @@ namespace Feelknit.iOS
 			if (SkipButton != null) {
 				SkipButton.Dispose ();
 				SkipButton = null;
+			}
+			if (UserAvatarImageView != null) {
+				UserAvatarImageView.Dispose ();
+				UserAvatarImageView = null;
 			}
 		}
 	}

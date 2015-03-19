@@ -19,7 +19,7 @@ namespace Feelknit.iOS
 		public LeftDrawerView (IntPtr handle) : base (handle)
 		{
 			mEvHandler = new MessageBusEventHandler () {
-				EventId = "LoginDetailsEvent",
+				EventId = Constants.LoginDetailsReceivedEvent,
 				EventAction = MessageBusEventHandler,
 			};
 			//register for an event
@@ -66,7 +66,6 @@ namespace Feelknit.iOS
 			});
 
 		}
-		
 }
 }
 

@@ -24,8 +24,28 @@ namespace Feelknit.iOS
 //			<color name="mainBg">#A4C3DC</color>
 //			<color name="greyColor">#6F7376</color>
 
-		public static IList<string> Avatars = new List<string> {"agnes", "blackwidow", "chef", "evilminion", "girl1",
-			"girl2", "girl3", "gru", "hulk", "ironman", "kungfuminion", "thor"
+		public static IList<string> Avatars = new List<string> {"ade",
+			        "ben",
+			        "billy",
+			        "billy_boy",
+			        "carla",
+			        "coco_moustasche",
+			        "cora",
+			        "costa",
+			        "frank",
+			        "fred",
+			        "gav",
+			        "gus",
+			        "hena",
+			        "iri",
+			        "jayman",
+			        "john",
+			        "laly",
+			        "michela",
+			        "profile",
+			        "seby",
+			        "smith",
+			        "stella"
 		};
 
 		public static List<LeftDrawerItem> LeftDrawerItems = new List<LeftDrawerItem>

@@ -4,6 +4,7 @@ using System;
 using System.CodeDom.Compiler;
 using Feelknit.iOS.Helpers;
 using Feelknit.iOS.Controllers;
+using DSoft.Messaging;
 
 namespace Feelknit.iOS.Controllers
 {
@@ -11,6 +12,12 @@ namespace Feelknit.iOS.Controllers
 	{
 		public ProfileViewController (IntPtr handle) : base (handle)
 		{
+			;
+			//register for an event
+			MessageBus.Default.Register (new MessageBusEventHandler () {
+				EventId = Constants.AvatarSelectedEvent,
+				EventAction = MessageBusEventHandler,
+			});
 		}
 
 		public override void ViewWillAppear (bool animated)
@@ -33,6 +40,10 @@ namespace Feelknit.iOS.Controllers
 			UserNameLabel.Text = ApplicationHelper.UserName;
 			UserImageButton.SetBackgroundImage (UIImage.FromBundle (string.Format ("Avatars/{0}", ApplicationHelper.Avatar)), UIControlState.Normal);
 		
+			UserImageButton.TouchUpInside+= (object sender, EventArgs e) => {
+				MoveToNextController(typeof(AvatarViewController).Name);
+			};
+
 			SaveButton.TouchUpInside += (object sender, EventArgs e) => {
 
 		
@@ -46,6 +57,22 @@ namespace Feelknit.iOS.Controllers
 
 		}
 
+		/// <summary>
+		/// Messages the bus event handler.
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="evnt">Evnt.</param>
+		public void MessageBusEventHandler (object sender, MessageBusEvent evnt)
+		{
+			var avatar = evnt.Data [0] as string;
+			//execute on the UI thread
+			BeginInvokeOnMainThread (() => {
+				//post to the output box
+			
+				UserImageButton.SetBackgroundImage (UIImage.FromBundle (string.Format("Avatars/{0}.png", avatar)), UIControlState.Normal);
+			});
+
+		}
 
 	}
 }

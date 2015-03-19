@@ -622,7 +622,7 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1817" translatesAutoresizingMaskIntoConstraints="NO" text="" textAlignment="left" indicatorStyle="0" scrollEnabled="NO">
                                 <rect key="frame" x="5" y="185.5" width="310" height="36"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0" blue="1" alpha="1"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="emailAddress"/>
                                 <constraints>
@@ -635,7 +635,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                                 </state>
-                                
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1823" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="169" y="253.5" width="141" height="30"/>
@@ -681,52 +680,49 @@
             </objects>
             <point key="canvasLocation" x="612" y="1473"/>
         </scene>
-        <scene sceneID="1832">
+        <scene sceneID="1909">
             <objects>
-                <viewController id="1833" sceneMemberID="viewController" customClass="AvatarViewController" storyboardIdentifier="AvatarViewController">
+                <viewController id="1910" sceneMemberID="viewController" customClass="AvatarViewController" storyboardIdentifier="AvatarViewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1830"/>
-                        <viewControllerLayoutGuide type="bottom" id="1831"/>
+                        <viewControllerLayoutGuide type="top" id="1907"/>
+                        <viewControllerLayoutGuide type="bottom" id="1908"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1834">
+                    <view key="view" contentMode="scaleToFill" id="1911">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Your Avatar" lineBreakMode="tailTruncation" minimumFontSize="10" id="1837" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="20" y="43" width="150" height="32"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Your Avatar" lineBreakMode="tailTruncation" minimumFontSize="10" id="1914" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="10" y="60" width="201" height="20.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <constraints>
-                                    <constraint id="1847" firstItem="1837" firstAttribute="width" constant="150"/>
-                                </constraints>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1838" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="250" y="27" width="64" height="64"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="1915" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="241" y="45.5" width="50" height="50"/>
                                 <constraints>
-                                    <constraint id="1852" firstItem="1838" firstAttribute="width" constant="64"/>
-                                    <constraint id="1853" firstItem="1838" firstAttribute="height" constant="64"/>
+                                    <constraint id="1918" firstItem="1915" firstAttribute="width" constant="50"/>
+                                    <constraint id="1919" firstItem="1915" firstAttribute="height" constant="50"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" id="1839" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="0.0" y="111" width="320" height="2"/>
+                            <view contentMode="scaleToFill" id="1924" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="100.5" width="320" height="10"/>
                                 <color key="backgroundColor" customColorSpace="calibratedWhite" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
-                                    <constraint id="1857" firstItem="1839" firstAttribute="height" constant="2"/>
+                                    <constraint id="1926" firstItem="1924" firstAttribute="height" constant="10"/>
                                 </constraints>
                             </view>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="1840" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="0.0" y="173" width="320" height="0.0"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1842">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="1930" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="120.5" width="320" height="340.5"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1932">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1841">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1931">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -736,45 +732,57 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.6" green="0.4" blue="0.2" alpha="1"/>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1862" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="34" y="520" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1940" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="8" y="535" width="140" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" title="Skip">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1863" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="264" y="518" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1941" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="168" y="535" width="140" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="1"/>
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                                 </state>
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="1837" firstAttribute="leading" secondItem="1834" secondAttribute="leading" constant="20" id="1843"/>
-                            <constraint firstItem="1837" firstAttribute="top" secondItem="1830" secondAttribute="bottom" constant="23" id="1844"/>
-                            <constraint id="1846" firstItem="1838" firstAttribute="centerY" secondItem="1837" secondAttribute="centerY" constant="0.0"/>
-                            <constraint firstItem="1838" firstAttribute="top" secondItem="1830" secondAttribute="bottom" constant="7" id="1848"/>
-                            <constraint firstItem="1834" firstAttribute="trailing" secondItem="1838" secondAttribute="trailing" constant="6" id="1849"/>
-                            <constraint firstItem="1839" firstAttribute="leading" secondItem="1834" secondAttribute="leading" constant="0.0" id="1854"/>
-                            <constraint firstItem="1834" firstAttribute="trailing" secondItem="1839" secondAttribute="trailing" constant="0.0" id="1855"/>
-                            <constraint firstItem="1839" firstAttribute="top" secondItem="1837" secondAttribute="bottom" constant="36" id="1858"/>
-                            <constraint firstItem="1840" firstAttribute="leading" secondItem="1834" secondAttribute="leading" constant="0.0" id="1859"/>
-                            <constraint firstItem="1834" firstAttribute="trailing" secondItem="1840" secondAttribute="trailing" constant="0.0" id="1860"/>
-                            <constraint firstItem="1840" firstAttribute="top" secondItem="1839" secondAttribute="centerY" constant="61" id="1861"/>
-                            <constraint firstItem="1863" firstAttribute="top" secondItem="1840" secondAttribute="bottom" constant="53" id="1864"/>
+                            <constraint firstItem="1914" firstAttribute="top" secondItem="1907" secondAttribute="bottom" constant="40" id="1916"/>
+                            <constraint firstItem="1914" firstAttribute="leading" secondItem="1911" secondAttribute="leading" constant="10" id="1917"/>
+                            <constraint firstItem="1911" firstAttribute="trailing" secondItem="1915" secondAttribute="trailing" constant="29" id="1920"/>
+                            <constraint id="1921" firstItem="1915" firstAttribute="centerY" secondItem="1914" secondAttribute="centerY" constant="0.0"/>
+                            <constraint id="1922" firstItem="1915" firstAttribute="centerY" secondItem="1914" secondAttribute="centerY" constant="0.0"/>
+                            <constraint firstItem="1915" firstAttribute="leading" secondItem="1914" secondAttribute="trailing" constant="30" id="1923"/>
+                            <constraint firstItem="1924" firstAttribute="top" secondItem="1914" secondAttribute="bottom" constant="20" id="1927"/>
+                            <constraint firstItem="1911" firstAttribute="trailing" secondItem="1924" secondAttribute="trailing" constant="0.0" id="1928"/>
+                            <constraint firstItem="1924" firstAttribute="leading" secondItem="1911" secondAttribute="leading" constant="0.0" id="1929"/>
+                            <constraint firstItem="1930" firstAttribute="leading" secondItem="1911" secondAttribute="leading" constant="0.0" id="1935"/>
+                            <constraint firstItem="1911" firstAttribute="trailing" secondItem="1930" secondAttribute="trailing" constant="0.0" id="1938"/>
+                            <constraint firstItem="1930" firstAttribute="top" secondItem="1924" secondAttribute="centerY" constant="15" id="1939"/>
+                            <constraint firstItem="1908" firstAttribute="top" secondItem="1940" secondAttribute="bottom" constant="3" id="1942"/>
+                            <constraint firstItem="1908" firstAttribute="top" secondItem="1941" secondAttribute="bottom" constant="3" id="1943"/>
+                            <constraint firstItem="1940" firstAttribute="leading" secondItem="1911" secondAttribute="leading" constant="8" id="1945"/>
+                            <constraint firstItem="1911" firstAttribute="trailing" secondItem="1941" secondAttribute="trailing" constant="12" id="1946"/>
+                            <constraint firstItem="1941" firstAttribute="top" secondItem="1930" secondAttribute="bottom" constant="74" id="1948"/>
+                            <constraint id="1952" firstItem="1940" firstAttribute="width" secondItem="1941" secondAttribute="width" constant="0.0"/>
+                            <constraint firstItem="1941" firstAttribute="leading" secondItem="1940" secondAttribute="trailing" constant="20" id="1953"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="SkipButton" destination="1862" id="name-outlet-1862"/>
-                        <outlet property="SaveButton" destination="1863" id="name-outlet-1863"/>
-                        <outlet property="AvatarCollectionView" destination="1840" id="name-outlet-1840"/>
+                        <outlet property="AvatarCollectionView" destination="1930" id="name-outlet-1930"/>
+                        <outlet property="SkipButton" destination="1940" id="name-outlet-1940"/>
+                        <outlet property="SaveButton" destination="1941" id="name-outlet-1941"/>
+                        <outlet property="UserAvatarImageView" destination="1915" id="name-outlet-1915"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1835" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1912" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1064" y="1480"/>
+            <point key="canvasLocation" x="1068" y="1472"/>
         </scene>
     </scenes>
     <resources>
