@@ -41,7 +41,7 @@ namespace Feelknit.iOS.Views
                 labelHeight
                 ));
             loadingLabel.BackgroundColor = UIColor.Clear;
-            loadingLabel.TextColor = UIColor.White;
+            loadingLabel.TextColor = Resources.WhiteColor;
             loadingLabel.Text = message;
             loadingLabel.TextAlignment = UITextAlignment.Center;
             loadingLabel.AutoresizingMask = UIViewAutoresizing.FlexibleMargins;

@@ -28,8 +28,8 @@ namespace Feelknit.iOS.Controllers
             this.LoginButton.BackgroundColor = Resources.ButtonColor;
             RegisterButton.BackgroundColor = Resources.ButtonColor;
 			NavigationController.NavigationBarHidden = true;
-			LoginButton.SetTitleColor(UIColor.White, UIControlState.Normal);
-			RegisterButton.SetTitleColor(UIColor.White, UIControlState.Normal);
+			LoginButton.SetTitleColor(Resources.WhiteColor, UIControlState.Normal);
+			RegisterButton.SetTitleColor(Resources.WhiteColor, UIControlState.Normal);
 
         }
 
@@ -77,7 +77,7 @@ namespace Feelknit.iOS.Controllers
 
         private void SetImageAndMargin(UITextField uiTextField, string image)
         {
-			uiTextField.BackgroundColor = UIColor.White;
+			uiTextField.BackgroundColor = Resources.WhiteColor;
             var imageView = new UIImageView(UIImage.FromBundle(image))
             {
                 // Indent it 10 pixels from the left.

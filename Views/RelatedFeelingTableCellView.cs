@@ -5,17 +5,22 @@ using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using Feelknit.iOS.Model;
+using System.Threading.Tasks;
+using Feelknit.iOS.Helpers;
+using System.Collections.Specialized;
 
 namespace Feelknit.iOS
 {
 	public partial class RelatedFeelingTableCellView : UITableViewCell
 	{
 		public Feeling Feeling{ get; set;}
+
 		public static readonly UINib Nib = UINib.FromName ("RelatedFeelingTableCellView", NSBundle.MainBundle);
 		public static readonly NSString Key = new NSString ("RelatedFeelingTableCellView");
 
 		public RelatedFeelingTableCellView (IntPtr handle) : base (handle)
 		{
+
 
 		}
 
@@ -23,6 +28,45 @@ namespace Feelknit.iOS
 		{
 			return (RelatedFeelingTableCellView)Nib.Instantiate (null, null) [0];
 
+		}
+
+		public override void AwakeFromNib ()
+		{
+			base.AwakeFromNib ();
+
+				SupportButton.TouchUpInside += IncreaseSupportCount;
+
+		}
+
+		private void IncreaseSupportCount(object sender, EventArgs e)
+		{
+			var isIncrease = true;
+			if (Feeling.SupportUsers.Contains (ApplicationHelper.UserName))
+				isIncrease = false;
+
+			if (isIncrease) {
+				SupportButton.SetTitle ("Un-Support", UIControlState.Normal);
+				Feeling.SupportCount += 1;
+				Feeling.SupportUsers.Add (ApplicationHelper.UserName);
+			} else {
+				SupportButton.SetTitle ("Support", UIControlState.Normal);
+				Feeling.SupportCount -= 1;
+				Feeling.SupportUsers.Remove (ApplicationHelper.UserName);
+			}
+
+			SupportLabel.Text = string.Format ("Support {0}", Feeling.SupportCount);
+			Task.Factory.StartNew(()=>{
+				SaveSupportCountModification(isIncrease);
+			});
+		}
+
+		private void DecreaseSupportCount(object sender, EventArgs e)
+		{
+			Feeling.SupportCount -= 1;
+			SupportLabel.Text = string.Format ("Support {0}", Feeling.SupportCount);
+			Task.Factory.StartNew(()=>{
+				SaveSupportCountModification(false);
+			});
 		}
 
 		public override void LayoutSubviews ()  
@@ -38,7 +82,12 @@ namespace Feelknit.iOS
 
 				Font = UIFont.BoldSystemFontOfSize (12)
 			};
+			if (Feeling.SupportUsers.Contains (ApplicationHelper.UserName)) {
+				SupportButton.SetTitle ("Un-Suppport", UIControlState.Normal);
 
+			} else {
+				SupportButton.SetTitle ("Suppport", UIControlState.Normal);
+			}
 			var fulltext = string.Format ("{0} {1}", Feeling.UserName, Feeling.GetFeelingFormattedText (""));
 			var startIndexOfFeeling = Feeling.UserName.Length + 13; // fulltexy is in format of username was feeling FeellingText
 			var prettyString = new NSMutableAttributedString (fulltext);
@@ -53,6 +102,23 @@ namespace Feelknit.iOS
 			CommentsLabel.Text = string.Format ("Comments {0}", Feeling.Comments.Count == 0 ? Feeling.CommentsCount:Feeling.Comments.Count);
 			SupportLabel.Text = string.Format ("Support {0}", Feeling.SupportCount);
 			FeelingDate.Text = Feeling.FeelingDate.ToString ("dd MMM yyyy HH:mm");
+		
+			FormatButton (CommentButton);
+			FormatButton (SupportButton);
+			FormatButton (ReportButton);
+
+		}
+
+		public override void PrepareForReuse ()
+		{
+			base.PrepareForReuse ();
+
+		}
+
+		private void FormatButton(UIButton button)
+		{
+			button.BackgroundColor = Resources.LightButtonColor;
+			button.SetTitleColor (Resources.WhiteColor, UIControlState.Normal);
 		}
 
 		private void ResizeHeigthWithText(UILabel label,float maxHeight = 960f) 
@@ -67,6 +133,32 @@ namespace Feelknit.iOS
 			var labelFrame = label.Frame;
 			labelFrame.Size = new SizeF(280,size.Height);
 			label.Frame = labelFrame; 
+		}
+
+		private async void SaveSupportCountModification(bool isIncrease = true)
+		{
+			var url = isIncrease ? UrlHelper.INCREASE_SUPPORT : UrlHelper.DECREASE_SUPPORT;
+			var client = new JsonHttpClient(url);
+			var collection = new NameValueCollection ();
+			collection.Add ("feelingId", Feeling.Id);
+			collection.Add ("username", ApplicationHelper.UserName);
+//			var feeling = new { feelingId = Feeling.Id , UserName = ApplicationHelper.UserName };
+			await client.PostRequestWithParams(collection);
+
+
+			//MessageBus.PostEvent (new CoreMessageBusEvent (Constants.UserDetailsUpdateEvent));
+			//InvokeOnMainThread(()=> {});
+
+		}
+
+
+		private async void DecreaseSupport()
+		{
+			var client = new JsonHttpClient(string.Format(UrlHelper.DECREASE_SUPPORT));
+			var feeling = new { feelingId = Feeling.Id , username = ApplicationHelper.UserName };
+			await client.PostRequest(feeling);
+
+
 		}
 	}
 }

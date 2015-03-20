@@ -14,11 +14,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REQ-fQ-dcv">
-                        <rect key="frame" x="8" y="143" width="82" height="30"/>
+                        <rect key="frame" x="8" y="143" width="99" height="30"/>
+                        <color key="backgroundColor" red="0.1988979481" green="1" blue="0.37979163459999998" alpha="1" colorSpace="calibratedRGB"/>
                         <accessibility key="accessibilityConfiguration" label="Comment"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="KI0-NG-gS6"/>
-                            <constraint firstAttribute="width" constant="82" id="KNl-Qa-gjk"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="Comment">
@@ -26,10 +26,10 @@
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6v-UW-XJC">
-                        <rect key="frame" x="238" y="143" width="64" height="30"/>
+                        <rect key="frame" x="215" y="143" width="99" height="30"/>
+                        <color key="backgroundColor" red="0.1988979481" green="1" blue="0.37979163459999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="t5K-Fo-QOC"/>
-                            <constraint firstAttribute="width" constant="64" id="x16-gx-rmi"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="Report">
@@ -64,9 +64,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7az-kN-GDg">
-                        <rect key="frame" x="127" y="143" width="69" height="30"/>
+                        <rect key="frame" x="112" y="143" width="98" height="30"/>
+                        <color key="backgroundColor" red="0.1988979481" green="1" blue="0.37979163459999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="69" id="4F3-SW-LK0"/>
                             <constraint firstAttribute="height" constant="30" id="HWj-8d-o4L"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -86,18 +86,21 @@
                     <constraint firstAttribute="bottom" secondItem="7az-kN-GDg" secondAttribute="bottom" constant="8" id="0TL-Ms-mKp"/>
                     <constraint firstItem="REQ-fQ-dcv" firstAttribute="top" secondItem="eqP-HD-2na" secondAttribute="bottom" constant="20" id="0yc-aH-kFp"/>
                     <constraint firstAttribute="bottom" secondItem="a6v-UW-XJC" secondAttribute="bottom" constant="8" id="3W3-JB-iVT"/>
+                    <constraint firstItem="7az-kN-GDg" firstAttribute="width" secondItem="a6v-UW-XJC" secondAttribute="width" id="5Sj-OZ-yyb"/>
                     <constraint firstItem="Mho-9f-r0q" firstAttribute="leading" secondItem="eqP-HD-2na" secondAttribute="trailing" constant="16" id="9Ox-M0-Bac"/>
-                    <constraint firstItem="a6v-UW-XJC" firstAttribute="leading" secondItem="7az-kN-GDg" secondAttribute="trailing" constant="42" id="GH8-yy-idx"/>
+                    <constraint firstItem="a6v-UW-XJC" firstAttribute="leading" secondItem="7az-kN-GDg" secondAttribute="trailing" constant="5" id="GH8-yy-idx"/>
                     <constraint firstItem="vbD-qq-iBY" firstAttribute="top" secondItem="YTl-1W-gDM" secondAttribute="top" constant="15" id="IBa-qe-blB"/>
                     <constraint firstItem="vbD-qq-iBY" firstAttribute="centerY" secondItem="CMF-jW-RBQ" secondAttribute="centerY" id="LTw-TG-Dov"/>
                     <constraint firstAttribute="trailing" secondItem="CMF-jW-RBQ" secondAttribute="trailing" constant="10" id="PPA-6S-ObA"/>
                     <constraint firstAttribute="trailing" secondItem="qaS-bD-h3Y" secondAttribute="trailing" constant="10" id="a8C-jN-I5B"/>
                     <constraint firstAttribute="bottom" secondItem="REQ-fQ-dcv" secondAttribute="bottom" constant="8" id="csZ-Bq-X6g"/>
-                    <constraint firstItem="7az-kN-GDg" firstAttribute="leading" secondItem="REQ-fQ-dcv" secondAttribute="trailing" constant="37" id="nLx-Ms-5fG"/>
+                    <constraint firstItem="7az-kN-GDg" firstAttribute="width" secondItem="REQ-fQ-dcv" secondAttribute="width" id="dZA-8d-4ly"/>
+                    <constraint firstItem="7az-kN-GDg" firstAttribute="leading" secondItem="REQ-fQ-dcv" secondAttribute="trailing" constant="5" id="kbg-yG-2aO"/>
                     <constraint firstItem="REQ-fQ-dcv" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" constant="8" id="nc6-5J-geI"/>
                     <constraint firstItem="eqP-HD-2na" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" constant="8" id="nl6-sn-pWi"/>
                     <constraint firstItem="Mho-9f-r0q" firstAttribute="top" secondItem="eqP-HD-2na" secondAttribute="top" id="of7-Zp-MHi"/>
                     <constraint firstItem="vbD-qq-iBY" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" constant="8" id="p1g-E5-uw3"/>
+                    <constraint firstAttribute="trailing" secondItem="a6v-UW-XJC" secondAttribute="trailing" constant="8" id="tMn-IM-Eyf"/>
                     <constraint firstItem="Mho-9f-r0q" firstAttribute="top" secondItem="qaS-bD-h3Y" secondAttribute="top" id="wfc-jD-LC7"/>
                     <constraint firstItem="CMF-jW-RBQ" firstAttribute="leading" secondItem="vbD-qq-iBY" secondAttribute="trailing" constant="32" id="wsy-67-JYX"/>
                 </constraints>

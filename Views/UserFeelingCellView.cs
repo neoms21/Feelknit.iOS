@@ -50,7 +50,7 @@ namespace Feelknit.iOS.Views
             _timeTextField.Text = timeText;
 
 
-            ContentView.BackgroundColor = UIColor.White;
+            ContentView.BackgroundColor = Resources.WhiteColor;
             _feelingTextField.TextColor = UIColor.Black;
             _commentsTextField.TextColor = UIColor.Black;
             _supportTextField.TextColor = UIColor.Black;

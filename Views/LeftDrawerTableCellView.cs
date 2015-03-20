@@ -15,6 +15,7 @@ namespace Feelknit.iOS
 
 		public LeftDrawerTableCellView (IntPtr handle) : base (handle)
 		{
+
 		}
 
 		public static LeftDrawerTableCellView Create ()

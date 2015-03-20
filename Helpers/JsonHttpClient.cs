@@ -4,6 +4,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Collections.Specialized;
 
 namespace Feelknit.iOS.Helpers
 {
@@ -25,6 +26,7 @@ namespace Feelknit.iOS.Helpers
             request.Accept = "application/json";
 			request.Headers.Add (HttpRequestHeader.Authorization, ApplicationHelper.AuthorizationToken);
             request.ContentLength = json.Length;
+
             using (var webStream = request.GetRequestStream())
             using (var requestWriter = new StreamWriter(webStream, Encoding.ASCII))
             {
@@ -53,6 +55,15 @@ namespace Feelknit.iOS.Helpers
             }
             return response;
         }
+
+		public async Task<string> PostRequestWithParams(NameValueCollection collection  )
+		{
+
+			var webClient = new WebClient ();
+
+			var responseArray = webClient.UploadValues (url, collection);
+			return Encoding.ASCII.GetString(responseArray);
+		}
 
         public async Task<string> GetRequest()
         {

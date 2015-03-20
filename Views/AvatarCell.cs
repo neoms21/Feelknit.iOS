@@ -19,7 +19,7 @@ namespace Feelknit.iOS
 
 			ContentView.Layer.BorderColor = UIColor.LightGray.CGColor;
 			ContentView.Layer.BorderWidth = 1.0f;
-			ContentView.BackgroundColor = UIColor.White;
+			ContentView.BackgroundColor = Resources.WhiteColor;
 			//ContentView.Transform = CGAffineTransform.MakeScale (1.2f, 1.2f);
 
 			imageView = new UIImageView (UIImage.FromBundle ("UserIcon.png"));

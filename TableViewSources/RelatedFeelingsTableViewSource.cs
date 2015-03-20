@@ -29,7 +29,8 @@ namespace Feelknit.iOS
 			var cell = (RelatedFeelingTableCellView)tableView.DequeueReusableCell (RelatedFeelingTableCellView.Key);
 			if (cell == null) {
 				cell = RelatedFeelingTableCellView.Create ();
-			}
+				};
+
 			cell.Feeling = feeling;
 
 			return cell;
@@ -43,6 +44,11 @@ namespace Feelknit.iOS
 		public override float GetHeightForRow (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 		{
 			return 175;
+		}
+
+		private void SupportButtonClicked()
+		{
+			Console.WriteLine ("In Clicked");
 		}
 	}
 }

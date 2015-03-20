@@ -16,6 +16,7 @@ namespace Feelknit.iOS
 		public static UIColor LightButtonColor =UIColor.Clear.FromHex(0x2B6600);
 		public static UIColor MainBackgroundColor =UIColor.Clear.FromHex(0xA4C3DC);
 		public static UIColor DisabledColor =UIColor.Clear.FromHex(0x6F7376);
+		public static UIColor WhiteColor =UIColor.Clear.FromHex(0xFFFFFF);
 //			<color name="loginLabel">#2659A1</color>
 //			<color name="textColor">#FFFFFF</color>
 //			<color name="buttonColor">#629E36</color>
