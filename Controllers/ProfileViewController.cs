@@ -52,11 +52,7 @@ namespace Feelknit.iOS.Controllers
 
 			SaveButton.TouchUpInside += (object sender, EventArgs e) => {
 				string email = UserEmailTextView.Text;
-				try{Task.Factory.StartNew(()=>SaveUser(email));}
-				catch(Exception ex)
-				{
-
-				}
+				Task.Factory.StartNew(()=>SaveUser(email));
 			};
 		
 

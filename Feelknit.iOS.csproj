@@ -297,12 +297,12 @@
       <DependentUpon>ProfileViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\AvatarCell.cs" />
-    <Compile Include="AvatarViewController.cs" />
-    <Compile Include="AvatarViewController.designer.cs">
-      <DependentUpon>AvatarViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="TableViewSources\AvatarCollectioniewSource.cs" />
     <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Controllers\AvatarViewController.cs" />
+    <Compile Include="Controllers\AvatarViewController.designer.cs">
+      <DependentUpon>AvatarViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

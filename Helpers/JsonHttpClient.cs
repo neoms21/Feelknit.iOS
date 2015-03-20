@@ -60,8 +60,7 @@ namespace Feelknit.iOS.Helpers
 		{
 
 			var webClient = new WebClient ();
-
-			var responseArray = webClient.UploadValues (url, collection);
+			var responseArray = await webClient.UploadValuesTaskAsync (url, collection);
 			return Encoding.ASCII.GetString(responseArray);
 		}
 

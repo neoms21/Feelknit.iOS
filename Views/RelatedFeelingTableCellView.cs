@@ -144,11 +144,6 @@ namespace Feelknit.iOS
 			collection.Add ("username", ApplicationHelper.UserName);
 //			var feeling = new { feelingId = Feeling.Id , UserName = ApplicationHelper.UserName };
 			await client.PostRequestWithParams(collection);
-
-
-			//MessageBus.PostEvent (new CoreMessageBusEvent (Constants.UserDetailsUpdateEvent));
-			//InvokeOnMainThread(()=> {});
-
 		}
 
 

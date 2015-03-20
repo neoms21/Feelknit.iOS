@@ -13,9 +13,6 @@ namespace Feelknit
     [Register("AppDelegate")]
     public partial class AppDelegate : UIApplicationDelegate
     {
-        // class-level declarations
-        private string _deviceToken;
-
         public override UIWindow Window
         {
             get;
