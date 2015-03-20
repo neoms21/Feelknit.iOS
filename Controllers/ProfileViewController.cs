@@ -5,11 +5,15 @@ using System.CodeDom.Compiler;
 using Feelknit.iOS.Helpers;
 using Feelknit.iOS.Controllers;
 using DSoft.Messaging;
+using Newtonsoft.Json;
+using Feelknit.Model;
+using System.Threading.Tasks;
 
 namespace Feelknit.iOS.Controllers
 {
 	partial class ProfileViewController : BaseController
 	{
+		private string _avatar = string.Empty;
 		public ProfileViewController (IntPtr handle) : base (handle)
 		{
 			;
@@ -36,6 +40,7 @@ namespace Feelknit.iOS.Controllers
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			_avatar = ApplicationHelper.Avatar;
 			UserEmailTextView.Text = ApplicationHelper.EmailAddress;
 			UserNameLabel.Text = ApplicationHelper.UserName;
 			UserImageButton.SetBackgroundImage (UIImage.FromBundle (string.Format ("Avatars/{0}", ApplicationHelper.Avatar)), UIControlState.Normal);
@@ -44,14 +49,19 @@ namespace Feelknit.iOS.Controllers
 				MoveToNextController(typeof(AvatarViewController).Name);
 			};
 
-			SaveButton.TouchUpInside += (object sender, EventArgs e) => {
 
-		
+			SaveButton.TouchUpInside += (object sender, EventArgs e) => {
+				string email = UserEmailTextView.Text;
+				try{Task.Factory.StartNew(()=>SaveUser(email));}
+				catch(Exception ex)
+				{
+
+				}
 			};
 		
 
 			CancelButton.TouchUpInside += (object sender, EventArgs e) => {
-
+				NavigationController.PopViewControllerAnimated(true);
 			};
 
 
@@ -64,14 +74,27 @@ namespace Feelknit.iOS.Controllers
 		/// <param name="evnt">Evnt.</param>
 		public void MessageBusEventHandler (object sender, MessageBusEvent evnt)
 		{
-			var avatar = evnt.Data [0] as string;
+			_avatar = evnt.Data [0] as string;
 			//execute on the UI thread
 			BeginInvokeOnMainThread (() => {
 				//post to the output box
 			
-				UserImageButton.SetBackgroundImage (UIImage.FromBundle (string.Format("Avatars/{0}.png", avatar)), UIControlState.Normal);
+				UserImageButton.SetBackgroundImage (UIImage.FromBundle (string.Format("Avatars/{0}.png", _avatar)), UIControlState.Normal);
 			});
 
+		}
+
+		private async void SaveUser(string email)
+		{
+			//var emailAddress = "a@b.com";
+			var client = new JsonHttpClient(string.Format(UrlHelper.SAVE_USER));
+			var user = new User{ EmailAddress = email , Avatar = _avatar, UserName = ApplicationHelper.UserName };
+			await client.PostRequest(user);
+		
+				ApplicationHelper.Avatar = _avatar;
+			ApplicationHelper.EmailAddress = email;
+			MessageBus.PostEvent (new CoreMessageBusEvent (Constants.UserDetailsUpdateEvent));
+			InvokeOnMainThread(()=> NavigationController.PopViewControllerAnimated(true));
 		}
 
 	}

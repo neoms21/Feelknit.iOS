@@ -111,14 +111,14 @@ namespace Feelknit.iOS.Controllers
 			
 
 				//send it
-				MessageBus.Default.Post (new CoreMessageBusEvent (Constants.LoginDetailsReceivedEvent) {
+				MessageBus.Default.Post (new CoreMessageBusEvent (Constants.UserDetailsUpdateEvent) {
 					Sender = this,
 					});
 
                 await Task.Factory.StartNew(async () =>
                 {
                     client = new JsonHttpClient(UrlHelper.USER_KEY);
-						user.iosKey = ApplicationHelper.ApnsToken;
+						user.IosKey = ApplicationHelper.ApnsToken;
                     await client.PostRequest(user);
                 });
 

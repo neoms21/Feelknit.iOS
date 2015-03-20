@@ -14,7 +14,9 @@ namespace Feelknit.Model
 
         public string Key { get; set; }
 
-		public string iosKey { get; set; }
+		public string Avatar{ get; set; }
+			
+		public string IosKey { get; set; }
 
         public bool IsTemporary { get; set; }
 
