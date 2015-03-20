@@ -8,9 +8,9 @@ namespace Feelknit.iOS
 	{
 		List<LeftDrawerItem> _items;
 
-		readonly Action<string> _action;
+		readonly Action<Container> _action;
 
-		public LeftDrawerTableViewSource (List<LeftDrawerItem> items, Action<string> action)
+		public LeftDrawerTableViewSource (List<LeftDrawerItem> items, Action<Container> action)
 		{
 			_items = items;
 			_action = action;
@@ -38,7 +38,7 @@ namespace Feelknit.iOS
 
 		public override void RowSelected (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 		{
-			_action.Invoke (_items[indexPath.Row].Id);
+			_action.Invoke (_items[indexPath.Row].Container);
 			// NOTE: Don't call the base implementation on a Model class
 			// see http://docs.xamarin.com/guides/ios/application_fundamentals/delegates,_protocols,_and_events
 			//throw new NotImplementedException ();

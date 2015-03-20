@@ -28,14 +28,14 @@ namespace Feelknit.iOS.Controllers
             View.BackgroundColor = UIColor.FromRGB(.9f, .9f, .9f);
         }
 
-		public void DrawerItemSelected (string id)
+		public void DrawerItemSelected (Container container)
 		{
-			if (string.IsNullOrWhiteSpace (id)) {
+			if (container == null) {
 				Action.Invoke (true);
 				return;
 			}
 
-			MoveToNextController (id);
+			MoveToNextController (container.Name,container.Data);
 				Action.Invoke (true);
 		}
 

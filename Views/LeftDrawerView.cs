@@ -12,7 +12,7 @@ namespace Feelknit.iOS
 	{
 		public static readonly UINib Nib = UINib.FromName ("LeftDrawerView", NSBundle.MainBundle);
 		public static readonly NSString Key = new NSString ("LeftDrawerView");
-		private static Action<string> _action;
+		private static Action<Container> _action;
 		private static Action _actionSignOut;
 		private MessageBusEventHandler mEvHandler;
 
@@ -26,7 +26,7 @@ namespace Feelknit.iOS
 			MessageBus.Default.Register (mEvHandler);
 		}
 
-		public static LeftDrawerView Create (Action<string> action, Action actionSignOut)
+		public static LeftDrawerView Create (Action<Container> action, Action actionSignOut)
 		{
 			_action = action;
 			_actionSignOut = actionSignOut;
@@ -44,7 +44,7 @@ namespace Feelknit.iOS
 			LeftDrawerTableView.Source = new LeftDrawerTableViewSource (Resources.LeftDrawerItems,_action);
 
 			SignoutButton.TouchUpInside += (object sender, EventArgs e) => {
-				_action.Invoke("");
+				_action.Invoke(null);
 				Task.Factory.StartNew (() => {
 					_actionSignOut.Invoke();
 				});

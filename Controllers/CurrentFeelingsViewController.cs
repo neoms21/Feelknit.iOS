@@ -24,7 +24,6 @@ namespace Feelknit.iOS
 		public CurrentFeelingsViewController (IntPtr handle) : base (handle)
 		{
 			Title = "Current Feelings";
-
 		}
 
 		public override void ViewWillAppear (bool animated)
@@ -49,10 +48,14 @@ namespace Feelknit.iOS
 			// show the loading overlay on the UI thread using the correct orientation sizing
 			_loadingOverlay = new LoadingOverlay(bounds, "Getting feelings..");
 			this.View.Add(_loadingOverlay);
-
+			var isCommentFeelings = Data == null ? false: (bool)Data;
+			RecentFeelingsLabel.Text = isCommentFeelings ? "Feelings with my Comments" : "Recent Feelings";
 			GetFeelings += async () =>
 			{
-				_feelings = await GetCurrentFeelings();
+				if(isCommentFeelings)
+					_feelings = await GetCommentsFeelings() ;
+						else
+					_feelings= await GetCurrentFeelings();
 
 				this.RecentFeelingsTableView.Source = new RelatedFeelingsTableViewSource(_feelings.ToList(), OnRowSelection);
 				this.RecentFeelingsTableView.ReloadData();
@@ -74,6 +77,17 @@ namespace Feelknit.iOS
 
 			return _feelings;
 		}
+
+		private async Task<IEnumerable<Feeling>> GetCommentsFeelings()
+		{
+			var client = new JsonHttpClient(string.Format(UrlHelper.COMMENTS_FEELINGS, ApplicationHelper.UserName));
+			var result = await client.GetRequest();
+
+			_feelings = JsonConvert.DeserializeObject<IEnumerable<Feeling>>(result);
+
+			return _feelings;
+		}
+
 
 		private void OnRowSelection(Feeling feeling)
 		{

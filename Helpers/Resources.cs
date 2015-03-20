@@ -50,12 +50,12 @@ namespace Feelknit.iOS
 
 		public static List<LeftDrawerItem> LeftDrawerItems = new List<LeftDrawerItem>
 		{
-			new LeftDrawerItem("Profile","notifications",typeof(ProfileViewController).Name),
-			new LeftDrawerItem("Current Feelings","userdrawer",typeof(CurrentFeelingsViewController).Name),
-			new LeftDrawerItem("My Feelings","userdrawer",typeof(UserFeelingsController).Name),
-			new LeftDrawerItem("Comments","comments",typeof(CommentsViewController).Name),
-			new LeftDrawerItem("Related Feelings","userdrawer", typeof(RelatedFeelingsViewController).Name),
-			new LeftDrawerItem("About","settings",""),
+			new LeftDrawerItem("Profile","notifications",new Container{Name = typeof(ProfileViewController).Name}),
+			new LeftDrawerItem("Current Feelings","userdrawer",new Container{Name = typeof(CurrentFeelingsViewController).Name}),
+			new LeftDrawerItem("My Feelings","userdrawer",new Container{Name = typeof(UserFeelingsController).Name}),
+			new LeftDrawerItem("Comments","comments",new Container{Name = typeof(CurrentFeelingsViewController).Name, Data = true}),
+			new LeftDrawerItem("Related Feelings","userdrawer", new Container{Name = typeof(RelatedFeelingsViewController).Name}),
+			new LeftDrawerItem("About","settings",new Container()),
 		};
 	}
 }

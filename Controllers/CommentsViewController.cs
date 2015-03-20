@@ -16,7 +16,9 @@ namespace Feelknit.iOS.Controllers
 	partial class CommentsViewController : BaseController
 	{
 		public Feeling Feeling{ get; set; }
+
 		private LoadingOverlay _loadingOverlay;
+
 		public CommentsViewController (IntPtr handle)
 			: base (handle)
 		{

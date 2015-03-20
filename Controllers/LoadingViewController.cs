@@ -62,7 +62,7 @@ namespace Feelknit.iOS.Controllers
             if (isAuthenticated)
             {
                 ApplicationHelper.UserName = NSUserDefaults.StandardUserDefaults.StringForKey("UserName");
-				MoveToNextController(typeof(CurrentFeelingsViewController).Name, true);
+				MoveToNextController(typeof(CurrentFeelingsViewController).Name, false);
                 return;
             }
             MoveToNextController(typeof(LoginViewController).Name);
