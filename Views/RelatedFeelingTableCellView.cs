@@ -13,7 +13,7 @@ namespace Feelknit.iOS
 {
 	public partial class RelatedFeelingTableCellView : UITableViewCell
 	{
-		public Feeling Feeling{ get; set;}
+		public Feeling Feeling{ get; set; }
 
 		public static readonly UINib Nib = UINib.FromName ("RelatedFeelingTableCellView", NSBundle.MainBundle);
 		public static readonly NSString Key = new NSString ("RelatedFeelingTableCellView");
@@ -34,11 +34,20 @@ namespace Feelknit.iOS
 		{
 			base.AwakeFromNib ();
 
-				SupportButton.TouchUpInside += IncreaseSupportCount;
+			SupportButton.TouchUpInside += ProcessSupportCount;
+			ReportButton.TouchUpInside += ExecuteReportButtonClick;
 
 		}
+		private void ExecuteReportButtonClick (object sender, EventArgs e)
+		{
+			Feeling.IsReported = true;
+			FormatButtons ();
+			Task.Factory.StartNew (() => {
+				ReportFeeling ();
+			});
+		}
 
-		private void IncreaseSupportCount(object sender, EventArgs e)
+		private void ProcessSupportCount (object sender, EventArgs e)
 		{
 			var isIncrease = true;
 			if (Feeling.SupportUsers.Contains (ApplicationHelper.UserName))
@@ -55,28 +64,28 @@ namespace Feelknit.iOS
 			}
 
 			SupportLabel.Text = string.Format ("Support {0}", Feeling.SupportCount);
-			Task.Factory.StartNew(()=>{
-				SaveSupportCountModification(isIncrease);
+			Task.Factory.StartNew (() => {
+				SaveSupportCountModification (isIncrease);
 			});
 		}
 
-		private void DecreaseSupportCount(object sender, EventArgs e)
+		private void DecreaseSupportCount (object sender, EventArgs e)
 		{
 			Feeling.SupportCount -= 1;
 			SupportLabel.Text = string.Format ("Support {0}", Feeling.SupportCount);
-			Task.Factory.StartNew(()=>{
-				SaveSupportCountModification(false);
+			Task.Factory.StartNew (() => {
+				SaveSupportCountModification (false);
 			});
 		}
 
-		public override void LayoutSubviews ()  
+		public override void LayoutSubviews ()
 		{
 			base.LayoutSubviews ();
 
 			var firstAttributes = new UIStringAttributes {
 				ForegroundColor = Resources.LightButtonColor,
 				Font = UIFont.BoldSystemFontOfSize (12)
-				};
+			};
 
 			var boldAttributes = new UIStringAttributes {
 
@@ -94,66 +103,70 @@ namespace Feelknit.iOS
 			prettyString.SetAttributes (firstAttributes.Dictionary, new NSRange (0, Feeling.UserName.Length));
 			prettyString.SetAttributes (boldAttributes.Dictionary, new NSRange (startIndexOfFeeling, Feeling.FeelingText.Length));
 
-			userImageView.Image = UIImage.FromBundle (string.IsNullOrWhiteSpace (Feeling.UserAvatar) ? "userIcon.png":
-				string.Format("Avatars/{0}.png",Feeling.UserAvatar));
-			FeelingTextLabel.AttributedText = prettyString ;
+			userImageView.Image = UIImage.FromBundle (string.IsNullOrWhiteSpace (Feeling.UserAvatar) ? "userIcon.png" :
+				string.Format ("Avatars/{0}.png", Feeling.UserAvatar));
+			FeelingTextLabel.AttributedText = prettyString;
 
 			ResizeHeigthWithText (FeelingTextLabel);
-			CommentsLabel.Text = string.Format ("Comments {0}", Feeling.Comments.Count == 0 ? Feeling.CommentsCount:Feeling.Comments.Count);
+			CommentsLabel.Text = string.Format ("Comments {0}", Feeling.Comments.Count == 0 ? Feeling.CommentsCount : Feeling.Comments.Count);
 			SupportLabel.Text = string.Format ("Support {0}", Feeling.SupportCount);
 			FeelingDate.Text = Feeling.FeelingDate.ToString ("dd MMM yyyy HH:mm");
-		
-			FormatButton (CommentButton);
+			FormatButtons ();
+		}
+
+		void FormatButtons ()
+		{
 			FormatButton (SupportButton);
+			FormatButton (CommentButton);
 			FormatButton (ReportButton);
-
 		}
 
-		public override void PrepareForReuse ()
+		private void FormatButton (UIButton button)
 		{
-			base.PrepareForReuse ();
+			if (Feeling.IsReported) {
+				button.Enabled = false;
+				button.BackgroundColor = Resources.DisabledColor;
+			} else {
+				button.Enabled = true;
+				button.BackgroundColor = Resources.LightButtonColor;
+			}
 
-		}
-
-		private void FormatButton(UIButton button)
-		{
-			button.BackgroundColor = Resources.LightButtonColor;
 			button.SetTitleColor (Resources.WhiteColor, UIControlState.Normal);
 		}
 
-		private void ResizeHeigthWithText(UILabel label,float maxHeight = 960f) 
+		private void ResizeHeigthWithText (UILabel label, float maxHeight = 960f)
 		{
 
 			label.AdjustsFontSizeToFitWidth = false;
 			float width = 280;// label.Frame.Width;  
 			label.Lines = 0;
-			SizeF size = ((NSString)label.Text).StringSize(label.Font,  
-				constrainedToSize:new SizeF(width,maxHeight) ,lineBreakMode:UILineBreakMode.WordWrap);
+			SizeF size = ((NSString)label.Text).StringSize (label.Font,  
+				             constrainedToSize: new SizeF (width, maxHeight), lineBreakMode: UILineBreakMode.WordWrap);
 
 			var labelFrame = label.Frame;
-			labelFrame.Size = new SizeF(280,size.Height);
+			labelFrame.Size = new SizeF (280, size.Height);
 			label.Frame = labelFrame; 
 		}
 
-		private async void SaveSupportCountModification(bool isIncrease = true)
+		private void SaveSupportCountModification (bool isIncrease = true)
 		{
 			var url = isIncrease ? UrlHelper.INCREASE_SUPPORT : UrlHelper.DECREASE_SUPPORT;
-			var client = new JsonHttpClient(url);
+			var client = new JsonHttpClient (url);
 			var collection = new NameValueCollection ();
 			collection.Add ("feelingId", Feeling.Id);
 			collection.Add ("username", ApplicationHelper.UserName);
-//			var feeling = new { feelingId = Feeling.Id , UserName = ApplicationHelper.UserName };
-			await client.PostRequestWithParams(collection);
+
+			client.PostRequestWithParams (collection);
 		}
 
 
-		private async void DecreaseSupport()
+		private void ReportFeeling ()
 		{
-			var client = new JsonHttpClient(string.Format(UrlHelper.DECREASE_SUPPORT));
-			var feeling = new { feelingId = Feeling.Id , username = ApplicationHelper.UserName };
-			await client.PostRequest(feeling);
-
-
+			var client = new JsonHttpClient (UrlHelper.REPORT_FEELING);
+			var collection = new NameValueCollection ();
+			collection.Add ("feelingId", Feeling.Id);
+			collection.Add ("username", ApplicationHelper.UserName);
+			client.PostRequestWithParams (collection);
 		}
 	}
 }

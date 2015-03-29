@@ -7,7 +7,7 @@ namespace Feelknit.iOS
 		private static bool onEmulator{ get { return MonoTouch.ObjCRuntime.Runtime.Arch == MonoTouch.ObjCRuntime.Arch.SIMULATOR; } }
 
 		private static  string BASE_URL_EMULATOR = "http://192.168.0.6/FeelKnitService/";
-		private static  string BASE_URL = "http://feelknitservice.apphb.com/";
+		private static  string BASE_URL = "http://vps148394.ovh.net/feelknit/";
 		public static  string COMMENTS = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "Comments";
 		public static  string FEELINGS = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings";
 		public static  string USER_VERIFY = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "Users/login";
@@ -18,8 +18,9 @@ namespace Feelknit.iOS
 		public static  string INCREASE_SUPPORT = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings/increasesupport";
 		public static  string DECREASE_SUPPORT = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings/decreasesupport";
 		public static  string COMMENTSFEELING = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings/comments/%s";
-		public static  string EMAILREPORT = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "email/report";
+		public static  string REPORT_FEELING = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings/report";
 		public static  string USER_FEELINGS = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings/username/{0}";
+		public static  string RELATED_FEELINGS = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings/relatedfeelings/{0}";
 		public static  string GET_FEELS = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings/getfeels";
 		public static  string CURRENT = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings/current";
 		public static  string SAVE_USER = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "users/saveuser";

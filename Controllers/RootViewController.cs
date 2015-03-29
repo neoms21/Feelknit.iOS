@@ -11,6 +11,8 @@ namespace Feelknit.iOS.Controllers
         // the navigation controller
         public NavController NavController { get; private set; }
 
+		public bool Other{ get; set;}
+
         public RootViewController()
             : base(null, null)
         {
@@ -36,11 +38,12 @@ namespace Feelknit.iOS.Controllers
             appD.NavController = new NavController();
 
             var storyboard = UIStoryboard.FromName("MainStoryboard", null);
+
             var loadingViewController = storyboard.InstantiateViewController(typeof(LoadingViewController).Name) as LoadingViewController;
 
             if (loadingViewController != null)
             {
-                NavController.PushViewController(loadingViewController, true);
+			    NavController.PushViewController(loadingViewController, true);
             }
 
             //VCConnection vConnect = (VCConnection)Storyboard.InstantiateViewController("VCConnection");

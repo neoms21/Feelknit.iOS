@@ -26,6 +26,10 @@ namespace Feelknit.iOS.Controllers
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableView RelatedFeelingsTable { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIImageView UserImageView { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (FeelingNumberLabel != null) {
@@ -39,6 +43,10 @@ namespace Feelknit.iOS.Controllers
 			if (RelatedFeelingsTable != null) {
 				RelatedFeelingsTable.Dispose ();
 				RelatedFeelingsTable = null;
+			}
+			if (UserImageView != null) {
+				UserImageView.Dispose ();
+				UserImageView = null;
 			}
 		}
 	}

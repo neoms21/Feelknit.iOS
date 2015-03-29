@@ -38,17 +38,13 @@ namespace Feelknit.iOS
 
 		public override void RowSelected (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 		{
-			_action.Invoke (_feelings[indexPath.Row]);
+			if(!_feelings[indexPath.Row].IsReported)
+				_action.Invoke (_feelings[indexPath.Row]);
 		}
 
 		public override float GetHeightForRow (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 		{
 			return 175;
-		}
-
-		private void SupportButtonClicked()
-		{
-			Console.WriteLine ("In Clicked");
 		}
 	}
 }
