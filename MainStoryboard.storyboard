@@ -110,7 +110,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="127">
-                                <rect key="frame" x="15" y="124" width="290" height="30"/>
+                                <rect key="frame" x="15" y="139" width="290" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1197"/>
                                 </constraints>
@@ -128,7 +128,7 @@
                                 </state>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your password" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="157">
-                                <rect key="frame" x="15" y="199" width="290" height="30"/>
+                                <rect key="frame" x="15" y="214" width="290" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1191"/>
                                 </constraints>
@@ -137,20 +137,25 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your email addres" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="159">
-                                <rect key="frame" x="15" y="272" width="290" height="30"/>
+                                <rect key="frame" x="15" y="287" width="290" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1187"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="iconsmall_cut.png" translatesAutoresizingMaskIntoConstraints="NO" id="167">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="iconsmall.png" translatesAutoresizingMaskIntoConstraints="NO" id="167">
                                 <rect key="frame" x="126" y="35" width="69" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="69" id="1203"/>
                                     <constraint firstAttribute="height" constant="74" id="1204"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="" borderStyle="line" minimumFontSize="17" id="1979" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Location">
+                                <rect key="frame" x="15" y="361" width="290" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -166,10 +171,15 @@
                             <constraint firstItem="159" firstAttribute="top" secondItem="157" secondAttribute="bottom" constant="43" id="1194"/>
                             <constraint firstItem="157" firstAttribute="leading" secondItem="127" secondAttribute="leading" id="1195"/>
                             <constraint firstItem="127" firstAttribute="trailing" secondItem="157" secondAttribute="trailing" id="1196"/>
-                            <constraint firstItem="127" firstAttribute="top" secondItem="167" secondAttribute="bottom" constant="15" id="1202"/>
+                            <constraint firstItem="127" firstAttribute="top" secondItem="167" secondAttribute="bottom" constant="30" id="1202"/>
                             <constraint firstAttribute="trailing" secondItem="167" secondAttribute="trailing" constant="125" id="1208"/>
                             <constraint firstItem="167" firstAttribute="leading" secondItem="124" secondAttribute="leading" constant="126" id="1209"/>
                             <constraint firstItem="167" firstAttribute="top" secondItem="120" secondAttribute="bottom" constant="15" id="1210"/>
+                            <constraint id="1980" firstItem="159" firstAttribute="leading" secondItem="1979" secondAttribute="leading" constant="0.0"/>
+                            <constraint id="1982" firstItem="159" firstAttribute="trailing" secondItem="1979" secondAttribute="trailing" constant="0.0"/>
+                            <constraint id="1983" firstItem="1979" firstAttribute="leading" secondItem="159" secondAttribute="leading" constant="0.0"/>
+                            <constraint firstItem="1979" firstAttribute="top" secondItem="159" secondAttribute="bottom" constant="44" id="1984"/>
+                            <constraint id="1985" firstItem="159" firstAttribute="height" secondItem="1979" secondAttribute="height" constant="0.0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="880"/>
@@ -179,6 +189,7 @@
                         <outlet property="RegisterUserName" destination="127" id="name-outlet-127"/>
                         <outlet property="RegistrationEmail" destination="159" id="name-outlet-159"/>
                         <outlet property="RegistrationPassword" destination="157" id="name-outlet-157"/>
+                        <outlet property="LocationTextView" destination="1979" id="name-outlet-1979"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="125" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -207,7 +218,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="525">
                                 <rect key="frame" x="0.0" y="77" width="320" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.99014075180000005" blue="0.61971404050000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1"/>
                                 <state key="normal" title="Select a Feeling">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -219,8 +230,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="988">
-                                <rect key="frame" x="32" y="115" width="249" height="302"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="988" misplaced="YES">
+                                <rect key="frame" x="0.0" y="195" width="320" height="343"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -235,6 +246,10 @@
                             <constraint firstItem="536" firstAttribute="top" secondItem="182" secondAttribute="bottom" constant="135" id="949"/>
                             <constraint firstItem="536" firstAttribute="leading" secondItem="186" secondAttribute="leading" constant="10" id="5UF-RV-7DD"/>
                             <constraint firstAttribute="trailing" secondItem="536" secondAttribute="trailing" constant="10" id="yZs-a1-Sxn"/>
+                            <constraint firstItem="988" firstAttribute="top" secondItem="525" secondAttribute="top" constant="0.0" id="2000"/>
+                            <constraint firstItem="988" firstAttribute="leading" secondItem="186" secondAttribute="leading" constant="0.0" id="2001"/>
+                            <constraint firstItem="186" firstAttribute="trailing" secondItem="988" secondAttribute="trailing" constant="0.0" id="2002"/>
+                            <constraint firstItem="571" firstAttribute="top" secondItem="988" secondAttribute="bottom" constant="0.0" id="2003"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -393,14 +408,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="userIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="764" misplaced="YES">
-                                <rect key="frame" x="12" y="34" width="36" height="38"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="userIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="764">
+                                <rect key="frame" x="12" y="34" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="1495"/>
+                                    <constraint firstAttribute="width" constant="40" id="1495"/>
+                                    <constraint id="2018" firstItem="764" firstAttribute="height" constant="40"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="I" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="770" misplaced="YES">
-                                <rect key="frame" x="72" y="42" width="5" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="I" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="770">
+                                <rect key="frame" x="72" y="42" width="4.5" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="1488"/>
@@ -409,16 +425,6 @@
                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium " translatesAutoresizingMaskIntoConstraints="NO" id="1525">
-                                <rect key="frame" x="84" y="28" width="222" height="49"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="222" id="1588"/>
-                                    <constraint firstAttribute="height" constant="49" id="1589"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="1634" misplaced="YES">
                                 <rect key="frame" x="0.0" y="1034" width="42" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -457,6 +463,13 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="1990" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="84.5" y="42" width="225.5" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -464,11 +477,7 @@
                             <constraint firstItem="764" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="12" id="1493"/>
                             <constraint firstItem="770" firstAttribute="top" secondItem="755" secondAttribute="bottom" constant="22" id="1498"/>
                             <constraint firstItem="764" firstAttribute="top" secondItem="755" secondAttribute="bottom" constant="14" id="1501"/>
-                            <constraint firstItem="1525" firstAttribute="centerY" secondItem="764" secondAttribute="centerY" id="1585"/>
-                            <constraint firstItem="1525" firstAttribute="centerY" secondItem="770" secondAttribute="centerY" id="1586"/>
-                            <constraint firstAttribute="trailing" secondItem="1525" secondAttribute="trailing" constant="14" id="1587"/>
                             <constraint firstItem="1635" firstAttribute="leading" secondItem="759" secondAttribute="leading" id="1637"/>
-                            <constraint firstItem="1635" firstAttribute="top" secondItem="1525" secondAttribute="bottom" constant="34" id="1638"/>
                             <constraint firstAttribute="trailing" secondItem="1635" secondAttribute="trailing" id="1643"/>
                             <constraint firstItem="wk0-go-rJm" firstAttribute="leading" secondItem="759" secondAttribute="leadingMargin" constant="-12" id="2af-96-zNE"/>
                             <constraint firstItem="wk0-go-rJm" firstAttribute="top" secondItem="1660" secondAttribute="bottom" constant="4" id="6fn-gh-d9b"/>
@@ -480,6 +489,11 @@
                             <constraint firstItem="1634" firstAttribute="top" secondItem="756" secondAttribute="bottom" constant="466" id="TpV-oQ-pCA"/>
                             <constraint firstItem="1660" firstAttribute="leading" secondItem="759" secondAttribute="leadingMargin" constant="-16" id="Zg9-Kq-PDq"/>
                             <constraint firstItem="1660" firstAttribute="top" secondItem="1635" secondAttribute="bottom" constant="8" id="c5O-gd-f9o"/>
+                            <constraint firstItem="1990" firstAttribute="leading" secondItem="770" secondAttribute="centerX" constant="10" id="1991"/>
+                            <constraint firstItem="1990" firstAttribute="top" secondItem="755" secondAttribute="bottom" constant="22" id="1992"/>
+                            <constraint firstItem="1635" firstAttribute="top" secondItem="1990" secondAttribute="bottom" constant="48" id="1993"/>
+                            <constraint firstItem="759" firstAttribute="trailing" secondItem="1990" secondAttribute="trailing" constant="10" id="1994"/>
+                            <constraint id="1995" firstItem="770" firstAttribute="centerY" secondItem="1990" secondAttribute="centerY" constant="0.0"/>
                         </constraints>
                     </view>
                     <connections>
@@ -487,9 +501,9 @@
                         <outlet property="CommentTextView" destination="wk0-go-rJm" id="D7S-Yz-875"/>
                         <outlet property="CommentsCountLabel" destination="1635" id="name-outlet-1635"/>
                         <outlet property="CommentsTable" destination="1660" id="name-outlet-1660"/>
-                        <outlet property="FeelingTextView" destination="1525" id="name-outlet-1525"/>
                         <outlet property="UserIcon" destination="764" id="name-outlet-764"/>
                         <outlet property="UserNameLabel" destination="770" id="name-outlet-770"/>
+                        <outlet property="FeelingTextLabel" destination="1990" id="name-outlet-1990"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="760" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -512,7 +526,6 @@
                                 <rect key="frame" x="60" y="190" width="201" height="199"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="904" firstAttribute="top" secondItem="889" secondAttribute="top" constant="190" id="BfR-2B-oqJ"/>
                             <constraint firstAttribute="trailing" secondItem="904" secondAttribute="trailing" constant="59" id="DrS-jP-VCx"/>
@@ -836,6 +849,7 @@
         <image name="Avatars/stella.png" width="128" height="128"/>
         <image name="threelines.png" width="30" height="30"/>
         <image name="userdrawer.png" width="38" height="38"/>
+        <image name="compass.png" width="128" height="128"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

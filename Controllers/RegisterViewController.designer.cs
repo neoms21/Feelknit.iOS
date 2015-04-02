@@ -16,6 +16,10 @@ namespace Feelknit.iOS.Controllers
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UITextField LocationTextView { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton RegisterButton { get; set; }
 
 		[Outlet]
@@ -36,6 +40,10 @@ namespace Feelknit.iOS.Controllers
 
 		void ReleaseDesignerOutlets ()
 		{
+			if (LocationTextView != null) {
+				LocationTextView.Dispose ();
+				LocationTextView = null;
+			}
 			if (RegisterButton != null) {
 				RegisterButton.Dispose ();
 				RegisterButton = null;

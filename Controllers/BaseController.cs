@@ -8,9 +8,12 @@ namespace Feelknit.iOS.Controllers
     {
 		public object Data{ get; set; }
 
+		protected bool NavigationButtonVisible{ get; set; }
+
         public BaseController(IntPtr handle)
             : base(handle)
         {
+			NavigationButtonVisible = true;
         }
 
         protected UIStoryboard MainStoryboard
@@ -45,13 +48,10 @@ namespace Feelknit.iOS.Controllers
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-//			NavigationItem.SetLeftBarButtonItem(
-//				new UIBarButtonItem(UIImage.FromBundle("")
-//					, UIBarButtonItemStyle.Plain
-//					, (sender, args) => SidebarController.ToggleMenu()), true);
-
-			NavigationItem.SetRightBarButtonItem(
+			if (!NavigationButtonVisible)
+				NavigationItem.SetLeftBarButtonItem (null, false);
+			else
+			NavigationItem.SetLeftBarButtonItem(
                 new UIBarButtonItem(UIImage.FromBundle("threelines")
                     , UIBarButtonItemStyle.Plain
                     , (sender, args) => SidebarController.ToggleMenu()), true);

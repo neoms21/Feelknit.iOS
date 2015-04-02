@@ -12,15 +12,21 @@ namespace Feelknit.iOS.Controllers
             : base(handle)
         {
         }
+		public override void ViewWillAppear (bool animated)
+		{
+			base.ViewWillAppear (animated);
+			this.View.BackgroundColor = Resources.MainBackgroundColor;
+			RegisterButton.SetTitleColor(Resources.WhiteColor, UIControlState.Normal);
+			SetImageAndMargin(RegisterUserName, "userIcon.png");
+			SetImageAndMargin(RegistrationPassword, "password.png");
+			SetImageAndMargin(RegistrationEmail, "004.png");
+			SetImageAndMargin(LocationTextView, "compass.png");
+			RegisterButton.BackgroundColor = Resources.LoginButtonColor;
+		}
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-            SetImageAndMargin(RegisterUserName, "userIcon.png");
-            SetImageAndMargin(RegistrationPassword, "password.png");
-            SetImageAndMargin(RegistrationEmail, "004.png");
-            RegisterButton.BackgroundColor = Resources.LoginButtonColor;
 
             RegisterButton.TouchUpInside += (sender, e) =>
             {

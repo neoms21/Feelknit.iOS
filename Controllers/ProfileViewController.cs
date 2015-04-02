@@ -16,7 +16,7 @@ namespace Feelknit.iOS.Controllers
 		private string _avatar = string.Empty;
 		public ProfileViewController (IntPtr handle) : base (handle)
 		{
-			;
+			NavigationButtonVisible = false;
 			//register for an event
 			MessageBus.Default.Register (new MessageBusEventHandler () {
 				EventId = Constants.AvatarSelectedEvent,

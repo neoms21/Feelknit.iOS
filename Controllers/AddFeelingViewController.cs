@@ -16,11 +16,18 @@ namespace Feelknit.iOS.Controllers
 		string _feelingText;
 		private LoadingOverlay _loadingOverlay;
 
-	
-		public AddFeelingViewController () : base (null,null)
+		public AddFeelingViewController (IntPtr handle) : base (handle)
 		{
+			NavigationButtonVisible = false;
 		}
 
+		public override void ViewWillAppear (bool animated)
+		{
+			base.ViewWillAppear (animated);
+			ShareFeelingButton.BackgroundColor = Resources.LightButtonColor;
+			ShareFeelingButton.SetTitleColor (UIColor.White, UIControlState.Normal);
+		}
+	
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();

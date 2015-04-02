@@ -59,7 +59,7 @@ namespace Feelknit.iOS.Controllers
             // NavController.PushViewController(new LoadingViewController(), false);
             SidebarController = new SidebarController(this, NavController,new SideMenuController())
             {
-				MenuLocation = SidebarController.MenuLocations.Right,
+				MenuLocation = SidebarController.MenuLocations.Left,
                 MenuWidth = 220,
                 ReopenOnRotate = false
             };

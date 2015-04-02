@@ -214,6 +214,7 @@
     <BundleResource Include="Resources\Avatars\smith.png" />
     <BundleResource Include="Resources\Avatars\stella.png" />
     <BundleResource Include="Resources\userdrawer.png" />
+    <BundleResource Include="Resources\compass.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

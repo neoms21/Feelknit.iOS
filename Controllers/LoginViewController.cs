@@ -25,8 +25,8 @@ namespace Feelknit.iOS.Controllers
         {
             base.ViewWillAppear(animated);
             this.View.BackgroundColor = Resources.MainBackgroundColor;
-            this.LoginButton.BackgroundColor = Resources.ButtonColor;
-            RegisterButton.BackgroundColor = Resources.ButtonColor;
+			this.LoginButton.BackgroundColor = Resources.LoginButtonColor;
+			RegisterButton.BackgroundColor = Resources.LoginButtonColor;
 			NavigationController.NavigationBarHidden = true;
 			LoginButton.SetTitleColor(Resources.WhiteColor, UIControlState.Normal);
 			RegisterButton.SetTitleColor(Resources.WhiteColor, UIControlState.Normal);

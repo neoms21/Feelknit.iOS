@@ -22,6 +22,7 @@ namespace Feelknit.iOS.Controllers
 		public CommentsViewController (IntPtr handle)
 			: base (handle)
 		{
+			NavigationButtonVisible = false;
 		}
 
 		public override void ViewWillAppear (bool animated)
@@ -41,9 +42,6 @@ namespace Feelknit.iOS.Controllers
 			CommentTextView.Layer.CornerRadius = 2;
 			CommentTextView.ScrollEnabled = false;
 
-
-
-
 			//CommentsCountLabel.BackgroundColor = Resources.LoginButtonColor;
 		}
 
@@ -53,7 +51,8 @@ namespace Feelknit.iOS.Controllers
 
 			UserIcon.Image = ResizeImage (UIImage.FromBundle ("Avatars/" + ApplicationHelper.Avatar + ".png"), 100, 100);
 			UserNameLabel.Text = ApplicationHelper.UserName == Feeling.UserName ? "I" : Feeling.UserName;
-			FeelingTextView.Text = Feeling.GetFeelingFormattedText ("");
+			FeelingTextLabel.Text = Feeling.GetFeelingFormattedText ("");
+			ResizeHeigthWithText (FeelingTextLabel, 400);
 			CommentsCountLabel.Text = string.Format ("  {0} comments", Feeling.Comments.Count);
 
 			CommentsTable.SeparatorColor = Resources.MainBackgroundColor;
@@ -148,6 +147,19 @@ namespace Feelknit.iOS.Controllers
 				CommentsTable.Source = new CommentsTableViewSource (Feeling.Comments.ToList ());
 				CommentsTable.ReloadData ();
 			});
+		}
+
+		private void ResizeHeigthWithText(UILabel label,float maxHeight = 960f) 
+		{
+			label.AdjustsFontSizeToFitWidth = false;
+			float width = 280;// label.Frame.Width;  
+			label.Lines = 0;
+			SizeF size = ((NSString)label.Text).StringSize(label.Font,  
+				constrainedToSize:new SizeF(width,maxHeight) ,lineBreakMode:UILineBreakMode.WordWrap);
+
+			var labelFrame = label.Frame;
+			labelFrame.Size = new SizeF(280,size.Height);
+			label.Frame = labelFrame; 
 		}
 	}
 }
