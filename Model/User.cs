@@ -21,5 +21,8 @@ namespace Feelknit.Model
         public bool IsTemporary { get; set; }
 
         public DateTime? PasswordExpiryTime { get; set; }
+
+		public double Latitude{ get; set;}
+		public double Longitude{ get; set; }
     }
 }

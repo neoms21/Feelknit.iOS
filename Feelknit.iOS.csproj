@@ -308,6 +308,7 @@
     <Compile Include="Controllers\AvatarViewController.designer.cs">
       <DependentUpon>AvatarViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\LocationManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

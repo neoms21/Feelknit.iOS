@@ -13,9 +13,9 @@ namespace Feelknit.iOS.Controllers
 {
     partial class LoginViewController : BaseController
     {
-        private LoadingOverlay _loadingOverlay;
+        //
 
-        public LoginViewController(IntPtr handle)
+		public LoginViewController(IntPtr handle)
             : base(handle)
         {
         }
@@ -47,7 +47,7 @@ namespace Feelknit.iOS.Controllers
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            _loadingOverlay = new LoadingOverlay(UIScreen.MainScreen.Bounds, "Logging In");
+			LoadingOverlay = new LoadingOverlay(UIScreen.MainScreen.Bounds, "Logging In");
 
             SetImageAndMargin(UserName, "userIcon.png");
             SetImageAndMargin(Password, "password.png");
@@ -69,10 +69,14 @@ namespace Feelknit.iOS.Controllers
 
             LoginButton.TouchUpInside += (sender, e) =>
                         {
-                            View.Add(_loadingOverlay);
+				View.Add(LoadingOverlay);
                             var user = new User { UserName = UserName.Text, Password = Password.Text };
                             VerifyUser(user);
                         };
+			this.Password.ShouldReturn += (textField) => { 
+				textField.ResignFirstResponder();
+				return true; 
+			};
         }
 
         private void SetImageAndMargin(UITextField uiTextField, string image)
@@ -94,7 +98,7 @@ namespace Feelknit.iOS.Controllers
         {
             var client = new JsonHttpClient(UrlHelper.USER_VERIFY);
             var result = await client.PostRequest(user);
-            _loadingOverlay.Hide();
+			LoadingOverlay.Hide();
 
             var loginResult = JsonConvert.DeserializeObject<LoginResult>(result);
             if (loginResult.IsLoginSuccessful)

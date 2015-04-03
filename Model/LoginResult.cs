@@ -10,6 +10,7 @@ namespace Feelknit.iOS
 		public string Token{ get; set;}
 
 		public string UserEmail{ get; set;}
+		public string Error {get;set;}
 		public LoginResult ()
 		{
 		

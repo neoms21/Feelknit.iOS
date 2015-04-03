@@ -8,6 +8,7 @@ using Feelknit.iOS.Views;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using Newtonsoft.Json;
+using MonoTouch.CoreLocation;
 
 namespace Feelknit.iOS.Controllers
 {
@@ -15,6 +16,11 @@ namespace Feelknit.iOS.Controllers
 	{
 		string _feelingText;
 		private LoadingOverlay _loadingOverlay;
+	
+		private double _latitude = 0.0;
+		private double _longitude = 0.0;
+
+
 
 		public AddFeelingViewController (IntPtr handle) : base (handle)
 		{
@@ -26,6 +32,8 @@ namespace Feelknit.iOS.Controllers
 			base.ViewWillAppear (animated);
 			ShareFeelingButton.BackgroundColor = Resources.LightButtonColor;
 			ShareFeelingButton.SetTitleColor (UIColor.White, UIControlState.Normal);
+			Manager.StartLocationUpdates ();
+			Manager.LocationUpdated += HandleLocationChanged;
 		}
 	
 		public override void ViewDidLoad ()
@@ -57,7 +65,9 @@ namespace Feelknit.iOS.Controllers
 			var feeling = new Feeling {
 				UserName = ApplicationHelper.UserName,
 				FeelingText = _feelingText,
-				Reason = ReasonText.Text
+				Reason = ReasonText.Text,
+				Latitude = _latitude,
+				Longitude = _longitude
 			};
 			var result = await client.PostRequest (feeling);
 
@@ -91,6 +101,17 @@ namespace Feelknit.iOS.Controllers
 		{
 			base.TouchesEnded (touches,evt);
 			FeelingsTableView.Hidden = true;
+		}
+
+		public async void HandleLocationChanged (object sender, LocationUpdatedEventArgs e)
+		{
+			// Handle foreground updates
+			CLLocation location = e.Location;
+
+			_latitude = location.Coordinate.Latitude;
+			_longitude = location.Coordinate.Longitude;
+
+
 		}
 	    
 	}

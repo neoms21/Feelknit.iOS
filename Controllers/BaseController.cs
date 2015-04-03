@@ -1,6 +1,7 @@
 ﻿using System;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using Feelknit.iOS.Views;
 
 namespace Feelknit.iOS.Controllers
 {
@@ -9,6 +10,10 @@ namespace Feelknit.iOS.Controllers
 		public object Data{ get; set; }
 
 		protected bool NavigationButtonVisible{ get; set; }
+
+		protected LocationManager Manager{ get; set; }
+
+		protected LoadingOverlay LoadingOverlay{ get; set; }
 
         public BaseController(IntPtr handle)
             : base(handle)
@@ -55,6 +60,8 @@ namespace Feelknit.iOS.Controllers
                 new UIBarButtonItem(UIImage.FromBundle("threelines")
                     , UIBarButtonItemStyle.Plain
                     , (sender, args) => SidebarController.ToggleMenu()), true);
+			Manager = new LocationManager();
+
         }
 
 		protected void MoveToNextController(string controllerName, object data = null)

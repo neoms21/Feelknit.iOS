@@ -12,6 +12,7 @@ namespace Feelknit.iOS
 		public static  string FEELINGS = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings";
 		public static  string USER_VERIFY = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "Users/login";
 		public static  string USER_KEY = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "Users/devicetoken";
+		public static  string SAVE_AVATAR = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "Users/saveavatar";
 		public static  string CLEAR_USER_KEY = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "Users/clearkey";
 		public static  string USER = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "Users";
 		public static  string USERNAME = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings/username/";
