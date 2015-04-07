@@ -100,7 +100,8 @@ namespace Feelknit.iOS.Controllers
             var result = await client.GetRequest();
 
             _feelings = JsonConvert.DeserializeObject<IEnumerable<Feeling>>(result);
-            _feelings.First().IsFirstFeeling = true;
+			if(_feelings.Any())
+				_feelings.First().IsFirstFeeling = true;
             return _feelings;
         }
     }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -22,40 +22,44 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report Abuse!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUw-vg-rLa">
-                        <rect key="frame" x="376" y="33" width="80" height="15"/>
+                        <rect key="frame" x="376" y="8" width="80" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVP-DP-15l">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVP-DP-15l">
                         <rect key="frame" x="428" y="190" width="28" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="Eu9-47-dZk"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4X2-Za-n26">
-                        <rect key="frame" x="12" y="90" width="444" height="16"/>
+                        <rect key="frame" x="12" y="90" width="444" height="85"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="CommentUserName" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbl-ku-Oeo">
-                        <rect key="frame" x="88" y="33" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="CommentUserName" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbl-ku-Oeo">
+                        <rect key="frame" x="88" y="23" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="OVP-DP-15l" firstAttribute="top" secondItem="4X2-Za-n26" secondAttribute="bottom" constant="15" id="5cR-D1-Zt4"/>
+                    <constraint firstItem="eUw-vg-rLa" firstAttribute="top" secondItem="gJO-vV-GXO" secondAttribute="top" id="8Vv-Ok-Jmv"/>
                     <constraint firstItem="gJO-vV-GXO" firstAttribute="leading" secondItem="gCc-zc-qV3" secondAttribute="leadingMargin" id="CZT-L1-aS1"/>
+                    <constraint firstItem="Dbl-ku-Oeo" firstAttribute="centerY" secondItem="gJO-vV-GXO" secondAttribute="centerY" id="F8f-BC-RzB"/>
                     <constraint firstItem="4X2-Za-n26" firstAttribute="leading" secondItem="gCc-zc-qV3" secondAttribute="leading" constant="12" id="NqO-ei-Nfi"/>
                     <constraint firstItem="Dbl-ku-Oeo" firstAttribute="leading" secondItem="gJO-vV-GXO" secondAttribute="trailing" constant="30" id="VAP-VC-Oev"/>
                     <constraint firstAttribute="bottom" secondItem="OVP-DP-15l" secondAttribute="bottom" constant="5" id="YEr-Cs-NIP"/>
-                    <constraint firstItem="eUw-vg-rLa" firstAttribute="top" secondItem="Dbl-ku-Oeo" secondAttribute="top" id="dbs-jU-Qc6"/>
                     <constraint firstAttribute="trailing" secondItem="OVP-DP-15l" secondAttribute="trailing" constant="10" id="hEK-Wj-85T"/>
                     <constraint firstAttribute="trailing" secondItem="eUw-vg-rLa" secondAttribute="trailing" constant="10" id="izK-cu-z8n"/>
                     <constraint firstAttribute="trailing" secondItem="4X2-Za-n26" secondAttribute="trailing" constant="10" id="odb-cf-yeb"/>
-                    <constraint firstItem="eUw-vg-rLa" firstAttribute="top" secondItem="gCc-zc-qV3" secondAttribute="top" constant="33" id="wbP-2g-EeF"/>
                     <constraint firstItem="gJO-vV-GXO" firstAttribute="top" secondItem="gCc-zc-qV3" secondAttribute="topMargin" id="ysd-JN-Gt9"/>
                     <constraint firstItem="4X2-Za-n26" firstAttribute="top" secondItem="gJO-vV-GXO" secondAttribute="bottom" constant="32" id="zui-dH-Ha1"/>
                 </constraints>

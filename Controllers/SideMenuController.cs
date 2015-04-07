@@ -41,13 +41,16 @@ namespace Feelknit.iOS.Controllers
 
 		public void SignOutHandler ()
 		{
+
 			ApplicationHelper.UserName = string.Empty;
 			ApplicationHelper.EmailAddress = string.Empty;
 			ApplicationHelper.Avatar = string.Empty;
 			ApplicationHelper.ApnsToken = string.Empty;
 			ApplicationHelper.AuthorizationToken = string.Empty;
 			ApplicationHelper.IsAuthenticated = false;
-			InvokeOnMainThread(()=> {MoveToNextController (typeof(LoginViewController).Name);});
+			InvokeOnMainThread (() => {
+				MoveToNextController (typeof(LoginViewController).Name);
+			});
 		}
     }
 }

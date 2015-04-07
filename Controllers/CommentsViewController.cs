@@ -28,19 +28,18 @@ namespace Feelknit.iOS.Controllers
 		public override void ViewWillAppear (bool animated)
 		{
 			View.BackgroundColor = Resources.MainBackgroundColor;
-			UserNameLabel.TextColor = Resources.ButtonColor;
 			CommentsCountLabel.BackgroundColor = Resources.LoginButtonColor;
 
 			this.NavigationController.NavigationBarHidden = false;
-//			AddCommentButton = UIButton.FromType(UIButtonType.RoundedRect);
-//			AddCommentButton.SetImage(UIImage.FromBundle("012.png"), UIControlState.Normal);
-//			AddCommentButton.BackgroundColor = Resources.LightButtonColor;
-
 			AddCommentButton.Hidden = true;
 
 			CommentTextView.Layer.BorderColor = UIColor.Black.CGColor;
 			CommentTextView.Layer.CornerRadius = 2;
 			CommentTextView.ScrollEnabled = false;
+
+			UserNameLabel.SizeToFit ();
+			UserNameLabel.PreferredMaxLayoutWidth = 200;
+			UserNameLabel.LineBreakMode = UILineBreakMode.WordWrap;
 
 			//CommentsCountLabel.BackgroundColor = Resources.LoginButtonColor;
 		}
@@ -50,9 +49,29 @@ namespace Feelknit.iOS.Controllers
 			base.ViewDidLoad ();
 
 			UserIcon.Image = ResizeImage (UIImage.FromBundle ("Avatars/" + ApplicationHelper.Avatar + ".png"), 100, 100);
-			UserNameLabel.Text = ApplicationHelper.UserName == Feeling.UserName ? "I" : Feeling.UserName;
-			FeelingTextLabel.Text = Feeling.GetFeelingFormattedText ("");
-			ResizeHeigthWithText (FeelingTextLabel, 400);
+
+			//UserNameLabel.Text = ApplicationHelper.UserName == Feeling.UserName ? "I" : Feeling.UserName;
+			//FeelingTextLabel.Text = Feeling.GetFeelingFormattedText ("");
+
+			var firstAttributes = new UIStringAttributes {
+				ForegroundColor = Resources.LightButtonColor,
+				Font = UIFont.BoldSystemFontOfSize (12)
+			};
+
+			var boldAttributes = new UIStringAttributes {
+
+				Font = UIFont.BoldSystemFontOfSize (12)
+			};
+
+			var fulltext = string.Format ("{0} {1}", Feeling.UserName, Feeling.GetFeelingFormattedText (""));
+			var startIndexOfFeeling = Feeling.UserName.Length + 13; // fulltext is in format of 'username was feeling' FeellingText
+			var prettyString = new NSMutableAttributedString (fulltext);
+			prettyString.SetAttributes (firstAttributes.Dictionary, new NSRange (0, Feeling.UserName.Length));
+			prettyString.SetAttributes (boldAttributes.Dictionary, new NSRange (startIndexOfFeeling, Feeling.FeelingText.Length));
+
+			UserNameLabel.AttributedText = prettyString;
+
+			ResizeHeigthWithText (UserNameLabel, 400);
 			CommentsCountLabel.Text = string.Format ("  {0} comments", Feeling.Comments.Count);
 
 			CommentsTable.SeparatorColor = Resources.MainBackgroundColor;

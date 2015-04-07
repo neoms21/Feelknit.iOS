@@ -33,8 +33,6 @@ namespace Feelknit.iOS.Controllers
 
 			UserEmailTextView.Layer.BorderColor = UIColor.Black.CGColor;
 			UserEmailTextView.Layer.BorderWidth = 1.5f;
-
-		
 		}
 
 		public override void ViewDidLoad ()
@@ -46,7 +44,7 @@ namespace Feelknit.iOS.Controllers
 			UserImageButton.SetBackgroundImage (UIImage.FromBundle (string.Format ("Avatars/{0}", ApplicationHelper.Avatar)), UIControlState.Normal);
 		
 			UserImageButton.TouchUpInside+= (object sender, EventArgs e) => {
-				MoveToNextController(typeof(AvatarViewController).Name);
+				MoveToNextController(typeof(AvatarViewController).Name, true);
 			};
 
 

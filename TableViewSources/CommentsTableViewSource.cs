@@ -46,7 +46,7 @@ namespace Feelknit.iOS
 
 			System.Drawing.SizeF size = ((NSString)text).StringSize (font, new System.Drawing.SizeF (width, float.MaxValue),
 				UILineBreakMode.WordWrap);
-			return (float)size.Height + 150; // The 50 is just padding
+			return (float)size.Height + 100; // The 50 is just padding
 		}
 
 //		public override float GetHeightForRow (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)

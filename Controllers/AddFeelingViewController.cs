@@ -20,6 +20,7 @@ namespace Feelknit.iOS.Controllers
 		private double _latitude = 0.0;
 		private double _longitude = 0.0;
 
+		UIViewController previousController;
 
 
 		public AddFeelingViewController (IntPtr handle) : base (handle)
@@ -39,6 +40,13 @@ namespace Feelknit.iOS.Controllers
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
+
+			var controllers = this.NavController.ViewControllers.ToList ();
+			var currentIndex = controllers.IndexOf (this);
+			previousController = controllers.ElementAt (currentIndex - 1);
+
+
 			this.NavigationController.NavigationBarHidden = false;
 			#region View lifecycle
 			FeelingsTableView.Hidden = true;
@@ -113,6 +121,15 @@ namespace Feelknit.iOS.Controllers
 
 
 		}
-	    
+
+		public override void ViewWillDisappear (bool animated)
+		{
+			if (!previousController.GetType ().Name.Equals (typeof(UserFeelingsController).Name) &&
+			   this.NavController.ViewControllers.FirstOrDefault (c => c.GetType ().Name.Equals (this.GetType ().Name)) == null) {
+				MoveToNextController (typeof(UserFeelingsController).Name);
+			} else {
+				base.ViewWillDisappear (animated);
+			}
+		}
 	}
 }

@@ -31,8 +31,11 @@ namespace Feelknit.iOS
 		{
 			base.LayoutSubviews ();
 			var frame = CommentTextLabel.Frame;
+			CommentTextLabel.SizeToFit ();
+			CommentTextLabel.PreferredMaxLayoutWidth = 200;
+			CommentTextLabel.LineBreakMode = UILineBreakMode.CharacterWrap;
 
-			CommentTextLabel.Text = Comment.Text;
+			CommentTextLabel.Text = Comment.Text.Replace("\n","");
 			ResizeHeigthWithText (CommentTextLabel);
 
 			UserNameLabel.Text = Comment.User;
@@ -43,7 +46,7 @@ namespace Feelknit.iOS
 //			ReportAbuseLabel.Touch
 		}
 
-		private void ResizeHeigthWithText(UILabel label,float maxHeight = 960f) 
+		private void ResizeHeigthWithText(UILabel label,float maxHeight = 100f) 
 		{
 			label.AdjustsFontSizeToFitWidth = false;
 			float width = 280;// label.Frame.Width;  

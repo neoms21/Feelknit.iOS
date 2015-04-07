@@ -81,6 +81,12 @@ namespace Feelknit.iOS
 		public override void LayoutSubviews ()
 		{
 			base.LayoutSubviews ();
+			if (Feeling.SupportUsers.Contains (ApplicationHelper.UserName)) {
+				SupportButton.SetTitle ("Un-Suppport", UIControlState.Normal);
+
+			} else {
+				SupportButton.SetTitle ("Suppport", UIControlState.Normal);
+			}
 
 			var firstAttributes = new UIStringAttributes {
 				ForegroundColor = Resources.LightButtonColor,
@@ -91,14 +97,9 @@ namespace Feelknit.iOS
 
 				Font = UIFont.BoldSystemFontOfSize (12)
 			};
-			if (Feeling.SupportUsers.Contains (ApplicationHelper.UserName)) {
-				SupportButton.SetTitle ("Un-Suppport", UIControlState.Normal);
 
-			} else {
-				SupportButton.SetTitle ("Suppport", UIControlState.Normal);
-			}
 			var fulltext = string.Format ("{0} {1}", Feeling.UserName, Feeling.GetFeelingFormattedText (""));
-			var startIndexOfFeeling = Feeling.UserName.Length + 13; // fulltexy is in format of username was feeling FeellingText
+			var startIndexOfFeeling = Feeling.UserName.Length + 13; // fulltext is in format of 'username was feeling' FeellingText
 			var prettyString = new NSMutableAttributedString (fulltext);
 			prettyString.SetAttributes (firstAttributes.Dictionary, new NSRange (0, Feeling.UserName.Length));
 			prettyString.SetAttributes (boldAttributes.Dictionary, new NSRange (startIndexOfFeeling, Feeling.FeelingText.Length));

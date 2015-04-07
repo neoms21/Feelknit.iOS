@@ -32,16 +32,8 @@ namespace Feelknit.iOS.Controllers
 		[Outlet]
 		MonoTouch.UIKit.UILabel UserNameLabel { get; set; }
 
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel FeelingTextLabel { get; set; }
-
 		void ReleaseDesignerOutlets ()
 		{
-			if (FeelingTextLabel != null) {
-				FeelingTextLabel.Dispose ();
-				FeelingTextLabel = null;
-			}
 		}
 	}
 }

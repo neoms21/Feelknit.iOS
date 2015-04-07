@@ -44,9 +44,9 @@ namespace Feelknit.iOS
 			SkipButton.TouchUpInside += (object sender, EventArgs e) => {
 				NavigationController.PopViewControllerAnimated (true);
 			};
-			var isFromProfile = (bool)Data;
-
+			var isFromProfile = Data == null ? false : (bool)Data;
 			SaveButton.TouchUpInside += (object sender, EventArgs e) => {
+
 
 				if (isFromProfile) {
 					MessageBus.PostEvent (new CoreMessageBusEvent (Constants.AvatarSelectedEvent) {
@@ -57,6 +57,12 @@ namespace Feelknit.iOS
 					NavigationController.PopViewControllerAnimated (true);
 				}
 				else{
+					ApplicationHelper.Avatar = _avatar;
+					//Update Left Hand menu
+					MessageBus.Default.Post (new CoreMessageBusEvent (Constants.UserDetailsUpdateEvent) {
+						Sender = this,
+					});
+
 					 Task.Factory.StartNew (async () => {
 						var client = new JsonHttpClient (UrlHelper.SAVE_AVATAR);
 						await client.PostRequest (new User{ UserName = ApplicationHelper.UserName, Avatar = _avatar });

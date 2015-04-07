@@ -24,6 +24,7 @@ namespace Feelknit.iOS.Controllers
 		public override void ViewWillAppear (bool animated)
 		{
 			base.ViewWillAppear (animated);
+			NavigationController.NavigationBarHidden = true;
 			this.View.BackgroundColor = Resources.MainBackgroundColor;
 			RegisterButton.SetTitleColor(Resources.WhiteColor, UIControlState.Normal);
 			SetImageAndMargin(RegisterUserName, "userIcon.png");
