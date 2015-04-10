@@ -11,6 +11,7 @@ using Feelknit.iOS.Views;
 using System.Drawing;
 using System.Linq;
 using Feelknit.iOS.Controllers;
+using DSoft.Messaging;
 
 namespace Feelknit.iOS
 {
@@ -21,9 +22,17 @@ namespace Feelknit.iOS
 		private LoadingOverlay _loadingOverlay;
 
 		event GetUserFeelingsDelegate GetFeelings;
+		private MessageBusEventHandler gotoCommentEventHandler;
+
 		public CurrentFeelingsViewController (IntPtr handle) : base (handle)
 		{
 			Title = "Current Feelings";
+			gotoCommentEventHandler = new MessageBusEventHandler () {
+				EventId = Constants.GoToCommentsEvent,
+				EventAction = GoToCommentEventHandler,
+			};
+
+			MessageBus.Default.Register (gotoCommentEventHandler);
 		}
 
 		public override void ViewWillAppear (bool animated)
@@ -101,6 +110,27 @@ namespace Feelknit.iOS
 			}
 		}
 
+
+		/// <summary>
+		/// Messages the bus event handler.
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="evnt">Evnt.</param>
+		private void GoToCommentEventHandler (object sender, MessageBusEvent evnt)
+		{
+			var feeling = evnt.Data [0] as Feeling;
+			//execute on the UI thread
+			BeginInvokeOnMainThread (() => {
+				var commentsViewController =
+					this.Storyboard.InstantiateViewController ("CommentsViewController") as CommentsViewController;
+				if (commentsViewController != null) {
+					commentsViewController.Feeling = feeling;
+					commentsViewController.Data = true;
+					this.NavigationController.PushViewController (commentsViewController, true);
+				}
+			});
+
+		}
 
 		internal delegate void GetUserFeelingsDelegate();
 

@@ -8,6 +8,7 @@ using Feelknit.iOS.Model;
 using System.Threading.Tasks;
 using Feelknit.iOS.Helpers;
 using System.Collections.Specialized;
+using DSoft.Messaging;
 
 namespace Feelknit.iOS
 {
@@ -36,8 +37,18 @@ namespace Feelknit.iOS
 
 			SupportButton.TouchUpInside += ProcessSupportCount;
 			ReportButton.TouchUpInside += ExecuteReportButtonClick;
+			CommentButton.TouchUpInside += ExecuteCommentButtonClick;
 
 		}
+
+		private void ExecuteCommentButtonClick (object sender, EventArgs e)
+		{
+			MessageBus.PostEvent (new CoreMessageBusEvent (Constants.GoToCommentsEvent) {
+				Sender = this,
+				Data = new object[]{ Feeling }
+			});
+		}
+
 		private void ExecuteReportButtonClick (object sender, EventArgs e)
 		{
 			Feeling.IsReported = true;
@@ -82,10 +93,10 @@ namespace Feelknit.iOS
 		{
 			base.LayoutSubviews ();
 			if (Feeling.SupportUsers.Contains (ApplicationHelper.UserName)) {
-				SupportButton.SetTitle ("Un-Suppport", UIControlState.Normal);
+				SupportButton.SetTitle ("Un-Support", UIControlState.Normal);
 
 			} else {
-				SupportButton.SetTitle ("Suppport", UIControlState.Normal);
+				SupportButton.SetTitle ("Support", UIControlState.Normal);
 			}
 
 			var firstAttributes = new UIStringAttributes {

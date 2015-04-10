@@ -14,22 +14,22 @@ namespace Feelknit.iOS.Helpers
 			set { NSUserDefaults.StandardUserDefaults.SetString (value, "AuthToken"); } }
 
 		public static string Avatar { get { return NSUserDefaults.StandardUserDefaults.StringForKey ("Avatar"); } 
-			set { NSUserDefaults.StandardUserDefaults.SetString (value, "Avatar"); } }
+			set { if(value!=null) NSUserDefaults.StandardUserDefaults.SetString (value, "Avatar"); } }
 
 
 		public static string ApnsToken { get { return NSUserDefaults.StandardUserDefaults.StringForKey ("ApnsToken"); } 
-			set { NSUserDefaults.StandardUserDefaults.SetString (value, "ApnsToken"); } }
+			set { if(value!=null) NSUserDefaults.StandardUserDefaults.SetString (value, "ApnsToken"); } }
 
 
 		public static string FeelTexts { get { return NSUserDefaults.StandardUserDefaults.StringForKey ("FeelTexts"); } 
-			set { NSUserDefaults.StandardUserDefaults.SetString (value, "FeelTexts"); } }
+			set { if(value!=null)NSUserDefaults.StandardUserDefaults.SetString (value, "FeelTexts"); } }
 
 		public static string EmailAddress { get { return NSUserDefaults.StandardUserDefaults.StringForKey ("EmailAddress"); } 
-			set { NSUserDefaults.StandardUserDefaults.SetString (value, "EmailAddress"); } }
+			set { if(value!=null)NSUserDefaults.StandardUserDefaults.SetString (value, "EmailAddress"); } }
 
 
 		public static bool IsAuthenticated { get { return NSUserDefaults.StandardUserDefaults.BoolForKey ("IsAuthenticated"); } 
-			set { NSUserDefaults.StandardUserDefaults.SetBool (value, "IsAuthenticated"); } }
+			set { if(value!=null) NSUserDefaults.StandardUserDefaults.SetBool (value, "IsAuthenticated"); } }
 
 
 //

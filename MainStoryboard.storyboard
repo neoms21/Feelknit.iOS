@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="height" constant="30" id="1152"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="16">
                                 <rect key="frame" x="15" y="300" width="290" height="30"/>
@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="height" constant="30" id="1162"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" returnKeyType="done" autocorrectionType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18">
                                 <rect key="frame" x="114" y="1027" width="46" height="30"/>
@@ -218,7 +218,7 @@
                                     <constraint firstAttribute="height" constant="150" id="944"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="525">
                                 <rect key="frame" x="0.0" y="77" width="320" height="30"/>
@@ -420,7 +420,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="I" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="770">
-                                <rect key="frame" x="72" y="42" width="238" height="14.5"/>
+                                <rect key="frame" x="72" y="34" width="238" height="14.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -433,8 +433,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="1635" misplaced="YES">
-                                <rect key="frame" x="0.0" y="111" width="320" height="25"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="1635">
+                                <rect key="frame" x="0.0" y="96.5" width="320" height="25"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="1640"/>
@@ -443,48 +443,51 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1660" misplaced="YES">
-                                <rect key="frame" x="0.0" y="144" width="320" height="386"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1660">
+                                <rect key="frame" x="0.0" y="126.5" width="320" height="404.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="wk0-go-rJm">
-                                <rect key="frame" x="4" y="534" width="254" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="2" translatesAutoresizingMaskIntoConstraints="NO" id="wk0-go-rJm" misplaced="YES">
+                                <rect key="frame" x="2" y="534" width="278" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="91U-CW-0Kc"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <constraints>
+                                    <constraint id="2265" firstItem="wk0-go-rJm" firstAttribute="height" constant="30"/>
+                                </constraints>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2I-oW-bqT">
-                                <rect key="frame" x="266" y="534" width="30" height="28"/>
-                                <color key="backgroundColor" red="0.1988979481" green="1" blue="0.37979163459999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="287" y="537" width="30" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="add">
+                                <state key="normal" title="" backgroundImage="012.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <constraints>
+                                    <constraint id="2267" firstItem="F2I-oW-bqT" firstAttribute="width" constant="30"/>
+                                    <constraint id="2268" firstItem="F2I-oW-bqT" firstAttribute="height" constant="28"/>
+                                </constraints>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1"/>
                         <constraints>
                             <constraint firstItem="770" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="72" id="1486"/>
                             <constraint firstItem="764" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="12" id="1493"/>
-                            <constraint firstItem="770" firstAttribute="top" secondItem="755" secondAttribute="bottom" constant="22" id="1498"/>
                             <constraint firstItem="764" firstAttribute="top" secondItem="755" secondAttribute="bottom" constant="14" id="1501"/>
                             <constraint firstItem="1635" firstAttribute="leading" secondItem="759" secondAttribute="leading" id="1637"/>
                             <constraint firstAttribute="trailing" secondItem="1635" secondAttribute="trailing" id="1643"/>
-                            <constraint firstItem="wk0-go-rJm" firstAttribute="leading" secondItem="759" secondAttribute="leadingMargin" constant="-12" id="2af-96-zNE"/>
-                            <constraint firstItem="wk0-go-rJm" firstAttribute="top" secondItem="1660" secondAttribute="bottom" constant="4" id="6fn-gh-d9b"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="F2I-oW-bqT" secondAttribute="trailing" constant="8" id="CGX-AC-H1P"/>
-                            <constraint firstItem="756" firstAttribute="top" secondItem="wk0-go-rJm" secondAttribute="bottom" constant="4" id="DdE-ND-eWe"/>
-                            <constraint firstItem="F2I-oW-bqT" firstAttribute="leading" secondItem="wk0-go-rJm" secondAttribute="trailing" constant="8" id="JIL-KP-g8l"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1660" secondAttribute="trailing" constant="-16" id="JTP-ca-KSX"/>
-                            <constraint firstItem="F2I-oW-bqT" firstAttribute="top" secondItem="1660" secondAttribute="bottom" constant="4" id="Mw1-Pt-Z0J"/>
                             <constraint firstItem="1634" firstAttribute="top" secondItem="756" secondAttribute="bottom" constant="466" id="TpV-oQ-pCA"/>
-                            <constraint firstItem="1660" firstAttribute="leading" secondItem="759" secondAttribute="leadingMargin" constant="-16" id="Zg9-Kq-PDq"/>
-                            <constraint firstItem="1660" firstAttribute="top" secondItem="1635" secondAttribute="bottom" constant="8" id="c5O-gd-f9o"/>
                             <constraint firstItem="759" firstAttribute="trailing" secondItem="770" secondAttribute="trailing" constant="10" id="2035"/>
                             <constraint firstItem="1635" firstAttribute="top" secondItem="770" secondAttribute="bottom" constant="48" id="2044"/>
+                            <constraint id="2138" firstItem="764" firstAttribute="top" secondItem="770" secondAttribute="top" constant="0.0"/>
+                            <constraint firstItem="759" firstAttribute="trailing" secondItem="F2I-oW-bqT" secondAttribute="trailing" constant="3" id="2251"/>
+                            <constraint firstItem="1660" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="0.0" id="2252"/>
+                            <constraint firstItem="759" firstAttribute="trailing" secondItem="1660" secondAttribute="trailing" constant="0.0" id="2253"/>
+                            <constraint firstItem="1660" firstAttribute="top" secondItem="1635" secondAttribute="bottom" constant="5" id="2254"/>
+                            <constraint firstItem="756" firstAttribute="top" secondItem="wk0-go-rJm" secondAttribute="bottom" constant="2" id="2262"/>
+                            <constraint firstItem="wk0-go-rJm" firstAttribute="leading" secondItem="759" secondAttribute="leading" constant="2" id="2263"/>
+                            <constraint firstItem="759" firstAttribute="trailing" secondItem="wk0-go-rJm" secondAttribute="trailing" constant="40" id="2264"/>
+                            <constraint id="2266" firstItem="wk0-go-rJm" firstAttribute="centerY" secondItem="F2I-oW-bqT" secondAttribute="centerY" constant="0.0"/>
+                            <constraint firstItem="wk0-go-rJm" firstAttribute="top" secondItem="1660" secondAttribute="bottom" constant="5" id="2269"/>
                         </constraints>
                     </view>
                     <connections>

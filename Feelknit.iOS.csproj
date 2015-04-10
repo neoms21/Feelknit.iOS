@@ -29,8 +29,8 @@
     <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
     <MtouchI18n>
     </MtouchI18n>
-    <CodesignKey>iPhone Distribution</CodesignKey>
-    <CodesignProvision>da3fe6fe-83c9-4d34-bab3-6555ecf1fbb9</CodesignProvision>
+    <CodesignKey>iPhone Developer: Manoj Sethi (KVMQ8BJK94)</CodesignKey>
+    <CodesignProvision>8e69a558-b55d-4c42-b9f1-5cdfa9b777e9</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>full</DebugType>
@@ -59,7 +59,7 @@
     <MtouchI18n>
     </MtouchI18n>
     <MtouchArch>ARMv7</MtouchArch>
-    <CodesignProvision>da3fe6fe-83c9-4d34-bab3-6555ecf1fbb9</CodesignProvision>
+    <CodesignProvision>021c7c89-83a4-480e-b56a-ea86a1c9ee25</CodesignProvision>
     <BuildIpa>true</BuildIpa>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -80,8 +80,8 @@
     <ConsolePause>false</ConsolePause>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <BuildIpa>true</BuildIpa>
-    <CodesignProvision>da3fe6fe-83c9-4d34-bab3-6555ecf1fbb9</CodesignProvision>
-    <CodesignKey>iOS Distribution: Manoj Sethi</CodesignKey>
+    <CodesignProvision>021c7c89-83a4-480e-b56a-ea86a1c9ee25</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
     <IpaPackageName>
     </IpaPackageName>
     <MtouchI18n>

@@ -31,8 +31,9 @@ namespace Feelknit.iOS.Controllers
 		public override void ViewWillAppear (bool animated)
 		{
 			base.ViewWillAppear (animated);
-			ShareFeelingButton.BackgroundColor = Resources.LightButtonColor;
+			ShareFeelingButton.BackgroundColor = Resources.DisabledColor;
 			ShareFeelingButton.SetTitleColor (UIColor.White, UIControlState.Normal);
+			ShareFeelingButton.Enabled = false;
 			Manager.StartLocationUpdates ();
 			Manager.LocationUpdated += HandleLocationChanged;
 		}
@@ -46,11 +47,16 @@ namespace Feelknit.iOS.Controllers
 			var currentIndex = controllers.IndexOf (this);
 			previousController = controllers.ElementAt (currentIndex - 1);
 
+			this.ReasonText.ShouldReturn += (textField) => { 
+				textField.ResignFirstResponder();
+				return true; 
+			};
 
 			this.NavigationController.NavigationBarHidden = false;
 			#region View lifecycle
 			FeelingsTableView.Hidden = true;
-				
+//			ShareFeelingButton.Enabled = false;
+//			ShareFeelingButton.BackgroundColor = Resources.DisabledColor;
 			//string[] tableItems = new string[] {"Sad","Angry","Worried","Frustrated"};
 			var feelings  = JsonConvert.DeserializeObject<List<string>>(ApplicationHelper.FeelTexts);
 			FeelingsTableView.Source = new FeelingsTableViewSources (feelings, SetSelection);
@@ -99,10 +105,12 @@ namespace Feelknit.iOS.Controllers
 
 		public void SetSelection (string value)
 		{
-
 			SelectFeelingButton.SetTitle (value, UIControlState.Normal);
 			_feelingText = value;
 			FeelingsTableView.Hidden = true;
+			ShareFeelingButton.BackgroundColor = Resources.LightButtonColor;
+			ShareFeelingButton.SetTitleColor (UIColor.White, UIControlState.Normal);
+			ShareFeelingButton.Enabled = true;
 		}
 
 		public override void TouchesEnded (NSSet touches, UIEvent evt)

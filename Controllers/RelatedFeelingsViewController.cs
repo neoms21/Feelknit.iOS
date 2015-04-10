@@ -6,6 +6,7 @@ using Feelknit.iOS.Helpers;
 using Newtonsoft.Json;
 using System.Linq;
 using System.Threading.Tasks;
+using DSoft.Messaging;
 
 namespace Feelknit.iOS.Controllers
 {
@@ -14,10 +15,16 @@ namespace Feelknit.iOS.Controllers
 		public Feeling Feeling{ get; set; }
 
 		public IList<Feeling> RelatedFeelings{ get; set; }
-
+		private MessageBusEventHandler gotoCommentEventHandler;
 		public RelatedFeelingsViewController (IntPtr handle) : base (handle)
 		{
 			RelatedFeelings = new List<Feeling> ();
+			gotoCommentEventHandler = new MessageBusEventHandler () {
+				EventId = Constants.GoToCommentsEvent,
+				EventAction = GoToCommentEventHandler,
+			};
+
+			MessageBus.Default.Register (gotoCommentEventHandler);
 		}
 	
 		public override void ViewDidLoad ()
@@ -51,7 +58,7 @@ namespace Feelknit.iOS.Controllers
 
 			var responseText = await client.GetRequest ();
 			var feelings = JsonConvert.DeserializeObject<IList<Feeling>> (responseText);
-			if (!feelings.Any ())
+			if (feelings == null || !feelings.Any ())
 				return;
 			Feeling = feelings.First();
 
@@ -71,6 +78,27 @@ namespace Feelknit.iOS.Controllers
 			FeelingNumberLabel.Text = string.Format ("  {0} people feeling {1} currently", RelatedFeelings.Count, Feeling.FeelingText);
 			RelatedFeelingsTable.Source = new RelatedFeelingsTableViewSource (RelatedFeelings, OnRowSelection);
 			RelatedFeelingsTable.ReloadData ();
+		}
+
+		/// <summary>
+		/// Messages the bus event handler.
+		/// </summary>
+		/// <param name="sender">Sender.</param>
+		/// <param name="evnt">Evnt.</param>
+		private void GoToCommentEventHandler (object sender, MessageBusEvent evnt)
+		{
+			var feeling = evnt.Data [0] as Feeling;
+			//execute on the UI thread
+			BeginInvokeOnMainThread (() => {
+				var commentsViewController =
+					this.Storyboard.InstantiateViewController ("CommentsViewController") as CommentsViewController;
+				if (commentsViewController != null) {
+					commentsViewController.Feeling = feeling;
+					commentsViewController.Data = true;
+					this.NavigationController.PushViewController (commentsViewController, true);
+				}
+			});
+
 		}
 	}
 }

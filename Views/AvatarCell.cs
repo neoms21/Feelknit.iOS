@@ -22,7 +22,7 @@ namespace Feelknit.iOS
 			ContentView.BackgroundColor = Resources.WhiteColor;
 			//ContentView.Transform = CGAffineTransform.MakeScale (1.2f, 1.2f);
 
-			imageView = new UIImageView (UIImage.FromBundle ("UserIcon.png"));
+			imageView = new UIImageView (UIImage.FromBundle ("userIcon.png"));
 			imageView.Center = ContentView.Center;
 //			imageView.Transform = CGAffineTransform.MakeScale (1.5f, 1.5f);
 

@@ -10,20 +10,30 @@ using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Feelknit.iOS.Views;
+using System;
+using System.Drawing;
+
+//using MonoTouch.ObjCRuntime.Libraries.Foundation;
+//using MonoTouch.ObjCRuntime.Libraries.UIKit;
+using System.Collections.Generic;
 
 namespace Feelknit.iOS.Controllers
 {
 	partial class CommentsViewController : BaseController
 	{
 		public Feeling Feeling{ get; set; }
-
+		bool isKeyboardVisible;
 		private LoadingOverlay _loadingOverlay;
+		NSLayoutConstraint heightConstraint;
+
 
 		public CommentsViewController (IntPtr handle)
 			: base (handle)
 		{
 			NavigationButtonVisible = false;
 		}
+
+
 
 		public override void ViewWillAppear (bool animated)
 		{
@@ -41,14 +51,76 @@ namespace Feelknit.iOS.Controllers
 			UserNameLabel.PreferredMaxLayoutWidth = 200;
 			UserNameLabel.LineBreakMode = UILineBreakMode.WordWrap;
 
+			this.CommentTextView.ResignFirstResponder ();
+			NSNotificationCenter.DefaultCenter.AddObserver (UIKeyboard.WillHideNotification, OnKeyboardNotification, this.View.Window);
+			NSNotificationCenter.DefaultCenter.AddObserver (UIKeyboard.WillShowNotification, OnKeyboardNotification, this.View.Window);
+
+			var constraints = CommentTextView.Constraints.ToList ();
+			heightConstraint = constraints.FirstOrDefault (c => c.FirstAttribute == NSLayoutAttribute.Height);
+
+
 			//CommentsCountLabel.BackgroundColor = Resources.LoginButtonColor;
+		}
+
+		private void OnKeyboardNotification (NSNotification notification)
+		{
+			if (IsViewLoaded) {
+
+				//Check if the keyboard is becoming visible
+				bool visible = notification.Name == UIKeyboard.WillShowNotification;
+
+				//Start an animation, using values from the keyboard
+				UIView.BeginAnimations ("AnimateForKeyboard");
+				UIView.SetAnimationBeginsFromCurrentState (true);
+				UIView.SetAnimationDuration (UIKeyboard.AnimationDurationFromNotification (notification));
+				UIView.SetAnimationCurve ((UIViewAnimationCurve)UIKeyboard.AnimationCurveFromNotification (notification));
+
+				//Pass the notification, calculating keyboard height, etc.
+				bool landscape = InterfaceOrientation == UIInterfaceOrientation.LandscapeLeft || InterfaceOrientation == UIInterfaceOrientation.LandscapeRight;
+				if (visible) {
+					var keyboardFrame = UIKeyboard.FrameEndFromNotification (notification);
+
+					OnKeyboardChanged (visible, landscape ? keyboardFrame.Width : keyboardFrame.Height);
+				} else {
+					var keyboardFrame = UIKeyboard.FrameBeginFromNotification (notification);
+
+					OnKeyboardChanged (visible, landscape ? keyboardFrame.Width : keyboardFrame.Height);
+				}
+
+				//Commit the animation
+				UIView.CommitAnimations ();	
+			}
+		}
+
+		/// <summary>
+		/// Override this method to apply custom logic when the keyboard is shown/hidden
+		/// </summary>
+		/// <param name='visible'>
+		/// If the keyboard is visible
+		/// </param>
+		/// <param name='height'>
+		/// Calculated height of the keyboard (width not generally needed here)
+		/// </param>
+		protected virtual void OnKeyboardChanged (bool visible, float height)
+		{
+			//Console.WriteLine ("{0} - {1}", visible, height);
+			var frame = this.View.Frame;
+			if (visible && !isKeyboardVisible) {
+				isKeyboardVisible = true;
+				frame.Height -= height;
+			} else {
+				isKeyboardVisible = false;
+				frame.Height += height;
+			}	
+			this.View.Frame = frame;
+
 		}
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
-			UserIcon.Image = ResizeImage (UIImage.FromBundle ("Avatars/" + ApplicationHelper.Avatar + ".png"), 100, 100);
+			UserIcon.Image = ResizeImage (UIImage.FromBundle ("Avatars/" + Feeling.UserAvatar + ".png"), 100, 100);
 
 			//UserNameLabel.Text = ApplicationHelper.UserName == Feeling.UserName ? "I" : Feeling.UserName;
 			//FeelingTextLabel.Text = Feeling.GetFeelingFormattedText ("");
@@ -75,9 +147,13 @@ namespace Feelknit.iOS.Controllers
 			CommentsCountLabel.Text = string.Format ("  {0} comments", Feeling.Comments.Count);
 
 			CommentsTable.SeparatorColor = Resources.MainBackgroundColor;
-			var constraints = CommentTextView.Constraints;
-			//var heightConstraint = constraints.FirstOrDefault(c=>c.Constant == 30);
-			//AddCommentButton.Title = "Cli";
+
+			var tapRecognizer = new UITapGestureRecognizer ();
+			CommentsTable.AddGestureRecognizer (tapRecognizer);
+			tapRecognizer.AddTarget (() => {
+				this.CommentTextView.ResignFirstResponder();
+			});
+
 			AddCommentButton.TouchUpInside += (sender, e) => {
 				var comment = new Comment {
 					Text = CommentTextView.Text,
@@ -88,21 +164,65 @@ namespace Feelknit.iOS.Controllers
 
 				SaveComment (comment);
 			};
+			var originalWidth = ((NSString)CommentTextView.Text).StringSize (font: CommentTextView.Font);
+			var originalLines = 1;
+			var lastCharLineBreak = false;
+			var previousLength = CommentTextView.Text.Length;
 
 			CommentTextView.Changed += (object sender, EventArgs e) => {
 				InvokeOnMainThread (() => {
-					if (this.CommentTextView.Text.Length > 0) {
-						//						var size =	this.CommentTextView.StringSize(CommentTextView.Text,UIFont.SystemFontOfSize(12));
-						this.AddCommentButton.Hidden = false;
-						//	heightConstraint.Constant = 50;
-						//var size = CommentTextView.SizeThatFits(Comm;
 
-
-					} else {
-
+					if(CommentTextView.Text.Length == 0)
+					{
 						this.AddCommentButton.Hidden = true;
+						return;
 					}
-				});
+					this.AddCommentButton.Hidden = false;
+					if(originalLines == 4)
+						return;
+
+					var currentLength = CommentTextView.Text.Length;
+					var size = ((NSString)CommentTextView.Text).StringSize (font: CommentTextView.Font);
+					var tfWidth = size.Width;
+					var x = (int) (originalWidth.Width ==0 ? 1: Math.Ceiling( tfWidth /originalWidth.Width));
+
+
+					if(CommentTextView.Text.ElementAt(CommentTextView.Text.Length-1).ToString() == "\n" )
+					{
+						lastCharLineBreak = true;
+						if (heightConstraint != null && previousLength < currentLength)
+						{
+							heightConstraint.Constant += 20;
+							originalLines +=1;
+							x = originalLines;
+						}else
+						{
+							heightConstraint.Constant -= 20;
+							originalLines -=1;
+							x = originalLines;
+						}
+						originalLines = originalLines == 0 ? 1 :originalLines;
+						previousLength = currentLength;
+						originalWidth = ((NSString)CommentTextView.Text).StringSize (font: CommentTextView.Font);
+						return;
+					}
+					else
+					{
+						if(lastCharLineBreak)
+							x-=1;
+						lastCharLineBreak = false;
+					}
+						
+					if (originalLines != x || lastCharLineBreak) {
+						if (heightConstraint != null)
+						{
+							heightConstraint.Constant = x < originalLines ? heightConstraint.Constant - 20 : heightConstraint.Constant + 20;
+							originalLines = x == 0 ? 1 : x;
+						}
+					}
+					originalWidth = ((NSString)CommentTextView.Text).StringSize (font: CommentTextView.Font);
+					previousLength = currentLength;
+					});
 			};
 
 
@@ -165,6 +285,9 @@ namespace Feelknit.iOS.Controllers
 				_loadingOverlay.Hide();
 				CommentsTable.Source = new CommentsTableViewSource (Feeling.Comments.ToList ());
 				CommentsTable.ReloadData ();
+
+				CommentsCountLabel.Text = string.Format ("  {0} comments", Feeling.Comments.Count);
+
 			});
 		}
 

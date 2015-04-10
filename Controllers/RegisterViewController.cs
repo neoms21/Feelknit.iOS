@@ -73,11 +73,12 @@ namespace Feelknit.iOS.Controllers
 				ApplicationHelper.IsAuthenticated = true;
 				ApplicationHelper.AuthorizationToken = loginResult.Token;
 
-				await Task.Factory.StartNew (async () => {
-					client = new JsonHttpClient (UrlHelper.USER_KEY);
-					new User{ UserName = RegisterUserName.Text, IosKey = ApplicationHelper.ApnsToken };
-					await client.PostRequest (user);
-				});
+				await Task.Factory.StartNew(async () =>
+					{
+						client = new JsonHttpClient(UrlHelper.USER_KEY);
+						user.IosKey = ApplicationHelper.ApnsToken;
+						await client.PostRequest(user);
+					});
 
 				//send it
 				MessageBus.Default.Post (new CoreMessageBusEvent (Constants.UserDetailsUpdateEvent) {
