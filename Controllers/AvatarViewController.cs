@@ -40,11 +40,14 @@ namespace Feelknit.iOS
 			AvatarCollectionView.Source = tableSource;
 
 			UserAvatarImageView.Image = UIImage.FromBundle ("Avatars/" + ApplicationHelper.Avatar + ".png"); 
+			var isFromProfile = Data == null ? false : (bool)Data;
 
 			SkipButton.TouchUpInside += (object sender, EventArgs e) => {
-				NavigationController.PopViewControllerAnimated (true);
+				if(isFromProfile)
+					NavigationController.PopViewControllerAnimated (true);
+				else
+					MoveToNextController(typeof(AddFeelingViewController).Name);
 			};
-			var isFromProfile = Data == null ? false : (bool)Data;
 			SaveButton.TouchUpInside += (object sender, EventArgs e) => {
 
 

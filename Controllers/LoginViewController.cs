@@ -25,14 +25,25 @@ namespace Feelknit.iOS.Controllers
         {
             base.ViewWillAppear(animated);
             this.View.BackgroundColor = Resources.MainBackgroundColor;
-			this.LoginButton.BackgroundColor = Resources.LoginButtonColor;
+			DisableLogin ();
 			RegisterButton.BackgroundColor = Resources.LoginButtonColor;
 			NavigationController.NavigationBarHidden = true;
 			LoginButton.SetTitleColor(Resources.WhiteColor, UIControlState.Normal);
 			RegisterButton.SetTitleColor(Resources.WhiteColor, UIControlState.Normal);
 
-        }
+			UserName.EditingChanged+=  EditingChanged ;
+			Password.EditingChanged += EditingChanged;
+		}
 
+		private void EditingChanged(object sender, EventArgs e)
+		{
+			if (UserName.Text.Length > 0 && Password.Text.Length > 0) {
+				LoginButton.BackgroundColor = Resources.LoginButtonColor;
+				LoginButton.Enabled = true;
+			} else {
+				DisableLogin ();
+			}
+		}
 
         public override bool ShouldAutorotate()
         {
@@ -78,6 +89,12 @@ namespace Feelknit.iOS.Controllers
 				return true; 
 			};
         }
+
+		void DisableLogin ()
+		{
+			this.LoginButton.BackgroundColor = Resources.DisabledColor;
+			LoginButton.Enabled = false;
+		}
 
         private void SetImageAndMargin(UITextField uiTextField, string image)
         {

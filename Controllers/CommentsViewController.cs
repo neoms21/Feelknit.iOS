@@ -30,6 +30,7 @@ namespace Feelknit.iOS.Controllers
 		public CommentsViewController (IntPtr handle)
 			: base (handle)
 		{
+			Title = "Comments";
 			NavigationButtonVisible = false;
 		}
 
@@ -125,11 +126,6 @@ namespace Feelknit.iOS.Controllers
 				if (fromLoading) {
 					var bounds = UIScreen.MainScreen.Bounds; // portrait bounds
 
-					if (UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeLeft
-						|| UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeRight)
-					{
-						bounds.Size = new SizeF(bounds.Size.Height, bounds.Size.Width);
-					}
 					_loadingOverlay = new LoadingOverlay(bounds, "Getting comments");
 					this.View.Add(_loadingOverlay);
 					Task.Factory.StartNew (RefreshFeeling).ContinueWith (DisplayComments);
@@ -137,7 +133,7 @@ namespace Feelknit.iOS.Controllers
 
 			} else {
 				PopulateDetails ();
-				CommentsTable.Source = new CommentsTableViewSource (Feeling.Comments.ToList ());
+				CommentsTable.Source = new CommentsTableViewSource (Feeling);
 			}
 
 
@@ -156,7 +152,7 @@ namespace Feelknit.iOS.Controllers
 					UserAvatar = ApplicationHelper.Avatar,
 					PostedAt = DateTime.UtcNow
 				};
-
+				CommentTextView.Text = string.Empty;
 				SaveComment (comment);
 			};
 			var originalWidth = ((NSString)CommentTextView.Text).StringSize (font: CommentTextView.Font);
@@ -228,7 +224,8 @@ namespace Feelknit.iOS.Controllers
 
 		private void PopulateDetails()
 		{
-			UserIcon.Image = ResizeImage (UIImage.FromBundle ("Avatars/" + Feeling.UserAvatar + ".png"), 100, 100);
+			UserIcon.Image = ResizeImage (UIImage.FromBundle (Feeling.UserAvatar != null ?
+				"Avatars/" + Feeling.UserAvatar + ".png" : "userIcon.png"), 100, 100);
 
 			var firstAttributes = new UIStringAttributes {
 				ForegroundColor = Resources.LightButtonColor,
@@ -255,7 +252,7 @@ namespace Feelknit.iOS.Controllers
 
 		private void DisplayComments (Task task)
 		{
-			CommentsTable.Source = new CommentsTableViewSource (Feeling.Comments.ToList ());
+			//CommentsTable.Source = new CommentsTableViewSource (Feeling.Comments.ToList ());
 		}
 
 		private async void SaveComment (Comment comment)
@@ -264,7 +261,7 @@ namespace Feelknit.iOS.Controllers
 			await client.PostRequest (comment);
 			Feeling.Comments.Add (comment);
 			InvokeOnMainThread (() => {
-				CommentsTable.Source = new CommentsTableViewSource (Feeling.Comments.ToList ());
+				CommentsTable.Source = new CommentsTableViewSource (Feeling);
 				CommentsTable.ReloadData ();
 			});
 		}
@@ -288,7 +285,7 @@ namespace Feelknit.iOS.Controllers
 
 			InvokeOnMainThread (() => {
 				_loadingOverlay.Hide();
-				CommentsTable.Source = new CommentsTableViewSource (Feeling.Comments.ToList ());
+				CommentsTable.Source = new CommentsTableViewSource (Feeling);
 				CommentsTable.ReloadData ();
 
 				CommentsCountLabel.Text = string.Format ("  {0} comments", Feeling.Comments.Count);

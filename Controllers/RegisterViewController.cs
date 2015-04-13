@@ -9,6 +9,7 @@ using Feelknit.iOS.Views;
 using Newtonsoft.Json;
 using DSoft.Messaging;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Feelknit.iOS.Controllers
 {
@@ -31,8 +32,12 @@ namespace Feelknit.iOS.Controllers
 			SetImageAndMargin(RegistrationPassword, "password.png");
 			SetImageAndMargin(RegistrationEmail, "004.png");
 			SetImageAndMargin(LocationTextView, "compass.png");
-			RegisterButton.BackgroundColor = Resources.LoginButtonColor;
+			DisableRegisterButton ();
 			Manager.StartLocationUpdates ();
+
+			RegisterUserName.EditingChanged += HandleEditingChanged;
+			RegistrationPassword.EditingChanged += HandleEditingChanged;
+			RegistrationEmail.EditingChanged += HandleEditingChanged;
 		}
 
         public override void ViewDidLoad()
@@ -47,6 +52,11 @@ namespace Feelknit.iOS.Controllers
 			LoadingOverlay = new LoadingOverlay(UIScreen.MainScreen.Bounds, "Registering");
             RegisterButton.TouchUpInside += (sender, e) =>
             {
+				if(!Validate())
+				{
+					return;
+				}
+
 				View.Add(LoadingOverlay);
 
                 var user = new User { UserName = RegisterUserName.Text, 
@@ -58,6 +68,47 @@ namespace Feelknit.iOS.Controllers
                 SaveUser(user);
             };
         }
+
+		void HandleEditingChanged (object sender, EventArgs e)
+		{
+			if (RegisterUserName.Text.Length > 0 && RegistrationPassword.Text.Length > 0 &&  RegistrationEmail.Text.Length > 0) {
+				RegisterButton.BackgroundColor = Resources.LoginButtonColor;
+				RegisterButton.Enabled = true;
+			} else {
+				DisableRegisterButton ();
+			}
+		}
+
+		void DisableRegisterButton ()
+		{
+			RegisterButton.BackgroundColor = Resources.DisabledColor;
+			RegisterButton.Enabled = false;
+		}
+
+
+		bool Validate()
+		{
+			if (!Regex.IsMatch (RegistrationEmail.Text, @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*")) {
+				ShowMessage ("Please enter valid email.");
+				return false;
+			}
+			if (RegisterUserName.Text.Length < 3) {
+				ShowMessage ("Please enter at least 3 characters for username");
+				return false;
+			}
+			if (RegistrationPassword.Text.Length < 6) {
+				ShowMessage ("Please enter at least 6 characters for password");
+				return false;
+			}
+			return true;
+		}
+
+		private void ShowMessage(string message)
+		{
+			//var pleaseEnterValidEmail = ;
+			var alert = new UIAlertView ("Error", message, null, "OK",null);
+			alert.Show();
+		}
 
         private async void SaveUser(User user)
 		{

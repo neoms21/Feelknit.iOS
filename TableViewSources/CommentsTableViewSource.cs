@@ -4,16 +4,19 @@ using Feelknit.Model;
 using System.Collections.Generic;
 using MonoTouch.Foundation;
 using System.Linq;
+using Feelknit.iOS.Model;
 
 namespace Feelknit.iOS
 {
 	public class CommentsTableViewSource: UITableViewSource
 	{
 		private List<Comment> _comments;
+		private Feeling _feeling;
 
-		public CommentsTableViewSource (List<Comment> comments)
+		public CommentsTableViewSource (Feeling feeling)
 		{
-			_comments = comments;
+			_feeling = feeling;
+			_comments = feeling.Comments.ToList();
 		}
 
 		public override int RowsInSection (UITableView tableview, int section)
@@ -29,6 +32,7 @@ namespace Feelknit.iOS
 				cell = CommentCellView.Create ();
 			}
 			cell.Comment = comment;
+			cell.Feeling = _feeling;
 
 			return cell;
 		}

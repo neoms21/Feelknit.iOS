@@ -108,9 +108,9 @@ namespace Feelknit.iOS
 
 				Font = UIFont.BoldSystemFontOfSize (12)
 			};
-
+			Feeling.UserName = ApplicationHelper.UserName == Feeling.UserName ? "I" : Feeling.UserName;
 			var fulltext = string.Format ("{0} {1}", Feeling.UserName, Feeling.GetFeelingFormattedText (""));
-			var startIndexOfFeeling = Feeling.UserName.Length + 13; // fulltext is in format of 'username was feeling' FeellingText
+			var startIndexOfFeeling = Feeling.UserName.Length + 14; // fulltext is in format of 'username was feeling' FeellingText
 			var prettyString = new NSMutableAttributedString (fulltext);
 			prettyString.SetAttributes (firstAttributes.Dictionary, new NSRange (0, Feeling.UserName.Length));
 			prettyString.SetAttributes (boldAttributes.Dictionary, new NSRange (startIndexOfFeeling, Feeling.FeelingText.Length));
@@ -122,7 +122,8 @@ namespace Feelknit.iOS
 			ResizeHeigthWithText (FeelingTextLabel);
 			CommentsLabel.Text = string.Format ("Comments {0}", Feeling.Comments.Count == 0 ? Feeling.CommentsCount : Feeling.Comments.Count);
 			SupportLabel.Text = string.Format ("Support {0}", Feeling.SupportCount);
-			FeelingDate.Text = Feeling.FeelingDate.ToString ("dd MMM yyyy HH:mm");
+			FeelingDate.Text = Feeling.FeelingDate.ToLocalTime().ToString ("dd MMM yyyy HH:mm");
+
 			FormatButtons ();
 		}
 
@@ -131,15 +132,27 @@ namespace Feelknit.iOS
 			FormatButton (SupportButton);
 			FormatButton (CommentButton);
 			FormatButton (ReportButton);
+
+			if(Feeling.UserName.Equals("I"))
+				{
+				ReportButton.Enabled = false;
+				ReportButton.BackgroundColor = Resources.DisabledColor;
+				}
 		}
 
 		private void FormatButton (UIButton button)
 		{
+
 			if (Feeling.IsReported) {
+				ReportedLabel.Opaque = true;
+				ReportedLabel.Hidden = false;
 				button.Enabled = false;
 				button.BackgroundColor = Resources.DisabledColor;
+				CommentsLabel.Hidden = true;
 			} else {
 				button.Enabled = true;
+				ReportedLabel.Hidden = true;
+				CommentsLabel.Hidden = false;
 				button.BackgroundColor = Resources.LightButtonColor;
 			}
 

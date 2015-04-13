@@ -32,6 +32,7 @@ namespace Feelknit.iOS
 				{
 					// fire our custom Location Updated event
 					LocationUpdated (this, new LocationUpdatedEventArgs (e.Locations [e.Locations.Length - 1]));
+					LocMgr.StopUpdatingLocation();
 				};
 				LocMgr.StartUpdatingLocation();
 			}

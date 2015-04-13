@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using System.Linq;
 using System.Threading.Tasks;
 using DSoft.Messaging;
+using Feelknit.iOS.Views;
 
 namespace Feelknit.iOS.Controllers
 {
@@ -16,8 +17,11 @@ namespace Feelknit.iOS.Controllers
 
 		public IList<Feeling> RelatedFeelings{ get; set; }
 		private MessageBusEventHandler gotoCommentEventHandler;
+		private LoadingOverlay _loadingOverlay;
+
 		public RelatedFeelingsViewController (IntPtr handle) : base (handle)
 		{
+			Title = "Related Feelings";
 			RelatedFeelings = new List<Feeling> ();
 			gotoCommentEventHandler = new MessageBusEventHandler () {
 				EventId = Constants.GoToCommentsEvent,
@@ -38,6 +42,10 @@ namespace Feelknit.iOS.Controllers
 			if (Feeling != null)
 				PopulateView ();
 			else {
+				var bounds = UIScreen.MainScreen.Bounds; // portrait bounds
+
+				_loadingOverlay = new LoadingOverlay(bounds, "Getting Related Feelings");
+				this.View.Add(_loadingOverlay);
 				Task.Factory.StartNew (() => GetFeelings ());
 			}
 		}
@@ -66,6 +74,7 @@ namespace Feelknit.iOS.Controllers
 			RelatedFeelings = feelings;
 
 			InvokeOnMainThread (() => {
+				_loadingOverlay.Hide();
 				PopulateView();
 			
 			});
@@ -73,7 +82,7 @@ namespace Feelknit.iOS.Controllers
 
 		private void PopulateView()
 		{
-			UserImageView.Image = UIImage.FromBundle ("Avatars/" + ApplicationHelper.Avatar + ".png");
+			UserImageView.Image = UIImage.FromBundle (!string.IsNullOrEmpty(ApplicationHelper.Avatar)? "Avatars/" + ApplicationHelper.Avatar + ".png": "userIcon.png");
 			FeelingTextLabel.Text = Feeling.GetFeelingFormattedText ("I");
 			FeelingNumberLabel.Text = string.Format ("  {0} people feeling {1} currently", RelatedFeelings.Count, Feeling.FeelingText);
 			RelatedFeelingsTable.Source = new RelatedFeelingsTableViewSource (RelatedFeelings, OnRowSelection);

@@ -5,13 +5,16 @@ using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using Feelknit.Model;
+using Feelknit.iOS.Helpers;
+using System.Collections.Specialized;
+using Feelknit.iOS.Model;
 
 namespace Feelknit.iOS
 {
 	public partial class CommentCellView : UITableViewCell
 	{
 		public Comment Comment{ get; set; }
-
+		public Feeling Feeling{ get; set;}
 
 		public static readonly UINib Nib = UINib.FromName ("CommentCellView", NSBundle.MainBundle);
 		public static readonly NSString Key = new NSString ("CommentCellView");
@@ -27,6 +30,26 @@ namespace Feelknit.iOS
 		
 		}
 
+		public override void AwakeFromNib ()
+		{
+			base.AwakeFromNib ();
+
+			ReportAbuseButton.BackgroundColor = Resources.LightButtonColor;
+			ReportAbuseButton.SetTitleColor (UIColor.White, UIControlState.Normal);
+			ReportAbuseButton.Layer.BorderColor = UIColor.Black.CGColor;
+			ReportAbuseButton.Layer.CornerRadius = 5f;
+			ReportAbuseButton.Layer.BorderWidth = 1f;
+
+
+			ReportAbuseButton.TouchUpInside+= (object sender, EventArgs e) => {
+				Comment.IsReported = true;
+				CommentReportedLabel.Hidden = false;
+				ReportAbuseButton.Enabled = false;
+				ReportAbuseButton.BackgroundColor = Resources.DisabledColor;
+				ReportComment();
+			};
+		}
+
 		public override void LayoutSubviews ()
 		{
 			base.LayoutSubviews ();
@@ -40,10 +63,19 @@ namespace Feelknit.iOS
 
 			UserNameLabel.Text = Comment.User;
 			UserNameLabel.TextColor = Resources.LightButtonColor;
-			CommentTimeLabel.Text = Comment.PostedAt.ToString ("dd-MMM-yyyy HH:mm");
+			CommentTimeLabel.Text = Comment.PostedAt.ToLocalTime().ToString ("dd-MMM-yyyy HH:mm");
 			UserIconImageView.Image = UIImage.FromBundle ("Avatars/" + Comment.UserAvatar + ".png");
+			ReportAbuseButton.Hidden = Comment.User == ApplicationHelper.UserName;
 
-//			ReportAbuseLabel.Touch
+			if (Comment.IsReported) {
+				CommentReportedLabel.Hidden = false;
+				ReportAbuseButton.Enabled = false;
+				ReportAbuseButton.BackgroundColor = Resources.DisabledColor;
+			} else {
+				CommentReportedLabel.Hidden = true;
+				ReportAbuseButton.Enabled = true;
+				ReportAbuseButton.BackgroundColor = Resources.LightButtonColor;
+			}
 		}
 
 		private void ResizeHeigthWithText(UILabel label,float maxHeight = 100f) 
@@ -57,6 +89,16 @@ namespace Feelknit.iOS
 			var labelFrame = label.Frame;
 			labelFrame.Size = new SizeF(280,size.Height);
 			label.Frame = labelFrame; 
+		}
+
+		private void ReportComment()
+		{
+			var client = new JsonHttpClient (UrlHelper.REPORT_COMMENT);
+			var collection = new NameValueCollection ();
+			collection.Add ("feelingId", Feeling.Id);
+			collection.Add ("id", Comment.Id.ToString());
+			collection.Add ("reportedBy", ApplicationHelper.UserName);
+			client.PostRequestWithParams (collection);
 		}
 
 	}

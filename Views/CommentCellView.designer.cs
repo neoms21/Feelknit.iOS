@@ -13,6 +13,9 @@ namespace Feelknit.iOS
 	partial class CommentCellView
 	{
 		[Outlet]
+		MonoTouch.UIKit.UILabel CommentReportedLabel { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UILabel CommentTextLabel { get; set; }
 
 		[Outlet]
@@ -22,7 +25,10 @@ namespace Feelknit.iOS
 		MonoTouch.UIKit.UILabel CommentTimeLabel { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel ReportAbuseLabel { get; set; }
+		MonoTouch.UIKit.UIButton ReportAbuseButton { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton ReportCommentButton { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UIImageView UserIconImageView { get; set; }
@@ -32,6 +38,16 @@ namespace Feelknit.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (CommentReportedLabel != null) {
+				CommentReportedLabel.Dispose ();
+				CommentReportedLabel = null;
+			}
+
+			if (CommentTextLabel != null) {
+				CommentTextLabel.Dispose ();
+				CommentTextLabel = null;
+			}
+
 			if (CommentTextView != null) {
 				CommentTextView.Dispose ();
 				CommentTextView = null;
@@ -42,9 +58,9 @@ namespace Feelknit.iOS
 				CommentTimeLabel = null;
 			}
 
-			if (ReportAbuseLabel != null) {
-				ReportAbuseLabel.Dispose ();
-				ReportAbuseLabel = null;
+			if (ReportAbuseButton != null) {
+				ReportAbuseButton.Dispose ();
+				ReportAbuseButton = null;
 			}
 
 			if (UserIconImageView != null) {
@@ -57,9 +73,9 @@ namespace Feelknit.iOS
 				UserNameLabel = null;
 			}
 
-			if (CommentTextLabel != null) {
-				CommentTextLabel.Dispose ();
-				CommentTextLabel = null;
+			if (ReportCommentButton != null) {
+				ReportCommentButton.Dispose ();
+				ReportCommentButton = null;
 			}
 		}
 	}

@@ -7,7 +7,7 @@ using DSoft.Messaging;
 
 namespace Feelknit.iOS
 {
-	[Register("LeftDrawerView")] 
+	[Register ("LeftDrawerView")] 
 	public partial class LeftDrawerView : UIView
 	{
 		public static readonly UINib Nib = UINib.FromName ("LeftDrawerView", NSBundle.MainBundle);
@@ -15,6 +15,8 @@ namespace Feelknit.iOS
 		private static Action<Container> _action;
 		private static Action _actionSignOut;
 		private MessageBusEventHandler mEvHandler;
+
+		private static bool _isRegistered = false;
 
 		public LeftDrawerView (IntPtr handle) : base (handle)
 		{
@@ -30,24 +32,30 @@ namespace Feelknit.iOS
 		{
 			_action = action;
 			_actionSignOut = actionSignOut;
+
 			return (LeftDrawerView)Nib.Instantiate (null, null) [0];
 		}
 
 
-		public override void LayoutSubviews ()  
+		public override void LayoutSubviews ()
 		{
 			base.LayoutSubviews ();
+			if (_isRegistered)
+				return;
+
+			_isRegistered = true;
 			UserNameLabel.TextColor = Resources.LightButtonColor;
 			SignoutButton.BackgroundColor = Resources.LightButtonColor;
 			UserNameLabel.Text = ApplicationHelper.UserName;
-			UserImageView.Image = UIImage.FromBundle (string.Format("Avatars/{0}.png", ApplicationHelper.Avatar));
-			LeftDrawerTableView.Source = new LeftDrawerTableViewSource (Resources.LeftDrawerItems,_action);
+			UserImageView.Image = UIImage.FromBundle (
+				string.IsNullOrEmpty (ApplicationHelper.Avatar) ?
+				string.Format ("userIcon.png") :
+				string.Format ("Avatars/{0}.png", ApplicationHelper.Avatar));
+			LeftDrawerTableView.Source = new LeftDrawerTableViewSource (Resources.LeftDrawerItems, _action);
 
 			SignoutButton.TouchUpInside += (object sender, EventArgs e) => {
-				_action.Invoke(null);
-				Task.Factory.StartNew (() => {
-					_actionSignOut.Invoke();
-				});
+				_action.Invoke (null);
+				MessageBus.Default.Post (new CoreMessageBusEvent (Constants.SignoutEvent){ Sender = this });
 			};
 		}
 
@@ -62,10 +70,13 @@ namespace Feelknit.iOS
 			BeginInvokeOnMainThread (() => {
 				//post to the output box
 				UserNameLabel.Text = ApplicationHelper.UserName;
-				UserImageView.Image = UIImage.FromBundle (string.Format("Avatars/{0}.png", ApplicationHelper.Avatar));
+				UserImageView.Image = UIImage.FromBundle (
+					string.IsNullOrEmpty (ApplicationHelper.Avatar) ?
+					string.Format ("userIcon.png") :
+					string.Format ("Avatars/{0}.png", ApplicationHelper.Avatar));
 			});
 
 		}
-}
+	}
 }
 

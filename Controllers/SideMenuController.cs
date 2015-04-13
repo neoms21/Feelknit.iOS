@@ -3,16 +3,23 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System;
 using Feelknit.iOS.Helpers;
+using DSoft.Messaging;
 
 namespace Feelknit.iOS.Controllers
 {
     public class SideMenuController : BaseController
     {
 		public Action<bool> Action { get; set; }
+		private MessageBusEventHandler mEvHandler;
 
         public SideMenuController()
             : base(null, null)
         {
+			mEvHandler = new MessageBusEventHandler () {
+				EventId = Constants.SignoutEvent,
+				EventAction = SignoutEventHandler,
+			};
+			MessageBus.Default.Register (mEvHandler);
         }
 
 		public override void ViewWillAppear (bool animated)
@@ -49,6 +56,19 @@ namespace Feelknit.iOS.Controllers
 			InvokeOnMainThread (() => {
 				MoveToNextController (typeof(LoginViewController).Name);
 			});
+		}
+
+		private void SignoutEventHandler(object sender, MessageBusEvent evnt)
+		{
+			ApplicationHelper.UserName = string.Empty;
+			ApplicationHelper.EmailAddress = string.Empty;
+			ApplicationHelper.Avatar = string.Empty;
+			ApplicationHelper.AuthorizationToken = string.Empty;
+			ApplicationHelper.IsAuthenticated = false;
+			InvokeOnMainThread (() => {
+				MoveToNextController (typeof(LoginViewController).Name);
+			});
+
 		}
     }
 }

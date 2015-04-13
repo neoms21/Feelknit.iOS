@@ -53,18 +53,24 @@ namespace Feelknit
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-			if (launchOptions != null) {
-				new UIAlertView ("In Finished Launching", launchOptions.ToString (), null, "OK", null).Show ();
+//			if (launchOptions != null) {
+//				//new UIAlertView ("In Finished Launching", launchOptions.ToString (), null, "OK", null).Show ();
+//				//Console.WriteLine (launchOptions.ToString ());
+//				//ActionNotificationReceived (application,launchOptions);
+//				_userInfo = launchOptions;
+//				NavigateToController ();
+//				return true;
+//
+//			}
 
-
-			}// NOTE: Don't call the base implementation on a Model class
+			// NOTE: Don't call the base implementation on a Model class
             // see http://docs.xamarin.com/guides/ios/application_fundamentals/delegates,_protocols,_and_events
             BugSenseHandler.Instance.InitAndStartSession("9dd4c16c");
             // create a new window instance based on the screen size
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
             // If you have defined a root view controller, set it here:
-            Window.RootViewController = new RootViewController();
+			Window.RootViewController = new RootViewController(launchOptions);
 
             // make the window visible
             Window.MakeKeyAndVisible();

@@ -1,5 +1,7 @@
 ﻿using System;
 using MonoTouch.UIKit;
+using MonoTouch.Foundation;
+using Feelknit.iOS.Model;
 
 namespace Feelknit.iOS.Controllers
 {
@@ -10,13 +12,14 @@ namespace Feelknit.iOS.Controllers
 
         // the navigation controller
         public NavController NavController { get; private set; }
+		private NSDictionary _options;
 
 		public bool Other{ get; set;}
 
-        public RootViewController()
+		public RootViewController(NSDictionary options)
             : base(null, null)
         {
-
+			_options = options;
         }
         public RootViewController(IntPtr handle)
             : base(handle)
@@ -41,23 +44,28 @@ namespace Feelknit.iOS.Controllers
 
             var loadingViewController = storyboard.InstantiateViewController(typeof(LoadingViewController).Name) as LoadingViewController;
 
-            if (loadingViewController != null)
-            {
-			    NavController.PushViewController(loadingViewController, true);
-            }
+			if (_options == null) {
+				NavController.PushViewController (loadingViewController, true);
+			} 
+			else {
+			
+				if (_options ["feelingId"] != null) {
+					CommentsViewController commentsViewController = storyboard.InstantiateViewController ("CommentsViewController") as CommentsViewController;
+					commentsViewController.Feeling = new Feeling {
+						Id = _options ["feelingId"].ToString ()
+					};
+					commentsViewController.Data = true;
 
-            //VCConnection vConnect = (VCConnection)Storyboard.InstantiateViewController("VCConnection");
-            //VCLeftMenu vLeftMenu = (VCLeftMenu)Storyboard.InstantiateViewController("VCLeftMenu");
-            //appD.GETSET_NavController.PushViewController(vConnect, false);
-            //appD.GETSET_SidebarController = new SidebarController(this, appD.GETSET_NavController, vLeftMenu);
-            //appD.GETSET_SidebarController.MenuWidth = 250;
-            //appD.GETSET_SidebarController.ReopenOnRotate = false;
-            //appD.GETSET_SidebarController.IsOpening += appD.GETSET_Menu.UpdatePicturesToSynch;
+					NavController.PushViewController (commentsViewController, true);
 
-            // create a slideout navigation controller with the top navigation controller and the menu view controller
-            
-            // NavController.PushViewController(new LoadingViewController(), false);
-            SidebarController = new SidebarController(this, NavController,new SideMenuController())
+					return;
+				} else {
+					RelatedFeelingsViewController relatedFeelingsViewController = storyboard.InstantiateViewController ("RelatedFeelingsViewController") as RelatedFeelingsViewController;
+					NavController.PushViewController (relatedFeelingsViewController, true);
+				}
+			}
+
+			SidebarController = new SidebarController(this, NavController,new SideMenuController())
             {
 				MenuLocation = SidebarController.MenuLocations.Left,
                 MenuWidth = 220,

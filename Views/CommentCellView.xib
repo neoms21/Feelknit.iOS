@@ -14,21 +14,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="CommentUserIcon" image="userIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="gJO-vV-GXO">
-                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="CommentUserIcon" image="userIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="gJO-vV-GXO">
+                        <rect key="frame" x="8" y="10" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="L05-s2-t2X"/>
                             <constraint firstAttribute="width" constant="50" id="cCc-EI-IUG"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report Abuse!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUw-vg-rLa">
-                        <rect key="frame" x="376" y="8" width="80" height="15"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVP-DP-15l">
-                        <rect key="frame" x="428" y="190" width="28" height="17"/>
+                        <rect key="frame" x="428" y="191" width="28" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="Eu9-47-dZk"/>
                         </constraints>
@@ -38,7 +32,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4X2-Za-n26">
                         <rect key="frame" x="12" y="90" width="444" height="85"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -48,98 +42,56 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Comment Reported. Awaiting admin review." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kA9-kj-IwL">
+                        <rect key="frame" x="12" y="123" width="444" height="15"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bnt-99-oRe">
+                        <rect key="frame" x="374" y="8" width="82" height="18"/>
+                        <color key="backgroundColor" red="0.1988979481" green="1" blue="0.37979163459999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="AQC-0p-kae"/>
+                            <constraint firstAttribute="width" constant="82" id="e5z-Nz-Z3d"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="Report Abuse">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="gJO-vV-GXO" firstAttribute="top" secondItem="kA9-kj-IwL" secondAttribute="bottom" constant="-128" id="31x-7s-Rxt"/>
                     <constraint firstItem="OVP-DP-15l" firstAttribute="top" secondItem="4X2-Za-n26" secondAttribute="bottom" constant="15" id="5cR-D1-Zt4"/>
-                    <constraint firstItem="eUw-vg-rLa" firstAttribute="top" secondItem="gJO-vV-GXO" secondAttribute="top" id="8Vv-Ok-Jmv"/>
+                    <constraint firstItem="4X2-Za-n26" firstAttribute="leading" secondItem="kA9-kj-IwL" secondAttribute="leading" id="AHR-UF-eGG"/>
                     <constraint firstItem="gJO-vV-GXO" firstAttribute="leading" secondItem="gCc-zc-qV3" secondAttribute="leadingMargin" id="CZT-L1-aS1"/>
+                    <constraint firstAttribute="trailing" secondItem="kA9-kj-IwL" secondAttribute="trailing" constant="10" id="ENE-g8-ObF"/>
                     <constraint firstItem="Dbl-ku-Oeo" firstAttribute="centerY" secondItem="gJO-vV-GXO" secondAttribute="centerY" id="F8f-BC-RzB"/>
                     <constraint firstItem="4X2-Za-n26" firstAttribute="leading" secondItem="gCc-zc-qV3" secondAttribute="leading" constant="12" id="NqO-ei-Nfi"/>
+                    <constraint firstItem="kA9-kj-IwL" firstAttribute="trailing" secondItem="Bnt-99-oRe" secondAttribute="trailing" id="Ouo-Ht-anU"/>
                     <constraint firstItem="Dbl-ku-Oeo" firstAttribute="leading" secondItem="gJO-vV-GXO" secondAttribute="trailing" constant="30" id="VAP-VC-Oev"/>
                     <constraint firstAttribute="bottom" secondItem="OVP-DP-15l" secondAttribute="bottom" constant="5" id="YEr-Cs-NIP"/>
+                    <constraint firstItem="gJO-vV-GXO" firstAttribute="top" secondItem="Bnt-99-oRe" secondAttribute="top" id="eJ8-CA-gXd"/>
                     <constraint firstAttribute="trailing" secondItem="OVP-DP-15l" secondAttribute="trailing" constant="10" id="hEK-Wj-85T"/>
-                    <constraint firstAttribute="trailing" secondItem="eUw-vg-rLa" secondAttribute="trailing" constant="10" id="izK-cu-z8n"/>
                     <constraint firstAttribute="trailing" secondItem="4X2-Za-n26" secondAttribute="trailing" constant="10" id="odb-cf-yeb"/>
                     <constraint firstItem="gJO-vV-GXO" firstAttribute="top" secondItem="gCc-zc-qV3" secondAttribute="topMargin" id="ysd-JN-Gt9"/>
                     <constraint firstItem="4X2-Za-n26" firstAttribute="top" secondItem="gJO-vV-GXO" secondAttribute="bottom" constant="32" id="zui-dH-Ha1"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="CommentReportedLabel" destination="kA9-kj-IwL" id="P3l-HP-Ey6"/>
                 <outlet property="CommentTextLabel" destination="4X2-Za-n26" id="DHf-97-X4U"/>
                 <outlet property="CommentTimeLabel" destination="OVP-DP-15l" id="wty-kh-7SV"/>
-                <outlet property="ReportAbuseLabel" destination="eUw-vg-rLa" id="mQU-32-Bqv"/>
+                <outlet property="ReportAbuseButton" destination="Bnt-99-oRe" id="ZS4-Xs-YUR"/>
+                <outlet property="ReportCommentButton" destination="Bnt-99-oRe" id="wVc-W2-Ksb"/>
                 <outlet property="UserIconImageView" destination="gJO-vV-GXO" id="kOD-hE-Cg8"/>
                 <outlet property="UserNameLabel" destination="Dbl-ku-Oeo" id="Yqa-4h-WQY"/>
             </connections>
-            <point key="canvasLocation" x="409" y="253.5"/>
+            <point key="canvasLocation" x="409" y="248.5"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="213" id="lTC-EL-OD2" customClass="CommentCellView">
-            <rect key="frame" x="0.0" y="0.0" width="466" height="213"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lTC-EL-OD2" id="HQ6-Wd-asx">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="CommentUserIcon" image="userIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="EwQ-Si-DQT">
-                        <rect key="frame" x="8" y="8" width="50" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="50" id="mhP-N2-DZP"/>
-                            <constraint firstAttribute="height" constant="50" id="n9A-Xb-WYF"/>
-                        </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="CommentUserName" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJi-Ny-ixg">
-                        <rect key="frame" x="88" y="31" width="38" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu," translatesAutoresizingMaskIntoConstraints="NO" id="LyY-6P-WnS">
-                        <rect key="frame" x="8" y="76" width="374" height="34"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report Abuse!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWB-23-m0f">
-                        <rect key="frame" x="381" y="20" width="80" height="15"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMe-8W-bhT">
-                        <rect key="frame" x="414" y="123" width="42" height="16"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="42" id="euN-z6-C7R"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                </subviews>
-                <constraints>
-                    <constraint firstItem="LWB-23-m0f" firstAttribute="top" secondItem="HQ6-Wd-asx" secondAttribute="top" constant="20" id="0FK-fd-xTo"/>
-                    <constraint firstItem="LyY-6P-WnS" firstAttribute="top" secondItem="EwQ-Si-DQT" secondAttribute="bottom" constant="18" id="0OI-FP-1X8"/>
-                    <constraint firstItem="LyY-6P-WnS" firstAttribute="top" secondItem="LJi-Ny-ixg" secondAttribute="bottom" constant="27" id="BGx-zx-yj4"/>
-                    <constraint firstItem="EwQ-Si-DQT" firstAttribute="top" secondItem="HQ6-Wd-asx" secondAttribute="topMargin" id="II3-Fk-ISs"/>
-                    <constraint firstItem="EwQ-Si-DQT" firstAttribute="centerX" secondItem="LJi-Ny-ixg" secondAttribute="centerX" constant="-74" id="cmi-29-IIf"/>
-                    <constraint firstAttribute="trailing" secondItem="LWB-23-m0f" secondAttribute="trailing" constant="5" id="eKg-sp-q5Q"/>
-                    <constraint firstItem="EwQ-Si-DQT" firstAttribute="leading" secondItem="LyY-6P-WnS" secondAttribute="leading" id="g0S-tO-Y7S"/>
-                    <constraint firstItem="CMe-8W-bhT" firstAttribute="leading" secondItem="LyY-6P-WnS" secondAttribute="trailing" constant="32" id="k9a-fs-GqM"/>
-                    <constraint firstItem="EwQ-Si-DQT" firstAttribute="leading" secondItem="HQ6-Wd-asx" secondAttribute="leadingMargin" id="qJZ-Ep-Lgu"/>
-                    <constraint firstItem="EwQ-Si-DQT" firstAttribute="centerX" secondItem="LJi-Ny-ixg" secondAttribute="centerX" constant="-74" id="rZE-JR-eIK"/>
-                    <constraint firstAttribute="trailing" secondItem="CMe-8W-bhT" secondAttribute="trailing" constant="10" id="w50-qq-5QG"/>
-                    <constraint firstItem="CMe-8W-bhT" firstAttribute="top" secondItem="LWB-23-m0f" secondAttribute="bottom" constant="88" id="yjW-C5-nYC"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="LyY-6P-WnS" secondAttribute="bottom" constant="94" id="zHC-iO-J9Y"/>
-                </constraints>
-            </tableViewCellContentView>
-            <connections>
-                <outlet property="CommentTextView" destination="LyY-6P-WnS" id="iyw-ap-bSr"/>
-                <outlet property="CommentTimeLabel" destination="CMe-8W-bhT" id="cUt-cI-wtJ"/>
-                <outlet property="ReportAbuseLabel" destination="LWB-23-m0f" id="3at-0h-KpP"/>
-                <outlet property="UserIconImageView" destination="EwQ-Si-DQT" id="KAk-fI-Kbg"/>
-                <outlet property="UserNameLabel" destination="LJi-Ny-ixg" id="YNp-cm-ArH"/>
-            </connections>
-            <point key="canvasLocation" x="409" y="253.5"/>
-        </tableViewCell>
+
     </objects>
     <resources>
         <image name="userIcon.png" width="38" height="38"/>

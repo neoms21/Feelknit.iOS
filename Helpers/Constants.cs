@@ -8,6 +8,9 @@ namespace Feelknit.iOS
 
 		public static string AvatarSelectedEvent = "AvatarSelectedEvent";
 		public static string GoToCommentsEvent = "GoToCommentsEvent";
+		public static string SignoutEvent = "SignOutEvent";
+
+
 	}
 }
 

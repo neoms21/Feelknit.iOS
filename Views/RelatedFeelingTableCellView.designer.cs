@@ -28,6 +28,9 @@ namespace Feelknit.iOS
 		MonoTouch.UIKit.UIButton ReportButton { get; set; }
 
 		[Outlet]
+		MonoTouch.UIKit.UILabel ReportedLabel { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIButton SupportButton { get; set; }
 
 		[Outlet]
@@ -38,24 +41,9 @@ namespace Feelknit.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (userImageView != null) {
-				userImageView.Dispose ();
-				userImageView = null;
-			}
-
 			if (CommentButton != null) {
 				CommentButton.Dispose ();
 				CommentButton = null;
-			}
-
-			if (SupportButton != null) {
-				SupportButton.Dispose ();
-				SupportButton = null;
-			}
-
-			if (ReportButton != null) {
-				ReportButton.Dispose ();
-				ReportButton = null;
 			}
 
 			if (CommentsLabel != null) {
@@ -63,19 +51,39 @@ namespace Feelknit.iOS
 				CommentsLabel = null;
 			}
 
-			if (SupportLabel != null) {
-				SupportLabel.Dispose ();
-				SupportLabel = null;
-			}
-
 			if (FeelingDate != null) {
 				FeelingDate.Dispose ();
 				FeelingDate = null;
 			}
 
+			if (ReportedLabel != null) {
+				ReportedLabel.Dispose ();
+				ReportedLabel = null;
+			}
+
 			if (FeelingTextLabel != null) {
 				FeelingTextLabel.Dispose ();
 				FeelingTextLabel = null;
+			}
+
+			if (ReportButton != null) {
+				ReportButton.Dispose ();
+				ReportButton = null;
+			}
+
+			if (SupportButton != null) {
+				SupportButton.Dispose ();
+				SupportButton = null;
+			}
+
+			if (SupportLabel != null) {
+				SupportLabel.Dispose ();
+				SupportLabel = null;
+			}
+
+			if (userImageView != null) {
+				userImageView.Dispose ();
+				userImageView = null;
 			}
 		}
 	}
