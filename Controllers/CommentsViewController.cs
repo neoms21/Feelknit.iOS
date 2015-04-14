@@ -52,7 +52,6 @@ namespace Feelknit.iOS.Controllers
 			UserNameLabel.PreferredMaxLayoutWidth = 200;
 			UserNameLabel.LineBreakMode = UILineBreakMode.WordWrap;
 
-			this.CommentTextView.ResignFirstResponder ();
 			NSNotificationCenter.DefaultCenter.AddObserver (UIKeyboard.WillHideNotification, OnKeyboardNotification, this.View.Window);
 			NSNotificationCenter.DefaultCenter.AddObserver (UIKeyboard.WillShowNotification, OnKeyboardNotification, this.View.Window);
 
@@ -135,7 +134,6 @@ namespace Feelknit.iOS.Controllers
 				PopulateDetails ();
 				CommentsTable.Source = new CommentsTableViewSource (Feeling);
 			}
-
 
 			CommentsTable.SeparatorColor = Resources.MainBackgroundColor;
 

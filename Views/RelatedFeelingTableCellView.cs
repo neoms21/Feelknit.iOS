@@ -21,13 +21,22 @@ namespace Feelknit.iOS
 
 		public RelatedFeelingTableCellView (IntPtr handle) : base (handle)
 		{
+			EventHelper.RegisterEvent (Constants.DeRegisterEvents, RemoveEventHandlers);
+		}
 
-
+		public override void RemoveFromSuperview ()
+		{
+			base.RemoveFromSuperview ();
 		}
 
 		public static RelatedFeelingTableCellView Create ()
 		{
 			return (RelatedFeelingTableCellView)Nib.Instantiate (null, null) [0];
+
+		}
+
+		private void RemoveEventHandlers (object sender, MessageBusEvent evnt)
+		{
 
 		}
 
@@ -38,9 +47,16 @@ namespace Feelknit.iOS
 			SupportButton.TouchUpInside += ProcessSupportCount;
 			ReportButton.TouchUpInside += ExecuteReportButtonClick;
 			CommentButton.TouchUpInside += ExecuteCommentButtonClick;
-
 		}
 
+		protected override void Dispose (bool disposing)
+		{
+			base.Dispose (disposing);
+			SupportButton.TouchUpInside -= ProcessSupportCount;
+			ReportButton.TouchUpInside -= ExecuteReportButtonClick;
+			CommentButton.TouchUpInside -= ExecuteCommentButtonClick;
+		}
+	
 		private void ExecuteCommentButtonClick (object sender, EventArgs e)
 		{
 			MessageBus.PostEvent (new CoreMessageBusEvent (Constants.GoToCommentsEvent) {

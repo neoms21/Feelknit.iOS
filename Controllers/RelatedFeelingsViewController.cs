@@ -16,19 +16,14 @@ namespace Feelknit.iOS.Controllers
 		public Feeling Feeling{ get; set; }
 
 		public IList<Feeling> RelatedFeelings{ get; set; }
-		private MessageBusEventHandler gotoCommentEventHandler;
+	
 		private LoadingOverlay _loadingOverlay;
-
+		private MessageBusEventHandler _handler;
 		public RelatedFeelingsViewController (IntPtr handle) : base (handle)
 		{
 			Title = "Related Feelings";
 			RelatedFeelings = new List<Feeling> ();
-			gotoCommentEventHandler = new MessageBusEventHandler () {
-				EventId = Constants.GoToCommentsEvent,
-				EventAction = GoToCommentEventHandler,
-			};
-
-			MessageBus.Default.Register (gotoCommentEventHandler);
+			_handler = EventHelper.RegisterEvent (Constants.GoToCommentsEvent, GoToCommentEventHandler);
 		}
 	
 		public override void ViewDidLoad ()
@@ -107,6 +102,13 @@ namespace Feelknit.iOS.Controllers
 					this.NavigationController.PushViewController (commentsViewController, true);
 				}
 			});
+
+		}
+		public override void ViewWillDisappear (bool animated)
+		{
+			base.ViewWillDisappear (animated);
+
+			MessageBus.Default.DeRegister ( _handler);
 
 		}
 	}

@@ -311,6 +311,7 @@
       <DependentUpon>AvatarViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\LocationManager.cs" />
+    <Compile Include="Helpers\EventHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />

@@ -4,6 +4,7 @@ using MonoTouch.UIKit;
 using System;
 using Feelknit.iOS.Helpers;
 using DSoft.Messaging;
+using System.Collections.Specialized;
 
 namespace Feelknit.iOS.Controllers
 {
@@ -53,6 +54,8 @@ namespace Feelknit.iOS.Controllers
 			ApplicationHelper.Avatar = string.Empty;
 			ApplicationHelper.AuthorizationToken = string.Empty;
 			ApplicationHelper.IsAuthenticated = false;
+
+
 			InvokeOnMainThread (() => {
 				MoveToNextController (typeof(LoginViewController).Name);
 			});
@@ -65,6 +68,11 @@ namespace Feelknit.iOS.Controllers
 			ApplicationHelper.Avatar = string.Empty;
 			ApplicationHelper.AuthorizationToken = string.Empty;
 			ApplicationHelper.IsAuthenticated = false;
+
+			JsonHttpClient client = new JsonHttpClient(UrlHelper.CLEAR_USER_KEY);
+			var collection = new NameValueCollection ();
+			collection.Add ("username", ApplicationHelper.UserName);
+			client.PostRequestWithParams(collection);
 			InvokeOnMainThread (() => {
 				MoveToNextController (typeof(LoginViewController).Name);
 			});

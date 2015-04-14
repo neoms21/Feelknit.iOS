@@ -10,7 +10,7 @@ namespace Feelknit.iOS
 		public static string GoToCommentsEvent = "GoToCommentsEvent";
 		public static string SignoutEvent = "SignOutEvent";
 
-
+		public static string DeRegisterEvents="DeRegisterEvents";
 	}
 }
 

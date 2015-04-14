@@ -64,7 +64,7 @@ namespace Feelknit.iOS
 			UserNameLabel.Text = Comment.User;
 			UserNameLabel.TextColor = Resources.LightButtonColor;
 			CommentTimeLabel.Text = Comment.PostedAt.ToLocalTime().ToString ("dd-MMM-yyyy HH:mm");
-			UserIconImageView.Image = UIImage.FromBundle ("Avatars/" + Comment.UserAvatar + ".png");
+			UserIconImageView.Image = UIImage.FromBundle ( !string.IsNullOrEmpty(Comment.UserAvatar) ? "Avatars/" + Comment.UserAvatar + ".png" : "userIcon.png");
 			ReportAbuseButton.Hidden = Comment.User == ApplicationHelper.UserName;
 
 			if (Comment.IsReported) {

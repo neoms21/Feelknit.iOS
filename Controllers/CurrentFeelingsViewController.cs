@@ -22,17 +22,15 @@ namespace Feelknit.iOS
 		private LoadingOverlay _loadingOverlay;
 
 		event GetUserFeelingsDelegate GetFeelings;
-		private MessageBusEventHandler gotoCommentEventHandler;
+
+		private MessageBusEventHandler _handler;
 
 		public CurrentFeelingsViewController (IntPtr handle) : base (handle)
 		{
 			Title = "Current Feelings";
-			gotoCommentEventHandler = new MessageBusEventHandler () {
-				EventId = Constants.GoToCommentsEvent,
-				EventAction = GoToCommentEventHandler,
-			};
 
-			MessageBus.Default.Register (gotoCommentEventHandler);
+		_handler =	EventHelper.RegisterEvent (Constants.GoToCommentsEvent, GoToCommentEventHandler);
+
 		}
 
 		public override void ViewWillAppear (bool animated)
@@ -134,5 +132,13 @@ namespace Feelknit.iOS
 
 		internal delegate void GetUserFeelingsDelegate();
 
+
+		public override void ViewWillDisappear (bool animated)
+		{
+			base.ViewWillDisappear (animated);
+		
+			EventHelper.DeRegisterEvent ( _handler);
+		
+		}
 	}
 }

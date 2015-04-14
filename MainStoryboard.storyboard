@@ -466,7 +466,7 @@
                                 <rect key="frame" x="2" y="534" width="278" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="default"/>
                                 <constraints>
                                     <constraint id="2265" firstItem="wk0-go-rJm" firstAttribute="height" constant="30"/>
                                 </constraints>

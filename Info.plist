@@ -34,6 +34,6 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app requires location updates.</string>
 	<key>CFBundleVersion</key>
-	<string>2.8</string>
+	<string>2.9</string>
 </dict>
 </plist>
