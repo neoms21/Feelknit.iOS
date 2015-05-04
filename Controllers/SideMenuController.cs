@@ -43,6 +43,16 @@ namespace Feelknit.iOS.Controllers
 				return;
 			}
 
+			if (container.Name.Equals ("About")) {
+				string version = NSBundle.MainBundle.ObjectForInfoDictionary("CFBundleVersion").ToString();
+
+
+				var alert = new UIAlertView("Version", version , null, "OK", null);
+				alert.Show();
+				return;
+			}
+
+
 			MoveToNextController (container.Name,container.Data);
 				Action.Invoke (true);
 		}

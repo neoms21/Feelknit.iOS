@@ -63,7 +63,8 @@ namespace Feelknit.iOS.Controllers
 					Password = RegistrationPassword.Text, 
 					EmailAddress = RegistrationEmail.Text,
 					Longitude = longitude,
-					Latitude = latitude
+					Latitude = latitude,
+					DeviceName = UIScreen.MainScreen.Bounds.Height.ToString()
 				};
                 SaveUser(user);
             };

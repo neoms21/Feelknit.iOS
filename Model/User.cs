@@ -15,6 +15,8 @@ namespace Feelknit.Model
         public string Key { get; set; }
 
 		public string Avatar{ get; set; }
+
+		public string DeviceName{ get; set; }
 			
 		public string IosKey { get; set; }
 

@@ -56,7 +56,7 @@ namespace Feelknit.iOS
 			new LeftDrawerItem("My Feelings","userdrawer",new Container{Name = typeof(UserFeelingsController).Name}),
 			new LeftDrawerItem("Comments","comments",new Container{Name = typeof(CurrentFeelingsViewController).Name, Data = true}),
 			new LeftDrawerItem("Related Feelings","userdrawer", new Container{Name = typeof(RelatedFeelingsViewController).Name}),
-			new LeftDrawerItem("About","settings",new Container()),
+			new LeftDrawerItem("About","settings",new Container{Name = "About"}),
 		};
 	}
 }
