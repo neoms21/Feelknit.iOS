@@ -1,6 +1,6 @@
-﻿using System;
-using MonoTouch.CoreLocation;
-using MonoTouch.UIKit;
+using System;
+using CoreLocation;
+using UIKit;
 
 namespace Feelknit.iOS
 {

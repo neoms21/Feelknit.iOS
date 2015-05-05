@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using Feelknit.iOS.Model;
 using Feelknit.iOS.Views;
 using Feelknit.Model;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using System;
 
 namespace Feelknit.iOS.TableViewSources
@@ -34,17 +34,17 @@ namespace Feelknit.iOS.TableViewSources
             return cell;
         }
 
-        public override int RowsInSection(UITableView tableview, int section)
+        public override nint RowsInSection(UITableView tableview, nint section)
         {
             return _feelings.Count();
         }
 
-        public override float GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+        public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
         {
             return 80;
         }
 
-		public override void RowSelected (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
 			_action.Invoke (_feelings[indexPath.Row]);
 		}

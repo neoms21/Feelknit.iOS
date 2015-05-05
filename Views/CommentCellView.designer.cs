@@ -4,7 +4,7 @@
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoTouch.Foundation;
+using Foundation;
 using System.CodeDom.Compiler;
 
 namespace Feelknit.iOS
@@ -13,28 +13,28 @@ namespace Feelknit.iOS
 	partial class CommentCellView
 	{
 		[Outlet]
-		MonoTouch.UIKit.UILabel CommentReportedLabel { get; set; }
+		UIKit.UILabel CommentReportedLabel { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel CommentTextLabel { get; set; }
+		UIKit.UILabel CommentTextLabel { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UITextView CommentTextView { get; set; }
+		UIKit.UITextView CommentTextView { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel CommentTimeLabel { get; set; }
+		UIKit.UILabel CommentTimeLabel { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIButton ReportAbuseButton { get; set; }
+		UIKit.UIButton ReportAbuseButton { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIButton ReportCommentButton { get; set; }
+		UIKit.UIButton ReportCommentButton { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIImageView UserIconImageView { get; set; }
+		UIKit.UIImageView UserIconImageView { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel UserNameLabel { get; set; }
+		UIKit.UILabel UserNameLabel { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{

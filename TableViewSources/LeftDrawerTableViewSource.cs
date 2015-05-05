@@ -1,5 +1,5 @@
-﻿using System;
-using MonoTouch.UIKit;
+using System;
+using UIKit;
 using System.Collections.Generic;
 
 namespace Feelknit.iOS
@@ -19,12 +19,12 @@ namespace Feelknit.iOS
 		private const string CellIdentifier = "LeftDrawerTableCell";
 
 
-		public override int RowsInSection (UITableView tableview, int section)
+		public override nint RowsInSection (UITableView tableview, nint section)
 		{
 			return _items.Count;
 		}
 
-		public override UITableViewCell GetCell (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+		public override UITableViewCell GetCell (UITableView tableView, Foundation.NSIndexPath indexPath)
 		{
 			var item = _items[indexPath.Row];
 			var cell = (LeftDrawerTableCellView)tableView.DequeueReusableCell (LeftDrawerTableCellView.Key);
@@ -36,7 +36,7 @@ namespace Feelknit.iOS
 			return cell;
 		}
 
-		public override void RowSelected (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+		public override void RowSelected (UITableView tableView, Foundation.NSIndexPath indexPath)
 		{
 			_action.Invoke (_items[indexPath.Row].Container);
 			// NOTE: Don't call the base implementation on a Model class

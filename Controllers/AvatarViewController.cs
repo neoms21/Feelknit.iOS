@@ -1,5 +1,5 @@
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using System;
 using System.CodeDom.Compiler;
 using Feelknit.iOS.Helpers;
@@ -44,7 +44,7 @@ namespace Feelknit.iOS
 
 			SkipButton.TouchUpInside += (object sender, EventArgs e) => {
 				if(isFromProfile)
-					NavigationController.PopViewControllerAnimated (true);
+					NavigationController.PopViewController (true);
 				else
 					MoveToNextController(typeof(AddFeelingViewController).Name);
 			};
@@ -57,7 +57,7 @@ namespace Feelknit.iOS
 						Data = new object[]{ _avatar }
 					});
 
-					NavigationController.PopViewControllerAnimated (true);
+					NavigationController.PopViewController (true);
 				}
 				else{
 					ApplicationHelper.Avatar = _avatar;

@@ -5,10 +5,10 @@ using Feelknit.iOS.Helpers;
 using Feelknit.iOS.Model;
 using Feelknit.iOS.TableViewSources;
 using Feelknit.iOS.Views;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using Newtonsoft.Json;
-using MonoTouch.CoreLocation;
+using CoreLocation;
 
 namespace Feelknit.iOS.Controllers
 {

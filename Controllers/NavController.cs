@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using MonoTouch.UIKit;
+using UIKit;
 
 namespace Feelknit.iOS.Controllers
 {

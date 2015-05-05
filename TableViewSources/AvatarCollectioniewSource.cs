@@ -1,9 +1,9 @@
-﻿using System;
-using MonoTouch.UIKit;
+using System;
+using UIKit;
 using System.Collections.Generic;
 using System.Linq;
-using System.Drawing;
-using MonoTouch.Foundation;
+using CoreGraphics;
+using Foundation;
 
 namespace Feelknit.iOS
 {
@@ -20,7 +20,7 @@ namespace Feelknit.iOS
 			_imageNames = imageNames;
 		}
 
-		public override UICollectionViewCell GetCell (UICollectionView collectionView, MonoTouch.Foundation.NSIndexPath indexPath)
+		public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)
 		{
 			var avatarCell = (AvatarCell)collectionView.DequeueReusableCell (avatarCellId, indexPath);
 
@@ -30,7 +30,7 @@ namespace Feelknit.iOS
 			return avatarCell;
 		}
 
-		public override int GetItemsCount (UICollectionView collectionView, int section)
+		public override nint GetItemsCount (UICollectionView collectionView, nint section)
 		{
 			return _imageNames.Count;
 		}
@@ -40,7 +40,7 @@ namespace Feelknit.iOS
 			_action.Invoke (_imageNames [indexPath.Row]);
 		}
 
-		public override int NumberOfSections (UICollectionView collectionView)
+		public override nint NumberOfSections (UICollectionView collectionView)
 		{
 			return 1;
 		}

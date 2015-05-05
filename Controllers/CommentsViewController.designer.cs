@@ -4,8 +4,8 @@
 // actions declared in your storyboard file.
 // Manual changes to this file will not be maintained.
 //
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using System;
 using System.CodeDom.Compiler;
 
@@ -15,22 +15,22 @@ namespace Feelknit.iOS.Controllers
 	partial class CommentsViewController
 	{
 		[Outlet]
-		MonoTouch.UIKit.UIButton AddCommentButton { get; set; }
+		UIKit.UIButton AddCommentButton { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel CommentsCountLabel { get; set; }
+		UIKit.UILabel CommentsCountLabel { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UITableView CommentsTable { get; set; }
+		UIKit.UITableView CommentsTable { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UITextView CommentTextView { get; set; }
+		UIKit.UITextView CommentTextView { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIImageView UserIcon { get; set; }
+		UIKit.UIImageView UserIcon { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel UserNameLabel { get; set; }
+		UIKit.UILabel UserNameLabel { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{

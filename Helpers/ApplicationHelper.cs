@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using MonoTouch.Foundation;
+using System.Collections.Generic;
+using Foundation;
 
 namespace Feelknit.iOS.Helpers
 {
@@ -29,7 +29,7 @@ namespace Feelknit.iOS.Helpers
 
 
 		public static bool IsAuthenticated { get { return NSUserDefaults.StandardUserDefaults.BoolForKey ("IsAuthenticated"); } 
-			set { if(value!=null) NSUserDefaults.StandardUserDefaults.SetBool (value, "IsAuthenticated"); } }
+			set { if(value!=false) NSUserDefaults.StandardUserDefaults.SetBool (value, "IsAuthenticated"); } }
 
 
 //

@@ -4,7 +4,7 @@
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-using MonoTouch.Foundation;
+using Foundation;
 using System.CodeDom.Compiler;
 
 namespace Feelknit.iOS
@@ -12,16 +12,16 @@ namespace Feelknit.iOS
 	partial class LeftDrawerView
 	{
 		[Outlet]
-		MonoTouch.UIKit.UITableView LeftDrawerTableView { get; set; }
+		UIKit.UITableView LeftDrawerTableView { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIButton SignoutButton { get; set; }
+		UIKit.UIButton SignoutButton { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIImageView UserImageView { get; set; }
+		UIKit.UIImageView UserImageView { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel UserNameLabel { get; set; }
+		UIKit.UILabel UserNameLabel { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{

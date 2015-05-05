@@ -1,4 +1,4 @@
-﻿using MonoTouch.UIKit;
+using UIKit;
 
 namespace Feelknit.iOS.TableViewSources
 {
@@ -11,11 +11,13 @@ namespace Feelknit.iOS.TableViewSources
         {
             tableItems = items;
         }
-        public override int RowsInSection(UITableView tableview, int section)
-        {
-            return tableItems.Length;
-        }
-        public override UITableViewCell GetCell(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+
+		public override System.nint RowsInSection (UITableView tableview, System.nint section)
+		{
+			return tableItems.Length;
+		}
+
+        public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
             UITableViewCell cell = tableView.DequeueReusableCell(cellIdentifier);
             // if there are no cells to reuse, create a new one
@@ -25,7 +27,7 @@ namespace Feelknit.iOS.TableViewSources
             return cell;
         }
 
-        public override void RowSelected(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+        public override void RowSelected(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
             UIAlertView alertview = new UIAlertView("tableiTem", tableItems[indexPath.Row], null, "ok", null);
             alertview.Show();

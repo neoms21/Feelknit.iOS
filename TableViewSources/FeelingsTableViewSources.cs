@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using MonoTouch.UIKit;
+using UIKit;
 
 namespace Feelknit.iOS.TableViewSources
 {
@@ -17,12 +17,12 @@ namespace Feelknit.iOS.TableViewSources
 			_feelings = feelings;
 		}
 
-		public override int RowsInSection (UITableView tableview, int section)
+		public override nint RowsInSection (UITableView tableview, nint section)
 		{
 			return _feelings.Count;
 		}
 
-		public override UITableViewCell GetCell (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+		public override UITableViewCell GetCell (UITableView tableView, Foundation.NSIndexPath indexPath)
 		{
 			UITableViewCell cell = tableView.DequeueReusableCell (CellIdentifier);
 			// if there are no cells to reuse, create a new one
@@ -32,7 +32,7 @@ namespace Feelknit.iOS.TableViewSources
 			return cell;
 		}
 
-		public override void RowSelected (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+		public override void RowSelected (UITableView tableView, Foundation.NSIndexPath indexPath)
 		{
 			_action.Invoke (_feelings[indexPath.Row]);
 			// NOTE: Don't call the base implementation on a Model class

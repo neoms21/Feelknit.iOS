@@ -1,17 +1,15 @@
 using System;
 using Feelknit.iOS.Model;
-using MonoTouch.UIKit;
+using UIKit;
 using Feelknit.iOS.Helpers;
-using System.Drawing;
-using MonoTouch.Foundation;
+using CoreGraphics;
+using Foundation;
 using System.Linq;
 using Feelknit.Model;
 using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Feelknit.iOS.Views;
-using System;
-using System.Drawing;
 
 //using MonoTouch.ObjCRuntime.Libraries.Foundation;
 //using MonoTouch.ObjCRuntime.Libraries.UIKit;
@@ -101,7 +99,7 @@ namespace Feelknit.iOS.Controllers
 		/// <param name='height'>
 		/// Calculated height of the keyboard (width not generally needed here)
 		/// </param>
-		protected virtual void OnKeyboardChanged (bool visible, float height)
+		protected virtual void OnKeyboardChanged (bool visible, System.nfloat height)
 		{
 			//Console.WriteLine ("{0} - {1}", visible, height);
 			var frame = this.View.Frame;
@@ -267,8 +265,8 @@ namespace Feelknit.iOS.Controllers
 		// resize the image (without trying to maintain aspect ratio)
 		public UIImage ResizeImage (UIImage sourceImage, float width, float height)
 		{
-			UIGraphics.BeginImageContextWithOptions (new SizeF (width, height), false, 2.0f);
-			sourceImage.Draw (new RectangleF (0, 0, width, height));
+			UIGraphics.BeginImageContextWithOptions (new CGSize (width, height), false, 2.0f);
+			sourceImage.Draw (new CGRect (0, 0, width, height));
 			var resultImage = UIGraphics.GetImageFromCurrentImageContext ();
 			UIGraphics.EndImageContext ();
 			return resultImage;
@@ -296,11 +294,11 @@ namespace Feelknit.iOS.Controllers
 			label.AdjustsFontSizeToFitWidth = false;
 			float width = 280;// label.Frame.Width;  
 			label.Lines = 0;
-			SizeF size = ((NSString)label.Text).StringSize(label.Font,  
-				constrainedToSize:new SizeF(width,maxHeight) ,lineBreakMode:UILineBreakMode.WordWrap);
+			CGSize size = ((NSString)label.Text).StringSize(label.Font,  
+				constrainedToSize:new CGSize(width,maxHeight) ,lineBreakMode:UILineBreakMode.WordWrap);
 
 			var labelFrame = label.Frame;
-			labelFrame.Size = new SizeF(280,size.Height);
+			labelFrame.Size = new CGSize(280,size.Height);
 			label.Frame = labelFrame; 
 		}
 	}

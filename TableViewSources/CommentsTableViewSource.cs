@@ -1,8 +1,8 @@
-﻿using System;
-using MonoTouch.UIKit;
+using System;
+using UIKit;
 using Feelknit.Model;
 using System.Collections.Generic;
-using MonoTouch.Foundation;
+using Foundation;
 using System.Linq;
 using Feelknit.iOS.Model;
 
@@ -19,12 +19,12 @@ namespace Feelknit.iOS
 			_comments = feeling.Comments.ToList();
 		}
 
-		public override int RowsInSection (UITableView tableview, int section)
+		public override nint RowsInSection (UITableView tableview, nint section)
 		{
 			return _comments.Count;
 		}
 
-		public override UITableViewCell GetCell (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+		public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
 		{
 			var comment =_comments[indexPath.Row];
 			var cell = (CommentCellView)tableView.DequeueReusableCell (CommentCellView.Key);
@@ -37,18 +37,18 @@ namespace Feelknit.iOS
 			return cell;
 		}
 
-		public override float GetHeightForRow (UITableView tableView, NSIndexPath indexPath)
+		public override nfloat GetHeightForRow (UITableView tableView, NSIndexPath indexPath)
 		{
-			var comment = _comments[indexPath.Item];
+			var comment = _comments[(int)indexPath.Item];
 
 			var f = EstimateHeight (comment.Text, UIScreen.MainScreen.Bounds.Width, UIFont.FromName ("Helvetica",14));
 			return f;
 		}
 
-		private float EstimateHeight(String text, float width, UIFont font)
+		private float EstimateHeight(String text, nfloat width, UIFont font)
 		{
 
-			System.Drawing.SizeF size = ((NSString)text).StringSize (font, new System.Drawing.SizeF (width, float.MaxValue),
+			CoreGraphics.CGSize size = ((NSString)text).StringSize (font, new CoreGraphics.CGSize (width, float.MaxValue),
 				UILineBreakMode.WordWrap);
 			return (float)size.Height + 130; // The 50 is just padding
 		}

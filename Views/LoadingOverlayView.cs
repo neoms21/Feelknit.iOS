@@ -1,5 +1,5 @@
-﻿using System.Drawing;
-using MonoTouch.UIKit;
+using CoreGraphics;
+using UIKit;
 
 namespace Feelknit.iOS.Views
 {
@@ -7,7 +7,7 @@ namespace Feelknit.iOS.Views
     {
         // control declarations 
 
-		public LoadingOverlay(RectangleF frame, string message)
+		public LoadingOverlay(CGRect frame, string message)
             : base(frame)
         {
             // configurable bits
@@ -16,15 +16,15 @@ namespace Feelknit.iOS.Views
             AutoresizingMask = UIViewAutoresizing.FlexibleDimensions;
 
             float labelHeight = 22;
-            float labelWidth = Frame.Width - 20;
+            var labelWidth = Frame.Width - 20;
 
             // derive the center x and y
-            float centerX = Frame.Width / 2;
-            float centerY = Frame.Height / 2;
+            var centerX = Frame.Width / 2;
+            var centerY = Frame.Height / 2;
 
             // create the activity spinner, center it horizontall and put it 5 points above center x
             var activitySpinner = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.WhiteLarge);
-            activitySpinner.Frame = new RectangleF(
+            activitySpinner.Frame = new CGRect(
                 centerX - (activitySpinner.Frame.Width / 2),
                 centerY - activitySpinner.Frame.Height - 20,
                 activitySpinner.Frame.Width,
@@ -34,7 +34,7 @@ namespace Feelknit.iOS.Views
             activitySpinner.StartAnimating();
 
             // create and configure the "Loading Data" label
-            UILabel loadingLabel = new UILabel(new RectangleF(
+            UILabel loadingLabel = new UILabel(new CGRect(
                 centerX - (labelWidth / 2),
                 centerY + 20,
                 labelWidth,

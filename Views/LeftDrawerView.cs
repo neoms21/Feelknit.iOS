@@ -1,6 +1,6 @@
-﻿using System;
-using MonoTouch.UIKit;
-using MonoTouch.Foundation;
+using System;
+using UIKit;
+using Foundation;
 using Feelknit.iOS.Helpers;
 using System.Threading.Tasks;
 using DSoft.Messaging;
@@ -13,7 +13,6 @@ namespace Feelknit.iOS
 		public static readonly UINib Nib = UINib.FromName ("LeftDrawerView", NSBundle.MainBundle);
 		public static readonly NSString Key = new NSString ("LeftDrawerView");
 		private static Action<Container> _action;
-		private static Action _actionSignOut;
 		private MessageBusEventHandler mEvHandler;
 
 		private static bool _isRegistered = false;
@@ -31,7 +30,6 @@ namespace Feelknit.iOS
 		public static LeftDrawerView Create (Action<Container> action, Action actionSignOut)
 		{
 			_action = action;
-			_actionSignOut = actionSignOut;
 
 			return (LeftDrawerView)Nib.Instantiate (null, null) [0];
 		}

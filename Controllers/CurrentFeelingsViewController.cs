@@ -1,5 +1,5 @@
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Feelknit.iOS.Helpers;
 using Newtonsoft.Json;
 using Feelknit.iOS.Views;
-using System.Drawing;
+using CoreGraphics;
 using System.Linq;
 using Feelknit.iOS.Controllers;
 using DSoft.Messaging;
@@ -49,7 +49,7 @@ namespace Feelknit.iOS
 			if (UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeLeft
 				|| UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeRight)
 			{
-				bounds.Size = new SizeF(bounds.Size.Height, bounds.Size.Width);
+				bounds.Size = new CGSize(bounds.Size.Height, bounds.Size.Width);
 			}
 
 			// show the loading overlay on the UI thread using the correct orientation sizing

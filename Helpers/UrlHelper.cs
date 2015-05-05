@@ -1,14 +1,14 @@
-﻿using System;
+using System;
 
 namespace Feelknit.iOS
 {
 	public  class UrlHelper
 	{
-		private static bool onEmulator{ get { return MonoTouch.ObjCRuntime.Runtime.Arch == MonoTouch.ObjCRuntime.Arch.SIMULATOR; } }
+		private static bool onEmulator{ get { return ObjCRuntime.Runtime.Arch == ObjCRuntime.Arch.SIMULATOR; } }
 
 		//private static  string BASE_URL_EMULATOR = "http://192.168.0.6/FeelknitService/";
 		private static  string BASE_URL_EMULATOR = "http://vps148394.ovh.net/feelknit/";
-		private static  string BASE_URL = "http://vps148394.ovh.net/feelknit/";
+		private static  string BASE_URL = "https://feelknitapi.com/";
 		public static  string COMMENTS = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "Comments";
 		public static  string FEELINGS = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "feelings";
 		public static  string USER_VERIFY = (onEmulator ? BASE_URL_EMULATOR : BASE_URL) + "Users/login";

@@ -1,10 +1,10 @@
 using System;
-using System.Drawing;
+using CoreGraphics;
 using Feelknit.Model;
-using MonoTouch.UIKit;
+using UIKit;
 using Feelknit.iOS.Helpers;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using CoreLocation;
+using MapKit;
 using Feelknit.iOS.Views;
 using Newtonsoft.Json;
 using DSoft.Messaging;
@@ -150,10 +150,10 @@ namespace Feelknit.iOS.Controllers
             var imageView = new UIImageView(UIImage.FromBundle(image))
             {
                 // Indent it 10 pixels from the left.
-                Frame = new RectangleF(10, 0, 20, 20)
+                Frame = new CGRect(10, 0, 20, 20)
             };
 
-            var leftView = new UIView(new Rectangle(0, 0, 30, 20));
+            var leftView = new UIView(new CGRect(0, 0, 30, 20));
             leftView.AddSubview(imageView);
             uiTextField.LeftViewMode = UITextFieldViewMode.Always;
             uiTextField.LeftView = leftView;

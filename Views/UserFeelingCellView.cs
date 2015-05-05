@@ -1,5 +1,5 @@
-﻿using System.Drawing;
-using MonoTouch.UIKit;
+using CoreGraphics;
+using UIKit;
 
 namespace Feelknit.iOS.Views
 {
@@ -62,10 +62,10 @@ namespace Feelknit.iOS.Views
         public override void LayoutSubviews()
         {
             base.LayoutSubviews();
-            _feelingTextField.Frame = new RectangleF(5, 5, ContentView.Bounds.Width, 30);
-            _commentsTextField.Frame = new RectangleF(5, 35, 90, 30);
-            _supportTextField.Frame = new RectangleF(100, 35, 80, 30);
-            _timeTextField.Frame = new RectangleF(220, 35, 80, 30);
+            _feelingTextField.Frame = new CGRect(5, 5, ContentView.Bounds.Width, 30);
+            _commentsTextField.Frame = new CGRect(5, 35, 90, 30);
+            _supportTextField.Frame = new CGRect(100, 35, 80, 30);
+            _timeTextField.Frame = new CGRect(220, 35, 80, 30);
         }
     }
 }

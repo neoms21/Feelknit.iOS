@@ -1,8 +1,7 @@
-﻿using System;
-using MonoTouch.UIKit;
-using MonoTouch.Foundation;
-using System.Drawing;
-using MonoTouch.CoreGraphics;
+using System;
+using UIKit;
+using Foundation;
+using CoreGraphics;
 
 namespace Feelknit.iOS
 {
@@ -11,7 +10,7 @@ namespace Feelknit.iOS
 		UIImageView imageView;
 
 		[Export ("initWithFrame:")]
-		public AvatarCell (RectangleF frame) : base (frame)
+		public AvatarCell (CGRect frame) : base (frame)
 		{
 			BackgroundView = new UIView{BackgroundColor = UIColor.Orange};
 

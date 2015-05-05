@@ -1,6 +1,6 @@
 using Feelknit.iOS.TableViewSources;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using System;
 using Feelknit.iOS.Helpers;
 using DSoft.Messaging;
@@ -44,10 +44,11 @@ namespace Feelknit.iOS.Controllers
 			}
 
 			if (container.Name.Equals ("About")) {
-				string version = NSBundle.MainBundle.ObjectForInfoDictionary("CFBundleVersion").ToString();
+				string build = Convert.ToString (NSBundle.MainBundle.ObjectForInfoDictionary ("CFBundleShortVersionString"));
+				string version = Convert.ToString (NSBundle.MainBundle.ObjectForInfoDictionary("CFBundleVersion"));
 
 
-				var alert = new UIAlertView("Version", version , null, "OK", null);
+				var alert = new UIAlertView("Version", string.Format("{0}.{1}",build,version) , null, "OK", null);
 				alert.Show();
 				return;
 			}

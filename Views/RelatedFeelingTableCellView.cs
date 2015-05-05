@@ -1,9 +1,9 @@
-﻿
-using System;
-using System.Drawing;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using System;
+using CoreGraphics;
+
+using Foundation;
+using UIKit;
 using Feelknit.iOS.Model;
 using System.Threading.Tasks;
 using Feelknit.iOS.Helpers;
@@ -181,11 +181,11 @@ namespace Feelknit.iOS
 			label.AdjustsFontSizeToFitWidth = false;
 			float width = 280;// label.Frame.Width;  
 			label.Lines = 0;
-			SizeF size = ((NSString)label.Text).StringSize (label.Font,  
-				             constrainedToSize: new SizeF (width, maxHeight), lineBreakMode: UILineBreakMode.WordWrap);
+			CGSize size = ((NSString)label.Text).StringSize (label.Font,  
+				             constrainedToSize: new CGSize (width, maxHeight), lineBreakMode: UILineBreakMode.WordWrap);
 
 			var labelFrame = label.Frame;
-			labelFrame.Size = new SizeF (280, size.Height);
+			labelFrame.Size = new CGSize (280, size.Height);
 			label.Frame = labelFrame; 
 		}
 

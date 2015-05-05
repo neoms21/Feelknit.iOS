@@ -1,5 +1,5 @@
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using System;
 using System.CodeDom.Compiler;
 using Feelknit.iOS.Helpers;
@@ -55,7 +55,7 @@ namespace Feelknit.iOS.Controllers
 		
 
 			CancelButton.TouchUpInside += (object sender, EventArgs e) => {
-				NavigationController.PopViewControllerAnimated(true);
+				NavigationController.PopViewController(true);
 			};
 
 
@@ -88,7 +88,7 @@ namespace Feelknit.iOS.Controllers
 				ApplicationHelper.Avatar = _avatar;
 			ApplicationHelper.EmailAddress = email;
 			MessageBus.PostEvent (new CoreMessageBusEvent (Constants.UserDetailsUpdateEvent));
-			InvokeOnMainThread(()=> NavigationController.PopViewControllerAnimated(true));
+			InvokeOnMainThread(()=> NavigationController.PopViewController(true));
 		}
 
 	}

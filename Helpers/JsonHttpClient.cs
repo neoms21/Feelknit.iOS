@@ -63,7 +63,6 @@ namespace Feelknit.iOS.Helpers
 //			catch(Exception e) {
 //				Console.WriteLine(e.ToString());
 //			}
-			return "";
 		}
 
 		public async Task<string> GetRequest ()

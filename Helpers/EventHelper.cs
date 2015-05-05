@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using DSoft.Messaging;
 
 namespace Feelknit.iOS

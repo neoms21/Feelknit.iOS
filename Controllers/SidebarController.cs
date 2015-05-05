@@ -1,8 +1,7 @@
 using System;
-using System.Drawing;
-using MonoTouch.CoreGraphics;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using CoreGraphics;
+using Foundation;
+using UIKit;
 
 namespace Feelknit.iOS.Controllers
 {
@@ -26,7 +25,7 @@ namespace Feelknit.iOS.Controllers
 		private bool _openWhenRotated = false;
 
 		// for swipe gesture
-		private float _panOriginX;
+		private System.nfloat _panOriginX;
 		private bool _ignorePan;
 
 		// gesture recognizers
@@ -186,9 +185,9 @@ namespace Feelknit.iOS.Controllers
 				UIViewAnimationOptions.CurveEaseInOut,
 				() => { 
 					if(MenuLocation == MenuLocations.Right){
-					view.Frame = new RectangleF (-MenuWidth, 0, view.Frame.Width, view.Frame.Height);
+					view.Frame = new CGRect (-MenuWidth, 0, view.Frame.Width, view.Frame.Height);
 					}else if(MenuLocation == MenuLocations.Left){
-					view.Frame = new RectangleF (MenuWidth, 0, view.Frame.Width, view.Frame.Height);
+					view.Frame = new CGRect (MenuWidth, 0, view.Frame.Width, view.Frame.Height);
 					}
 				},
 				() => {
@@ -209,9 +208,9 @@ namespace Feelknit.iOS.Controllers
 			MenuAreaController.View.EndEditing(true);
 			var view = _contentAreaView;
 			// define the animation
-			NSAction animation = () => { view.Frame = new RectangleF (0, 0, view.Frame.Width, view.Frame.Height); };
+			Action animation = () => { view.Frame = new CGRect (0, 0, view.Frame.Width, view.Frame.Height); };
 			// define the action for finished animation
-			NSAction finished = () => {
+			Action finished = () => {
 				if (view.Subviews.Length > 0)
 					view.Subviews[0].UserInteractionEnabled = true;
 				view.RemoveGestureRecognizer (_tapGesture);
@@ -288,7 +287,7 @@ namespace Feelknit.iOS.Controllers
 			_isIos7 = version.Major >= 7;
 
 			// add the navigation view on the right
-			RectangleF navigationFrame;
+			CGRect navigationFrame;
 			navigationFrame = MenuAreaController.View.Frame;
 				navigationFrame.X = navigationFrame.Width - MenuWidth;
 				navigationFrame.Width = MenuWidth;
@@ -306,7 +305,7 @@ namespace Feelknit.iOS.Controllers
 			if(!StatusBarMoves)
 				UIApplication.SharedApplication.SetStatusBarHidden(false, UIStatusBarAnimation.Fade);
 
-			RectangleF frame = View.Bounds;
+			CGRect frame = View.Bounds;
 			if (IsOpen)
 				frame.X = MenuWidth;
 
@@ -322,7 +321,7 @@ namespace Feelknit.iOS.Controllers
 		/// </summary>
 		private void SetViewSize()
 		{
-			RectangleF frame = View.Bounds;
+			CGRect frame = View.Bounds;
 			if (_contentAreaView.Bounds == frame)
 				return;
 			_contentAreaView.Bounds = frame;
@@ -332,10 +331,10 @@ namespace Feelknit.iOS.Controllers
 		/// Sets the location of the root view.
 		/// </summary>
 		/// <param name="frame">Frame.</param>
-		private void SetLocation(RectangleF frame)
+		private void SetLocation(CGRect frame)
 		{
 			frame.Y = 0;
-			_contentAreaView.Layer.AnchorPoint = new PointF (.5f, .5f);
+			_contentAreaView.Layer.AnchorPoint = new CGPoint (.5f, .5f);
 
 			// exit if we're already at the desired location
 			if (_contentAreaView.Frame.Location == frame.Location)
@@ -344,7 +343,7 @@ namespace Feelknit.iOS.Controllers
 			frame.Size = _contentAreaView.Frame.Size;
 
 			// set the root views cetner
-			var center = new PointF(frame.Left + frame.Width / 2,
+			var center = new CGPoint(frame.Left + frame.Width / 2,
 				frame.Top + frame.Height / 2);
 			_contentAreaView.Center = center;
 
@@ -364,13 +363,13 @@ namespace Feelknit.iOS.Controllers
 		private void Pan(UIView view)
 		{
 			if (_panGesture.State == UIGestureRecognizerState.Began) {
-				_panOriginX = view.Frame.X;
+				 _panOriginX = view.Frame.X;
 				if (MenuLocation == MenuLocations.Left)
 					_ignorePan = _panGesture.LocationInView(view).X > 50;
 				else
 					_ignorePan = _panGesture.LocationInView(view).X < view.Bounds.Width - 50;
 			} else if (!_ignorePan && (_panGesture.State == UIGestureRecognizerState.Changed)) {
-				float t = _panGesture.TranslationInView(view).X;
+				System.nfloat t = _panGesture.TranslationInView(view).X;
 				if (MenuLocation == MenuLocations.Left) {
 					if ((t > 0 && !IsOpen) || (t < 0 && IsOpen)) {
 						if (t > MenuWidth)
@@ -378,7 +377,7 @@ namespace Feelknit.iOS.Controllers
 						else if (t < -MenuWidth && IsOpen)
 							t = MenuWidth; 
 						if (_panOriginX + t <= MenuWidth)
-							view.Frame = new RectangleF(_panOriginX + t, view.Frame.Y, view.Frame.Width, view.Frame.Height);
+							view.Frame = new CGRect(_panOriginX + t, view.Frame.Y, view.Frame.Width, view.Frame.Height);
 						ShowShadowWhileDragging();
 					}
 				} else if (MenuLocation == MenuLocations.Right) {
@@ -388,20 +387,20 @@ namespace Feelknit.iOS.Controllers
 						else if (t > MenuWidth)
 							t = MenuWidth; 
 						if (_panOriginX + t <= 0)
-							view.Frame = new RectangleF(_panOriginX + t, view.Frame.Y, view.Frame.Width, view.Frame.Height);
+							view.Frame = new CGRect(_panOriginX + t, view.Frame.Y, view.Frame.Width, view.Frame.Height);
 						ShowShadowWhileDragging();
 					}
 				}
 			} else if (!_ignorePan && (_panGesture.State == UIGestureRecognizerState.Ended || _panGesture.State == UIGestureRecognizerState.Cancelled)) {
-				float t = _panGesture.TranslationInView(view).X;
-				float velocity = _panGesture.VelocityInView(view).X;
+				System.nfloat t = _panGesture.TranslationInView(view).X;
+				System.nfloat velocity = _panGesture.VelocityInView(view).X;
 				if ((MenuLocation == MenuLocations.Left && IsOpen && t < 0) || (MenuLocation == MenuLocations.Right && IsOpen && t > 0)) {
 					if (view.Frame.X > -view.Frame.Width / 2) {
 						CloseMenu();
 					} else {
 						UIView.Animate(_slideSpeed, 0, UIViewAnimationOptions.CurveEaseInOut,
 							() => {
-								view.Frame = new RectangleF(-MenuWidth, view.Frame.Y, view.Frame.Width, view.Frame.Height);
+								view.Frame = new CGRect(-MenuWidth, view.Frame.Y, view.Frame.Width, view.Frame.Height);
 							}, () => {
 						});
 					}
@@ -412,7 +411,7 @@ namespace Feelknit.iOS.Controllers
                     UIView.Animate(_slideSpeed, 0, UIViewAnimationOptions.CurveEaseInOut,
                         () =>
                         {
-                            view.Frame = new RectangleF(0, 0, view.Frame.Width, view.Frame.Height);
+                            view.Frame = new CGRect(0, 0, view.Frame.Width, view.Frame.Height);
                         }, () =>
                         {
                         });
@@ -427,7 +426,7 @@ namespace Feelknit.iOS.Controllers
 		{
 			if (!HasShadowing)
 				return;
-			_contentAreaView.Layer.ShadowOffset = new SizeF(5, 0);
+			_contentAreaView.Layer.ShadowOffset = new CGSize(5, 0);
 			_contentAreaView.Layer.ShadowPath = UIBezierPath.FromRect (_contentAreaView.Bounds).CGPath;
 			_contentAreaView.Layer.ShadowRadius = 4.0f;
 			_contentAreaView.Layer.ShadowOpacity = 0.5f;
@@ -442,7 +441,7 @@ namespace Feelknit.iOS.Controllers
 			//Dont need to call this twice if its already shown
 			if (!HasShadowing || _shadowShown)
 				return;
-			_contentAreaView.Layer.ShadowOffset = new SizeF(position, 0);
+			_contentAreaView.Layer.ShadowOffset = new CGSize(position, 0);
 			_contentAreaView.Layer.ShadowPath = UIBezierPath.FromRect (_contentAreaView.Bounds).CGPath;
 			_contentAreaView.Layer.ShadowRadius = 4.0f;
 			_contentAreaView.Layer.ShadowOpacity = 0.5f;
@@ -458,7 +457,7 @@ namespace Feelknit.iOS.Controllers
 			//Dont need to call this twice if its already hidden
 			if (!HasShadowing || !_shadowShown)
 				return;
-			_contentAreaView.Layer.ShadowOffset = new SizeF (0, 0);
+			_contentAreaView.Layer.ShadowOffset = new CGSize (0, 0);
 			_contentAreaView.Layer.ShadowRadius = 0.0f;
 			_contentAreaView.Layer.ShadowOpacity = 0.0f;
 			_contentAreaView.Layer.ShadowColor = UIColor.Clear.CGColor;
@@ -535,7 +534,7 @@ namespace Feelknit.iOS.Controllers
 		public override void ViewDidLayoutSubviews()
 		{
 			base.ViewDidLayoutSubviews();
-			RectangleF navigationFrame = View.Bounds;
+			CGRect navigationFrame = View.Bounds;
 
 			if (MenuLocation == MenuLocations.Right) {
 				navigationFrame.X = navigationFrame.Width - MenuWidth;
@@ -549,14 +548,14 @@ namespace Feelknit.iOS.Controllers
 
 		public override void ViewWillAppear(bool animated)
 		{
-			RectangleF navigationFrame = MenuAreaController.View.Frame;
+			CGRect navigationFrame = MenuAreaController.View.Frame;
 			if (MenuLocation == MenuLocations.Right) {
 				navigationFrame.X = navigationFrame.Width - MenuWidth;
 			} else if (MenuLocation == MenuLocations.Left) {
 				navigationFrame.X = 0;
 			}
 			navigationFrame.Width = MenuWidth;
-			navigationFrame.Location = PointF.Empty;
+			navigationFrame.Location = CGPoint.Empty;
 			MenuAreaController.View.Frame = navigationFrame;
 			View.SetNeedsLayout();
 			base.ViewWillAppear(animated);

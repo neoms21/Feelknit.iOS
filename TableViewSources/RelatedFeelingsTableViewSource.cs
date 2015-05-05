@@ -1,5 +1,5 @@
-﻿using System;
-using MonoTouch.UIKit;
+using System;
+using UIKit;
 using Feelknit.iOS.Model;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,12 +18,12 @@ namespace Feelknit.iOS
 			_feelings = feelings;
 		}
 
-		public override int RowsInSection (UITableView tableview, int section)
+		public override nint RowsInSection (UITableView tableview, nint section)
 		{
 			return _feelings.ToList().Count;
 		}
 
-		public override UITableViewCell GetCell (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+		public override UITableViewCell GetCell (UITableView tableView, Foundation.NSIndexPath indexPath)
 		{
 			var feeling = _feelings[indexPath.Row];
 			var cell = (RelatedFeelingTableCellView)tableView.DequeueReusableCell (RelatedFeelingTableCellView.Key);
@@ -36,13 +36,13 @@ namespace Feelknit.iOS
 			return cell;
 		}
 
-		public override void RowSelected (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+		public override void RowSelected (UITableView tableView, Foundation.NSIndexPath indexPath)
 		{
 			if(!_feelings[indexPath.Row].IsReported)
 				_action.Invoke (_feelings[indexPath.Row]);
 		}
 
-		public override float GetHeightForRow (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+		public override nfloat GetHeightForRow (UITableView tableView, Foundation.NSIndexPath indexPath)
 		{
 			return 175;
 		}

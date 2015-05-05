@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using Feelknit.iOS.Helpers;
 using Feelknit.iOS.Views;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using Newtonsoft.Json;
 
 namespace Feelknit.iOS.Controllers

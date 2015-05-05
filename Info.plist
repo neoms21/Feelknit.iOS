@@ -33,8 +33,6 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app requires location updates.</string>
-	<key>CFBundleVersion</key>
-	<string>2.9</string>
 	<key>UILaunchStoryboardName</key>
 	<string>MainStoryboard</string>
 	<key>CFBundleIconFiles</key>
@@ -46,5 +44,7 @@
 		<string>Icon-Small@2x</string>
 		<string>Icon-Small-40@2x</string>
 	</array>
+	<key>CFBundleVersion</key>
+	<string>14</string>
 </dict>
 </plist>

@@ -1,7 +1,7 @@
-﻿using Feelknit.iOS.Controllers;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using BugSense;
+using Feelknit.iOS.Controllers;
+using Foundation;
+using UIKit;
+//using BugSense;
 using System;
 using Feelknit.iOS.Helpers;
 using System.Collections;
@@ -65,7 +65,7 @@ namespace Feelknit
 
 			// NOTE: Don't call the base implementation on a Model class
             // see http://docs.xamarin.com/guides/ios/application_fundamentals/delegates,_protocols,_and_events
-            BugSenseHandler.Instance.InitAndStartSession("9dd4c16c");
+           // BugSenseHandler.Instance.InitAndStartSession("9dd4c16c");
             // create a new window instance based on the screen size
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
 

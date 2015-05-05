@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.Drawing;
+using CoreGraphics;
 using System.Linq;
 using System.Threading.Tasks;
 using Feelknit.iOS.Helpers;
 using Feelknit.iOS.Model;
 using Feelknit.iOS.TableViewSources;
 using Feelknit.iOS.Views;
-using MonoTouch.UIKit;
+using UIKit;
 using Newtonsoft.Json;
 
 namespace Feelknit.iOS.Controllers
@@ -52,7 +52,7 @@ namespace Feelknit.iOS.Controllers
             if (UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeLeft
                          || UIApplication.SharedApplication.StatusBarOrientation == UIInterfaceOrientation.LandscapeRight)
             {
-                bounds.Size = new SizeF(bounds.Size.Height, bounds.Size.Width);
+                bounds.Size = new CGSize(bounds.Size.Height, bounds.Size.Width);
             }
 
             CreateNewFeelingButton.TouchUpInside += (object sender, EventArgs e) =>
